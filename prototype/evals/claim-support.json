@@ -1,0 +1,146 @@
+{
+  "version": "claim-support-dev-1",
+  "description": "Assistant-authored synthetic claim-support development cases, frozen before inference. Not real-user, independent, or generated-answer evaluation. Cutoff fixed at 0.90 before run.",
+  "cases": [
+    {
+      "id": "S01",
+      "passage": "Maya, the service owner, must approve changes to the cleanup job before production deployment.",
+      "claim": "Maya must approve cleanup-job changes before production deployment.",
+      "expected_accept": true,
+      "category": "same-activity"
+    },
+    {
+      "id": "S02",
+      "passage": "Maya, the service owner, must approve changes to the cleanup job before production deployment.",
+      "claim": "Maya must approve customer refunds.",
+      "expected_accept": false,
+      "category": "wrong-activity"
+    },
+    {
+      "id": "S03",
+      "passage": "Current retention policy requires customer records to be deleted after 45 days.",
+      "claim": "Customer records must be deleted after 45 days.",
+      "expected_accept": true,
+      "category": "exact-policy"
+    },
+    {
+      "id": "S04",
+      "passage": "Current retention policy requires customer records to be deleted after 45 days.",
+      "claim": "Maya may modify any customer record during the first 45 days.",
+      "expected_accept": false,
+      "category": "permission-inference"
+    },
+    {
+      "id": "S05",
+      "passage": "Current retention policy requires customer records to be deleted after 45 days.",
+      "claim": "Customer records must be deleted after 30 days.",
+      "expected_accept": false,
+      "category": "wrong-number"
+    },
+    {
+      "id": "S06",
+      "passage": "Maya must not approve production deployment.",
+      "claim": "Maya must approve production deployment.",
+      "expected_accept": false,
+      "category": "negation"
+    },
+    {
+      "id": "S07",
+      "passage": "Maya, the service owner, must approve changes to the cleanup job before production deployment.",
+      "claim": "Sam must approve cleanup-job changes before production deployment.",
+      "expected_accept": false,
+      "category": "wrong-person"
+    },
+    {
+      "id": "S08",
+      "passage": "Customer records must be deleted after 45 days.",
+      "claim": "Customer records must be deleted after 45 hours.",
+      "expected_accept": false,
+      "category": "wrong-unit"
+    },
+    {
+      "id": "S09",
+      "passage": "If security approves, Maya may deploy the cleanup job.",
+      "claim": "Security has approved the cleanup job.",
+      "expected_accept": false,
+      "category": "condition-not-established"
+    },
+    {
+      "id": "S10",
+      "passage": "The RETENTION_DAYS setting is currently 30.",
+      "claim": "The RETENTION_DAYS setting is currently 30.",
+      "expected_accept": true,
+      "category": "configuration"
+    },
+    {
+      "id": "S11",
+      "passage": "Policy requires deletion after 45 days. The RETENTION_DAYS setting is currently 30.",
+      "claim": "The RETENTION_DAYS setting is already 45.",
+      "expected_accept": false,
+      "category": "policy-vs-implementation"
+    },
+    {
+      "id": "S12",
+      "passage": "Stored customer information is removed after forty-five days.",
+      "claim": "Customer records are deleted after forty-five days.",
+      "expected_accept": true,
+      "category": "paraphrase"
+    },
+    {
+      "id": "S13",
+      "passage": "The service owner must authorize production release.",
+      "claim": "The service owner must approve deployment to production.",
+      "expected_accept": true,
+      "category": "paraphrase"
+    },
+    {
+      "id": "S14",
+      "passage": "A user said that retention is 37 days. This has not been checked against policy.",
+      "claim": "The official policy has been verified to require 37 days.",
+      "expected_accept": false,
+      "category": "unverified-source"
+    },
+    {
+      "id": "S15",
+      "passage": "Production deployment requires approval. Staging deployment does not require approval.",
+      "claim": "Staging deployment requires approval.",
+      "expected_accept": false,
+      "category": "wrong-environment"
+    },
+    {
+      "id": "S16",
+      "passage": "Maya approves cleanup deployments. Sam approves refunds.",
+      "claim": "Sam approves refunds.",
+      "expected_accept": true,
+      "category": "multiple-roles"
+    },
+    {
+      "id": "S17",
+      "passage": "Maya approves cleanup deployments. Sam approves refunds.",
+      "claim": "Maya approves refunds.",
+      "expected_accept": false,
+      "category": "role-swap"
+    },
+    {
+      "id": "S18",
+      "passage": "The nightly cleanup job runs at 02:00 UTC.",
+      "claim": "The cleanup job runs every night at 02:00 UTC.",
+      "expected_accept": true,
+      "category": "schedule"
+    },
+    {
+      "id": "S19",
+      "passage": "Project ORBIT624 requires deletion after 45 days.",
+      "claim": "Project ORBIT625 requires deletion after 45 days.",
+      "expected_accept": false,
+      "category": "wrong-project"
+    },
+    {
+      "id": "S20",
+      "passage": "The source session records Maya as the service owner.",
+      "claim": "The source session says Maya is the service owner.",
+      "expected_accept": true,
+      "category": "attribution"
+    }
+  ]
+}

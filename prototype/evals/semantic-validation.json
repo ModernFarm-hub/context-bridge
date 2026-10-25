@@ -1,0 +1,296 @@
+{
+  "version": "semantic-validation-1.0",
+  "description": "Authored before hybrid inference was run; separate author-generated validation, not a customer blind benchmark. Do not tune thresholds on this file.",
+  "k": 5,
+  "cases": [
+    {
+      "id": "N01",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "Who can sign off on a live release?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Production rollout requires authorization from the service owner."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N02",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "Where should secrets be kept?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Credentials must reside in the managed vault; never commit keys to source control."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N03",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "How do we recover after losing the database?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Restore PostgreSQL from nightly snapshots and replay the write ahead log."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N04",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "Who gets paged when authentication stops working?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Identity service incident escalation goes to the on-call security engineer."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N05",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "Are we allowed to send customer information overseas?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Personal data must remain within the EU processing region."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N06",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "How can we undo a bad release?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Rollback deploys the preceding stable container image."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N07",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "How often do users need to change their passwords?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Credential rotation interval is every sixty days."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N08",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "What happens if we exceed the request quota?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "API rate limiting responds with HTTP 429 and Retry-After."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ]
+    },
+    {
+      "id": "N09",
+      "kind": "retrieval",
+      "category": "new-negative",
+      "split": "heldout",
+      "query": "Who signed the acquisition agreement?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "The chart color scheme uses green."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "N10",
+      "kind": "retrieval",
+      "category": "new-negative",
+      "split": "heldout",
+      "query": "Why did the payment service crash?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Security training attendance is tracked monthly."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "N11",
+      "kind": "retrieval",
+      "category": "new-negative",
+      "split": "heldout",
+      "query": "LOTUS817 deployment rule",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "LOTUS818 deployment needs approval."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "N12",
+      "kind": "retrieval",
+      "category": "new-paraphrase",
+      "split": "heldout",
+      "query": "How can we undo a bad release?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Unrelated background text. Rollback deploys the preceding stable container image."
+        },
+        {
+          "id": "noise",
+          "session": "other",
+          "text": "The lunch menu includes soup and bread."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Rollback deploys the preceding stable container image."
+      }
+    },
+    {
+      "id": "N13",
+      "kind": "control",
+      "category": "new-access-control",
+      "split": "heldout",
+      "mode": "isolation_employee"
+    },
+    {
+      "id": "N14",
+      "kind": "control",
+      "category": "new-access-control",
+      "split": "heldout",
+      "mode": "isolation_tenant"
+    },
+    {
+      "id": "N15",
+      "kind": "control",
+      "category": "new-access-control",
+      "split": "heldout",
+      "mode": "direct_read"
+    },
+    {
+      "id": "N16",
+      "kind": "control",
+      "category": "new-access-control",
+      "split": "heldout",
+      "mode": "revoke"
+    }
+  ]
+}

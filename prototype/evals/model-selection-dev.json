@@ -1,0 +1,1475 @@
+{
+  "version": "model-selection-dev-1",
+  "description": "Synthetic development data frozen before comparison; not independent validation. Includes prior development regression cases. No validation cases used for selection.",
+  "k": 5,
+  "cases": [
+    {
+      "id": "D01S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "Who handles a broken single sign on connection?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "SSO outages are assigned to the identity operations duty officer."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "SSO outages are assigned to the identity operations duty officer."
+      }
+    },
+    {
+      "id": "D01L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "Who handles a broken single sign on connection?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. SSO outages are assigned to the identity operations duty officer. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "SSO outages are assigned to the identity operations duty officer."
+      }
+    },
+    {
+      "id": "D02S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "What is the recovery procedure after a failed upgrade?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Revert the application to the last healthy artifact and restore its configuration."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Revert the application to the last healthy artifact and restore its configuration."
+      }
+    },
+    {
+      "id": "D02L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "What is the recovery procedure after a failed upgrade?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Revert the application to the last healthy artifact and restore its configuration. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Revert the application to the last healthy artifact and restore its configuration."
+      }
+    },
+    {
+      "id": "D03S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "Can we reverse the schema change?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Database migrations require a tested down migration before execution."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Database migrations require a tested down migration before execution."
+      }
+    },
+    {
+      "id": "D03L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "Can we reverse the schema change?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Database migrations require a tested down migration before execution. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Database migrations require a tested down migration before execution."
+      }
+    },
+    {
+      "id": "D04S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "Who should we alert if payments stop?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Billing incidents are routed to the finance platform on-call responder."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Billing incidents are routed to the finance platform on-call responder."
+      }
+    },
+    {
+      "id": "D04L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "Who should we alert if payments stop?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Billing incidents are routed to the finance platform on-call responder. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Billing incidents are routed to the finance platform on-call responder."
+      }
+    },
+    {
+      "id": "D05S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "How can a customer get their account removed?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Erasure requests go through the privacy portal and delete the subscriber profile."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Erasure requests go through the privacy portal and delete the subscriber profile."
+      }
+    },
+    {
+      "id": "D05L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "How can a customer get their account removed?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Erasure requests go through the privacy portal and delete the subscriber profile. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Erasure requests go through the privacy portal and delete the subscriber profile."
+      }
+    },
+    {
+      "id": "D06S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "What protects stored customer data?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Information at rest is encrypted using AES-256 with managed keys."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Information at rest is encrypted using AES-256 with managed keys."
+      }
+    },
+    {
+      "id": "D06L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "What protects stored customer data?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Information at rest is encrypted using AES-256 with managed keys. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Information at rest is encrypted using AES-256 with managed keys."
+      }
+    },
+    {
+      "id": "D07S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "How do I regain access when I forget my password?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Use the self-service credential reset flow after identity verification."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Use the self-service credential reset flow after identity verification."
+      }
+    },
+    {
+      "id": "D07L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "How do I regain access when I forget my password?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Use the self-service credential reset flow after identity verification. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Use the self-service credential reset flow after identity verification."
+      }
+    },
+    {
+      "id": "D08S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "What happens when a request takes too long?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Requests exceeding the deadline are cancelled and retried with exponential backoff."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Requests exceeding the deadline are cancelled and retried with exponential backoff."
+      }
+    },
+    {
+      "id": "D08L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "What happens when a request takes too long?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Requests exceeding the deadline are cancelled and retried with exponential backoff. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Requests exceeding the deadline are cancelled and retried with exponential backoff."
+      }
+    },
+    {
+      "id": "D09S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "Where can I see why the job failed?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Worker exceptions are recorded in the centralized observability dashboard."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Worker exceptions are recorded in the centralized observability dashboard."
+      }
+    },
+    {
+      "id": "D09L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "Where can I see why the job failed?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Worker exceptions are recorded in the centralized observability dashboard. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "Worker exceptions are recorded in the centralized observability dashboard."
+      }
+    },
+    {
+      "id": "D10S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "How often is disaster recovery rehearsed?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "The continuity team performs a failover exercise every quarter."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "The continuity team performs a failover exercise every quarter."
+      }
+    },
+    {
+      "id": "D10L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "How often is disaster recovery rehearsed?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. The continuity team performs a failover exercise every quarter. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "The continuity team performs a failover exercise every quarter."
+      }
+    },
+    {
+      "id": "D11S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "Who may authorize access to production secrets?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "The security lead grants permission to read live environment credentials."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "The security lead grants permission to read live environment credentials."
+      }
+    },
+    {
+      "id": "D11L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "Who may authorize access to production secrets?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. The security lead grants permission to read live environment credentials. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "The security lead grants permission to read live environment credentials."
+      }
+    },
+    {
+      "id": "D12S",
+      "kind": "retrieval",
+      "category": "paraphrase",
+      "split": "development",
+      "query": "How can we prevent duplicate charges?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "An idempotency key ensures a payment is processed only once."
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "An idempotency key ensures a payment is processed only once."
+      }
+    },
+    {
+      "id": "D12L",
+      "kind": "retrieval",
+      "category": "long-paraphrase",
+      "split": "development",
+      "query": "How can we prevent duplicate charges?",
+      "records": [
+        {
+          "id": "support",
+          "session": "research",
+          "text": "Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. Meeting notes about office seating. An idempotency key ensures a payment is processed only once. More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics.  More unrelated meeting logistics. "
+        },
+        {
+          "id": "n0",
+          "session": "other0",
+          "text": "The cafeteria menu changes on Tuesday."
+        },
+        {
+          "id": "n1",
+          "session": "other1",
+          "text": "A desk chair was delivered to reception."
+        },
+        {
+          "id": "n2",
+          "session": "other2",
+          "text": "The gardening club meets after lunch."
+        }
+      ],
+      "expected_evidence": [
+        "support"
+      ],
+      "required_text": {
+        "support": "An idempotency key ensures a payment is processed only once."
+      }
+    },
+    {
+      "id": "DN1",
+      "kind": "retrieval",
+      "category": "negative",
+      "split": "development",
+      "query": "Who repairs the payroll integration?",
+      "records": [
+        {
+          "id": "n0",
+          "session": "noise0",
+          "text": "The cafeteria serves hot meals."
+        },
+        {
+          "id": "n1",
+          "session": "noise1",
+          "text": "Garden maintenance is scheduled monthly."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "DN2",
+      "kind": "retrieval",
+      "category": "negative",
+      "split": "development",
+      "query": "What is the legal hold duration?",
+      "records": [
+        {
+          "id": "n0",
+          "session": "noise0",
+          "text": "The legal team ordered new stationery."
+        },
+        {
+          "id": "n1",
+          "session": "noise1",
+          "text": "The storage room holds spare monitors."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "DN3",
+      "kind": "retrieval",
+      "category": "negative",
+      "split": "development",
+      "query": "How do I rotate encryption keys?",
+      "records": [
+        {
+          "id": "n0",
+          "session": "noise0",
+          "text": "The office door key was replaced."
+        },
+        {
+          "id": "n1",
+          "session": "noise1",
+          "text": "Rotate the presentation slide clockwise."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "DN4",
+      "kind": "retrieval",
+      "category": "negative",
+      "split": "development",
+      "query": "Who can recover a deleted database?",
+      "records": [
+        {
+          "id": "n0",
+          "session": "noise0",
+          "text": "The lunch meeting moved to Wednesday."
+        },
+        {
+          "id": "n1",
+          "session": "noise1",
+          "text": "The customer service team has a new logo."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "DN5",
+      "kind": "retrieval",
+      "category": "negative",
+      "split": "development",
+      "query": "What is TULIP329 deployment policy?",
+      "records": [
+        {
+          "id": "n0",
+          "session": "noise0",
+          "text": "TULIP328 requires two reviewers before release."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "DN6",
+      "kind": "retrieval",
+      "category": "negative",
+      "split": "development",
+      "query": "When should backups expire?",
+      "records": [
+        {
+          "id": "n0",
+          "session": "noise0",
+          "text": "The team backs the proposed design."
+        },
+        {
+          "id": "n1",
+          "session": "noise1",
+          "text": "A meeting invitation expires tomorrow."
+        }
+      ],
+      "expected_evidence": []
+    },
+    {
+      "id": "OLD-R01",
+      "category": "exact",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar retention",
+      "records": [
+        {
+          "id": "policy",
+          "session": "policy",
+          "text": "Cedar retention is 90 days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "policy"
+      ]
+    },
+    {
+      "id": "OLD-R02",
+      "category": "code",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "cleanup retention setting",
+      "records": [
+        {
+          "id": "implementation",
+          "session": "implementation",
+          "text": "cleanup.py enforces retention with RETENTION_DAYS=90."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "implementation"
+      ]
+    },
+    {
+      "id": "OLD-R03",
+      "category": "client",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Orchid approval",
+      "records": [
+        {
+          "id": "client",
+          "session": "client",
+          "text": "Orchid requires approval before production deployment."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "client"
+      ]
+    },
+    {
+      "id": "OLD-R05",
+      "category": "paraphrase",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "How long do we keep customer records?",
+      "records": [
+        {
+          "id": "policy",
+          "session": "policy",
+          "text": "Client information retention duration: ninety days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "policy"
+      ]
+    },
+    {
+      "id": "OLD-R06",
+      "category": "paraphrase",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Why did checkout go down?",
+      "records": [
+        {
+          "id": "incident",
+          "session": "incident",
+          "text": "Payment service outage root cause: exhausted database connections."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "incident"
+      ]
+    },
+    {
+      "id": "OLD-R07",
+      "category": "multiple-sessions",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar retention policy implementation",
+      "records": [
+        {
+          "id": "policy",
+          "session": "research",
+          "text": "Cedar retention policy requires 90 days."
+        },
+        {
+          "id": "code",
+          "session": "code",
+          "text": "Cedar retention implementation sets RETENTION_DAYS=90."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "policy",
+        "code"
+      ]
+    },
+    {
+      "id": "OLD-R09",
+      "category": "conflicting-evidence",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar retention",
+      "records": [
+        {
+          "id": "old",
+          "session": "old",
+          "text": "Cedar retention is 90 days.",
+          "timestamp": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "new",
+          "session": "new",
+          "text": "Cedar retention is 30 days.",
+          "timestamp": "2026-10-23T09:00:00Z"
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "old",
+        "new"
+      ],
+      "note": "Retrieval must surface both; conflict explanation is not graded without a model."
+    },
+    {
+      "id": "OLD-R10",
+      "category": "updated-decision",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Current Larch deployment approval",
+      "records": [
+        {
+          "id": "a-old",
+          "session": "a-old",
+          "text": "Larch deployment approval requires two reviewers.",
+          "timestamp": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "z-new",
+          "session": "z-new",
+          "text": "Larch deployment approval now requires three reviewers; supersedes the earlier decision.",
+          "timestamp": "2026-10-23T09:00:00Z"
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "z-new"
+      ],
+      "top_evidence": "z-new"
+    },
+    {
+      "id": "OLD-R11",
+      "category": "numeric",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "ORCHID731",
+      "records": [
+        {
+          "id": "fact",
+          "session": "fact",
+          "text": "ORCHID731 has retention of 37 days."
+        },
+        {
+          "id": "near",
+          "session": "near",
+          "text": "ORCHID732 has retention of 80 days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "fact"
+      ]
+    },
+    {
+      "id": "OLD-R13",
+      "category": "punctuation",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "pine 963 deployment",
+      "records": [
+        {
+          "id": "fact",
+          "session": "fact",
+          "text": "PINE-963 requires deployment approval."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "fact"
+      ]
+    },
+    {
+      "id": "OLD-R14",
+      "category": "long-passage",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "ZEPHYR909",
+      "records": [
+        {
+          "id": "long",
+          "session": "long",
+          "text": "Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. ZEPHYR909 requires two approvals."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "long"
+      ],
+      "required_text": {
+        "long": "ZEPHYR909 requires two approvals."
+      }
+    },
+    {
+      "id": "OLD-R15",
+      "category": "distractors",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar production retention",
+      "records": [
+        {
+          "id": "a-dev",
+          "session": "a-dev",
+          "text": "Cedar retention production planning notes without a policy."
+        },
+        {
+          "id": "b-stage",
+          "session": "b-stage",
+          "text": "Cedar production retention staging discussion."
+        },
+        {
+          "id": "c-ui",
+          "session": "c-ui",
+          "text": "Cedar production retention dashboard layout."
+        },
+        {
+          "id": "d-old",
+          "session": "d-old",
+          "text": "Cedar production retention meeting agenda."
+        },
+        {
+          "id": "e-test",
+          "session": "e-test",
+          "text": "Cedar production retention synthetic test fixture."
+        },
+        {
+          "id": "z-policy",
+          "session": "z-policy",
+          "text": "Cedar production retention is 90 days."
+        }
+      ],
+      "expected_evidence": [
+        "z-policy"
+      ]
+    },
+    {
+      "id": "OLD-R17",
+      "category": "multiple-sessions",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Aster client deadline owner",
+      "records": [
+        {
+          "id": "deadline",
+          "session": "request",
+          "text": "Aster client deadline is November 15."
+        },
+        {
+          "id": "owner",
+          "session": "delivery",
+          "text": "Aster owner is the platform team."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "deadline",
+        "owner"
+      ]
+    },
+    {
+      "id": "OLD-R18",
+      "category": "missing-answer",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Birch retention",
+      "records": [
+        {
+          "id": "question",
+          "session": "question",
+          "text": "What is the Birch retention period?",
+          "role": "user"
+        },
+        {
+          "id": "response",
+          "session": "response",
+          "text": "Birch retention has not been established."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "question",
+        "response"
+      ],
+      "note": "Retrieval of uncertainty only. Whether the model abstains is not measured."
+    },
+    {
+      "id": "OLD-R19",
+      "category": "negative",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "QUARTZ000",
+      "records": [
+        {
+          "id": "fact",
+          "session": "fact",
+          "text": "Cedar retention is 90 days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [],
+      "expect_empty": true
+    },
+    {
+      "id": "OLD-C01",
+      "category": "employee-isolation",
+      "split": "development",
+      "kind": "control",
+      "mode": "isolation_employee"
+    },
+    {
+      "id": "OLD-C03",
+      "category": "direct-read-isolation",
+      "split": "development",
+      "kind": "control",
+      "mode": "direct_read"
+    },
+    {
+      "id": "OLD-C04",
+      "category": "identity-override",
+      "split": "development",
+      "kind": "control",
+      "mode": "override"
+    },
+    {
+      "id": "OLD-C05",
+      "category": "revocation",
+      "split": "development",
+      "kind": "control",
+      "mode": "revoke"
+    },
+    {
+      "id": "OLD-C07",
+      "category": "internal-records",
+      "split": "development",
+      "kind": "control",
+      "mode": "internal"
+    },
+    {
+      "id": "OLD-C08",
+      "category": "partial-write",
+      "split": "development",
+      "kind": "control",
+      "mode": "partial"
+    },
+    {
+      "id": "OLD-C10",
+      "category": "malformed-source",
+      "split": "development",
+      "kind": "control",
+      "mode": "malformed"
+    }
+  ]
+}

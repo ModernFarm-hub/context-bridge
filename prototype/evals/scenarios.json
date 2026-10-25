@@ -1,0 +1,686 @@
+{
+  "version": "1.0",
+  "description": "Synthetic retrieval/control benchmark. Expected evidence IDs, snippets, splits and notes never enter the indexed corpus. Heldout labels are a reserved evaluation subset, not an independently collected blind benchmark. No real employee data or model calls.",
+  "k": 5,
+  "cases": [
+    {
+      "id": "R01",
+      "category": "exact",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar retention",
+      "records": [
+        {
+          "id": "policy",
+          "session": "policy",
+          "text": "Cedar retention is 90 days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "policy"
+      ]
+    },
+    {
+      "id": "R02",
+      "category": "code",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "cleanup retention setting",
+      "records": [
+        {
+          "id": "implementation",
+          "session": "implementation",
+          "text": "cleanup.py enforces retention with RETENTION_DAYS=90."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "implementation"
+      ]
+    },
+    {
+      "id": "R03",
+      "category": "client",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Orchid approval",
+      "records": [
+        {
+          "id": "client",
+          "session": "client",
+          "text": "Orchid requires approval before production deployment."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "client"
+      ]
+    },
+    {
+      "id": "R04",
+      "category": "tool-output",
+      "split": "heldout",
+      "kind": "retrieval",
+      "query": "backup schedule",
+      "records": [
+        {
+          "id": "tool",
+          "session": "tool",
+          "text": "The backup schedule is weekly.",
+          "role": "user",
+          "tool_result": true
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "tool"
+      ]
+    },
+    {
+      "id": "R05",
+      "category": "paraphrase",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "How long do we keep customer records?",
+      "records": [
+        {
+          "id": "policy",
+          "session": "policy",
+          "text": "Client information retention duration: ninety days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "policy"
+      ]
+    },
+    {
+      "id": "R06",
+      "category": "paraphrase",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Why did checkout go down?",
+      "records": [
+        {
+          "id": "incident",
+          "session": "incident",
+          "text": "Payment service outage root cause: exhausted database connections."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "incident"
+      ]
+    },
+    {
+      "id": "R07",
+      "category": "multiple-sessions",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar retention policy implementation",
+      "records": [
+        {
+          "id": "policy",
+          "session": "research",
+          "text": "Cedar retention policy requires 90 days."
+        },
+        {
+          "id": "code",
+          "session": "code",
+          "text": "Cedar retention implementation sets RETENTION_DAYS=90."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "policy",
+        "code"
+      ]
+    },
+    {
+      "id": "R08",
+      "category": "multiple-sessions",
+      "split": "heldout",
+      "kind": "retrieval",
+      "query": "Orchid requirement policy enforcement",
+      "records": [
+        {
+          "id": "requirement",
+          "session": "client",
+          "text": "Orchid requirement: delete exported data."
+        },
+        {
+          "id": "policy",
+          "session": "research",
+          "text": "Orchid policy requires deletion after 30 days."
+        },
+        {
+          "id": "code",
+          "session": "code",
+          "text": "Orchid enforcement uses export_cleanup.py."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "requirement",
+        "policy",
+        "code"
+      ]
+    },
+    {
+      "id": "R09",
+      "category": "conflicting-evidence",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar retention",
+      "records": [
+        {
+          "id": "old",
+          "session": "old",
+          "text": "Cedar retention is 90 days.",
+          "timestamp": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "new",
+          "session": "new",
+          "text": "Cedar retention is 30 days.",
+          "timestamp": "2026-10-23T09:00:00Z"
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "old",
+        "new"
+      ],
+      "note": "Retrieval must surface both; conflict explanation is not graded without a model."
+    },
+    {
+      "id": "R10",
+      "category": "updated-decision",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Current Larch deployment approval",
+      "records": [
+        {
+          "id": "a-old",
+          "session": "a-old",
+          "text": "Larch deployment approval requires two reviewers.",
+          "timestamp": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "z-new",
+          "session": "z-new",
+          "text": "Larch deployment approval now requires three reviewers; supersedes the earlier decision.",
+          "timestamp": "2026-10-23T09:00:00Z"
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "z-new"
+      ],
+      "top_evidence": "z-new"
+    },
+    {
+      "id": "R11",
+      "category": "numeric",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "ORCHID731",
+      "records": [
+        {
+          "id": "fact",
+          "session": "fact",
+          "text": "ORCHID731 has retention of 37 days."
+        },
+        {
+          "id": "near",
+          "session": "near",
+          "text": "ORCHID732 has retention of 80 days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "fact"
+      ]
+    },
+    {
+      "id": "R12",
+      "category": "case",
+      "split": "heldout",
+      "kind": "retrieval",
+      "query": "marigold842",
+      "records": [
+        {
+          "id": "fact",
+          "session": "fact",
+          "text": "MARIGOLD842 uses weekly backups."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "fact"
+      ]
+    },
+    {
+      "id": "R13",
+      "category": "punctuation",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "pine 963 deployment",
+      "records": [
+        {
+          "id": "fact",
+          "session": "fact",
+          "text": "PINE-963 requires deployment approval."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "fact"
+      ]
+    },
+    {
+      "id": "R14",
+      "category": "long-passage",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "ZEPHYR909",
+      "records": [
+        {
+          "id": "long",
+          "session": "long",
+          "text": "Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. Routine background text. ZEPHYR909 requires two approvals."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "long"
+      ],
+      "required_text": {
+        "long": "ZEPHYR909 requires two approvals."
+      }
+    },
+    {
+      "id": "R15",
+      "category": "distractors",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Cedar production retention",
+      "records": [
+        {
+          "id": "a-dev",
+          "session": "a-dev",
+          "text": "Cedar retention production planning notes without a policy."
+        },
+        {
+          "id": "b-stage",
+          "session": "b-stage",
+          "text": "Cedar production retention staging discussion."
+        },
+        {
+          "id": "c-ui",
+          "session": "c-ui",
+          "text": "Cedar production retention dashboard layout."
+        },
+        {
+          "id": "d-old",
+          "session": "d-old",
+          "text": "Cedar production retention meeting agenda."
+        },
+        {
+          "id": "e-test",
+          "session": "e-test",
+          "text": "Cedar production retention synthetic test fixture."
+        },
+        {
+          "id": "z-policy",
+          "session": "z-policy",
+          "text": "Cedar production retention is 90 days."
+        }
+      ],
+      "expected_evidence": [
+        "z-policy"
+      ]
+    },
+    {
+      "id": "R16",
+      "category": "tool-output",
+      "split": "heldout",
+      "kind": "retrieval",
+      "query": "Confluence Sable encryption",
+      "records": [
+        {
+          "id": "source",
+          "session": "source",
+          "text": "Confluence Sable encryption requires customer-managed keys.",
+          "role": "user",
+          "tool_result": true
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "source"
+      ]
+    },
+    {
+      "id": "R17",
+      "category": "multiple-sessions",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Aster client deadline owner",
+      "records": [
+        {
+          "id": "deadline",
+          "session": "request",
+          "text": "Aster client deadline is November 15."
+        },
+        {
+          "id": "owner",
+          "session": "delivery",
+          "text": "Aster owner is the platform team."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "deadline",
+        "owner"
+      ]
+    },
+    {
+      "id": "R18",
+      "category": "missing-answer",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "Birch retention",
+      "records": [
+        {
+          "id": "question",
+          "session": "question",
+          "text": "What is the Birch retention period?",
+          "role": "user"
+        },
+        {
+          "id": "response",
+          "session": "response",
+          "text": "Birch retention has not been established."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [
+        "question",
+        "response"
+      ],
+      "note": "Retrieval of uncertainty only. Whether the model abstains is not measured."
+    },
+    {
+      "id": "R19",
+      "category": "negative",
+      "split": "development",
+      "kind": "retrieval",
+      "query": "QUARTZ000",
+      "records": [
+        {
+          "id": "fact",
+          "session": "fact",
+          "text": "Cedar retention is 90 days."
+        },
+        {
+          "id": "noise1",
+          "session": "noise1",
+          "text": "Deployment updates are published every Thursday."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "The dashboard theme is blue."
+        }
+      ],
+      "expected_evidence": [],
+      "expect_empty": true
+    },
+    {
+      "id": "R20",
+      "category": "irrelevant-word-overlap",
+      "split": "heldout",
+      "kind": "retrieval",
+      "query": "What is the password rotation policy?",
+      "records": [
+        {
+          "id": "noise",
+          "session": "noise",
+          "text": "The interface is blue and the build is passing."
+        },
+        {
+          "id": "noise2",
+          "session": "noise2",
+          "text": "What is the latest dashboard design?"
+        }
+      ],
+      "expected_evidence": [],
+      "expect_empty": true
+    },
+    {
+      "id": "C01",
+      "category": "employee-isolation",
+      "split": "development",
+      "kind": "control",
+      "mode": "isolation_employee"
+    },
+    {
+      "id": "C02",
+      "category": "tenant-isolation",
+      "split": "heldout",
+      "kind": "control",
+      "mode": "isolation_tenant"
+    },
+    {
+      "id": "C03",
+      "category": "direct-read-isolation",
+      "split": "development",
+      "kind": "control",
+      "mode": "direct_read"
+    },
+    {
+      "id": "C04",
+      "category": "identity-override",
+      "split": "development",
+      "kind": "control",
+      "mode": "override"
+    },
+    {
+      "id": "C05",
+      "category": "revocation",
+      "split": "development",
+      "kind": "control",
+      "mode": "revoke"
+    },
+    {
+      "id": "C06",
+      "category": "missing-source",
+      "split": "heldout",
+      "kind": "control",
+      "mode": "missing"
+    },
+    {
+      "id": "C07",
+      "category": "internal-records",
+      "split": "development",
+      "kind": "control",
+      "mode": "internal"
+    },
+    {
+      "id": "C08",
+      "category": "partial-write",
+      "split": "development",
+      "kind": "control",
+      "mode": "partial"
+    },
+    {
+      "id": "C09",
+      "category": "live-update",
+      "split": "heldout",
+      "kind": "control",
+      "mode": "append"
+    },
+    {
+      "id": "C10",
+      "category": "malformed-source",
+      "split": "development",
+      "kind": "control",
+      "mode": "malformed"
+    }
+  ]
+}

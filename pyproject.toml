@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-bridge-local"
+version = "0.6.0a1"
+description = "Local-first MCP search across Claude and ChatGPT conversations, with citations"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+classifiers = ["Development Status :: 3 - Alpha", "Operating System :: MacOS", "Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3", "License :: OSI Approved :: Apache Software License"]
+dependencies = []
+
+[project.optional-dependencies]
+semantic = ["numpy==1.26.4", "onnxruntime==1.19.2", "tokenizers==0.20.3"]
+
+[project.scripts]
+context-bridge = "context_bridge.cli:main"
+context-bridge-local = "context_bridge.cli:main"
+
+[tool.setuptools]
+packages = ["context_bridge"]
+include-package-data = false
+license-files = ["LICENSE", "NOTICE"]
+
+[tool.setuptools.package-dir]
+context_bridge = "prototype"
+
+[tool.setuptools.package-data]
+context_bridge = ["evals/*.json", "evals/*.md", "requirements-semantic-lock.txt"]

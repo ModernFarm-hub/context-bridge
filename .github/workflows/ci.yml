@@ -1,0 +1,48 @@
+name: Tests and packages
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ['3.9', '3.10', '3.11', '3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install build checks
+        run: python -m pip install build twine uv
+      - name: Regression suite
+        env:
+          PYTHONPATH: prototype
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -m unittest discover -s prototype/tests -v
+      - name: Build and check distributions
+        run: |
+          python -m build
+          python -m twine check --strict dist/*
+          python tools/check_artifacts.py dist
+      - name: uvx package smoke test
+        run: python tools/uvx_smoke.py dist
+      - name: Installed package smoke test
+        run: |
+          python -m venv /tmp/context-bridge-smoke
+          /tmp/context-bridge-smoke/bin/python -m pip install dist/*.whl
+          /tmp/context-bridge-smoke/bin/python tools/package_smoke.py
+  sdk-client:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install . 'mcp>=1.12,<2'
+      - run: python tools/sdk_smoke.py

@@ -1,0 +1,37 @@
+# Local state, session histories, credentials and model assets must never ship.
+work/
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite*
+*.jsonl
+*.command.tmp
+**/enrollment.json
+**/*-settings.json
+**/*-mcp.json
+**/mcp-demo.json
+**/context.db*
+*.log
+.DS_Store
+# Generated reports contain local paths. Publish curated synthetic summaries only.
+/evaluation/
+/research/internal/
+# Reproducible fixtures in prototype/evals/*.json are intentional source files.
+build/
+dist/
+*.egg-info/
+
+/releases/
+
+**/profile.json
+.mcpregistry_*
+server.json
+
+.build-venv/
+docs/assets/*.preview.png

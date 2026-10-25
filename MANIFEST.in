@@ -1,0 +1,14 @@
+include .gitignore LICENSE NOTICE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md THIRD_PARTY.md pyproject.toml
+recursive-include docs *.md *.gif
+recursive-include tools *.py
+recursive-include registry *.json
+recursive-include .github *.yml
+recursive-include prototype *.py
+recursive-include prototype/evals *.json *.md
+include prototype/requirements-semantic-lock.txt
+prune research
+prune evaluation
+prune releases
+prune work
+prune prototype/__pycache__
+recursive-exclude * __pycache__ *.pyc *.jsonl *.db *.log

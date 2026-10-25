@@ -1,0 +1,66 @@
+{
+  "version": "synthetic-negative-pilot-1",
+  "description": "Assistant-authored synthetic development probes, not human-reviewed real-work labels. Empty expected evidence tests the strict retrieval-abstention contract, not generated answers.",
+  "k": 5,
+  "cases": [
+    {
+      "id": "PN01",
+      "kind": "retrieval",
+      "category": "near-project-identifier",
+      "split": "development",
+      "origin": "synthetic",
+      "query": "What is the retention policy for ORBIT625?",
+      "records": [
+        {
+          "id": "other-project",
+          "session": "Retention policy",
+          "text": "Project ORBIT624 requires customer records to be deleted after 45 days."
+        }
+      ],
+      "expected_evidence": [],
+      "required_text": {},
+      "expected_answer": "No recorded policy for ORBIT625; do not substitute ORBIT624."
+    },
+    {
+      "id": "PN02",
+      "kind": "retrieval",
+      "category": "absent-fact",
+      "split": "development",
+      "origin": "synthetic",
+      "query": "What is the office Wi-Fi password?",
+      "records": [
+        {
+          "id": "policy",
+          "session": "Retention policy",
+          "text": "Current retention policy requires customer records to be deleted after 45 days."
+        },
+        {
+          "id": "deployment",
+          "session": "Deployment planning",
+          "text": "Maya, the service owner, must approve changes to the cleanup job before production deployment."
+        }
+      ],
+      "expected_evidence": [],
+      "required_text": {},
+      "expected_answer": "The provided sessions contain no Wi-Fi password."
+    },
+    {
+      "id": "PN03",
+      "kind": "retrieval",
+      "category": "same-action-wrong-subject",
+      "split": "development",
+      "origin": "synthetic",
+      "query": "Who must approve a customer refund?",
+      "records": [
+        {
+          "id": "deployment",
+          "session": "Deployment planning",
+          "text": "Maya, the service owner, must approve changes to the cleanup job before production deployment."
+        }
+      ],
+      "expected_evidence": [],
+      "required_text": {},
+      "expected_answer": "Refund approval is not recorded. The deployment approval statement does not establish who approves refunds."
+    }
+  ]
+}
