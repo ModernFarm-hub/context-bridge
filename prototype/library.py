@@ -84,7 +84,7 @@ def remove(directory=DEFAULT_ROOT, conversation=None, provider=None):
                         raise ValueError('Use a ChatGPT /c/<id> link, Claude /chat/<id> link, or conversation ID')
                     selected_provider, cid = expected[0], unquote(parts[1])
                 candidates = {source for source, meta in sources.items() if meta.get('conversation_id')==cid and (not selected_provider or meta.get('provider')==selected_provider)}
-                if not candidates:
+                if not candidates and selected_provider is None:
                     candidates = {row[0] for row in bridge.db.execute('SELECT DISTINCT source FROM records WHERE tenant=? AND employee=? AND session=?', (*bridge.owner, cid))}
                 if len(candidates)>1 and len({sources.get(p,{}).get('provider','claude-code') for p in candidates})>1:
                     raise ValueError('That ID exists in multiple providers. Supply the conversation link.')

@@ -16,8 +16,10 @@ import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 if __package__:
     from .local_profile import local_identity
+    from .privacy import REDACTION_VERSION
 else:
     from local_profile import local_identity
+    from privacy import REDACTION_VERSION
 
 
 if __package__:
@@ -55,7 +57,7 @@ class Sessions:
         self.config = self.root / ('enrollment.json' if (self.root / 'enrollment.json').exists() else 'profile.json')
         with config_lock(self.config):
             if not self.config.exists():
-                atomic_write(self.config, {'library_id': 'local-library', 'profile_id': 'default', 'database': str(self.root / 'context.db'), 'approved_transcripts': [], 'sessions': {}})
+                atomic_write(self.config, {'library_id': 'local-library', 'profile_id': 'default', 'redaction_version': REDACTION_VERSION, 'database': str(self.root / 'context.db'), 'approved_transcripts': [], 'sessions': {}})
         data = json.loads(self.config.read_text())
         self.code = Path(__file__).resolve().parent
         self.mcp = self.root / 'reader-mcp.json'

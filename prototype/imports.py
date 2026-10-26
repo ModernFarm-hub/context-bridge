@@ -2,9 +2,9 @@
 """Explicit local import of provider exports; never extracts ZIP members to disk."""
 import argparse
 if __package__:
-    from .privacy import redact
+    from .privacy import redact, REDACTION_VERSION
 else:
-    from privacy import redact
+    from privacy import redact, REDACTION_VERSION
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -123,12 +123,54 @@ def claude_messages(conversation):
     return result
 
 
+def redact_managed_copies(data, root):
+    """Upgrade owned normalized copies; never modify original exports/transcripts."""
+    if data.get('redaction_version', 0) >= REDACTION_VERSION:
+        return False
+    for source, meta in data.get('sources', {}).items():
+        meta['title'] = redact(meta.get('title'))
+        provider, cid = meta.get('provider'), meta.get('conversation_id')
+        if provider not in ('chatgpt','claude') or not isinstance(cid,str):
+            continue
+        path = Path(source)
+        expected = Path(root)/'imports'/provider/(hashlib.sha256(cid.encode()).hexdigest()+'.jsonl')
+        if path!=expected or path.is_symlink() or not path.is_file():
+            continue
+        original = path.read_bytes()
+        output = []
+        changed = False
+        for raw in original.splitlines(keepends=True):
+            try:
+                item = json.loads(raw)
+                message = item.get('message', {}) if isinstance(item,dict) else {}
+                body = message.get('content') if isinstance(message,dict) else None
+                filtered = redact(body)
+                if isinstance(body,str) and filtered!=body:
+                    message['content'] = filtered
+                    raw = json.dumps(item,ensure_ascii=False).encode()+ (b'\n' if raw.endswith(b'\n') else b'')
+                    changed = True
+            except (ValueError,UnicodeDecodeError):
+                pass
+            output.append(raw)
+        if changed:
+            payload = b''.join(output)
+            temp = path.with_suffix('.tmp')
+            temp.write_bytes(payload); temp.chmod(0o600); temp.replace(path)
+            meta['content_sha256'] = hashlib.sha256(payload).hexdigest()
+    for session in data.get('sessions', {}).values():
+        if isinstance(session.get('name'),str):
+            session['name'] = redact(session['name'])
+    data['redaction_version'] = REDACTION_VERSION
+    return True
+
+
 def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None):
     if provider not in ('chatgpt', 'claude'):
         raise ValueError('Use chatgpt or claude for a provider export')
     conversations = export_conversations(archive)
     manager = Sessions(directory)
     count, messages, skipped, present = 0, 0, [], set()
+    authoritative = True
     if __package__:
         from .library import discard_sources
     else:
@@ -139,14 +181,17 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None):
         bridge = Bridge(data['database'], *local_identity(data))
         try:
             with bridge.transaction():
+                redact_managed_copies(data, manager.root)
                 for position, conversation in enumerate(conversations, 1):
                     if progress and (position == 1 or position % 100 == 0 or position == len(conversations)):
                         progress(position, len(conversations))
                     if not isinstance(conversation, dict):
+                        authoritative = False
                         skipped.append({'conversation':position, 'reason':'Invalid conversation object'})
                         continue
                     cid = (conversation.get('id') or conversation.get('conversation_id')) if provider=='chatgpt' else conversation.get('uuid')
                     if not isinstance(cid, str) or not cid or len(cid)>200:
+                        authoritative = False
                         skipped.append({'conversation':position, 'reason':'Missing or invalid conversation ID'})
                         continue
                     # Present-but-malformed conversations are not deleted as if
@@ -177,14 +222,14 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None):
                     bridge.ingest(source, resolved=True)
                     count += 1; messages += len(records)
                 data['approved_transcripts'] = sorted(approved)
-                removed = {source for source,meta in data.get('sources', {}).items() if meta.get('provider')==provider and meta.get('conversation_id') not in present}
+                removed = {source for source,meta in data.get('sources', {}).items() if authoritative and meta.get('provider')==provider and meta.get('conversation_id') not in present}
                 copies = discard_sources(data, bridge, removed, manager.root)
                 atomic_write(manager.config, data)
             for path in copies:
                 path.unlink(missing_ok=True)
         finally:
             bridge.db.close()
-    return {'provider':provider, 'conversations_imported':count, 'messages_imported':messages, 'conversations_removed':len(removed), 'skipped':skipped}
+    return {'provider':provider, 'conversations_imported':count, 'messages_imported':messages, 'conversations_removed':len(removed), 'pruning_skipped':not authoritative, 'skipped':skipped}
 
 
 class ProjectSelection(dict):
