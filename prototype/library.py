@@ -6,12 +6,12 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 if __package__:
     from .bridge import Bridge
-    from .local_profile import local_identity
+    from .local_profile import local_identity, profile_directory
     from .privacy import redact
     from .session_manager import Sessions, DEFAULT_ROOT, config_lock, atomic_write
 else:
     from bridge import Bridge
-    from local_profile import local_identity
+    from local_profile import local_identity, profile_directory
     from privacy import redact
     from session_manager import Sessions, DEFAULT_ROOT, config_lock, atomic_write
 
@@ -67,6 +67,7 @@ def remove(directory=DEFAULT_ROOT, conversation=None, provider=None):
             sources = data.get('sources', {})
             candidates = set()
             if provider:
+                data.get('provider_accounts', {}).pop(provider, None)
                 candidates = {source for source, meta in sources.items() if meta.get('provider') == provider}
                 if provider == 'claude-code':
                     data['approved_projects'] = []
@@ -121,12 +122,16 @@ def main(argv=None):
     for name in ('list', 'stats', 'remove'):
         command = commands.add_parser(name)
         command.add_argument('--directory', type=Path, default=DEFAULT_ROOT)
+        command.add_argument('--profile', help='Named local library')
         if name=='remove':
             selection = command.add_mutually_exclusive_group(required=True)
             selection.add_argument('--conversation', help='Conversation ID or provider conversation URL')
             selection.add_argument('--provider', choices=PROVIDERS)
     args = parser.parse_args(argv)
     try:
+        args.directory = profile_directory(args.directory, args.profile)
+        if args.profile:
+            Sessions(args.directory, profile_id=args.profile)
         if args.command=='remove':
             result = remove(args.directory, args.conversation, args.provider)
         else:

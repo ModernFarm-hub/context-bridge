@@ -15,10 +15,10 @@ import sys
 import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 if __package__:
-    from .local_profile import local_identity
+    from .local_profile import local_identity, profile_directory
     from .privacy import REDACTION_VERSION
 else:
-    from local_profile import local_identity
+    from local_profile import local_identity, profile_directory
     from privacy import REDACTION_VERSION
 
 
@@ -51,13 +51,13 @@ def atomic_write(path, data):
 
 
 class Sessions:
-    def __init__(self, root):
+    def __init__(self, root, profile_id="default"):
         self.root = Path(root).resolve()
         self.root.mkdir(parents=True, exist_ok=True, mode=0o700)
         self.config = self.root / ('enrollment.json' if (self.root / 'enrollment.json').exists() else 'profile.json')
         with config_lock(self.config):
             if not self.config.exists():
-                atomic_write(self.config, {'library_id': 'local-library', 'profile_id': 'default', 'redaction_version': REDACTION_VERSION, 'database': str(self.root / 'context.db'), 'approved_transcripts': [], 'sessions': {}})
+                atomic_write(self.config, {'library_id': 'local-library', 'profile_id': profile_id, 'redaction_version': REDACTION_VERSION, 'database': str(self.root / 'context.db'), 'approved_transcripts': [], 'sessions': {}})
         data = json.loads(self.config.read_text())
         self.code = Path(__file__).resolve().parent
         self.mcp = self.root / 'reader-mcp.json'
@@ -287,11 +287,12 @@ def main():
     os.umask(0o077)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', type=Path, default=DEFAULT_ROOT)
+    parser.add_argument('--profile', help='Named local library')
     parser.add_argument('mode', nargs='?', default='serve', choices=['serve', 'register', 'terminal-source', 'terminal-reader'])
     parser.add_argument('--session')
     parser.add_argument('--no-browser', action='store_true')
     args = parser.parse_args()
-    sessions = Sessions(args.directory)
+    sessions = Sessions(profile_directory(args.directory, args.profile), profile_id=args.profile or 'default')
     if args.mode == 'register':
         sessions.register(args.session, json.load(sys.stdin))
         return

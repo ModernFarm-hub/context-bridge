@@ -3,12 +3,15 @@
 import argparse
 if __package__:
     from .privacy import redact, REDACTION_VERSION
+    from .accounts import export_account, check_account, AccountMismatch
 else:
     from privacy import redact, REDACTION_VERSION
+    from accounts import export_account, check_account, AccountMismatch
 from datetime import datetime, timezone
 import hashlib
 import json
 import os
+import re
 from pathlib import Path, PurePosixPath
 import sys
 import zipfile
@@ -20,9 +23,9 @@ else:
     from session_manager import Sessions, DEFAULT_ROOT, config_lock, atomic_write
     from bridge import Bridge
 if __package__:
-    from .local_profile import local_identity
+    from .local_profile import local_identity, profile_directory
 else:
-    from local_profile import local_identity
+    from local_profile import local_identity, profile_directory
 
 
 MAX_EXPORT_BYTES = 512 * 1024 * 1024
@@ -164,10 +167,11 @@ def redact_managed_copies(data, root):
     return True
 
 
-def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None):
+def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None, confirm_account_switch=False):
     if provider not in ('chatgpt', 'claude'):
         raise ValueError('Use chatgpt or claude for a provider export')
     conversations = export_conversations(archive)
+    incoming_account = export_account(archive, conversations)
     manager = Sessions(directory)
     count, messages, skipped, present = 0, 0, [], set()
     authoritative = True
@@ -177,6 +181,7 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None):
         from library import discard_sources
     with config_lock(manager.config):
         data = json.loads(manager.config.read_text())
+        account_check = check_account(data, provider, incoming_account, confirm_account_switch)
         approved = set(data.get('approved_transcripts', []))
         bridge = Bridge(data['database'], *local_identity(data))
         try:
@@ -229,7 +234,7 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None):
                 path.unlink(missing_ok=True)
         finally:
             bridge.db.close()
-    return {'provider':provider, 'conversations_imported':count, 'messages_imported':messages, 'conversations_removed':len(removed), 'pruning_skipped':not authoritative, 'skipped':skipped}
+    return {'provider':provider, 'conversations_imported':count, 'messages_imported':messages, 'conversations_removed':len(removed), 'pruning_skipped':not authoritative, 'account_check':account_check, 'skipped':skipped}
 
 
 class ProjectSelection(dict):
@@ -253,8 +258,56 @@ def project_preview(projects_root):
     return projects
 
 
+def transcript_project_path(path):
+    """Prefer Claude's explicit cwd; its encoded folder name is not reversible."""
+    with Path(path).open('rb') as stream:
+        for i, raw in enumerate(stream):
+            if i >= 200:
+                break
+            try:
+                item = json.loads(raw)
+            except (ValueError, UnicodeDecodeError):
+                continue
+            cwd = item.get('cwd') if isinstance(item, dict) else None
+            if isinstance(cwd, str) and os.path.isabs(cwd):
+                return Path(cwd).resolve()
+    return None
+
+
+def project_location(name, paths):
+    for path in paths[:3]:
+        location = transcript_project_path(path)
+        if location:
+            return str(location)
+    return '/' + name[1:].replace('-', '/') if name.startswith('-') else name
+
+
+def selected_projects(projects, selection):
+    selected = ProjectSelection()
+    for name in projects:
+        if name in selection:
+            selected[name] = projects[name]
+            selected.roots[name] = projects.roots[name]
+    return selected
+
+
+def select_numbers(value, projects):
+    if value.strip().casefold() == 'all':
+        return set(projects)
+    try:
+        numbers = [int(part.strip()) for part in value.split(',')]
+    except ValueError:
+        raise ValueError('Use comma-separated project numbers, such as --select 1,3')
+    if not numbers or any(number < 1 or number > len(projects) for number in numbers):
+        raise ValueError('Project selection is outside the numbered preview list')
+    names = list(projects)
+    return {names[number-1] for number in numbers}
+
+
 def code_metadata(path):
     title, created, session = None, None, path.stem
+    first_user = None
+    cwd = None
     with path.open('rb') as stream:
         for raw in stream:
             try:
@@ -263,6 +316,14 @@ def code_metadata(path):
                 continue
             if not isinstance(item, dict):
                 continue
+            candidate_cwd = item.get('cwd')
+            if cwd is None and isinstance(candidate_cwd, str) and os.path.isabs(candidate_cwd):
+                cwd = candidate_cwd
+            message = item.get('message', {})
+            if first_user is None and item.get('type')=='user' and isinstance(message,dict) and message.get('role')=='user':
+                body = Bridge.text(message.get('content'))
+                if body.strip():
+                    first_user = ' '.join(redact(body).split())[:60]
             if item.get('type') == 'ai-title':
                 candidate = item.get('aiTitle') or item.get('title')
                 if isinstance(candidate, str) and candidate.strip():
@@ -272,7 +333,10 @@ def code_metadata(path):
                 candidate = item.get('sessionId')
                 if isinstance(candidate, str) and candidate:
                     session = candidate
-    return {'provider': 'claude-code', 'title': redact(title or 'Claude Code session ' + session[:8]), 'created_at': created, 'conversation_id': session, 'link': None}
+    encoded = next((parent.name for parent in path.parents if parent.name.startswith('-')), path.parent.name)
+    folder = Path(cwd).name if cwd else encoded.split('-')[-1] if encoded.startswith('-') else encoded
+    fallback = folder + (' · '+first_user if first_user else ' · New conversation')
+    return {'provider': 'claude-code', 'title': redact(title or fallback), 'created_at': created, 'conversation_id': session, 'link': None}
 
 
 def discover_projects(data, bridge):
@@ -350,32 +414,81 @@ def main():
     parser.add_argument('archive', type=Path, nargs='?')
     parser.add_argument('--directory', type=Path, default=DEFAULT_ROOT)
     parser.add_argument('--projects-root', type=Path, default=Path.home() / '.claude/projects')
-    parser.add_argument('--project', action='append', help='Import only a listed project (repeatable)')
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument('--project', action='append', help='Select an encoded project directory name (repeatable)')
+    selection.add_argument('--select', help='Select preview numbers, e.g. 1,3 or all')
+    selection.add_argument('--path', action='append', help='Select the original project path, e.g. /path/to/project')
+    parser.add_argument('--profile', help='Separate local library name; use the same name with mcp/list/stats')
+    parser.add_argument('--confirm-account-switch', action='store_true', help='Explicitly permit a different/unverified export account to replace this provider snapshot')
     parser.add_argument('--yes', action='store_true', help='Explicitly approve importing listed Claude Code projects')
-    args = parser.parse_args()
+    argv = sys.argv[1:]
+    # argparse mistakes Claude's dash-prefixed directory names for options.
+    # Bind only single-dash values; never consume --yes or another long option.
+    normalized = []
+    i = 0
+    while i < len(argv):
+        if argv[i]=='--project' and i+1<len(argv) and argv[i+1].startswith('-') and not argv[i+1].startswith('--') and argv[i+1]!='-h':
+            normalized.append('--project='+argv[i+1]); i += 2
+        else:
+            normalized.append(argv[i]); i += 1
+    args = parser.parse_args(normalized)
     try:
         if args.provider == 'claude-code':
             projects = project_preview(args.projects_root)
-            if args.project:
-                missing = set(args.project) - set(projects)
-                if missing:
-                    parser.error('Unknown project selection: ' + ', '.join(sorted(missing)))
-                for key in list(projects):
-                    if key not in args.project:
-                        del projects[key]
             print('Claude Code project preview (nothing imported yet):')
-            for project, paths in projects.items():
-                print(f'  {project}: {len(paths)} transcripts (including future sessions)')
+            for number, (name, paths) in enumerate(projects.items(), 1):
+                print(f'  {number}. {name}: {len(paths)} transcripts — {project_location(name, paths)}')
             if not projects:
                 print('No projects found.'); return
+            chosen = None
+            if args.project:
+                missing = set(args.project)-set(projects)
+                if missing:
+                    parser.error('Unknown project selection: '+', '.join(sorted(missing)))
+                chosen = set(args.project)
+            elif args.select:
+                chosen = select_numbers(args.select, projects)
+            elif args.path:
+                wanted = {str(Path(path).expanduser().resolve()) for path in args.path}
+                chosen = set()
+                for name, paths in projects.items():
+                    location = project_location(name, paths)
+                    for path in wanted:
+                        if location==path or name in (re.sub(r'[^A-Za-z0-9]', '-', path), path.replace('/', '-')):
+                            chosen.add(name)
+                if not chosen:
+                    parser.error('No approved-project preview entry matches --path; use --select with the displayed numbers')
+            elif sys.stdin.isatty() and not args.yes:
+                answer = input('Choose project numbers (e.g. 1,3), all, or Enter to cancel: ').strip()
+                if not answer:
+                    print('Preview only. Nothing imported.'); return
+                chosen = select_numbers(answer, projects)
+            if chosen is not None:
+                projects = selected_projects(projects, chosen)
+            print('Selected project directories include future session files: '+', '.join(projects))
             if not args.yes:
-                if not sys.stdin.isatty() or input('Approve these project directories, including future sessions? [y/N] ').strip().casefold() not in ('y', 'yes'):
-                    print('Preview only. Repeat with --yes to approve this list.'); return
+                if not sys.stdin.isatty() or input('Approve these project directories, including future sessions? [y/N] ').strip().casefold() not in ('y','yes'):
+                    print('Preview only. Repeat with --select and --yes to approve a list.'); return
+            args.directory = profile_directory(args.directory, args.profile)
+            if args.profile:
+                Sessions(args.directory, profile_id=args.profile)
             result = import_code(projects, args.directory)
         else:
             if args.archive is None:
                 parser.error('Supply the official export ZIP file')
-            result = import_export(args.provider, args.archive, args.directory, progress=lambda current,total: print(f'Importing {args.provider}: {current}/{total} conversations', file=sys.stderr))
+            args.directory = profile_directory(args.directory, args.profile)
+            if args.profile:
+                Sessions(args.directory, profile_id=args.profile)
+            progress = lambda current,total: print(f'Importing {args.provider}: {current}/{total} conversations', file=sys.stderr)
+            try:
+                result = import_export(args.provider, args.archive, args.directory, progress=progress, confirm_account_switch=args.confirm_account_switch)
+            except AccountMismatch as exc:
+                if not sys.stdin.isatty():
+                    raise
+                print(str(exc), file=sys.stderr)
+                if input('Replace this provider snapshot and remove absent conversations? [y/N] ').strip().casefold() not in ('y','yes'):
+                    raise ValueError('Account switch cancelled. No imported conversations were changed.')
+                result = import_export(args.provider, args.archive, args.directory, progress=progress, confirm_account_switch=True)
         print(json.dumps(result, indent=2))
     except (ValueError, OSError, KeyError, zipfile.BadZipFile) as exc:
         parser.exit(1, str(exc) + '\n')
