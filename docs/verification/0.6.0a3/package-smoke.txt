@@ -1,0 +1,1 @@
+Installed package: import, profile creation, MCP negotiation/search/read, redaction, citations, list/stats/removal, real console project selectors, account guards and profile isolation passed.
