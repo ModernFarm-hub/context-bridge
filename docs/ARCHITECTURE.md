@@ -16,7 +16,7 @@ Maintaining a protocol adapter has a compatibility cost. If Python 3.9 is droppe
 
 New local profiles use `library_id`/`profile_id`. Legacy configuration names and SQLite ownership columns remain readable to preserve data and citation handles. No enterprise identity guarantee is implied.
 
-Each local profile has its own FTS5 corpus, maintained by SQLite triggers. Queries use normalized terms, BM25 ranking and source-preserving passage selection. Incremental ingestion tracks file metadata, byte offset, complete-line count and bounded prefix/tail hashes. Recognized secrets are redacted before indexing; passage offsets and hashes refer to redacted text. See [security boundaries](../SECURITY.md) and [benchmark results](MILESTONES.md).
+Each local profile has its own FTS5 corpus, maintained by SQLite triggers. Queries use normalized terms, BM25 ranking and source-preserving passage selection. Incremental ingestion tracks file metadata, byte offset, complete-line count and bounded prefix/tail hashes. Profile parsing is cached by inode/size/mtime/ctime, canonical paths and per-source ingestion states are reused, metadata writes compare a SHA-256 hash, and refresh mutations join one transaction. Imports likewise share one connection/transaction and write the profile once. Approved Code directories are rediscovered during refresh; removed paths/IDs stay excluded. Recognized secrets are redacted before indexing; passage offsets and hashes refer to redacted text. See [security boundaries](../SECURITY.md) and [benchmark results](MILESTONES.md).
 
 ## HTTP is deferred
 

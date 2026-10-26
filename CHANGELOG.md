@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.6.0a2 — independent re-test fixes, publication pending
+
+- Reconcile provider export snapshots and remove absent conversations, reporting removal counts.
+- Add `list`, `stats`, and scoped conversation/provider removal with complete index/copy cleanup.
+- Expand credential redaction, bump the policy to version 2, and migrate existing index metadata and owned working copies.
+- Batch export imports into one database transaction/connection and one profile write, with progress and unchanged-copy detection.
+- Cache profile parsing and canonical paths; skip unchanged metadata writes and batch refresh updates.
+- Discover new Claude Code sessions only within explicitly approved project directories; respect removals.
+- Update MCP descriptions, macOS pip setup guidance, and the benchmark to 5,000 files containing 2–40 messages each.
+
+
 ## 0.6.0a1 — local release candidate, publication pending
 
 - Import official ChatGPT and Claude.ai exports with conversation URLs and metadata.

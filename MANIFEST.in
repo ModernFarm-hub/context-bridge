@@ -1,5 +1,5 @@
 include .gitignore LICENSE NOTICE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md THIRD_PARTY.md pyproject.toml
-recursive-include docs *.md *.gif
+recursive-include docs *.md *.gif *.txt *.json
 recursive-include tools *.py
 recursive-include registry *.json
 recursive-include .github *.yml

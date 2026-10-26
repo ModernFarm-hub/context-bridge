@@ -6,7 +6,7 @@ Import your exports, connect an MCP client, and ask: “What did I decide about 
 
 ![Synthetic import, search and citation demo](docs/assets/demo.gif)
 
-**Release candidate: 0.6.0a1.** Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no Context Bridge telemetry. This checkout is not yet published to PyPI or the MCP registry. CI is configured; its remote runs are pending repository publication.
+**Release candidate: 0.6.0a2.** Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no Context Bridge telemetry. This checkout is not yet published to PyPI or the MCP registry. CI is configured; its remote runs are pending repository publication.
 
 ## Quickstart
 
@@ -14,9 +14,12 @@ With an official ChatGPT or Claude export ZIP already downloaded, install this c
 
 ```sh
 python3 -m venv .venv
+.venv/bin/python -m pip install -U pip
 .venv/bin/python -m pip install .
 .venv/bin/context-bridge import chatgpt /path/to/export.zip
 ```
+
+On macOS's bundled Python 3.9, upgrade pip first as shown above; pip 21.2 otherwise emits a legacy-build deprecation warning.
 
 For Claude.ai instead:
 
@@ -48,7 +51,21 @@ Approve the displayed list at the prompt, or select one project explicitly:
 .venv/bin/context-bridge import claude-code --project 'EXACT_PROJECT_NAME' --yes
 ```
 
-Nothing is imported without approval. Session titles come from Claude Code's `ai-title` records when available. The optional `context-bridge start` manager creates and approves live Claude Code sessions; those sessions refresh automatically when searched.
+The prompt approves the listed project directories, including future session files. New sessions are discovered during search refresh; other projects remain excluded. Existing 0.6.0a1 file-only imports need this project approval again to enable discovery. Session titles come from Claude Code's `ai-title` records when available. The optional `context-bridge start` manager creates and approves live Claude Code sessions; those sessions refresh automatically when searched.
+
+## Manage your library
+
+```sh
+.venv/bin/context-bridge list
+.venv/bin/context-bridge stats
+.venv/bin/context-bridge remove --conversation 'https://chatgpt.com/c/CONVERSATION_ID'
+.venv/bin/context-bridge remove --conversation CONVERSATION_ID
+.venv/bin/context-bridge remove --provider chatgpt
+```
+
+Provider names are `chatgpt`, `claude`, and `claude-code`. List returns provider, title, creation date and indexed message count. Removal deletes index rows, FTS data, ingestion state, citation handles, metadata/config entries, and owned web-import copies. Original export ZIPs and Claude Code transcripts stay untouched. Removing a Claude Code provider also withdraws project-directory approval; removing one Code conversation prevents its automatic rediscovery. A deliberate future export re-import can restore a conversation present in that export.
+
+Large export imports show progress on stderr and report `conversations_removed`. If an export contains objects without identifiable conversation IDs, pruning is skipped and reported as `pruning_skipped`; malformed entries with known IDs preserve their prior copy rather than masquerading as deletions.
 
 ## What you get
 
@@ -57,7 +74,7 @@ Nothing is imported without approval. Session titles come from Claude Code's `ai
 | `context_search` | Relevant redacted passages with title, provider, date, conversation link and opaque record ID |
 | `context_read` | A larger or question-focused passage, with pagination and changed-record checks |
 
-ChatGPT imports follow the active message-tree branch. Claude.ai imports human/assistant text. Tools, thinking blocks and internal replayed API requests are excluded. Re-importing a new export updates the conversation without duplicate messages. Export imports are snapshots; they do not capture new browser chats automatically.
+ChatGPT imports follow the active message-tree branch. Claude.ai imports human/assistant text. Tools, thinking blocks and internal replayed API requests are excluded. Re-importing a new export updates the conversation without duplicate messages. Each provider export is an authoritative snapshot: re-importing it removes conversations absent from that export, including their index and managed copies. Do not use a partial export to merge accounts. Export imports do not capture new browser chats automatically.
 
 Web citations open `chatgpt.com/c/<id>` or `claude.ai/chat/<uuid>` and require your normal provider access. Claude Code citations use `urn:context-bridge:record:<id>` handles resolved by `context_read`. They are not browser URLs. The MCP interface does not expose local filesystem locators. [Passage behavior](docs/PASSAGE-READING.md).
 
@@ -78,10 +95,10 @@ Default macOS storage is `~/Library/Application Support/ContextBridge`; Linux us
 
 ```sh
 PYTHONPATH=prototype python3 -m unittest discover -s prototype/tests -v
-PYTHONPATH=prototype python3 prototype/benchmark.py --messages 100000 --runs 30
+PYTHONPATH=prototype python3 prototype/benchmark.py --files 5000 --min-messages 2 --max-messages 40 --runs 30
 ```
 
-The tests and benchmark use invented conversations. Model-dependent tests skip without optional local assets. On the development Mac, the 100,000-message synthetic benchmark measured **117 ms p95** for warmed lexical search including refresh, against a 300 ms target; initial indexing took about 6 seconds. Results depend on hardware and workload. [Verification details](docs/MILESTONES.md).
+The tests and benchmark use invented conversations. Model-dependent tests skip without optional local assets. The benchmark uses 5,000 conversation files with 2–40 messages each, imports/re-imports an actual synthetic provider export, and measures search including per-file freshness checks. Its p95 target is 300 ms. Import, re-import and first-server-query times are reported separately; results depend on hardware and workload. [Latest complete re-test results](docs/RETEST-0.6.0a2.md). [Verification details](docs/MILESTONES.md).
 
 ## Distribution
 
@@ -96,7 +113,7 @@ uvx --from . context-bridge --help
 After this release is published, the explicit package form will be:
 
 ```sh
-uvx --from 'context-bridge-local==0.6.0a1' context-bridge mcp
+uvx --from 'context-bridge-local==0.6.0a2' context-bridge mcp
 ```
 
 The second command is a release target, not a claim that the package is already available. [Release and registry process](docs/RELEASING.md).

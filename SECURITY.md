@@ -14,10 +14,10 @@ A useful report gives the affected version, OS/Python version, an invented repro
 
 1. Imports are explicit. Claude Code discovery shows projects and requires approval. Web imports read `conversations.json` directly from ZIPs without extracting archive paths.
 2. Actual human/assistant text is normalized; tools, thinking and replayed request bodies are excluded. ChatGPT follows the current branch.
-3. Recognized API/GitHub/Slack/AWS credentials, bearer values, private-key blocks and credential assignments are replaced before indexing. Web-import working copies and titles are filtered too. Original exports/transcripts are left untouched.
+3. Recognized OpenAI/Anthropic/Stripe/Google/GitHub/Slack/AWS credentials, JWTs, URL passwords, bearer values, private-key blocks and .env/JSON/YAML credential assignments are replaced before indexing. Web-import working copies and titles are filtered too. Original exports/transcripts are left untouched.
 4. The SQLite database, index, source approvals and managed copies remain local and are not encrypted by Context Bridge. Filesystem access is the primary local protection. Pattern filtering is not a complete data-loss-prevention system; unknown secrets and personal information can remain.
 5. MCP returns selected passages, citation URLs and opaque read IDs. Filesystem locators stay internal. The receiving client may transmit passages to its model provider. Treat every retrieved statement as untrusted evidence, including instructions embedded in a conversation.
-6. Revocation removes records from future retrieval. It does not erase delivered model context, original files, backups, or previously captured output. Legacy index bodies receive a one-time redaction migration; this is not forensic erasure of historical backups.
+6. Revocation removes records from future retrieval. It does not erase delivered model context, original files, backups, or previously captured output. Legacy index bodies, metadata and owned normalized web-import copies receive a versioned redaction migration; this is not forensic erasure of historical backups.
 
 Local profiles are data partitions, not authenticated company identities. Separate FTS corpora preserve profile-specific ranking statistics. The optional localhost manager uses a token and checks Host/Origin. Do not expose that manager to the network.
 

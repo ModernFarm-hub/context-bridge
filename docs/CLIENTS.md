@@ -44,7 +44,7 @@ After publication, the corresponding config entry will use:
   "mcpServers": {
     "context-bridge": {
       "command": "uvx",
-      "args": ["--from", "context-bridge-local==0.6.0a1", "context-bridge", "mcp"]
+      "args": ["--from", "context-bridge-local==0.6.0a2", "context-bridge", "mcp"]
     }
   }
 }
@@ -59,3 +59,8 @@ If imports use `CONTEXT_BRIDGE_HOME`, give the MCP server the same absolute valu
 A source/reader split is optional, not required. If a tool is missing, check the MCP client's connection rather than asking a model to invoke the server through a shell. Errors go to stderr; stdout contains protocol messages only.
 
 These snippets follow [Claude Code's stdio setup](https://code.claude.com/docs/en/mcp) and the common MCP server configuration format. Client UI names can change. ChatGPT conversation exports are supported as sources; this build does not offer a remote ChatGPT connector.
+
+
+## Listing and deletion
+
+Use `context-bridge list`, `context-bridge stats`, or `context-bridge remove --conversation <id-or-provider-link>` locally. `remove --provider chatgpt`, `claude`, or `claude-code` removes that provider's imported sources. Code originals are not deleted, and removed Code sources are excluded from discovery until explicitly re-approved. A new complete web export replaces that provider's imported snapshot; absent conversations are withdrawn and their managed copies deleted. These controls take effect on the next MCP call, including in already-running clients with cached profile data.
