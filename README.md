@@ -6,7 +6,7 @@ Import your exports, connect an MCP client, and ask: “What did I decide about 
 
 ![Synthetic import, search and citation demo](docs/assets/demo.gif)
 
-**Release candidate: 0.6.0a2.** Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no Context Bridge telemetry. This checkout is not yet published to PyPI or the MCP registry. CI is configured; its remote runs are pending repository publication.
+**Release candidate: 0.6.0a3.** Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no Context Bridge telemetry. This checkout is not yet published to PyPI or the MCP registry. Source is on GitHub; CI checks macOS/Linux on Python 3.9–3.13. [Current runs](https://github.com/ModernFarm-hub/context-bridge/actions).
 
 ## Quickstart
 
@@ -48,10 +48,23 @@ Preview the projects available on this machine:
 Approve the displayed list at the prompt, or select one project explicitly:
 
 ```sh
-.venv/bin/context-bridge import claude-code --project 'EXACT_PROJECT_NAME' --yes
+.venv/bin/context-bridge import claude-code --select 1,3 --yes
+.venv/bin/context-bridge import claude-code --path /path/to/project --yes
 ```
 
-The prompt approves the listed project directories, including future session files. New sessions are discovered during search refresh; other projects remain excluded. Existing 0.6.0a1 file-only imports need this project approval again to enable discovery. Session titles come from Claude Code's `ai-title` records when available. The optional `context-bridge start` manager creates and approves live Claude Code sessions; those sessions refresh automatically when searched.
+The preview numbers projects; an interactive terminal lets you choose numbers before approving. Raw dash-prefixed names also work with `--project -Users-alice-code-app` without an equals sign. The prompt approves the selected project directories, including future session files. New sessions are discovered during search refresh; other projects remain excluded. Existing 0.6.0a1 file-only imports need this project approval again to enable discovery. Session titles come from Claude Code's `ai-title` records when available. The optional `context-bridge start` manager creates and approves live Claude Code sessions; those sessions refresh automatically when searched.
+
+## Keep accounts separate
+
+Export metadata (`user.json`, account IDs or user IDs when present) is compared before any imported data is changed. A different or unverifiable account stops a noninteractive import; in a terminal you can explicitly confirm replacement. `--yes` does not bypass this check. Prefer a separate named profile:
+
+```sh
+.venv/bin/context-bridge import chatgpt /path/to/export.zip --profile personal
+.venv/bin/context-bridge list --profile personal
+.venv/bin/context-bridge mcp --profile personal
+```
+
+Use the same `--profile` on import, MCP, list/stats/remove and the optional manager. Named profiles have separate files/databases under the base library's `profiles/NAME` directory. Only hashed account identifiers are stored. If both exports omit all account identifiers, account changes cannot be detected. Existing unidentified sources require explicit confirmation before adopting an identified account. To deliberately replace a provider's account snapshot, use `--confirm-account-switch`; absent conversations will be removed.
 
 ## Manage your library
 
@@ -84,7 +97,7 @@ Search retrieves recorded statements; it does not establish that those statement
 
 - No Context Bridge account, hosted storage, analytics or usage telemetry.
 - Indexing and default SQLite FTS5/BM25 search run locally, with no required runtime dependencies or cloud embedding calls.
-- Recognized credentials are redacted before indexing and again on MCP output. Pattern matching cannot detect every arbitrary secret.
+- Recognized credentials, Slack/Discord webhook URLs and URL passwords are redacted before indexing and again on MCP output. JSON/YAML schema keys such as `primary_key`, `sort_key` and `cache_key` are preserved. Pattern matching cannot detect every arbitrary secret.
 - Only explicitly imported or approved conversations are available. Original export ZIPs and Claude Code transcripts are not modified.
 - Selected results are sent to your MCP client. If that client uses a cloud model, the provider receives those passages under your account settings.
 - The database is plaintext. Local filesystem access can expose its content. Revocation prevents new retrieval; it cannot recall prior model responses.
@@ -98,7 +111,7 @@ PYTHONPATH=prototype python3 -m unittest discover -s prototype/tests -v
 PYTHONPATH=prototype python3 prototype/benchmark.py --files 5000 --min-messages 2 --max-messages 40 --runs 30
 ```
 
-The tests and benchmark use invented conversations. Model-dependent tests skip without optional local assets. The benchmark uses 5,000 conversation files with 2–40 messages each, imports/re-imports an actual synthetic provider export, and measures search including per-file freshness checks. Its p95 target is 300 ms. Import, re-import and first-server-query times are reported separately; results depend on hardware and workload. [Latest complete re-test results](docs/RETEST-0.6.0a2.md). [Verification details](docs/MILESTONES.md).
+The tests and benchmark use invented conversations. Model-dependent tests skip without optional local assets. The benchmark uses 5,000 conversation files with 2–40 messages each, imports/re-imports an actual synthetic provider export, and measures search including per-file freshness checks. Its p95 target is 300 ms. Import, re-import and first-server-query times are reported separately; results depend on hardware and workload. [Independent 0.6.0a2 re-test results](docs/RETEST-0.6.0a2.md). [Verification details](docs/MILESTONES.md).
 
 ## Distribution
 
@@ -113,7 +126,7 @@ uvx --from . context-bridge --help
 After this release is published, the explicit package form will be:
 
 ```sh
-uvx --from 'context-bridge-local==0.6.0a2' context-bridge mcp
+uvx --from 'context-bridge-local==0.6.0a3' context-bridge mcp
 ```
 
 The second command is a release target, not a claim that the package is already available. [Release and registry process](docs/RELEASING.md).

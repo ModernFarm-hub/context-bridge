@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.6.0a3 — project selection and account safety
+
+- Accept dash-prefixed project names, numbered `--select`, original `--path` and an interactive numbered picker.
+- Restrict structured credential names so database schema fields remain intact; redact Slack/Discord webhooks.
+- Upgrade redaction to policy 3 for stored webhook credentials. Already-erased schema values require re-importing an original export; original Claude Code transcripts can be reprocessed.
+- Improve fallback Code titles using the project folder and redacted first-user excerpt.
+- Compare hashed export account identifiers before replacing a provider snapshot; require explicit confirmation for switches and offer separate named profiles across import/MCP/management.
+- Commit 0.6.0a2 in logical groups; run the updated matrix through GitHub Actions before publication.
+
+
 ## 0.6.0a2 — independent re-test fixes, publication pending
 
 - Reconcile provider export snapshots and remove absent conversations, reporting removal counts.

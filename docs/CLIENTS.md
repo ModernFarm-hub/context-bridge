@@ -44,7 +44,7 @@ After publication, the corresponding config entry will use:
   "mcpServers": {
     "context-bridge": {
       "command": "uvx",
-      "args": ["--from", "context-bridge-local==0.6.0a2", "context-bridge", "mcp"]
+      "args": ["--from", "context-bridge-local==0.6.0a3", "context-bridge", "mcp"]
     }
   }
 }
@@ -64,3 +64,14 @@ These snippets follow [Claude Code's stdio setup](https://code.claude.com/docs/e
 ## Listing and deletion
 
 Use `context-bridge list`, `context-bridge stats`, or `context-bridge remove --conversation <id-or-provider-link>` locally. `remove --provider chatgpt`, `claude`, or `claude-code` removes that provider's imported sources. Code originals are not deleted, and removed Code sources are excluded from discovery until explicitly re-approved. A new complete web export replaces that provider's imported snapshot; absent conversations are withdrawn and their managed copies deleted. These controls take effect on the next MCP call, including in already-running clients with cached profile data.
+
+
+## Choose a Claude Code project
+
+Preview `context-bridge import claude-code`. Choose numbered entries interactively or use `--select 1,3 --yes`. You can use `--path /path/to/project --yes` for the original working directory, or `--project -Users-alice-code-app --yes` for the encoded directory name. No `--project=` workaround is required. Explicit `ai-title` records take precedence; fallback titles use the folder and the first redacted user-message excerpt. Encoded folder names are ambiguous for literal hyphens, so recorded `cwd` is preferred over best-effort decoding.
+
+## Separate accounts
+
+Use `import chatgpt export.zip --profile personal`, then set the MCP server's arguments to `["mcp", "--profile", "personal"]`. `list`, `stats`, `remove`, and `start` also accept the same profile name. The default profile retains the existing location; named profiles are stored separately beneath `profiles/NAME` within that base library. The same `CONTEXT_BRIDGE_HOME` and optional `--directory` must be used consistently.
+
+Conflicting export account identifiers stop imports before database/copy/profile changes. Interactive users can confirm; automation must explicitly pass `--confirm-account-switch`. `--yes` alone does not authorize an account switch. When metadata is absent in both old and new exports, identity cannot be verified. Use separate profiles when uncertain.

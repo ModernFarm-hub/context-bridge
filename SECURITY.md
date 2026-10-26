@@ -2,7 +2,7 @@
 
 ## Supported version
 
-The 0.6.0a1 local release candidate is the active development target. Earlier prototype builds should be upgraded before importing additional data. This is an alpha, not an enterprise security boundary.
+The 0.6.0a3 local release candidate is the active development target. Earlier prototype builds should be upgraded before importing additional data. This is an alpha, not an enterprise security boundary.
 
 ## Reporting a vulnerability
 
@@ -30,3 +30,10 @@ Unchanged files are skipped using metadata. Appends use committed complete-line 
 The released MCP interface is stdio only. It does not expose a public HTTP endpoint. Remote ChatGPT developer-mode connectors are not supported by this build. Adding HTTPS/tunnel transport would make a local library reachable beyond the local process boundary and requires authentication, source controls, logging review and explicit disclosure of tunnel/operator/model-provider data access. No tunnel is created automatically.
 
 Installation/build tools can download public dependencies. Optional model setup downloads public model assets separately; inference remains local. No Context Bridge telemetry is enabled.
+
+
+## Export account continuity
+
+Account/user identifiers and email addresses in export metadata are stored only as comparison hashes. Conflicting identities, or a missing identity after a known identity, require explicit confirmation before replacement. Metadata-free exports cannot establish account continuity. Named profiles isolate working copies and SQLite files; they are local data partitions, not an authentication boundary. `--confirm-account-switch` deliberately authorizes snapshot replacement and pruning. Project approval is separate and does not bypass account checks.
+
+Redaction policy 3 also filters webhook capabilities. Narrowing schema-key rules cannot recover values already erased from old managed copies; re-import original exports to restore non-secret schema text. Original Code transcripts remain available for reprocessing. Account metadata checks are a safeguard, not cryptographic proof of export authorship.
