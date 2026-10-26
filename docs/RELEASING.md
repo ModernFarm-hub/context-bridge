@@ -53,13 +53,21 @@ Rebuild and recheck artifacts after metadata changes. Keep repository privacy, e
 
 ## 3. Publish the package
 
-Use the chosen PyPI account or configure PyPI Trusted Publishing for the chosen repository/workflow. Authentication belongs in the publishing tool's secure flow; do not paste API tokens into chat, source, logs, or a command argument. Once authenticated, publish the verified artifacts:
+Publishing uses [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishers/) through `.github/workflows/release.yml`. GitHub Actions proves its identity to PyPI with a short-lived OIDC token, so no API token is created, stored or pasted anywhere.
 
-```sh
-python3 -m twine upload dist/*
-```
+### One-time setup
 
-The package name's availability/ownership must be checked under the chosen account; preparation does not reserve it. PyPI version uploads are immutable. Verify the published package page and install the exact version into a clean environment before claiming distribution works:
+1. **GitHub environments.** In the repository, open Settings → Environments and create `pypi` and `testpypi`. For `pypi`, add yourself as a required reviewer so every real upload waits for an approval click.
+2. **TestPyPI pending publisher.** Sign in at test.pypi.org (a separate account from pypi.org, with 2FA), open Account settings → Publishing → Add a new pending publisher, and enter: project `context-bridge-local`, owner `ModernFarm-hub`, repository `context-bridge`, workflow `release.yml`, environment `testpypi`.
+3. **PyPI pending publisher.** Repeat at pypi.org with environment `pypi`. A pending publisher reserves nothing; the project is created by the first successful upload, so do the first release soon after.
+
+### Each release
+
+1. Set the same version in `pyproject.toml` and `prototype/__init__.py`, update `CHANGELOG.md`, commit and push. The release job refuses mismatched versions or a README without the `mcp-name` marker.
+2. Optional rehearsal: Actions → Release → Run workflow uploads to TestPyPI only. TestPyPI also rejects reuse of a version number, so rehearse with a fresh prerelease number.
+3. Tag and push: `git tag v0.7.0b1 && git push origin v0.7.0b1`. After you approve the `pypi` environment, the workflow uploads to PyPI with attestations and creates a GitHub release; versions containing `a`, `b`, `rc` or `dev` are marked as prereleases.
+
+PyPI version uploads are immutable, including the description shown on the project page. Verify the published package page and install the exact version into a clean environment before claiming distribution works:
 
 ```sh
 uvx --from 'context-bridge-local==0.6.0a3' context-bridge --version
