@@ -11,7 +11,7 @@ from importlib.metadata import version
 
 
 def run(args, env, cwd, payload=None):
-    return subprocess.run([sys.executable, '-m', 'context_bridge', *args], env=env, cwd=cwd, input=payload, capture_output=True, text=True, check=True).stdout
+    return subprocess.run([str(Path(sys.executable).parent/'context-bridge'), *args], env=env, cwd=cwd, input=payload, capture_output=True, text=True, check=True).stdout
 
 
 def main():
@@ -45,8 +45,39 @@ def main():
         assert json.loads(run(['stats'],env,root))['messages']==0
         assert not call('context_search',{'query':'PACKAGE842'})['results']
         assert archive.exists()
+        projects=root/'projects'
+        project=projects/'-Users-alice-code-app'
+        project.mkdir(parents=True)
+        original=root/'my-app'
+        original.mkdir()
+        (project/'code.jsonl').write_text(json.dumps({'type':'user','sessionId':'code','uuid':'code-message','cwd':str(original),'message':{'role':'user','content':'CODE843 preserve primary_key: id'}})+'\n')
+        other=projects/'-Users-alice-code-other'
+        other.mkdir()
+        (other/'other.jsonl').write_text(json.dumps({'type':'user','sessionId':'other','uuid':'other-message','message':{'role':'user','content':'UNAPPROVED844 hidden'}})+'\n')
+        for selection in [['--project','-Users-alice-code-app'],['--select','1'],['--path',str(original)]]:
+            run(['import','claude-code','--projects-root',str(projects),*selection,'--yes'],env,root)
+        code=call('context_search',{'query':'CODE843'})['results'][0]
+        assert 'my-app' in code['source_label'] and 'primary_key: id' in code['body']
+        assert not call('context_search',{'query':'UNAPPROVED844'})['results']
+        def account_export(path,cid,account):
+            with zipfile.ZipFile(path,'w') as z:
+                z.writestr('conversations.json',json.dumps([{'uuid':cid,'name':cid,'chat_messages':[{'uuid':'m1','sender':'human','text':cid+' finding'}]}]))
+                z.writestr('user.json',json.dumps({'id':account}))
+        account_export(root/'personal.zip','PERSONAL845','account-one')
+        account_export(root/'work.zip','WORK846','account-two')
+        run(['import','claude',str(root/'personal.zip'),'--profile','personal'],env,root)
+        try:
+            run(['import','claude',str(root/'work.zip'),'--profile','personal'],env,root)
+        except subprocess.CalledProcessError as exc:
+            assert '--confirm-account-switch' in exc.stderr
+        else:
+            raise AssertionError('Account switch was not blocked')
+        run(['import','claude',str(root/'work.zip'),'--profile','work'],env,root)
+        assert json.loads(run(['stats','--profile','personal'],env,root))['messages']==1
+        assert json.loads(run(['stats','--profile','work'],env,root))['messages']==1
+        assert not call('context_search',{'query':'PERSONAL845 WORK846'})['results']
         assert run(['--version'],env,root).strip()==version('context-bridge-local')
-        print('Installed package: import, profile creation, MCP negotiation/search/read, redaction, citations, list/stats and scoped removal passed.')
+        print('Installed package: import, profile creation, MCP negotiation/search/read, redaction, citations, list/stats/removal, real console project selectors, account guards and profile isolation passed.')
 
 
 if __name__=='__main__':

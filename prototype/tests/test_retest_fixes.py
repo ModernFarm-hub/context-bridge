@@ -241,4 +241,5 @@ class IndependentRetestFixTests(unittest.TestCase):
         self.assertNotIn('sk_live_',hit['body'])
         self.assertNotIn('sk_live_',path.read_text())
         self.assertNotIn('oldTitleSecret842',manager.config.read_text())
-        self.assertEqual(json.loads(manager.config.read_text())['redaction_version'],2)
+        from privacy import REDACTION_VERSION
+        self.assertEqual(json.loads(manager.config.read_text())['redaction_version'],REDACTION_VERSION)

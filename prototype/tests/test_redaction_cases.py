@@ -8,6 +8,10 @@ from bridge import Bridge
 from privacy import redact, REDACTION_VERSION
 
 POSITIVE_CASES = [
+    ('slack_webhook', 'https://hooks.slack.com/services/TFAKE/BFAKE/secretWebhook842'),
+    ('discord_webhook', 'https://discord.com/api/webhooks/123456/secretWebhook842'),
+    ('discord_legacy', 'https://discordapp.com/api/webhooks/123456/secretWebhook842'),
+    ('discord_versioned', 'https://canary.discord.com/api/v10/webhooks/123456/secretWebhook842'),
     ('stripe_live', 'sk_live_'+'a'*24),
     ('stripe_test', 'sk_test_'+'b'*24),
     ('stripe_restricted', 'rk_live_'+'c'*24),
@@ -40,6 +44,18 @@ POSITIVE_CASES = [
 ]
 NEGATIVE_CASES = [
     'RETENTION_DAYS=45',
+    'primary_key: id',
+    'primary_key=id',
+    'cache_key=object_id',
+    'key_id=column_id',
+    'foreign_key: customer_id',
+    'sort_key: created_at',
+    'partition_key: tenant_id',
+    'unique_key: email',
+    'idempotency_key: request_id',
+    'cache_key: object_id',
+    'key_id: id',
+    '{"primary_key": "id", "sort_key": "created_at"}',
     'monkey: banana',
     'HOCKEY=Saturday',
     'https://alice:@example.test',
@@ -98,7 +114,7 @@ class CredentialTableTests(unittest.TestCase):
             root=Path(tmp)
             bridge=Bridge(root/'db','local','default')
             with bridge.db:
-                bridge.db.execute("DELETE FROM local_migrations WHERE name='redaction-2'")
+                bridge.db.execute('DELETE FROM local_migrations WHERE name=?', ('redaction-'+str(REDACTION_VERSION),))
                 bridge.db.execute('INSERT OR IGNORE INTO local_migrations VALUES (?,?,?)',(*bridge.owner,'redaction-1'))
                 bridge.db.execute('INSERT INTO records VALUES (?,?,?,?,?,?,?,?,?)',(*bridge.owner,'s','legacy',1,'fp',None,'user','LEGACY842 sk_live_'+'a'*24))
                 bridge.db.execute('INSERT INTO source_metadata VALUES (?,?,?,?)',(*bridge.owner,'legacy',json.dumps({'provider':'chatgpt','title':'api_key: oldSecret842'})))
