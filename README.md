@@ -10,20 +10,35 @@ Beta (0.7.0b1) · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-fi
 
 ## Quickstart
 
-With an official ChatGPT export ZIP downloaded, import it using uvx:
+The commands below use [uv](https://docs.astral.sh/uv/). If `uvx` is not installed yet:
+
+```sh
+brew install uv
+# or: curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+With an official ChatGPT export ZIP downloaded, import it:
 
 ```sh
 uvx --from context-bridge-local context-bridge import chatgpt /path/to/export.zip
 ```
 
-Or install with pip, then use the `context-bridge` command directly:
+To keep a `context-bridge` command on your PATH instead, install it as a tool:
 
 ```sh
-python3 -m pip install -U pip && python3 -m pip install context-bridge-local
+uv tool install context-bridge-local      # or: pipx install context-bridge-local
 context-bridge import chatgpt /path/to/export.zip
 ```
 
-On macOS's bundled Python 3.9, upgrade pip first as shown above; pip 21.2 otherwise emits a legacy-build deprecation warning.
+If the shell then reports `command not found`, run `uv tool update-shell` (or `pipx ensurepath`) and open a new terminal.
+
+Without uv or pipx, install into a dedicated virtual environment. A bare `pip install` outside one either puts the command off your PATH (macOS's bundled Python 3.9) or is refused as an externally managed environment (Homebrew and python.org Python 3.12+):
+
+```sh
+python3 -m venv ~/.context-bridge
+~/.context-bridge/bin/python -m pip install -U pip context-bridge-local
+~/.context-bridge/bin/context-bridge import chatgpt /path/to/export.zip
+```
 
 For Claude.ai instead:
 

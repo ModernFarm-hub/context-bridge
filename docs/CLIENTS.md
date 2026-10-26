@@ -18,12 +18,14 @@ Open Claude Desktop's developer configuration and merge this entry into its `mcp
 {
   "mcpServers": {
     "context-bridge": {
-      "command": "uvx",
+      "command": "/absolute/path/to/uvx",
       "args": ["--from", "context-bridge-local", "context-bridge", "mcp"]
     }
   }
 }
 ```
+
+Replace `/absolute/path/to/uvx` with the output of `which uvx` (for example `/opt/homebrew/bin/uvx`). Desktop apps launched from the Dock may not inherit your shell's PATH, so a bare `uvx` can fail with a "command not found" connection error.
 
 ## Cursor
 
@@ -39,12 +41,12 @@ uvx --from 'context-bridge-local==0.7.0b1' context-bridge mcp
 
 The package source is explicit because the PyPI name `context-bridge` belongs to a different project. [uv's package/command naming documentation](https://docs.astral.sh/uv/guides/tools/#commands-with-different-package-names).
 
-## Alternative: installed virtual environment
+## Alternative: installed command
 
-If you prefer an existing pip installation or a contributor checkout, use its absolute executable path:
+If you installed with `uv tool install context-bridge-local`, `pipx install context-bridge-local`, the `~/.context-bridge` virtual environment from the README, or a contributor checkout, use that executable's absolute path (`which context-bridge` shows it for tool installs; the README's environment uses `~/.context-bridge/bin/context-bridge`, written out in full):
 
 ```sh
-claude mcp add --transport stdio context-bridge -- /absolute/path/to/.venv/bin/context-bridge mcp
+claude mcp add --transport stdio context-bridge -- /absolute/path/to/context-bridge mcp
 ```
 
 Claude Desktop and Cursor accept the equivalent entry:
@@ -53,7 +55,7 @@ Claude Desktop and Cursor accept the equivalent entry:
 {
   "mcpServers": {
     "context-bridge": {
-      "command": "/absolute/path/to/.venv/bin/context-bridge",
+      "command": "/absolute/path/to/context-bridge",
       "args": ["mcp"]
     }
   }
