@@ -1,0 +1,1 @@
+uvx offline wheel: both console names and MCP negotiation passed (0.6.0a2).

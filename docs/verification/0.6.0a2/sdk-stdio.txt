@@ -1,0 +1,2 @@
+MCP tool error: record_unavailable (ValueError)
+Official MCP v1 client: initialize, tools, search/read, snapshot deletion and removal in the same live stdio session passed.
