@@ -12,3 +12,5 @@ prune releases
 prune work
 prune prototype/__pycache__
 recursive-exclude * __pycache__ *.pyc *.jsonl *.db *.log
+
+include server.json

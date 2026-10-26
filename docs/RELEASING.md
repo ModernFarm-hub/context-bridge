@@ -1,8 +1,8 @@
 # Release preparation and publication
 
-Current candidate: **0.6.0a3**, distribution **context-bridge-local**, executables **context-bridge** and **context-bridge-local**. The GitHub repository is ModernFarm-hub/context-bridge. PyPI ownership/authentication and MCP registry publication remain pending. No public upload is performed by the preparation scripts.
+Current candidate: **0.7.0b1**, distribution **context-bridge-local**, executables **context-bridge** and **context-bridge-local**. The GitHub repository is ModernFarm-hub/context-bridge. PyPI ownership/authentication and MCP registry publication remain pending. No public upload is performed by the preparation scripts.
 
-The PyPI name `context-bridge` is already used by another project. Use the explicit package source with uvx, or the package-matching alias `uvx context-bridge-local@0.6.0a3 mcp` once published. Do not claim that `uvx context-bridge` installs this server.
+The PyPI name `context-bridge` is already used by another project. Use the explicit package source with uvx, or the package-matching alias `uvx context-bridge-local@0.7.0b1 mcp` once published. Do not claim that `uvx context-bridge` installs this server.
 
 ## 1. Verify locally
 
@@ -23,7 +23,7 @@ Install the wheel into a separate environment and run from outside the checkout:
 
 ```sh
 python3 -m venv /tmp/context-bridge-release-check
-/tmp/context-bridge-release-check/bin/python -m pip install dist/context_bridge_local-0.6.0a3-py3-none-any.whl
+/tmp/context-bridge-release-check/bin/python -m pip install dist/context_bridge_local-0.7.0b1-py3-none-any.whl
 /tmp/context-bridge-release-check/bin/python tools/package_smoke.py
 ```
 
@@ -70,8 +70,8 @@ Publishing uses [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishe
 PyPI version uploads are immutable, including the description shown on the project page. Verify the published package page and install the exact version into a clean environment before claiming distribution works:
 
 ```sh
-uvx --from 'context-bridge-local==0.6.0a3' context-bridge --version
-uvx --from 'context-bridge-local==0.6.0a3' context-bridge mcp
+uvx --from 'context-bridge-local==0.7.0b1' context-bridge --version
+uvx --from 'context-bridge-local==0.7.0b1' context-bridge mcp
 ```
 
 ## 4. Publish MCP registry metadata

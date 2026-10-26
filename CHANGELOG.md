@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0b1 — first beta release preparation
+
+- Prepare the `io.github.ModernFarm-hub/context-bridge` MCP registry identity, README ownership marker, repository/issue URLs and generated server metadata before the first PyPI upload.
+- Synchronize the package, runtime, MCP server and registry package versions at 0.7.0b1; mark the distribution as beta.
+- Carry forward the independently tested local import/search, scoped removal, project selection, credential redaction and account-isolation features from the alpha series.
+- PyPI and MCP registry publication remain pending; this entry records release preparation, not a completed upload.
+
+
 ## 0.6.0a3 — project selection and account safety
 
 - Accept dash-prefixed project names, numbered `--select`, original `--path` and an interactive numbered picker.

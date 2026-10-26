@@ -31,7 +31,6 @@ dist/
 
 **/profile.json
 .mcpregistry_*
-server.json
 
 .build-venv/
 docs/assets/*.preview.png

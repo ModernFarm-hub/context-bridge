@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ModernFarm-hub/context-bridge",
+  "title": "Context Bridge",
+  "description": "Local-first search across past Claude and ChatGPT conversations, with citations.",
+  "repository": {
+    "url": "https://github.com/ModernFarm-hub/context-bridge",
+    "source": "github"
+  },
+  "version": "0.7.0b1",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "context-bridge-local",
+      "version": "0.7.0b1",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}
