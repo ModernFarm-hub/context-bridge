@@ -1,0 +1,121 @@
+name: Release
+# Publishes with PyPI Trusted Publishing (OIDC); no API tokens are stored.
+#   Push a tag vX.Y.Z[aN|bN|rcN] matching pyproject.toml -> PyPI + GitHub release.
+#   Run manually (Actions > Release > Run workflow)      -> TestPyPI only.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      prerelease: ${{ steps.version.outputs.prerelease }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check version consistency
+        id: version
+        run: |
+          python - <<'EOF'
+          import os, re, sys, tomllib
+          version = tomllib.load(open('pyproject.toml', 'rb'))['project']['version']
+          module = re.search(r"__version__ = '([^']+)'", open('prototype/__init__.py').read()).group(1)
+          errors = []
+          if module != version:
+              errors.append(f'prototype/__init__.py has {module}, pyproject.toml has {version}')
+          if os.environ['GITHUB_REF_TYPE'] == 'tag' and os.environ['GITHUB_REF_NAME'] != 'v' + version:
+              errors.append(f"tag {os.environ['GITHUB_REF_NAME']} does not match v{version}")
+          if 'mcp-name: io.github.' not in open('README.md').read():
+              errors.append('README.md lacks the mcp-name marker; run tools/prepare_registry.py first')
+          if errors:
+              sys.exit('\n'.join(errors))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f'version={version}\n')
+              out.write(f"prerelease={str(bool(re.search(r'(a|b|rc|dev)[0-9]', version))).lower()}\n")
+          print('Releasing', version)
+          EOF
+      - name: Install build checks
+        run: python -m pip install build twine
+      - name: Regression suite
+        env:
+          PYTHONPATH: prototype
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -m unittest discover -s prototype/tests
+      - name: Build and check distributions
+        run: |
+          python -m build
+          python -m twine check --strict dist/*
+          python tools/check_artifacts.py dist
+      - name: Installed package smoke test
+        run: |
+          python -m venv /tmp/context-bridge-smoke
+          /tmp/context-bridge-smoke/bin/python -m pip install dist/*.whl
+          /tmp/context-bridge-smoke/bin/python tools/package_smoke.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  testpypi:
+    if: github.event_name == 'workflow_dispatch'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/project/context-bridge-local/${{ needs.build.outputs.version }}/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  pypi:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/context-bridge-local/${{ needs.build.outputs.version }}/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  github-release:
+    needs: [build, pypi]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/* \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Context Bridge ${{ needs.build.outputs.version }}" \
+            --generate-notes \
+            ${{ needs.build.outputs.prerelease == 'true' && '--prerelease' || '' }}
