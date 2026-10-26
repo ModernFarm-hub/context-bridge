@@ -38,8 +38,15 @@ def main():
         assert '[REDACTED]' in hit['body']
         record=call('context_read',{'record_id':hit['record_id']})['record']
         assert 'PACKAGE842 requires approval.' in record['body']
+        listed=json.loads(run(['list'],env,root))['conversations']
+        assert listed[0]['provider']=='claude' and listed[0]['message_count']==1
+        assert json.loads(run(['stats'],env,root))['messages']==1
+        assert json.loads(run(['remove','--conversation',hit['link']],env,root))['conversations_removed']==1
+        assert json.loads(run(['stats'],env,root))['messages']==0
+        assert not call('context_search',{'query':'PACKAGE842'})['results']
+        assert archive.exists()
         assert run(['--version'],env,root).strip()==version('context-bridge-local')
-        print('Installed package: import, profile creation, MCP negotiation/search/read, redaction and citations passed.')
+        print('Installed package: import, profile creation, MCP negotiation/search/read, redaction, citations, list/stats and scoped removal passed.')
 
 
 if __name__=='__main__':

@@ -17,8 +17,9 @@ async def main():
         root=Path(tmp)
         env={**os.environ,'CONTEXT_BRIDGE_HOME':str(root/'state')}
         archive=root/'export.zip'
+        conversations=[{'uuid':'sdk-conversation','name':'SDK smoke','chat_messages':[{'uuid':'sdk-message','sender':'human','text':'SDK842 requires approval.'}]}, {'uuid':'sdk-deleted','name':'Deleted snapshot','chat_messages':[{'uuid':'deleted-message','sender':'human','text':'DELETE843 obsolete finding.'}]}]
         with zipfile.ZipFile(archive,'w') as z:
-            z.writestr('conversations.json',json.dumps([{'uuid':'sdk-conversation','name':'SDK smoke','chat_messages':[{'uuid':'sdk-message','sender':'human','text':'SDK842 requires approval.'}]}]))
+            z.writestr('conversations.json',json.dumps(conversations))
         subprocess.run([sys.executable,'-m','context_bridge','import','claude',str(archive)],env=env,capture_output=True,text=True,check=True)
         params=StdioServerParameters(command=sys.executable,args=['-m','context_bridge','mcp'],env=env)
         async with stdio_client(params) as (read,write):
@@ -33,7 +34,18 @@ async def main():
                 assert not read_result.isError
                 assert 'SDK842' in read_result.content[0].text
                 assert str(root) not in read_result.content[0].text
-    print('Official MCP v1 client: initialize, list_tools, search and read passed.')
+                assert json.loads((await client.call_tool('context_search',{'query':'DELETE843'})).content[0].text)['results']
+                with zipfile.ZipFile(archive,'w') as z:
+                    z.writestr('conversations.json',json.dumps(conversations[:1]))
+                imported=subprocess.run([sys.executable,'-m','context_bridge','import','claude',str(archive)],env=env,capture_output=True,text=True,check=True)
+                assert json.loads(imported.stdout)['conversations_removed']==1
+                assert not json.loads((await client.call_tool('context_search',{'query':'DELETE843'})).content[0].text)['results']
+                removed=subprocess.run([sys.executable,'-m','context_bridge','remove','--conversation',hit['link']],env=env,capture_output=True,text=True,check=True)
+                assert json.loads(removed.stdout)['conversations_removed']==1
+                stale=await client.call_tool('context_read',{'record_id':hit['record_id']})
+                assert stale.isError
+                assert not json.loads((await client.call_tool('context_search',{'query':'SDK842'})).content[0].text)['results']
+    print('Official MCP v1 client: initialize, tools, search/read, snapshot deletion and removal in the same live stdio session passed.')
 
 
 if __name__=='__main__':
