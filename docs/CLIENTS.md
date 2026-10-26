@@ -1,11 +1,11 @@
 # Connect your MCP client
 
-Install this checkout in a virtual environment and import an export first. Use the absolute path to that environment's `context-bridge` executable. The server runs over stdio; it waits for an MCP client rather than a chat prompt.
+Import an export using `uvx --from context-bridge-local context-bridge import chatgpt /path/to/export.zip` or the installed `context-bridge` command. The server runs over stdio; it waits for an MCP client rather than a chat prompt.
 
 ## Claude Code
 
 ```sh
-claude mcp add --transport stdio context-bridge -- /absolute/path/to/.venv/bin/context-bridge mcp
+claude mcp add --transport stdio context-bridge -- uvx --from context-bridge-local context-bridge mcp
 ```
 
 Run `/mcp` in Claude Code and check the connection. All sessions using that configuration can search the same approved local library.
@@ -18,8 +18,8 @@ Open Claude Desktop's developer configuration and merge this entry into its `mcp
 {
   "mcpServers": {
     "context-bridge": {
-      "command": "/absolute/path/to/.venv/bin/context-bridge",
-      "args": ["mcp"]
+      "command": "uvx",
+      "args": ["--from", "context-bridge-local", "context-bridge", "mcp"]
     }
   }
 }
@@ -27,30 +27,40 @@ Open Claude Desktop's developer configuration and merge this entry into its `mcp
 
 ## Cursor
 
-Use Cursor's MCP configuration (for example, project `.cursor/mcp.json`) with the same `mcpServers` entry above. Reconnect the server in Cursor's MCP settings. Do not commit a user-specific absolute executable path into a shared repository.
+Use Cursor's MCP configuration (for example, project `.cursor/mcp.json`) with the same `mcpServers` entry above. Reconnect the server in Cursor's MCP settings.
 
-## uvx
+## Pin a version
 
-Before publication, replace the package source with the absolute checkout path:
+To use this beta explicitly, replace `context-bridge-local` in the uvx arguments with `context-bridge-local==0.7.0b1`:
 
 ```sh
-uvx --from /absolute/path/to/context-bridge context-bridge mcp
+uvx --from 'context-bridge-local==0.7.0b1' context-bridge mcp
 ```
 
-After publication, the corresponding config entry will use:
+The package source is explicit because the PyPI name `context-bridge` belongs to a different project. [uv's package/command naming documentation](https://docs.astral.sh/uv/guides/tools/#commands-with-different-package-names).
+
+## Alternative: installed virtual environment
+
+If you prefer an existing pip installation or a contributor checkout, use its absolute executable path:
+
+```sh
+claude mcp add --transport stdio context-bridge -- /absolute/path/to/.venv/bin/context-bridge mcp
+```
+
+Claude Desktop and Cursor accept the equivalent entry:
 
 ```json
 {
   "mcpServers": {
     "context-bridge": {
-      "command": "uvx",
-      "args": ["--from", "context-bridge-local==0.6.0a3", "context-bridge", "mcp"]
+      "command": "/absolute/path/to/.venv/bin/context-bridge",
+      "args": ["mcp"]
     }
   }
 }
 ```
 
-The package source is explicit because the PyPI name `context-bridge` belongs to a different project. [uv's package/command naming documentation](https://docs.astral.sh/uv/guides/tools/#commands-with-different-package-names).
+Do not commit a user-specific executable path into a shared repository. Contributor installation is documented in the README's “Install from source” section.
 
 ## Storage overrides and troubleshooting
 
@@ -72,6 +82,6 @@ Preview `context-bridge import claude-code`. Choose numbered entries interactive
 
 ## Separate accounts
 
-Use `import chatgpt export.zip --profile personal`, then set the MCP server's arguments to `["mcp", "--profile", "personal"]`. `list`, `stats`, `remove`, and `start` also accept the same profile name. The default profile retains the existing location; named profiles are stored separately beneath `profiles/NAME` within that base library. The same `CONTEXT_BRIDGE_HOME` and optional `--directory` must be used consistently.
+Use `import chatgpt export.zip --profile personal`, then append `["--profile", "personal"]` to the MCP arguments (uvx: `["--from", "context-bridge-local", "context-bridge", "mcp", "--profile", "personal"]`; virtual environment: `["mcp", "--profile", "personal"]`). `list`, `stats`, `remove`, and `start` also accept the same profile name. The default profile retains the existing location; named profiles are stored separately beneath `profiles/NAME` within that base library. The same `CONTEXT_BRIDGE_HOME` and optional `--directory` must be used consistently.
 
 Conflicting export account identifiers stop imports before database/copy/profile changes. Interactive users can confirm; automation must explicitly pass `--confirm-account-switch`. `--yes` alone does not authorize an account switch. When metadata is absent in both old and new exports, identity cannot be verified. Use separate profiles when uncertain.

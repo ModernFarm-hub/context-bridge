@@ -4,19 +4,23 @@
 
 Import your exports, connect an MCP client, and ask: “What did I decide about Kafka retries last week?” Search stays on your computer. Results link to the original web conversation or an exact local transcript passage.
 
-![Synthetic import, search and citation demo](docs/assets/demo.gif)
+![Synthetic import, search and citation demo](https://raw.githubusercontent.com/ModernFarm-hub/context-bridge/main/docs/assets/demo.gif)
 
-**Release candidate: 0.6.0a3.** Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no Context Bridge telemetry. This checkout is not yet published to PyPI or the MCP registry. Source is on GitHub; CI checks macOS/Linux on Python 3.9–3.13. [Current runs](https://github.com/ModernFarm-hub/context-bridge/actions).
+Beta (0.7.0b1) · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
 
 ## Quickstart
 
-With an official ChatGPT or Claude export ZIP already downloaded, install this checkout:
+With an official ChatGPT export ZIP downloaded, import it using uvx:
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -U pip
-.venv/bin/python -m pip install .
-.venv/bin/context-bridge import chatgpt /path/to/export.zip
+uvx --from context-bridge-local context-bridge import chatgpt /path/to/export.zip
+```
+
+Or install with pip, then use the `context-bridge` command directly:
+
+```sh
+python3 -m pip install -U pip && python3 -m pip install context-bridge-local
+context-bridge import chatgpt /path/to/export.zip
 ```
 
 On macOS's bundled Python 3.9, upgrade pip first as shown above; pip 21.2 otherwise emits a legacy-build deprecation warning.
@@ -24,13 +28,13 @@ On macOS's bundled Python 3.9, upgrade pip first as shown above; pip 21.2 otherw
 For Claude.ai instead:
 
 ```sh
-.venv/bin/context-bridge import claude /path/to/export.zip
+uvx --from context-bridge-local context-bridge import claude /path/to/export.zip
 ```
 
-Connect Claude Code (replace the executable path with your installation's absolute path):
+Connect Claude Code:
 
 ```sh
-claude mcp add --transport stdio context-bridge -- /absolute/path/to/.venv/bin/context-bridge mcp
+claude mcp add --transport stdio context-bridge -- uvx --from context-bridge-local context-bridge mcp
 ```
 
 Ask: **“Use context_search to find what I decided about Kafka retries. Cite the conversation link, and read the surrounding passage if needed.”**
@@ -42,14 +46,14 @@ There is no required source/reader window split. Every client using this local l
 Preview the projects available on this machine:
 
 ```sh
-.venv/bin/context-bridge import claude-code
+uvx --from context-bridge-local context-bridge import claude-code
 ```
 
 Approve the displayed list at the prompt, or select one project explicitly:
 
 ```sh
-.venv/bin/context-bridge import claude-code --select 1,3 --yes
-.venv/bin/context-bridge import claude-code --path /path/to/project --yes
+uvx --from context-bridge-local context-bridge import claude-code --select 1,3 --yes
+uvx --from context-bridge-local context-bridge import claude-code --path /path/to/project --yes
 ```
 
 The preview numbers projects; an interactive terminal lets you choose numbers before approving. Raw dash-prefixed names also work with `--project -Users-alice-code-app` without an equals sign. The prompt approves the selected project directories, including future session files. New sessions are discovered during search refresh; other projects remain excluded. Existing 0.6.0a1 file-only imports need this project approval again to enable discovery. Session titles come from Claude Code's `ai-title` records when available. The optional `context-bridge start` manager creates and approves live Claude Code sessions; those sessions refresh automatically when searched.
@@ -59,9 +63,9 @@ The preview numbers projects; an interactive terminal lets you choose numbers be
 Export metadata (`user.json`, account IDs or user IDs when present) is compared before any imported data is changed. A different or unverifiable account stops a noninteractive import; in a terminal you can explicitly confirm replacement. `--yes` does not bypass this check. Prefer a separate named profile:
 
 ```sh
-.venv/bin/context-bridge import chatgpt /path/to/export.zip --profile personal
-.venv/bin/context-bridge list --profile personal
-.venv/bin/context-bridge mcp --profile personal
+uvx --from context-bridge-local context-bridge import chatgpt /path/to/export.zip --profile personal
+uvx --from context-bridge-local context-bridge list --profile personal
+uvx --from context-bridge-local context-bridge mcp --profile personal
 ```
 
 Use the same `--profile` on import, MCP, list/stats/remove and the optional manager. Named profiles have separate files/databases under the base library's `profiles/NAME` directory. Only hashed account identifiers are stored. If both exports omit all account identifiers, account changes cannot be detected. Existing unidentified sources require explicit confirmation before adopting an identified account. To deliberately replace a provider's account snapshot, use `--confirm-account-switch`; absent conversations will be removed.
@@ -69,11 +73,11 @@ Use the same `--profile` on import, MCP, list/stats/remove and the optional mana
 ## Manage your library
 
 ```sh
-.venv/bin/context-bridge list
-.venv/bin/context-bridge stats
-.venv/bin/context-bridge remove --conversation 'https://chatgpt.com/c/CONVERSATION_ID'
-.venv/bin/context-bridge remove --conversation CONVERSATION_ID
-.venv/bin/context-bridge remove --provider chatgpt
+uvx --from context-bridge-local context-bridge list
+uvx --from context-bridge-local context-bridge stats
+uvx --from context-bridge-local context-bridge remove --conversation 'https://chatgpt.com/c/CONVERSATION_ID'
+uvx --from context-bridge-local context-bridge remove --conversation CONVERSATION_ID
+uvx --from context-bridge-local context-bridge remove --provider chatgpt
 ```
 
 Provider names are `chatgpt`, `claude`, and `claude-code`. List returns provider, title, creation date and indexed message count. Removal deletes index rows, FTS data, ingestion state, citation handles, metadata/config entries, and owned web-import copies. Original export ZIPs and Claude Code transcripts stay untouched. Removing a Claude Code provider also withdraws project-directory approval; removing one Code conversation prevents its automatic rediscovery. A deliberate future export re-import can restore a conversation present in that export.
@@ -117,19 +121,29 @@ The tests and benchmark use invented conversations. Model-dependent tests skip w
 
 The executable is `context-bridge`; the distribution name is **`context-bridge-local`**. The PyPI name `context-bridge` belongs to an unrelated project.
 
-Before publication, uv users can run this checkout with:
+Run the package with uvx:
 
 ```sh
-uvx --from . context-bridge --help
+uvx --from context-bridge-local context-bridge mcp
 ```
 
-After this release is published, the explicit package form will be:
+Pin this beta when you need a reproducible version:
 
 ```sh
-uvx --from 'context-bridge-local==0.6.0a3' context-bridge mcp
+uvx --from 'context-bridge-local==0.7.0b1' context-bridge mcp
 ```
 
-The second command is a release target, not a claim that the package is already available. [Release and registry process](docs/RELEASING.md).
+[Release and registry process](docs/RELEASING.md).
+
+## Install from source
+
+For contributors, run from the repository root:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -U pip
+.venv/bin/python -m pip install .
+```
 
 ## Contribute
 
@@ -138,3 +152,6 @@ Bug reports with small synthetic examples are especially useful. See [contributi
 Research is frozen while the import/search product ships. Historical model comparisons and claim-support work live under [research](research/README.md). The claim-support checker is not part of MCP search.
 
 Original project code is licensed under [Apache-2.0](LICENSE).
+
+
+<!-- mcp-name: io.github.ModernFarm-hub/context-bridge -->
