@@ -52,7 +52,7 @@ Connect Claude Code:
 claude mcp add --transport stdio context-bridge -- uvx --from context-bridge-local context-bridge mcp
 ```
 
-Ask: **“Use context_search to find what I decided about Kafka retries. Cite the conversation link, and read the surrounding passage if needed.”**
+Ask: **“Use context_search to find what I decided about Kafka retries. Cite the conversation link. If needed, use context_read with the returned record_id and context=2 to read the surrounding turns.”**
 
 There is no required source/reader window split. Every client using this local library searches the same approved imports. [All client setup instructions](docs/CLIENTS.md).
 
@@ -104,7 +104,7 @@ Large export imports show progress on stderr and report `conversations_removed`.
 | Tool | Result |
 | --- | --- |
 | `context_search` | Relevant redacted passages with title, provider, date, conversation link and opaque record ID |
-| `context_read` | A larger or question-focused passage, with pagination and changed-record checks |
+| `context_read` | Surrounding indexed turns (context=2 by default, maximum 10 each side), with pagination and changed-window checks |
 
 ChatGPT imports follow the active message-tree branch. Claude.ai imports human/assistant text. Tools, thinking blocks and internal replayed API requests are excluded. Re-importing a new export updates the conversation without duplicate messages. Each provider export is an authoritative snapshot: re-importing it removes conversations absent from that export, including their index and managed copies. Do not use a partial export to merge accounts. Export imports do not capture new browser chats automatically.
 
