@@ -57,7 +57,7 @@ Publishing uses [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishe
 
 ### One-time setup
 
-1. **GitHub environments.** In the repository, open Settings → Environments and create `pypi` and `testpypi`. For `pypi`, add yourself as a required reviewer so every real upload waits for an approval click.
+1. **GitHub environments.** In the repository, open Settings → Environments and create `pypi` and `testpypi`. For `pypi`, add yourself as a required reviewer so every real upload waits for an approval click. GitHub offers required reviewers only on public repositories or paid plans; while the repository is private on a free plan, add the reviewer when it becomes public, before the first PyPI release.
 2. **TestPyPI pending publisher.** Sign in at test.pypi.org (a separate account from pypi.org, with 2FA), open Account settings → Publishing → Add a new pending publisher, and enter: project `context-bridge-local`, owner `ModernFarm-hub`, repository `context-bridge`, workflow `release.yml`, environment `testpypi`.
 3. **PyPI pending publisher.** Repeat at pypi.org with environment `pypi`. A pending publisher reserves nothing; the project is created by the first successful upload, so do the first release soon after.
 
