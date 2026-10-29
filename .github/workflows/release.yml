@@ -30,6 +30,10 @@ jobs:
           version = tomllib.load(open('pyproject.toml', 'rb'))['project']['version']
           module = re.search(r"__version__ = '([^']+)'", open('prototype/__init__.py').read()).group(1)
           errors = []
+          # Collaborators have write access; only the owner may start or re-run a release.
+          for name in ('GITHUB_ACTOR', 'GITHUB_TRIGGERING_ACTOR'):
+              if os.environ.get(name, 'ModernFarm-hub') != 'ModernFarm-hub':
+                  errors.append(f'{name}={os.environ[name]} may not publish; only ModernFarm-hub releases')
           if module != version:
               errors.append(f'prototype/__init__.py has {module}, pyproject.toml has {version}')
           if os.environ['GITHUB_REF_TYPE'] == 'tag' and os.environ['GITHUB_REF_NAME'] != 'v' + version:
