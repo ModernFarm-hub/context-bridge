@@ -41,6 +41,8 @@ Entering `mcp --profile personal` in a single argument field creates `args = ["m
 
 **Auth unsupported** in `/mcp` is normal for a local server; no authentication flow is required for this local STDIO configuration.
 
+`chatgpt.com/c/<id>` citations are web conversations: open them in a browser signed in to the exported account. They are not desktop-app threads, whose links look like `codex://threads/<id>`. ChatGPT opens a conversation at its end, not at the cited message, so in a long chat the cited passage can be far above where the page lands; use `context_read` for the exact passage.
+
 Ask: “Use context_search to find my past discussion of X. Cite the source conversation link.” Search responses include a readable `Source: label — link` line as well as structured citation fields.
 
 ### Limits
