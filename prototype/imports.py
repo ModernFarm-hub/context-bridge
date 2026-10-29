@@ -174,14 +174,16 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None, conf
     incoming_account = export_account(archive, conversations)
     manager = Sessions(directory)
     count, messages, skipped, present = 0, 0, [], set()
+    excluded_count = 0
     authoritative = True
     if __package__:
-        from .library import discard_sources
+        from .library import discard_sources, exclusion_hash
     else:
-        from library import discard_sources
+        from library import discard_sources, exclusion_hash
     with config_lock(manager.config):
         data = json.loads(manager.config.read_text())
         account_check = check_account(data, provider, incoming_account, confirm_account_switch)
+        excluded_ids = set(data.get('web_exclusions', {}).get(provider, []))
         approved = set(data.get('approved_transcripts', []))
         bridge = Bridge(data['database'], *local_identity(data))
         try:
@@ -202,6 +204,9 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None, conf
                     # Present-but-malformed conversations are not deleted as if
                     # they were absent from the export.
                     present.add(cid)
+                    if exclusion_hash(provider, cid) in excluded_ids:
+                        excluded_count += 1
+                        continue
                     try:
                         records = chatgpt_messages(conversation) if provider=='chatgpt' else claude_messages(conversation)
                     except (ValueError, TypeError, AttributeError) as exc:
@@ -234,7 +239,7 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None, conf
                 path.unlink(missing_ok=True)
         finally:
             bridge.db.close()
-    return {'provider':provider, 'conversations_imported':count, 'messages_imported':messages, 'conversations_removed':len(removed), 'pruning_skipped':not authoritative, 'account_check':account_check, 'skipped':skipped}
+    return {'provider':provider, 'conversations_imported':count, 'conversations_excluded':excluded_count, 'messages_imported':messages, 'conversations_removed':len(removed), 'pruning_skipped':not authoritative, 'account_check':account_check, 'skipped':skipped}
 
 
 class ProjectSelection(dict):

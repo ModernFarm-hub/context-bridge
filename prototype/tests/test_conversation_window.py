@@ -7,7 +7,7 @@ import tempfile
 import unittest
 import zipfile
 from imports import import_export, import_code, project_preview
-from library import remove
+from library import remove, exclusions
 from mcp_server import ContextService
 from session_manager import Sessions
 
@@ -105,6 +105,7 @@ class ConversationWindowTests(unittest.TestCase):
         remove(self.library,conversation='window-chat')
         with self.assertRaises(ValueError):
             self.read(service,rid)
+        exclusions(self.library, 'window-chat')
         self.export(['FIRST842','TARGET842'])
         rid = self.hit(service,'TARGET842')
         archive = self.root / 'empty.zip'

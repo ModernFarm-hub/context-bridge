@@ -10,10 +10,14 @@ COMMANDS = {'benchmark': 'benchmark', 'import': 'imports', 'start': 'session_man
 
 def main():
     if len(sys.argv) == 1 or sys.argv[1] in ('--help', '-h'):
-        print('Context Bridge — find past Claude and ChatGPT conversations\n\nUsage: context-bridge COMMAND [options]\n\nCommands:\n  list            List conversations and message counts\n  stats           Show local library totals by provider\n  remove          Remove a conversation or provider from this library\n  import          Import ChatGPT, Claude or approved Claude Code histories\n  mcp             Search your local library from an MCP client\n  start           Open the optional local session manager\n  paths           Show local storage locations\n  migrate         Copy an older library without deleting it\n  demo            Run a disposable synthetic demo\n  benchmark       Measure search on disposable synthetic messages\n\nUse COMMAND --help for options. Installation does not approve or read chats.\nLegacy research commands remain available; see research/README.md.')
+        print('Context Bridge — find past Claude and ChatGPT conversations\n\nUsage: context-bridge COMMAND [options]\n\nCommands:\n  list            List conversations and message counts\n  stats           Show local library totals by provider\n  remove          Remove a conversation or provider from this library\n  exclusions      List or clear durable web conversation exclusions\n  import          Import ChatGPT, Claude or approved Claude Code histories\n  mcp             Search your local library from an MCP client\n  start           Open the optional local session manager\n  paths           Show local storage locations\n  migrate         Copy an older library without deleting it\n  demo            Run a disposable synthetic demo\n  benchmark       Measure search on disposable synthetic messages\n\nUse COMMAND --help for options. Installation does not approve or read chats.\nLegacy research commands remain available; see research/README.md.')
         return
     command = sys.argv[1]
-    if command in ('list', 'stats', 'remove'):
+    words = command.split()
+    known = set(COMMANDS) | {'list', 'stats', 'remove', 'exclusions', 'paths'}
+    if any(char.isspace() for char in command) and words and words[0] in known:
+        raise SystemExit('Arguments were passed as one string. Use separate arguments: ' + ' '.join(words))
+    if command in ('list', 'stats', 'remove', 'exclusions'):
         from .library import main as library_main
         library_main([command, *sys.argv[2:]])
         return

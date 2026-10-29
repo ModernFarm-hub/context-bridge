@@ -2,6 +2,51 @@
 
 Import an export using `uvx --from context-bridge-local context-bridge import chatgpt /path/to/export.zip` or the installed `context-bridge` command. The server runs over stdio; it waits for an MCP client rather than a chat prompt.
 
+## ChatGPT desktop app
+
+The following local STDIO setup was verified by an independent tester on real data: ChatGPT desktop retrieved a past ChatGPT conversation through Context Bridge after built-in history search missed it. It applies to the tested desktop build with **Settings → MCP servers**; UI availability can vary by build.
+
+### Settings setup
+
+1. Open **Settings → MCP servers → Add server → STDIO**.
+2. Set **Command** to the absolute path from `which context-bridge` (or `which uvx`).
+3. Add **one value per argument field**. For the installed command, enter `mcp`, `--profile`, `personal` as three separate values. With uvx, enter `--from`, `context-bridge-local`, `context-bridge`, `mcp`, `--profile`, `personal` as six separate values.
+4. Save, then **Restart**. For configuration edits, fully quit with **⌘Q**, reopen the app, and start a **new chat**.
+
+Import into the same profile first, for example `context-bridge import chatgpt /path/to/export.zip --profile personal`.
+
+### Configuration file setup
+
+For the tested desktop build, merge this into `~/.codex/config.toml` (do not overwrite other settings):
+
+```toml
+[mcp_servers.context-bridge]
+command = "/absolute/path/to/context-bridge"
+args = ["mcp", "--profile", "personal"]
+```
+
+Alternatively, use uvx:
+
+```toml
+[mcp_servers.context-bridge]
+command = "/absolute/path/to/uvx"
+args = ["--from", "context-bridge-local", "context-bridge", "mcp"]
+```
+
+The uvx example uses the default profile. Append `"--profile", "personal"` to its arguments to search the personal profile. Replace the executable path with the actual absolute path on your machine. Fully quit with **⌘Q**, reopen, and start a new chat after editing.
+
+### Troubleshooting
+
+Entering `mcp --profile personal` in a single argument field creates `args = ["mcp --profile personal"]`. The server exits because it received one command string rather than three arguments. Older versions report **Unknown command**; newer versions explain that arguments must be separate. `/mcp` may still show the server as **Enabled**, while chats say `context_search` is unavailable. Split the arguments, restart the app, and use a new chat. Enabled alone does not prove a working connection.
+
+**Auth unsupported** in `/mcp` is normal for a local server; no authentication flow is required for this local STDIO configuration.
+
+Ask: “Use context_search to find my past discussion of X. Cite the source conversation link.” Search responses include a readable `Source: label — link` line as well as structured citation fields.
+
+### Limits
+
+`chatgpt.com` in a browser cannot use local STDIO servers. Context Bridge offers no remote mode, and none is planned without an explicit security design. This setup keeps the server local, but retrieved passages are supplied to your AI client and may be processed by its provider under your account settings.
+
 ## Claude Code
 
 ```sh
@@ -75,7 +120,7 @@ These snippets follow [Claude Code's stdio setup](https://code.claude.com/docs/e
 
 ## Listing and deletion
 
-Use `context-bridge list`, `context-bridge stats`, or `context-bridge remove --conversation <id-or-provider-link>` locally. `remove --provider chatgpt`, `claude`, or `claude-code` removes that provider's imported sources. Code originals are not deleted, and removed Code sources are excluded from discovery until explicitly re-approved. A new complete web export replaces that provider's imported snapshot; absent conversations are withdrawn and their managed copies deleted. These controls take effect on the next MCP call, including in already-running clients with cached profile data.
+Use `context-bridge list`, `context-bridge stats`, or `context-bridge remove --conversation <id-or-provider-link>` locally. `remove --provider chatgpt`, `claude`, or `claude-code` removes that provider's imported sources. Web conversation removal is durable across exports: imports skip excluded IDs and report `conversations_excluded` separately from imports/removals. Per-profile exclusions contain only provider names and SHA-256 hashes, without titles or raw IDs. `context-bridge exclusions list --profile personal` lists them. To deliberately restore eligibility, run `context-bridge exclusions clear --conversation <id-or-provider-link> --profile personal`, then re-import with that profile. A provider link clears only that provider; a bare ID clears matching exclusions across ChatGPT and Claude. `remove --provider chatgpt` (or `claude`) preserves existing exclusions but adds no new ones; removing/re-importing a provider does not reset privacy choices. Snapshot pruning never creates exclusions. Code originals are not deleted, and removed Code sources are excluded from discovery until explicitly re-approved. A new complete web export replaces that provider's imported snapshot; absent conversations are withdrawn and their managed copies deleted. These controls take effect on the next MCP call, including in already-running clients with cached profile data.
 
 
 ## Choose a Claude Code project
@@ -84,6 +129,6 @@ Preview `context-bridge import claude-code`. Choose numbered entries interactive
 
 ## Separate accounts
 
-Use `import chatgpt export.zip --profile personal`, then append `["--profile", "personal"]` to the MCP arguments (uvx: `["--from", "context-bridge-local", "context-bridge", "mcp", "--profile", "personal"]`; virtual environment: `["mcp", "--profile", "personal"]`). `list`, `stats`, `remove`, and `start` also accept the same profile name. The default profile retains the existing location; named profiles are stored separately beneath `profiles/NAME` within that base library. The same `CONTEXT_BRIDGE_HOME` and optional `--directory` must be used consistently.
+Use `import chatgpt export.zip --profile personal`, then append `["--profile", "personal"]` to the MCP arguments (uvx: `["--from", "context-bridge-local", "context-bridge", "mcp", "--profile", "personal"]`; virtual environment: `["mcp", "--profile", "personal"]`). `list`, `stats`, `remove`, `exclusions`, and `start` also accept the same profile name. The default profile retains the existing location; named profiles are stored separately beneath `profiles/NAME` within that base library. The same `CONTEXT_BRIDGE_HOME` and optional `--directory` must be used consistently.
 
 Conflicting export account identifiers stop imports before database/copy/profile changes. Interactive users can confirm; automation must explicitly pass `--confirm-account-switch`. `--yes` alone does not authorize an account switch. When metadata is absent in both old and new exports, identity cannot be verified. Use separate profiles when uncertain.

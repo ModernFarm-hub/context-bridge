@@ -238,7 +238,13 @@ def serve(service, incoming=sys.stdin, outgoing=sys.stdout):
                     if params['name'] == 'context_read' and (not isinstance(arguments, dict) or 'record_id' not in arguments or 'source' in arguments or 'line' in arguments):
                         raise ValueError('Use the opaque record_id returned by context_search')
                     data = public_result(service.call(params['name'], arguments))
-                    result = {'content': [{'type': 'text', 'text': json.dumps(data)}], 'isError': False}
+                    content = [{'type': 'text', 'text': json.dumps(data)}]
+                    if params['name'] == 'context_search':
+                        for hit in data.get('results', []):
+                            label = ' '.join(str(hit.get('source_label', '')).split())
+                            link = ' '.join(str(hit.get('link', '')).split())
+                            content.append({'type': 'text', 'text': 'Source: ' + label + ' — ' + link})
+                    result = {'content': content, 'isError': False}
                 except (ValueError, KeyError, TypeError, OSError, sqlite3.Error, ImportError, RuntimeError) as exc:
                     code = getattr(exc, 'code', None)
                     if code is None:

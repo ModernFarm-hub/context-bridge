@@ -54,7 +54,7 @@ claude mcp add --transport stdio context-bridge -- uvx --from context-bridge-loc
 
 Ask: **“Use context_search to find what I decided about Kafka retries. Cite the conversation link. If needed, use context_read with the returned record_id and context=2 to read the surrounding turns.”**
 
-There is no required source/reader window split. Every client using this local library searches the same approved imports. [All client setup instructions](docs/CLIENTS.md).
+There is no required source/reader window split. Every client using this local library searches the same approved imports. [All client setup instructions](docs/CLIENTS.md), including [ChatGPT desktop app setup and troubleshooting](docs/CLIENTS.md#chatgpt-desktop-app).
 
 ## Existing Claude Code conversations
 
@@ -93,11 +93,13 @@ uvx --from context-bridge-local context-bridge stats
 uvx --from context-bridge-local context-bridge remove --conversation 'https://chatgpt.com/c/CONVERSATION_ID'
 uvx --from context-bridge-local context-bridge remove --conversation CONVERSATION_ID
 uvx --from context-bridge-local context-bridge remove --provider chatgpt
+uvx --from context-bridge-local context-bridge exclusions list --profile personal
+uvx --from context-bridge-local context-bridge exclusions clear --conversation 'https://chatgpt.com/c/CONVERSATION_ID' --profile personal
 ```
 
-Provider names are `chatgpt`, `claude`, and `claude-code`. List returns provider, title, creation date and indexed message count. Removal deletes index rows, FTS data, ingestion state, citation handles, metadata/config entries, and owned web-import copies. Original export ZIPs and Claude Code transcripts stay untouched. Removing a Claude Code provider also withdraws project-directory approval; removing one Code conversation prevents its automatic rediscovery. A deliberate future export re-import can restore a conversation present in that export.
+Provider names are `chatgpt`, `claude`, and `claude-code`. List returns provider, title, creation date and indexed message count. Removal deletes index rows, FTS data, ingestion state, citation handles, metadata/config entries, and owned web-import copies. Original export ZIPs and Claude Code transcripts stay untouched. Removing a Claude Code provider also withdraws project-directory approval; removing one Code conversation prevents its automatic rediscovery. Removing a web conversation creates a durable exclusion in that profile: future ChatGPT/Claude imports skip it. Exclusions store only a provider and a SHA-256 digest of the provider/conversation ID, without titles or plaintext conversation IDs. `exclusions list` shows those hashes; use the original ID or provider link with `exclusions clear --conversation` to restore eligibility, then re-import. A link selects one provider; clearing a bare ID clears matching exclusions across both web providers. Use the same `--profile` consistently. Removing a whole provider preserves existing conversation exclusions but does not create exclusions for every remaining chat; a later export can restore those remaining chats. Only explicit `exclusions clear` clears the saved web exclusions.
 
-Large export imports show progress on stderr and report `conversations_removed`. If an export contains objects without identifiable conversation IDs, pruning is skipped and reported as `pruning_skipped`; malformed entries with known IDs preserve their prior copy rather than masquerading as deletions.
+Large export imports show progress on stderr and report `conversations_removed` and `conversations_excluded`. Excluded IDs are counted as skips, never imports or snapshot removals. Snapshot pruning does not create exclusions; absent chats can return in a later export. If an export contains objects without identifiable conversation IDs, pruning is skipped and reported as `pruning_skipped`; malformed entries with known IDs preserve their prior copy rather than masquerading as deletions.
 
 ## What you get
 
