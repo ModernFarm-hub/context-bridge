@@ -7,12 +7,12 @@
     "url": "https://github.com/ModernFarm-hub/context-bridge",
     "source": "github"
   },
-  "version": "0.7.0b1",
+  "version": "0.7.0b2",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "context-bridge-local",
-      "version": "0.7.0b1",
+      "version": "0.7.0b2",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"

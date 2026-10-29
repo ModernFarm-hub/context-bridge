@@ -4,12 +4,12 @@
   "title": "Context Bridge",
   "description": "Local-first search across past Claude and ChatGPT conversations, with citations.",
   "repository": {"url": "https://github.com/GITHUB_OWNER/GITHUB_REPO", "source": "github"},
-  "version": "0.7.0b1",
+  "version": "0.7.0b2",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "context-bridge-local",
-      "version": "0.7.0b1",
+      "version": "0.7.0b2",
       "runtimeHint": "uvx",
       "transport": {"type": "stdio"},
       "packageArguments": [{"type": "positional", "value": "mcp"}]

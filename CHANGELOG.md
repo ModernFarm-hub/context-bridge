@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.0b2 — first public beta
+
+- `context_read` returns surrounding conversation turns (`context`, default 2, maximum 10 each side) in order, with per-message record IDs, roles, timestamps and a target marker; conversation text appears once in the combined body.
+- `remove --conversation` now records a hashed, per-profile exclusion: removed ChatGPT and Claude chats stay out on re-import and are reported as `conversations_excluded`. `exclusions list` and `exclusions clear` restore eligibility deliberately.
+- Search results add a readable `Source: label — link` line for clients that ignore structured fields.
+- Document ChatGPT desktop app STDIO setup; arguments passed as one string now produce an explicit error instead of "Unknown command".
+- CI runs Python 3.9 on Ubuntu 24.04, because `ubuntu-latest` (26.04) has no 3.9 build.
+- 0.7.0b1 was uploaded to TestPyPI only as a release rehearsal; it was never published to PyPI.
+
+
 ## 0.7.0b1 — first beta release preparation
 
 - Prepare the `io.github.ModernFarm-hub/context-bridge` MCP registry identity, README ownership marker, repository/issue URLs and generated server metadata before the first PyPI upload.

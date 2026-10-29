@@ -6,7 +6,7 @@ Import your exports, connect an MCP client, and ask: “What did I decide about 
 
 ![Synthetic import, search and citation demo](https://raw.githubusercontent.com/ModernFarm-hub/context-bridge/main/docs/assets/demo.gif)
 
-Beta (0.7.0b1) · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
+Beta (0.7.0b2) · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
 
 ## Quickstart
 
@@ -147,7 +147,7 @@ uvx --from context-bridge-local context-bridge mcp
 Pin this beta when you need a reproducible version:
 
 ```sh
-uvx --from 'context-bridge-local==0.7.0b1' context-bridge mcp
+uvx --from 'context-bridge-local==0.7.0b2' context-bridge mcp
 ```
 
 [Release and registry process](docs/RELEASING.md).
