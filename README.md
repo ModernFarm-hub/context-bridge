@@ -164,7 +164,7 @@ python3 -m venv .venv
 
 ## Contribute
 
-Bug reports with small synthetic examples are especially useful. See [contributing](CONTRIBUTING.md), [architecture and SDK decision](docs/ARCHITECTURE.md), and [third-party notices](THIRD_PARTY.md).
+Bug reports with small synthetic examples are especially useful. See [contributing](CONTRIBUTING.md), the [roadmap](docs/ROADMAP.md), [architecture and SDK decision](docs/ARCHITECTURE.md), and [third-party notices](THIRD_PARTY.md).
 
 Research is frozen while the import/search product ships. Historical model comparisons and claim-support work live under [research](research/README.md). The claim-support checker is not part of MCP search.
 
