@@ -1,0 +1,182 @@
+[
+  {
+    "id": "0",
+    "title": "Starting as a Photographer",
+    "body": "Build a portfolio, learn exposure and sell portraits to clients.",
+    "query": "How could I earn a living by capturing moments through a lens?"
+  },
+  {
+    "id": "1",
+    "title": "Recovering a forgotten password",
+    "body": "Use the reset link and a recovery email to regain account access.",
+    "query": "locked out because I cannot remember my login secret"
+  },
+  {
+    "id": "2",
+    "title": "Moving to a new apartment",
+    "body": "Hire movers, pack boxes and arrange utilities before relocation.",
+    "query": "checklist for changing where I live"
+  },
+  {
+    "id": "3",
+    "title": "Training for a marathon",
+    "body": "Increase weekly mileage gradually and schedule long runs with rest days.",
+    "query": "preparing my body for a long distance race"
+  },
+  {
+    "id": "4",
+    "title": "Negotiating a salary increase",
+    "body": "Document achievements and benchmark compensation before requesting a raise.",
+    "query": "asking my boss for better pay"
+  },
+  {
+    "id": "5",
+    "title": "Reducing database latency",
+    "body": "Add indexes and inspect query plans to avoid full table scans.",
+    "query": "why fetching stored rows takes forever"
+  },
+  {
+    "id": "6",
+    "title": "Planning a wedding budget",
+    "body": "Allocate spending between venue, catering and guest count.",
+    "query": "keeping costs down for our marriage celebration"
+  },
+  {
+    "id": "7",
+    "title": "Learning acoustic guitar",
+    "body": "Practice chords and strumming daily using beginner songs.",
+    "query": "how to play a six string instrument"
+  },
+  {
+    "id": "8",
+    "title": "Starting a vegetable garden",
+    "body": "Prepare fertile soil and sow seeds after the final frost.",
+    "query": "growing food in the backyard"
+  },
+  {
+    "id": "9",
+    "title": "Preparing for job interviews",
+    "body": "Rehearse behavioral answers and research the prospective employer.",
+    "query": "practice before meeting a hiring manager"
+  },
+  {
+    "id": "10",
+    "title": "Managing insomnia",
+    "body": "Keep a consistent bedtime and avoid caffeine late in the day.",
+    "query": "trouble falling asleep at night"
+  },
+  {
+    "id": "11",
+    "title": "Backing up family photos",
+    "body": "Keep redundant copies on an external drive and offsite storage.",
+    "query": "protecting irreplaceable pictures if my laptop breaks"
+  },
+  {
+    "id": "12",
+    "title": "Choosing an electric vehicle",
+    "body": "Compare battery range, charging access and total ownership cost.",
+    "query": "buying a car that does not burn petrol"
+  },
+  {
+    "id": "13",
+    "title": "Handling customer complaints",
+    "body": "Acknowledge frustration, investigate the incident and offer a remedy.",
+    "query": "responding to unhappy buyers"
+  },
+  {
+    "id": "14",
+    "title": "Reducing cloud infrastructure costs",
+    "body": "Right size idle servers and reserve predictable compute capacity.",
+    "query": "lowering the monthly bill for hosted machines"
+  },
+  {
+    "id": "15",
+    "title": "Adopting a rescue dog",
+    "body": "Visit shelters and plan vaccination, training and veterinary care.",
+    "query": "bringing home a homeless puppy"
+  },
+  {
+    "id": "16",
+    "title": "Learning conversational Spanish",
+    "body": "Listen to native speakers and practice common phrases aloud.",
+    "query": "speaking the language used in Madrid"
+  },
+  {
+    "id": "17",
+    "title": "Writing a first novel",
+    "body": "Outline characters and plot, then revise a complete draft.",
+    "query": "turning a story idea into a fiction book"
+  },
+  {
+    "id": "18",
+    "title": "Planning a hiking trip",
+    "body": "Carry navigation, water and layered clothing for mountain trails.",
+    "query": "what to bring when walking in the wilderness"
+  },
+  {
+    "id": "19",
+    "title": "Building an emergency fund",
+    "body": "Save several months of essential expenses in a liquid account.",
+    "query": "setting money aside for unexpected bills"
+  },
+  {
+    "id": "20",
+    "title": "Understanding stock options",
+    "body": "Vesting schedules and strike prices determine equity exercise decisions.",
+    "query": "when can I buy my employer shares"
+  },
+  {
+    "id": "21",
+    "title": "Fixing a leaking faucet",
+    "body": "Replace the worn washer and shut off the water supply first.",
+    "query": "stopping a dripping kitchen tap"
+  },
+  {
+    "id": "22",
+    "title": "Organizing a remote team",
+    "body": "Use asynchronous updates and document decisions across time zones.",
+    "query": "coordinating colleagues who work from home"
+  },
+  {
+    "id": "23",
+    "title": "Improving website accessibility",
+    "body": "Provide alt text, keyboard navigation and sufficient color contrast.",
+    "query": "making pages usable by people with disabilities"
+  },
+  {
+    "id": "24",
+    "title": "Preparing a tax return",
+    "body": "Gather income statements and deductible expenses before filing.",
+    "query": "paperwork for reporting earnings to the government"
+  },
+  {
+    "id": "25",
+    "title": "Learning to bake sourdough",
+    "body": "Maintain a starter and allow slow fermentation before shaping loaves.",
+    "query": "making bread with wild yeast"
+  },
+  {
+    "id": "26",
+    "title": "Preventing phishing attacks",
+    "body": "Verify senders and avoid fraudulent links requesting credentials.",
+    "query": "spotting scam emails that steal logins"
+  },
+  {
+    "id": "27",
+    "title": "Reducing household energy use",
+    "body": "Insulate windows and replace inefficient appliances.",
+    "query": "cutting electricity consumption at home"
+  },
+  {
+    "id": "28",
+    "title": "Planning a retirement portfolio",
+    "body": "Diversify investments according to time horizon and risk tolerance.",
+    "query": "investing for life after I stop working"
+  },
+  {
+    "id": "29",
+    "title": "Deploying a Kubernetes service",
+    "body": "Configure replicas, health probes and rolling updates in the cluster.",
+    "query": "releasing containers without interrupting traffic"
+  }
+]

@@ -66,7 +66,7 @@ def passage(text, query_terms, weights, size=4000):
     return text[start:start + size], start, start + size
 
 
-def rank(rows, query, limit):
+def rank(rows, query, limit, unbounded=False):
     query_words = re.findall(r'\w+', query.casefold())
     if len(query) > 2000:
         raise ValueError('Query too long')
@@ -97,4 +97,4 @@ def rank(rows, query, limit):
         hits.sort(key=lambda v: (-len(v['matched_terms']), -timestamp(v['timestamp']), -v['score'], v['source'], v['line']))
     else:
         hits.sort(key=lambda v: (-v['score'], v['source'], v['line']))
-    return hits[:max(1, min(limit, 20))]
+    return hits if unbounded else hits[:max(1, min(limit, 20))]

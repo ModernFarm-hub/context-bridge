@@ -16,7 +16,7 @@ else:
     from privacy import redact
     from session_manager import Sessions, DEFAULT_ROOT, config_lock, atomic_write
 
-PROVIDERS = ('chatgpt', 'claude', 'claude-code')
+PROVIDERS = ('chatgpt', 'claude', 'claude-code', 'codex')
 
 
 def exclusion_hash(provider, conversation_id):
@@ -24,6 +24,11 @@ def exclusion_hash(provider, conversation_id):
 
 
 def conversation_selector(conversation):
+    if conversation.startswith('codex://threads/'):
+        cid = conversation[len('codex://threads/'):]
+        if not cid or '/' in cid:
+            raise ValueError('Use codex://threads/<thread-id>')
+        return 'codex', cid
     if '://' not in conversation:
         return None, conversation
     url = urlparse(conversation)
@@ -43,7 +48,7 @@ def exclusions(directory=DEFAULT_ROOT, conversation=None):
             return {'exclusions':[{'provider':provider, 'hash':digest} for provider in sorted(entries) for digest in entries[provider]]}
         selected, cid = conversation_selector(conversation)
         count = 0
-        for provider in ('chatgpt', 'claude'):
+        for provider in ('chatgpt', 'claude', 'codex'):
             if selected and selected != provider:
                 continue
             digest = exclusion_hash(provider, cid)
@@ -66,6 +71,9 @@ def discard_sources(data, bridge, paths, root):
         path = Path(source)
         if meta.get('provider') in ('chatgpt', 'claude') and path.parent.resolve().is_relative_to((Path(root)/'imports').resolve()):
             copies.append(path)
+        elif meta.get('provider') == 'codex':
+            values = data.setdefault('web_exclusions',{}).setdefault('codex',[])
+            data['web_exclusions']['codex'] = sorted(set(values)|{exclusion_hash('codex',meta['conversation_id'])})
         elif meta.get('provider') == 'claude-code':
             excluded.add(source)
             cid = 'claude-code:'+str(meta.get('conversation_id'))
@@ -107,6 +115,8 @@ def remove(directory=DEFAULT_ROOT, conversation=None, provider=None):
             if provider:
                 data.get('provider_accounts', {}).pop(provider, None)
                 candidates = {source for source, meta in sources.items() if meta.get('provider') == provider}
+                if provider == 'codex':
+                    data['approved_codex_projects'] = []
                 if provider == 'claude-code':
                     data['approved_projects'] = []
                     for entry in data.get('sessions', {}).values():
@@ -121,11 +131,14 @@ def remove(directory=DEFAULT_ROOT, conversation=None, provider=None):
                 if len(candidates)>1 and len({sources.get(p,{}).get('provider','claude-code') for p in candidates})>1:
                     raise ValueError('That ID exists in multiple providers. Supply the conversation link.')
             with bridge.transaction():
+                if provider=='codex':
+                    bridge.db.execute('DELETE FROM codex_classifications WHERE tenant=? AND employee=?',bridge.owner)
+                    bridge._codex_classifications.clear()
                 if not provider:
                     for source in candidates:
                         meta = sources.get(source, {})
                         name = meta.get('provider')
-                        if name in ('chatgpt', 'claude'):
+                        if name in ('chatgpt', 'claude', 'codex'):
                             values = data.setdefault('web_exclusions', {}).setdefault(name, [])
                             digest = exclusion_hash(name, meta['conversation_id'])
                             data['web_exclusions'][name] = sorted(set(values) | {digest})
@@ -196,7 +209,7 @@ def main(argv=None):
                     item = providers.setdefault(row['provider'], {'conversations':0, 'messages':0})
                     item['conversations'] += 1
                     item['messages'] += row['message_count']
-                result = {'conversations':len(conversations), 'messages':sum(r['message_count'] for r in conversations), 'providers':providers, 'capture_status':capture}
+                result = {'retrieval_mode':capture['retrieval_mode'], 'conversations':len(conversations), 'messages':sum(r['message_count'] for r in conversations), 'providers':providers, 'capture_status':capture}
         print(json.dumps(result, indent=2))
     except (ValueError, OSError, KeyError) as exc:
         parser.exit(1, str(exc)+'\n')

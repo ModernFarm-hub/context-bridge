@@ -6,7 +6,7 @@ Import your exports, connect an MCP client, and ask: “What did I decide about 
 
 ![Synthetic import, search and citation demo](https://raw.githubusercontent.com/ModernFarm-hub/context-bridge/main/docs/assets/demo.gif)
 
-Beta (0.7.0b2) · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
+Beta (0.8.0b1) · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
 
 ## Quickstart
 
@@ -73,6 +73,48 @@ uvx --from context-bridge-local context-bridge import claude-code --path /path/t
 
 The preview numbers projects; an interactive terminal lets you choose numbers before approving. Raw dash-prefixed names also work with `--project -Users-alice-code-app` without an equals sign. The prompt approves the selected project directories, including future session files. New sessions are discovered during search refresh; other projects remain excluded. Existing 0.6.0a1 file-only imports need this project approval again to enable discovery. Session titles come from Claude Code's `ai-title` records when available. The optional `context-bridge start` manager creates and approves live Claude Code sessions; those sessions refresh automatically when searched.
 
+## Sources
+
+| Source | Capture | Approval |
+| --- | --- | --- |
+| ChatGPT web | Official export ZIP | Explicit import; re-import to refresh |
+| Claude.ai | Official export ZIP | Explicit import; re-import to refresh |
+| Claude Code | Automatic local transcript discovery | Selected project directories only |
+| ChatGPT desktop / Codex | Automatic, no export | Selected project folders only |
+
+### ChatGPT desktop / Codex capture
+
+```sh
+context-bridge import codex
+context-bridge import codex --select 1,3 --yes --profile personal
+# Or select one original working directory:
+context-bridge import codex --path /path/to/project --yes --profile personal
+```
+
+The first command previews threads grouped by project without importing anything. Approval includes future threads in those project folders; search refresh discovers them automatically. It reads rollout files under `~/.codex/sessions`, honoring `CODEX_HOME` (or `--codex-home /path/to/state`). Original files are never modified. Discovery stops at the thread/project headers and caches rejected or unclassifiable files by file signature; unchanged unapproved rollouts are not re-read on each search. Title excerpts are read only for approved projects. Only user and assistant text is indexed; tools, reasoning, developer/system messages, events and known injected context envelopes are excluded. Titles use `session_index.jsonl`, with a redacted first-user-message fallback. Citations use `codex://threads/<thread-id>` to open the desktop thread. [Capture and consent details](docs/CLIENTS.md#chatgpt-desktop--codex-as-a-source).
+
+## Paraphrases and optional offline semantic search
+
+The default needs no third-party dependencies: SQLite FTS5 with Porter stemming and weighted conversation titles. `matched_terms` shows the query terms that matched. Results use one slot per conversation, with the best passage and `more_matches_in_conversation` counting other matching indexed messages. `capture_status.retrieval_mode` and `context-bridge stats` report `bm25` or `hybrid`. It cannot reliably connect unrelated wording; try two or three phrasings, or opt into local hybrid search:
+
+```sh
+context-bridge semantic enable --profile personal
+```
+
+For a source install or an unreleased version absent from PyPI, run `context-bridge semantic enable --from-source /path/to/context-bridge --profile personal` using the checkout containing `pyproject.toml`.
+
+This explicitly installs the optional `[semantic]` dependencies if needed in a private runtime (upgrading its pip first), downloads checksum-verified MiniLM model files, and backfills embeddings for approved records. Setup reports model bytes, embedding count and elapsed time. Package/model downloads use the network; no conversation text is sent. Later searches combine BM25 and local vectors fully offline. Embeddings persist in the profile's local database, respect removal, and update as content changes. Restart your MCP client after enabling so it uses the selected runtime. Return to the dependency-free mode with `context-bridge semantic disable --profile personal` (this does not erase downloaded model files).
+
+On the frozen 30-conversation synthetic paraphrase fixture:
+
+| Mode | Top-1 | Top-5 | MRR@20 |
+| --- | ---: | ---: | ---: |
+| 0.7.0b2 baseline | 3.3% | 3.3% | 0.0333 |
+| 0.8 BM25 + stemming/title | 3.3% | 6.7% | 0.0444 |
+| 0.8 hybrid MiniLM | 86.7% | 90.0% | 0.8833 |
+
+These are synthetic conversation-level retrieval measurements, not a real-library accuracy claim. Semantic mode remains opt-in: its recall gains come with an approximately 90 MB model plus optional runtime packages. No built-in synonym list was added. [Reproduce the benchmark and inspect all per-query ranks](docs/verification/0.8.0b1/README.md).
+
 ## Keep accounts separate
 
 Export metadata (`user.json`, account IDs or user IDs when present) is compared before any imported data is changed. A different or unverifiable account stops a noninteractive import; in a terminal you can explicitly confirm replacement. `--yes` does not bypass this check. Prefer a separate named profile:
@@ -97,7 +139,9 @@ uvx --from context-bridge-local context-bridge exclusions list --profile persona
 uvx --from context-bridge-local context-bridge exclusions clear --conversation 'https://chatgpt.com/c/CONVERSATION_ID' --profile personal
 ```
 
-Provider names are `chatgpt`, `claude`, and `claude-code`. List returns provider, title, creation date and indexed message count. Removal deletes index rows, FTS data, ingestion state, citation handles, metadata/config entries, and owned web-import copies. Original export ZIPs and Claude Code transcripts stay untouched. Removing a Claude Code provider also withdraws project-directory approval; removing one Code conversation prevents its automatic rediscovery. Removing a web conversation creates a durable exclusion in that profile: future ChatGPT/Claude imports skip it. Exclusions store only a provider and a SHA-256 digest of the provider/conversation ID, without titles or plaintext conversation IDs. `exclusions list` shows those hashes; use the original ID or provider link with `exclusions clear --conversation` to restore eligibility, then re-import. A link selects one provider; clearing a bare ID clears matching exclusions across both web providers. Use the same `--profile` consistently. Removing a whole provider preserves existing conversation exclusions but does not create exclusions for every remaining chat; a later export can restore those remaining chats. Only explicit `exclusions clear` clears the saved web exclusions.
+Provider names are `chatgpt`, `claude`, `claude-code`, and `codex`. List returns provider, title, creation date and indexed message count. Removal deletes index rows, FTS data, ingestion state, citation handles, metadata/config entries, and owned web-import copies. Original export ZIPs, Claude Code transcripts and Codex rollout files stay untouched. Removing a Claude Code provider also withdraws project-directory approval; removing one Code conversation prevents its automatic rediscovery. Removing a web conversation creates a durable exclusion in that profile: future ChatGPT/Claude imports skip it. Exclusions store only a provider and a SHA-256 digest of the provider/conversation ID, without titles or plaintext conversation IDs. `exclusions list` shows those hashes; use the original ID or provider link with `exclusions clear --conversation` to restore eligibility, then re-import. A link selects one provider; clearing a bare ID clears matching exclusions across web providers and Codex. Use the same `--profile` consistently. Removing a whole provider preserves existing conversation exclusions but does not create exclusions for every remaining chat; a later export can restore those remaining chats. Only explicit `exclusions clear` clears the saved web exclusions.
+
+Codex removal uses the same hashed exclusions: `remove --conversation codex://threads/THREAD_ID`, then optionally `exclusions clear --conversation codex://threads/THREAD_ID` to allow discovery again. `remove --provider codex` withdraws all Codex project approvals and excludes the currently imported threads; clearing a thread exclusion alone does not re-approve its project.
 
 Large export imports show progress on stderr and report `conversations_removed` and `conversations_excluded`. Excluded IDs are counted as skips, never imports or snapshot removals. Snapshot pruning does not create exclusions; absent chats can return in a later export. If an export contains objects without identifiable conversation IDs, pruning is skipped and reported as `pruning_skipped`; malformed entries with known IDs preserve their prior copy rather than masquerading as deletions.
 
@@ -147,7 +191,7 @@ uvx --from context-bridge-local context-bridge mcp
 Pin this beta when you need a reproducible version:
 
 ```sh
-uvx --from 'context-bridge-local==0.7.0b2' context-bridge mcp
+uvx --from 'context-bridge-local==0.8.0b1' context-bridge mcp
 ```
 
 [Release and registry process](docs/RELEASING.md).

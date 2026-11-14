@@ -21,7 +21,7 @@ def percentile(values, fraction):
     return sorted(values)[max(0, min(len(values)-1, int(len(values)*fraction + .999999)-1))]
 
 
-def benchmark(messages=None, runs=30, files=5000, min_messages=2, max_messages=40):
+def benchmark(messages=None, runs=30, files=5000, min_messages=2, max_messages=40, profile_query=None):
     if (messages is not None and messages < 100) or runs < 3 or files<1 or min_messages<1 or max_messages<min_messages:
         raise ValueError('Use at least 100 messages and 3 runs')
     with tempfile.TemporaryDirectory(prefix='context-bridge-benchmark-') as tmp:
@@ -81,6 +81,13 @@ def benchmark(messages=None, runs=30, files=5000, min_messages=2, max_messages=4
             start = time.perf_counter()
             fresh = service.call('context_search', {'query':'FRESH842'})
             append_ms = (time.perf_counter()-start)*1000
+            if profile_query:
+                import cProfile, pstats, io
+                profiler = cProfile.Profile()
+                profiler.runcall(service.bridge.search,'Kafka retries')
+                report = io.StringIO()
+                pstats.Stats(profiler,stream=report).strip_dirs().sort_stats('cumulative').print_stats(40)
+                Path(profile_query).write_text(report.getvalue())
             p95 = percentile(elapsed, .95)
             return {'files':files,'messages':messages,'messages_per_file_min':min_messages if files>1 else messages,'messages_per_file_max':max_messages if files>1 else messages,'import_ms':round(import_ms,2) if import_ms is not None else None,'unchanged_reimport_ms':round(reimport_ms,2) if reimport_ms is not None else None,'runs':runs,'initial_ingestion_and_search_ms':round(initial,2),'search_refresh_p50_ms':round(statistics.median(elapsed),2),'search_refresh_p95_ms':round(p95,2),'search_refresh_max_ms':round(max(elapsed),2),'append_refresh_search_ms':round(append_ms,2),'append_visible':bool(fresh['results']),'target_ms':300,'target_passed':p95 < 300 and bool(fresh['results']),'scope':'Local lexical search including per-file freshness checks and cached profile metadata; initial server query and export import/reimport are reported separately.'}
         finally:
@@ -96,13 +103,30 @@ def main():
     parser.add_argument('--max-messages',type=int,default=40)
     parser.add_argument('--runs',type=int,default=30)
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--profile-query',type=Path,help='Write a separate grouped-query CPU profile, outside timed search runs')
+    parser.add_argument('--codex-scale',action='store_true',help='Benchmark 200 five-MiB rollouts, five approved, against a no-Codex baseline')
+    parser.add_argument('--paraphrases',action='store_true',help='Run the frozen 30-conversation paraphrase recall benchmark')
+    parser.add_argument('--model',type=Path,help='Local verified MiniLM directory for hybrid paraphrase benchmark')
     args=parser.parse_args()
-    result=benchmark(args.messages,args.runs,args.files,args.min_messages,args.max_messages)
+    if args.codex_scale:
+        if __package__:
+            from .codex_benchmark import codex_benchmark
+        else:
+            from codex_benchmark import codex_benchmark
+        result=codex_benchmark(runs=args.runs)
+    elif args.paraphrases:
+        if __package__:
+            from .paraphrase_benchmark import paraphrase_benchmark
+        else:
+            from paraphrase_benchmark import paraphrase_benchmark
+        result=paraphrase_benchmark(args.model)
+    else:
+        result=benchmark(args.messages,args.runs,args.files,args.min_messages,args.max_messages,args.profile_query)
     payload=json.dumps(result,indent=2)
     if args.output:
         args.output.write_text(payload+'\n')
     print(payload)
-    if not result['target_passed']:
+    if not args.paraphrases and not result['target_passed']:
         raise SystemExit(1)
 
 

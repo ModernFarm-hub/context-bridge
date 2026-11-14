@@ -415,9 +415,10 @@ def import_code(projects, directory=DEFAULT_ROOT):
 def main():
     os.umask(0o077)
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('provider', choices=('chatgpt', 'claude', 'claude-code'))
+    parser.add_argument('provider', choices=('chatgpt', 'claude', 'claude-code', 'codex'))
     parser.add_argument('archive', type=Path, nargs='?')
     parser.add_argument('--directory', type=Path, default=DEFAULT_ROOT)
+    parser.add_argument('--codex-home',type=Path,help='Codex state directory; defaults to CODEX_HOME or ~/.codex')
     parser.add_argument('--projects-root', type=Path, default=Path.home() / '.claude/projects')
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument('--project', action='append', help='Select an encoded project directory name (repeatable)')
@@ -438,7 +439,43 @@ def main():
             normalized.append(argv[i]); i += 1
     args = parser.parse_args(normalized)
     try:
-        if args.provider == 'claude-code':
+        if args.provider == 'codex':
+            if __package__:
+                from .codex_capture import preview, import_codex
+            else:
+                from codex_capture import preview, import_codex
+            projects = preview(args.codex_home)
+            print('ChatGPT desktop / Codex project preview (nothing imported yet):')
+            for number,(name,paths) in enumerate(projects.items(),1):
+                print(f'  {number}. {name}: {len(paths)} threads')
+            if not projects:
+                print('No projects found.'); return
+            chosen = None
+            if args.select:
+                chosen = select_numbers(args.select,projects)
+            elif args.path:
+                chosen = {str(Path(p).expanduser().resolve()) for p in args.path}
+                if not chosen <= set(projects):
+                    parser.error('Unknown project path; choose a path from the preview')
+            elif args.project:
+                chosen = set(args.project)
+                if not chosen <= set(projects):
+                    parser.error('Unknown project selection')
+            elif sys.stdin.isatty() and not args.yes:
+                answer = input('Choose project numbers (e.g. 1,3), all, or Enter to cancel: ').strip()
+                if not answer:
+                    print('Preview only. Nothing imported.'); return
+                chosen = select_numbers(answer,projects)
+            if chosen is not None:
+                projects = {key:paths for key,paths in projects.items() if key in chosen}
+            if not args.yes:
+                if not sys.stdin.isatty() or input('Approve these project folders including future threads? [y/N] ').strip().casefold() not in ('y','yes'):
+                    print('Preview only. Repeat with --select and --yes to approve a list.'); return
+            args.directory = profile_directory(args.directory,args.profile)
+            if args.profile:
+                Sessions(args.directory,profile_id=args.profile)
+            result = import_codex(projects,args.directory,args.codex_home)
+        elif args.provider == 'claude-code':
             projects = project_preview(args.projects_root)
             print('Claude Code project preview (nothing imported yet):')
             for number, (name, paths) in enumerate(projects.items(), 1):

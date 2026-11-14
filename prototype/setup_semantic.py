@@ -60,8 +60,12 @@ def main():
     parser.add_argument('--model', choices=sorted(SPECS), default='minilm')
     parser.add_argument('--directory', type=Path)
     args = parser.parse_args()
-    spec = SPECS[args.model]
-    root = (args.directory or (data_home() / 'models' / spec['model'].split('/')[-1])).resolve()
+    download_model(args.directory, args.model)
+
+
+def download_model(directory=None, name='minilm'):
+    spec = SPECS[name]
+    root = Path(directory or (data_home() / 'models' / spec['model'].split('/')[-1])).resolve()
     root.mkdir(parents=True, exist_ok=True)
     hashes = {}
     for name, (kind, expected) in spec['files'].items():
@@ -79,6 +83,8 @@ def main():
         hashes[name] = hashlib.sha256(data).hexdigest()
     (root / 'manifest.json').write_text(json.dumps({'model': spec['model'], 'revision': spec['revision'], 'license': spec['license'], 'sha256': hashes}, indent=2) + '\n')
     print('Verified local model at ' + str(root))
+
+    return root
 
 
 if __name__ == '__main__':

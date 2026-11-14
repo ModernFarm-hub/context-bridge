@@ -1,0 +1,163 @@
+{
+  "fixture_sha256": "82e5e1db3474f28f837d5009b4d7d06b354005a916675c6cd0527ceeba333f9f",
+  "conversations": 30,
+  "queries": 30,
+  "mode": "bm25",
+  "top_1": 0.03333333333333333,
+  "top_5": 0.03333333333333333,
+  "mrr_at_20": 0.03333333333333333,
+  "seconds": 0.011,
+  "cases": [
+    {
+      "id": "0",
+      "query": "How could I earn a living by capturing moments through a lens?",
+      "rank": null
+    },
+    {
+      "id": "1",
+      "query": "locked out because I cannot remember my login secret",
+      "rank": null
+    },
+    {
+      "id": "2",
+      "query": "checklist for changing where I live",
+      "rank": null
+    },
+    {
+      "id": "3",
+      "query": "preparing my body for a long distance race",
+      "rank": 1
+    },
+    {
+      "id": "4",
+      "query": "asking my boss for better pay",
+      "rank": null
+    },
+    {
+      "id": "5",
+      "query": "why fetching stored rows takes forever",
+      "rank": null
+    },
+    {
+      "id": "6",
+      "query": "keeping costs down for our marriage celebration",
+      "rank": null
+    },
+    {
+      "id": "7",
+      "query": "how to play a six string instrument",
+      "rank": null
+    },
+    {
+      "id": "8",
+      "query": "growing food in the backyard",
+      "rank": null
+    },
+    {
+      "id": "9",
+      "query": "practice before meeting a hiring manager",
+      "rank": null
+    },
+    {
+      "id": "10",
+      "query": "trouble falling asleep at night",
+      "rank": null
+    },
+    {
+      "id": "11",
+      "query": "protecting irreplaceable pictures if my laptop breaks",
+      "rank": null
+    },
+    {
+      "id": "12",
+      "query": "buying a car that does not burn petrol",
+      "rank": null
+    },
+    {
+      "id": "13",
+      "query": "responding to unhappy buyers",
+      "rank": null
+    },
+    {
+      "id": "14",
+      "query": "lowering the monthly bill for hosted machines",
+      "rank": null
+    },
+    {
+      "id": "15",
+      "query": "bringing home a homeless puppy",
+      "rank": null
+    },
+    {
+      "id": "16",
+      "query": "speaking the language used in Madrid",
+      "rank": null
+    },
+    {
+      "id": "17",
+      "query": "turning a story idea into a fiction book",
+      "rank": null
+    },
+    {
+      "id": "18",
+      "query": "what to bring when walking in the wilderness",
+      "rank": null
+    },
+    {
+      "id": "19",
+      "query": "setting money aside for unexpected bills",
+      "rank": null
+    },
+    {
+      "id": "20",
+      "query": "when can I buy my employer shares",
+      "rank": null
+    },
+    {
+      "id": "21",
+      "query": "stopping a dripping kitchen tap",
+      "rank": null
+    },
+    {
+      "id": "22",
+      "query": "coordinating colleagues who work from home",
+      "rank": null
+    },
+    {
+      "id": "23",
+      "query": "making pages usable by people with disabilities",
+      "rank": null
+    },
+    {
+      "id": "24",
+      "query": "paperwork for reporting earnings to the government",
+      "rank": null
+    },
+    {
+      "id": "25",
+      "query": "making bread with wild yeast",
+      "rank": null
+    },
+    {
+      "id": "26",
+      "query": "spotting scam emails that steal logins",
+      "rank": null
+    },
+    {
+      "id": "27",
+      "query": "cutting electricity consumption at home",
+      "rank": null
+    },
+    {
+      "id": "28",
+      "query": "investing for life after I stop working",
+      "rank": null
+    },
+    {
+      "id": "29",
+      "query": "releasing containers without interrupting traffic",
+      "rank": null
+    }
+  ],
+  "implementation_revision": "4f898b8"
+}

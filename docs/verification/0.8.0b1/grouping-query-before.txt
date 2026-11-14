@@ -1,0 +1,48 @@
+         331 function calls in 0.221 seconds
+
+   Ordered by: cumulative time
+   List reduced from 44 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.221    0.221 bridge.py:304(search)
+       18    0.220    0.012    0.220    0.012 {method 'execute' of 'sqlite3.Connection' objects}
+        1    0.000    0.000    0.000    0.000 bridge.py:359(<dictcomp>)
+        2    0.000    0.000    0.000    0.000 bridge.py:359(<setcomp>)
+       10    0.000    0.000    0.000    0.000 privacy.py:20(redact)
+        5    0.000    0.000    0.000    0.000 bridge.py:159(decorate)
+       80    0.000    0.000    0.000    0.000 {method 'sub' of 're.Pattern' objects}
+        5    0.000    0.000    0.000    0.000 __init__.py:299(loads)
+       15    0.000    0.000    0.000    0.000 {method 'fetchone' of 'sqlite3.Cursor' objects}
+        5    0.000    0.000    0.000    0.000 decoder.py:332(decode)
+        1    0.000    0.000    0.000    0.000 retrieval.py:32(tokens)
+        5    0.000    0.000    0.000    0.000 decoder.py:343(raw_decode)
+        1    0.000    0.000    0.000    0.000 retrieval.py:33(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+        1    0.000    0.000    0.000    0.000 re.py:243(finditer)
+       10    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        1    0.000    0.000    0.000    0.000 bridge.py:356(<listcomp>)
+        2    0.000    0.000    0.000    0.000 retrieval.py:22(normalize)
+        5    0.000    0.000    0.000    0.000 bridge.py:368(<setcomp>)
+        5    0.000    0.000    0.000    0.000 retrieval.py:46(passage)
+        1    0.000    0.000    0.000    0.000 re.py:233(findall)
+       20    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        2    0.000    0.000    0.000    0.000 re.py:289(_compile)
+       26    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       17    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        4    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 bridge.py:321(<genexpr>)
+        5    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
+        5    0.000    0.000    0.000    0.000 bridge.py:370(<dictcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'findall' of 're.Pattern' objects}
+        6    0.000    0.000    0.000    0.000 bridge.py:357(<genexpr>)
+        6    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
+        5    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'finditer' of 're.Pattern' objects}
+        7    0.000    0.000    0.000    0.000 {method 'casefold' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+
+

@@ -116,9 +116,9 @@ def identifiers(text):
     return {re.sub(r'[-_]', '', m.group().casefold()) for m in re.finditer(r'\b[a-zA-Z]+[-_]?\d+\b', text)}
 
 
-def hybrid_rank(rows, query, limit, settings, cache):
+def hybrid_rank(rows, query, limit, settings, cache, lexical_hits=None, group=None):
     rows = [dict(row) for row in rows]
-    lexical = rank(rows, query, 20)  # validates query and applies normal ranking
+    lexical = rank(rows, query, 20) if lexical_hits is None else lexical_hits
     if not tokens(query):
         cache.clear()
         return []
@@ -127,7 +127,7 @@ def hybrid_rank(rows, query, limit, settings, cache):
         # Never substitute a nearby ticket/customer identifier by similarity.
         rows = [r for r in rows if required_ids <= identifiers(r['body'])]
         lexical = [r for r in lexical if required_ids <= identifiers(r['body'])]
-    active = {(r['source'], r['line'], hashlib.sha256(r['body'].encode()).hexdigest()) for r in rows}
+    active = {(r['source'], r['line'], hashlib.sha256((r.get('title','')+'\n'+r['body']).encode()).hexdigest()) for r in rows}
     for key in list(cache):
         if key not in active:
             del cache[key]
@@ -136,12 +136,15 @@ def hybrid_rank(rows, query, limit, settings, cache):
     embedder = model(str(Path(settings['model_directory']).resolve()))
     all_chunks = []
     for row in rows:
-        key = (row['source'], row['line'], hashlib.sha256(row['body'].encode()).hexdigest())
+        key = (row['source'], row['line'], hashlib.sha256((row.get('title','')+'\n'+row['body']).encode()).hexdigest())
         if key not in cache:
             chunks = embedder.chunks(row['body'], settings.get('token_window', 200), settings.get('sentence_chunks', False))
             # Repeated background sentences share inference within this owner record.
             unique = list(dict.fromkeys(c[2] for c in chunks))
-            encoded = embedder.encode(unique)
+            title = row.get('title', '')
+            # Include the title in the embedding while retaining body offsets.
+            inputs = [(title+'\n'+text) if title else text for text in unique]
+            encoded = embedder.encode(inputs)
             by_text = dict(zip(unique, encoded))
             cache[key] = (chunks, [by_text[c[2]] for c in chunks])
         chunks, vectors = cache[key]
@@ -164,7 +167,7 @@ def hybrid_rank(rows, query, limit, settings, cache):
         # exact-term matches; otherwise require semantic relevance as well.
         terms = set(tokens(query))
         lexical = [hit for hit in lexical if (hit['source'], hit['line']) in candidates or terms <= set(tokens(hit['body']))]
-    semantic_hits = sorted(candidates.values(), key=lambda x: (-x['semantic_similarity'], x['source'], x['line']))[:20]
+    semantic_hits = sorted(candidates.values(), key=lambda x: (-x['semantic_similarity'], x['source'], x['line']))
     combined = {}
     # Reciprocal-rank fusion preserves exact lexical matches while admitting
     # qualified semantic-only evidence. No gold IDs or synonym lists are used.
@@ -183,4 +186,29 @@ def hybrid_rank(rows, query, limit, settings, cache):
         result.sort(key=lambda v: (-len(terms & set(tokens(v['body']))), -timestamp(v['timestamp']), -v['score'], v['source'], v['line']))
     else:
         result.sort(key=lambda v: (-v['score'], v['source'], v['line']))
-    return result[:max(1, min(limit, 20))]
+    for hit in result:
+        hit.setdefault('matched_terms', sorted(set(tokens(query)) & set(tokens(hit['body']+' '+hit.get('title','')))))
+        hit.pop('title', None)
+    return group(result,limit) if group else result[:max(1, min(limit, 20))]
+
+
+def persistent_hybrid_rank(bridge, rows, query, limit, lexical_hits=None):
+    """Cache embeddings in the local owner-scoped DB; never transmit bodies."""
+    settings = bridge.retrieval_settings
+    embedder = model(str(Path(settings['model_directory']).resolve()))
+    namespace = hashlib.sha256(json.dumps({'model':embedder.model_id, 'window':settings.get('token_window',200), 'sentences':settings.get('sentence_chunks',False), 'version':2},sort_keys=True).encode()).hexdigest()
+    cache = bridge._embedding_cache
+    if not cache:
+        for row in bridge.db.execute('SELECT source,line,signature,payload FROM embeddings WHERE tenant=? AND employee=? AND model=?', (*bridge.owner, namespace)):
+            chunks, vectors = json.loads(row['payload'])
+            cache[(row['source'],row['line'],row['signature'])] = (chunks, [embedder.np.asarray(v,dtype=embedder.np.float32) for v in vectors])
+    saved = set(cache)
+    results = hybrid_rank(rows,query,limit,settings,cache,lexical_hits,bridge.group_conversations)
+    with bridge.transaction():
+        for key in saved-set(cache):
+            bridge.db.execute('DELETE FROM embeddings WHERE tenant=? AND employee=? AND source=? AND line=? AND signature=? AND model=?', (*bridge.owner,*key,namespace))
+        for key in set(cache)-saved:
+            chunks, vectors = cache[key]
+            payload = json.dumps([chunks,[v.tolist() for v in vectors]])
+            bridge.db.execute('INSERT OR REPLACE INTO embeddings VALUES (?,?,?,?,?,?,?)', (*bridge.owner,*key,namespace,payload))
+    return results

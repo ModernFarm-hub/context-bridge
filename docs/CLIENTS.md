@@ -78,12 +78,46 @@ Replace `/absolute/path/to/uvx` with the output of `which uvx` (for example `/op
 
 Use Cursor's MCP configuration (for example, project `.cursor/mcp.json`) with the same `mcpServers` entry above. Reconnect the server in Cursor's MCP settings.
 
-## Pin a version
+## ChatGPT desktop / Codex as a source
 
-To use this beta explicitly, replace `context-bridge-local` in the uvx arguments with `context-bridge-local==0.7.0b2`:
+Client setup above connects a model to the search tools. Capturing desktop conversations is a separate, explicit approval:
 
 ```sh
-uvx --from 'context-bridge-local==0.7.0b2' context-bridge mcp
+context-bridge import codex                       # preview only in a noninteractive shell
+context-bridge import codex --select 1,3 --yes --profile personal
+context-bridge import codex --path /path/to/project --yes --profile personal
+```
+
+In an interactive terminal, the preview offers a numbered selection and confirmation. `--yes` without a selection approves all displayed projects. Preview groups threads by their `turn_context.payload.cwd`; it does not index them. Threads with no project cwd or session identifier are skipped. The default state directory is `$CODEX_HOME` or `~/.codex`; override it with `--codex-home`. Only selected projects are approved. The server checks new rollout files in that approved state directory on refresh, classifies their projects, and indexes only approved projects. Classification reads only session/turn headers and stops at the first thread ID and project cwd. A persistent, per-profile rejection cache records paths plus size/mtime/inode and an approval/exclusion hash, never titles or chat text. Unchanged unapproved or unclassifiable files are not opened again; changed files and changed approvals/exclusions invalidate the cache. Title excerpts are computed only after project approval. Previews use the same header-only classifier; unapproved message bodies are not decoded, stored or returned.
+
+Rollouts are read in place from `sessions/YYYY/MM/DD/rollout-*.jsonl`. Complete appended lines are ingested incrementally; malformed lines are skipped and reported in capture status. Unknown record types are ignored. Only `response_item` messages in user/assistant roles contribute `input_text`/`output_text` text. Developer/system messages, reasoning/encrypted content, custom/function tool calls and outputs, events, token usage, turn/world state, and known host-injected user context blocks are excluded. This is a format-specific parser; new envelope formats may need an update. Titles come from `session_index.jsonl`'s `thread_name`, falling back to the first redacted user excerpt.
+
+Results are labeled `ChatGPT desktop · 'Title' · YYYY-MM-DD`, link to `codex://threads/<thread-id>`, and contain opaque record handles without local filesystem locators. Original rollout and index files are never modified.
+
+```sh
+context-bridge remove --conversation codex://threads/THREAD_ID --profile personal
+context-bridge exclusions list --profile personal
+context-bridge exclusions clear --conversation codex://threads/THREAD_ID --profile personal
+context-bridge remove --provider codex --profile personal
+```
+
+Conversation removal blocks rediscovery using a provider-scoped hash. Clear its exclusion to deliberately allow discovery again while the project remains approved. Provider removal also withdraws all Codex project approvals and excludes currently imported threads. To restore after provider removal, clear the desired exclusions and approve the projects again. No sources are approved by installation or by configuring the MCP client.
+
+## Optional offline hybrid search
+
+```sh
+context-bridge semantic enable --profile personal
+context-bridge semantic disable --profile personal
+```
+
+Enable installs optional `[semantic]` packages in an isolated runtime when missing, fetches pinned checksum-verified MiniLM files, and backfills embeddings for that profile. It reports size, elapsed time and record count. To reuse a verified local model, pass `--model /absolute/path/to/all-MiniLM-L6-v2`. The runtime upgrades pip before installing the extra. If an unreleased version or non-editable source install cannot resolve its own version on PyPI, the command explains the cause. Use `context-bridge semantic enable --from-source /path/to/context-bridge --profile personal` to install the checkout's extra instead. Setup needs network only for missing packages/model files; no chats are uploaded. Search is offline, combines title-weighted BM25 with vectors, and stores embeddings in the local profile database. Restart the MCP client after changing modes; `context-bridge mcp` automatically uses the configured semantic runtime. Default lexical mode remains dependency-free. `matched_terms` helps identify lexical overlap; a semantically relevant result may have an empty list. Clients should try two or three phrasings when an initial search is weak and cite the returned link.
+
+## Pin a version
+
+To use this beta explicitly, replace `context-bridge-local` in the uvx arguments with `context-bridge-local==0.8.0b1`:
+
+```sh
+uvx --from 'context-bridge-local==0.8.0b1' context-bridge mcp
 ```
 
 The package source is explicit because the PyPI name `context-bridge` belongs to a different project. [uv's package/command naming documentation](https://docs.astral.sh/uv/guides/tools/#commands-with-different-package-names).
@@ -134,3 +168,9 @@ Preview `context-bridge import claude-code`. Choose numbered entries interactive
 Use `import chatgpt export.zip --profile personal`, then append `["--profile", "personal"]` to the MCP arguments (uvx: `["--from", "context-bridge-local", "context-bridge", "mcp", "--profile", "personal"]`; virtual environment: `["mcp", "--profile", "personal"]`). `list`, `stats`, `remove`, `exclusions`, and `start` also accept the same profile name. The default profile retains the existing location; named profiles are stored separately beneath `profiles/NAME` within that base library. The same `CONTEXT_BRIDGE_HOME` and optional `--directory` must be used consistently.
 
 Conflicting export account identifiers stop imports before database/copy/profile changes. Interactive users can confirm; automation must explicitly pass `--confirm-account-switch`. `--yes` alone does not authorize an account switch. When metadata is absent in both old and new exports, identity cannot be verified. Use separate profiles when uncertain.
+
+## Conversation-level results
+
+`context_search` applies `limit` to distinct conversations, returning the best-ranked passage for each. Conversations are identified by provider and conversation ID, not title, so separate “New chat” threads remain distinct. `more_matches_in_conversation` counts the other matching indexed messages in that conversation (the union of qualifying lexical and semantic matches in hybrid mode, without counting a record twice). It does not count text chunks or all unrelated messages. Use `context_read` with the returned record ID for surrounding turns. Readable `Source:` lines appear once per returned conversation.
+
+Every search's `capture_status.retrieval_mode` identifies `bm25` or `hybrid`. `context-bridge stats` reports the same value at the top level and inside capture status.

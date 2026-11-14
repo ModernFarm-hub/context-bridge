@@ -46,7 +46,10 @@ class RetrievalTests(unittest.TestCase):
         restarted = Bridge(self.root / 'context.db', 'company', 'alice')
         self.addCleanup(restarted.db.close)
         self.assertEqual(restarted.ingest(path), 1)
-        self.assertEqual(len(restarted.search('finding')), 2)
+        hits = restarted.search('finding')
+        self.assertEqual(len(hits),1)
+        self.assertEqual(hits[0]['more_matches_in_conversation'],1)
+        self.assertEqual(restarted.db.execute('SELECT COUNT(*) FROM records WHERE tenant=? AND employee=?',restarted.owner).fetchone()[0],2)
 
     def test_tool_output_excluded_and_scoped_delete(self):
         path = self.write('tool', 'same-session', [{'type': 'tool_result', 'content': [{'type': 'text', 'text': 'TOOLONLY842 hidden result'}]}, {'type':'text', 'text':'Confluence retention evidence'}], 'user')

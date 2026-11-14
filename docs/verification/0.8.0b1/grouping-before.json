@@ -1,0 +1,18 @@
+{
+  "files": 5000,
+  "messages": 104876,
+  "messages_per_file_min": 2,
+  "messages_per_file_max": 40,
+  "import_ms": 15132.57,
+  "unchanged_reimport_ms": 3354.46,
+  "runs": 30,
+  "initial_ingestion_and_search_ms": 258.62,
+  "search_refresh_p50_ms": 279.94,
+  "search_refresh_p95_ms": 293.32,
+  "search_refresh_max_ms": 345.62,
+  "append_refresh_search_ms": 39.56,
+  "append_visible": true,
+  "target_ms": 300,
+  "target_passed": true,
+  "scope": "Local lexical search including per-file freshness checks and cached profile metadata; initial server query and export import/reimport are reported separately."
+}

@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.8.0b1 — paraphrase recall and desktop capture (unpublished)
+
+- Make Codex classification header-only and stop at the thread ID/project cwd. Cache unapproved/failed classifications across restarts using size, nanosecond mtime, inode and an approval/exclusion hash; never cache chat text. Read title excerpts only after project approval.
+- Add a 200 × 5 MiB Codex discovery benchmark (five approved files), including no-Codex baseline, first refresh and steady-state p95.
+- Use the FTS5 rank cursor to select distinct conversations, then compute exact match counts only for returned conversations. Preserve integer counts and remove global per-hit metadata grouping from ordinary BM25 search.
+
+- Group results before applying `limit`: one best passage and `more_matches_in_conversation` per provider/conversation, including after hybrid fusion. Keep one readable Source line per conversation.
+- Add `semantic enable --from-source PATH`, upgrade the private runtime's pip first, and explain recovery when an unreleased package version is absent from PyPI.
+- Report `retrieval_mode` (`bm25`/`hybrid`) in search capture status and library stats.
+- Replace the roadmap-derived fixture query with a new paraphrase and recompute the old-code baseline and current modes on the revised fixture, preserving the scoring method.
+
+- Freeze a 30-conversation paraphrase benchmark before retrieval changes: baseline top-5 3.3%; Porter/title-weighted BM25 6.7%; local MiniLM hybrid 90.0%, MRR@20 0.8833. Expose it through `benchmark --paraphrases` and regression tests.
+- Migrate existing FTS indexes to Porter stemming and weighted title columns without changing citation handles. Report stem/title matches in `matched_terms`; guide clients to try alternate phrasings.
+- Add `semantic enable`: optional dependency setup, pinned model checksum verification, embedding backfill and persistent profile-local caching. Keep semantic mode opt-in and the default free of third-party dependencies.
+- Add opt-in `import codex` with project previews, numbered/path selections, CODEX_HOME support and approved-project thread discovery. Parse only allowed response text; exclude injected host context, tools, reasoning and metadata. Add desktop titles, redacted fallbacks, durable exclusions and `codex://threads/` citations.
+- Document source/client distinction, consent, restore/revoke commands, offline setup, benchmark limits and version 0.8.0b1 registry metadata. No remote transport is introduced.
+
 ## 0.7.0b2 — first public beta
 
 - `context_read` returns surrounding conversation turns (`context`, default 2, maximum 10 each side) in order, with per-message record IDs, roles, timestamps and a target marker; conversation text appears once in the combined body.

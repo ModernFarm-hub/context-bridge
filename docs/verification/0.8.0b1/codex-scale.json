@@ -1,0 +1,15 @@
+{
+  "files": 200,
+  "bytes_per_file": 5242880,
+  "total_rollout_bytes": 1048576000,
+  "approved_files": 5,
+  "cached_unapproved_files": 195,
+  "runs": 30,
+  "no_codex_p95_ms": 0.129,
+  "first_refresh_ms": 108.577,
+  "steady_codex_p95_ms": 2.065,
+  "p95_over_baseline_ms": 1.936,
+  "target_extra_ms": 10,
+  "target_passed": true,
+  "scope": "Same synthetic web library, before and after project approval; first refresh includes discovery and initial ingestion. Tails are excluded tool output. Steady-state includes directory scanning, stat checks and incremental ingestion checks."
+}
