@@ -32,6 +32,8 @@ jobs:
           PYTHONPATH: prototype
           PYTHONDONTWRITEBYTECODE: '1'
         run: python -m unittest discover -s prototype/tests -v
+      - name: Offline synthetic savings benchmark (no API key or paid mode)
+        run: python prototype/benchmark.py --savings --output /tmp/savings.json
       - name: Build and check distributions
         run: |
           python -m build

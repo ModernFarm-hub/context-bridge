@@ -15,14 +15,15 @@ Last updated: 2026-11-22. Context Bridge is a free, open-source, local-first pro
 - An offer to enable semantic search after the first import; embeddings built during import.
 - Legacy research commands removed from the product CLI.
 
-## 0.9: proof and automatic reuse
+## 0.9.0b1: implemented locally, pending release
 
-The goal is to show, with reproducible numbers, when reusing past research is cheaper than redoing it, and to make reuse happen without the user having to ask.
+Local accounting, compact results, printed agent guidance and an opt-in bounded hook are implemented. The goal is to make the cost of reuse visible, including failures; no universal or measured real-user savings claim is made.
 
-- **Savings benchmark.** The same research tasks run by an agent with and without Context Bridge, measuring tokens, wall time and answer accuracy. Published method and results that anyone can re-run.
-- **`context-bridge savings`.** A local report estimating the tokens and time saved by reused answers. Computed on the user's machine; no telemetry.
-- **Automatic consultation.** Ready-made `CLAUDE.md` / `AGENTS.md` guidance and a Claude Code hook or plugin that checks past sessions before new research, with strict token limits.
-- **Compact results.** Token cost per tool call is measured, with a compact output mode so a lookup costs far less than the research it replaces.
+- **Offline proof fixture:** twenty invented research sessions, explicit synthetic usage counters, measured response character estimates, and stale/wrong/cheap-redo negative cases. [Methods and results](benchmarks/savings.md).
+- **Local savings report:** recorded Claude Code/Codex counters or lower-quality visible-text estimates, one counterfactual redo credit per conversation actually read, with all lookup overhead deducted. No query text by default, no telemetry, optional user-priced dollars only. No wall-time savings estimate for historical conversations.
+- **Automatic consultation:** a tested CLAUDE.md/AGENTS.md instruction block and an opt-in Claude Code hook. It uses bounded lexical search, not cold semantic inference, within a 200 ms worker budget; host timeout is 250 ms. Misses and timeouts add no context.
+- **Compact results:** five concise fields per result; benchmark full and compact response token estimates separately.
+- **Live validation remains opt-in and unrun:** a capped synthetic Anthropic agent harness measures provider usage, wall time and reference-substring accuracy with and without reuse tools. It requires a price, --yes and a key, and refuses CI. Public live claims require a separately consented run, including negative cases.
 
 ## 0.10: trust at scale
 
@@ -43,3 +44,5 @@ The goal is to show, with reproducible numbers, when reusing past research is ch
 
 - Paid tiers, hosted services or data collection.
 - Scraping chatgpt.com or claude.ai. Web history arrives only through official exports until providers offer a history API.
+
+Risk-weighted reuse guidance and heuristic search signals now distinguish REUSE/CHECK/REDO. Historical small-n synthetic live runs used the old guide; the new policy is tested with fake responses only. Next validation should measure decision accuracy and high-risk answer failures by class, not just token totals. Conflict detection remains disabled pending validation.

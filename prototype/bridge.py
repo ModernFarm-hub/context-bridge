@@ -52,6 +52,9 @@ class Bridge:
           CREATE TABLE IF NOT EXISTS codex_classifications (
             tenant TEXT, employee TEXT, source TEXT, signature TEXT, approvals TEXT,
             PRIMARY KEY(tenant,employee,source));
+          CREATE TABLE IF NOT EXISTS research_costs (tenant TEXT, employee TEXT, source TEXT, line INTEGER, method TEXT, counts TEXT, PRIMARY KEY(tenant,employee,source,line));
+          CREATE TABLE IF NOT EXISTS usage_calls (id INTEGER PRIMARY KEY AUTOINCREMENT,tenant TEXT,employee TEXT,timestamp TEXT,tool TEXT,client TEXT,record_ids TEXT,response_chars INTEGER,estimated_tokens INTEGER,format TEXT,query_text TEXT,research TEXT,error INTEGER);
+          CREATE INDEX IF NOT EXISTS usage_owner ON usage_calls(tenant,employee,id);
           CREATE TABLE IF NOT EXISTS embeddings (tenant TEXT, employee TEXT, source TEXT, line INTEGER, signature TEXT, model TEXT, payload TEXT, PRIMARY KEY(tenant,employee,source,line,signature,model));
           CREATE TRIGGER IF NOT EXISTS embeddings_ad AFTER DELETE ON records BEGIN
             DELETE FROM embeddings WHERE tenant=old.tenant AND employee=old.employee AND source=old.source AND line=old.line;
@@ -89,6 +92,7 @@ class Bridge:
         with self.transaction():
             self.db.execute('DELETE FROM records WHERE tenant=? AND employee=? AND source=?', (*self.owner, source))
             self.db.execute('DELETE FROM embeddings WHERE tenant=? AND employee=? AND source=?', (*self.owner, source))
+            self.db.execute('DELETE FROM research_costs WHERE tenant=? AND employee=? AND source=?',(*self.owner,source))
             self.db.execute('DELETE FROM ingestion_state WHERE tenant=? AND employee=? AND source=?', (*self.owner, source))
             if purge:
                 self.db.execute('DELETE FROM record_handles WHERE tenant=? AND employee=? AND source=?', (*self.owner, source))
@@ -208,7 +212,7 @@ class Bridge:
         stat = stat_result if stat_result is not None else path.stat()
         state = self._states.get(source, {})
         signature = [stat.st_dev, stat.st_ino, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns]
-        if state.get('signature') == signature:
+        if state.get('signature') == signature and state.get('research_version')==2:
             self.ingest_status = dict(state['status'], bytes_read=0, incremental=True)
             return 0
         meta_row = self.db.execute('SELECT metadata FROM source_metadata WHERE tenant=? AND employee=? AND source=?', (*self.owner, source)).fetchone()
@@ -216,13 +220,17 @@ class Bridge:
         inserted, withdrawn = 0, False
         with path.open('rb') as stream, self.transaction():
             offset = state.get('offset', 0)
-            append = bool(state and signature[:2] == state['signature'][:2] and stat.st_size > state['signature'][2] and list(self._anchors(stream, offset)) == state.get('anchors'))
+            append = bool(state.get('research_version')==2 and signature[:2] == state['signature'][:2] and stat.st_size > state['signature'][2] and list(self._anchors(stream, offset)) == state.get('anchors'))
             if append:
                 line = state['line']
                 malformed = list(state['status']['malformed_lines'])
             else:
                 offset, line, malformed = 0, 0, []
                 self.db.execute('UPDATE record_handles SET line=-ABS(line) WHERE tenant=? AND employee=? AND source=?', (*self.owner, source))
+            research = dict(state.get('research',{})) if append else {}
+            if not append:self.db.execute('DELETE FROM research_costs WHERE tenant=? AND employee=? AND source=?',(*self.owner,source))
+            if __package__:from .usage import update_research
+            else:from usage import update_research
             stream.seek(offset)
             visible_lines = set()
             initial_offset = offset
@@ -237,6 +245,8 @@ class Bridge:
                 except (ValueError, UnicodeDecodeError):
                     malformed.append(line)
                     continue
+                if update_research(item,research,meta.get('provider','claude-code'),line) and meta.get('provider')=='codex' and research.get('pending'):
+                    self.db.execute('INSERT OR REPLACE INTO research_costs VALUES (?,?,?,?,?,?)',(*self.owner,source,research.pop('pending'),research['method'],json.dumps({k:research[k] for k in ('counts','baseline_context','current_context') if k in research})))
                 if isinstance(item,dict) and meta.get('provider')=='codex':
                     if __package__:
                         from .codex_capture import message
@@ -252,6 +262,11 @@ class Bridge:
                 body = redact(self.text(message.get('content')))
                 if role != item['type'] or not body.strip():
                     continue
+                if research.get('method'):
+                    self.db.execute('INSERT OR REPLACE INTO research_costs VALUES (?,?,?,?,?,?)',(*self.owner,source,line,research['method'],json.dumps({k:research[k] for k in ('counts','baseline_context','current_context') if k in research})))
+                if meta.get('provider')=='codex':
+                    research.pop('pending',None)
+                    if role=='assistant':research['pending']=line
                 visible_lines.add(line)
                 mid = str(item.get('uuid') or 'line:'+str(line))
                 self.db.execute('INSERT INTO record_handles VALUES (?,?,?,?,?,?) ON CONFLICT(tenant,employee,source,message_id) DO UPDATE SET line=excluded.line', (uuid.uuid4().hex, *self.owner, source, line, mid))
@@ -268,7 +283,7 @@ class Bridge:
                         withdrawn = True
                         self.db.execute('DELETE FROM records WHERE tenant=? AND employee=? AND source=? AND line=?', (*self.owner, source, row[0]))
             status = {'file': source, 'malformed_line_count': len(malformed), 'malformed_lines': malformed}
-            state = {'signature': signature, 'offset': offset, 'line': line, 'anchors': list(self._anchors(stream, offset)), 'status': status}
+            state = {'signature': signature, 'offset': offset, 'line': line, 'anchors': list(self._anchors(stream, offset)), 'status': status,'research_version':2,'research':research}
             self.db.execute('INSERT OR REPLACE INTO ingestion_state VALUES (?,?,?,?)', (*self.owner, source, json.dumps(state)))
             self._states[source] = state
             if visible_lines:

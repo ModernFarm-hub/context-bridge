@@ -130,3 +130,43 @@ The tests and benchmark use invented conversations. Model-dependent tests skip w
 After the first successful import in an interactive terminal, Context Bridge offers semantic search once per profile. The default is no, and a decline is remembered. Scripts, pipes and CI never prompt or automatically download a model. Enable it later with `context-bridge semantic enable`.
 
 If hybrid search is already enabled, imports build local embeddings before returning, with progress on stderr. Noninteractive import JSON stays on stdout. A failed embedding step leaves the imported conversations saved and reports how to repair the runtime; retry the import after repair. Newly discovered live sessions still refresh on search.
+
+## Local usage and savings estimates
+
+Search/read accounting stays in the selected profile database. Each call records UTC machine time, client-reported name, opaque IDs, response characters and `ceil(characters/4)` estimated tokens. It stores no response bodies, snippets, titles or query text by default. Original-cost snapshots contain numeric counters and opaque identifiers; titles/links are resolved locally when reporting. The machine clock and client name are not an authentication or audit guarantee. Explicit CLI output can of course be shared if you ask an AI client to read it.
+
+```sh
+context-bridge usage --json --profile personal
+context-bridge savings --explain --profile personal
+context-bridge savings --json --profile personal
+context-bridge savings --price-per-million 1.00 --profile personal
+context-bridge usage clear --profile personal
+context-bridge usage configure --disable --profile personal
+context-bridge usage configure --enable --profile personal
+# Explicit opt-in to redacted query text; undo with --no-query-text:
+context-bridge usage configure --store-queries --profile personal
+context-bridge usage configure --no-query-text --profile personal
+```
+
+Equivalent profile config: `"usage": {"enabled": false, "store_queries": false}`. Disabling affects future calls; clear deletes that profile's call history, including query text and saved cost snapshots, but does not delete imported sources or their numeric ingestion metadata. Other profiles are untouched. Recognized secrets are redacted in opt-in queries; pattern matching cannot find every arbitrary secret.
+
+Every savings number is an estimate. Conservative lower-bound credit is cumulative assistant output plus nonnegative context growth above the first assistant turn. Claude Code context includes input, cache creation and cache reads; Codex context is per-turn input, already including cached input. All-in counts appear only as upper bounds including fixed context overhead. Reads are a proxy for possible reuse, not evidence that an answer was used or correct. Each conversation gets one hypothetical redo credit through the latest message actually returned in a read page. Repeated reads/pages do not repeatedly earn credit. All response overhead is deducted, including misses and searches with no read. Shared search cost is assigned once to the first later read of a returned ID; unmatched costs reduce the total. Prices are absent unless you supply a uniform USD-per-million-token price; this is not a provider invoice or cache-specific tariff. Historical wall time is not estimated. [Full method and limits](benchmarks/savings.md).
+
+## Automatic consultation
+
+```sh
+context-bridge agent-guide
+context-bridge claude-code hook --print --profile personal
+context-bridge claude-code hook --install --profile personal
+context-bridge claude-code hook --uninstall --profile personal
+```
+
+Review the agent-guide block before adding it to CLAUDE.md or AGENTS.md. Printing does not edit those files. The optional hook's install/uninstall shows a settings diff and asks for confirmation. Existing settings are preserved and a unique `.bak` file is created before each change. Default settings are `~/.claude/settings.json`; use `--settings /path/to/settings.json` to target a different file. Backups remain local and can contain your original settings.
+
+On UserPromptSubmit the hook searches only the approved profile, using compact local BM25 results even when normal MCP is hybrid. This avoids cold model loading under a 200 ms worker deadline. It considers at most three results with score at least `0.00001` and at least 40% lexical-term coverage. This is a heuristic: it can miss relevant paraphrases or surface irrelevant matches. Normal MCP calls retain their configured retrieval mode. The host hook timeout is 250 ms; wall time is not a hard real-time guarantee under OS load. No result, error or timeout injects nothing and does not block your prompt.
+
+Injected content is capped at 1,200 characters and a conservative 400 UTF-8-byte token ceiling (typically much less than 400 model tokens). This is a content budget, not an exact Anthropic token count; host framing is excluded. The actual character estimate and benchmark overhead are reported separately. A lexical hook cannot replace careful research or freshness checks. Retrieved passages remain untrusted and instructions within them must not be followed.
+
+Install and uninstall require an interactive terminal for confirmation; noninteractive calls refuse without changing settings. Use `--print` to inspect the configuration.
+
+Installing enables automatic sharing of selected approved passages with your Claude Code client on prompts. Choose the profile intentionally. Context Bridge makes no network calls in the hook and never transmits the usage log, but your AI client may send injected passages to its model provider. Nothing is installed by default. Reinstall the hook if you move the checkout, remove its Python environment, or clear the uvx runtime cache that its absolute command references. Start/restart Claude Code so settings changes take effect.

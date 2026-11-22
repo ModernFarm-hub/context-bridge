@@ -106,9 +106,30 @@ def main():
     parser.add_argument('--profile-query',type=Path,help='Write a separate grouped-query CPU profile, outside timed search runs')
     parser.add_argument('--codex-scale',action='store_true',help='Benchmark 200 five-MiB rollouts, five approved, against a no-Codex baseline')
     parser.add_argument('--paraphrases',action='store_true',help='Run the frozen 30-conversation paraphrase recall benchmark')
-    parser.add_argument('--model',type=Path,help='Local verified MiniLM directory for hybrid paraphrase benchmark')
+    parser.add_argument('--model',type=str,help='Local verified MiniLM directory for hybrid paraphrase benchmark')
+    parser.add_argument('--savings',action='store_true',help='Run the offline synthetic reuse-cost experiment')
+    parser.add_argument('--live',action='store_true',help='Explicit paid Anthropic API experiment; never in CI')
+    parser.add_argument('--yes',action='store_true')
+    parser.add_argument('--tasks',type=int)
+    parser.add_argument('--input-price-per-million',type=float)
+    parser.add_argument('--output-price-per-million',type=float)
+    parser.add_argument('--policy',choices=('economical','balanced','cautious'),default='balanced')
+    parser.add_argument('--task-ids',help='Comma-separated synthetic task IDs for live mode (at most five)')
+    parser.add_argument('--research-steps',type=int,default=4,help='Live synthetic research depth (1–10; default 4)')
     args=parser.parse_args()
-    if args.codex_scale:
+    if args.live and not args.savings:parser.error('--live requires --savings')
+    if args.savings:
+        if __package__:from .savings_benchmark import offline
+        else:from savings_benchmark import offline
+        if args.live:
+            if __package__:from .savings_live import live
+            else:from savings_live import live
+            try:result=live(count=args.tasks if args.tasks is not None else 5,model=args.model or 'claude-sonnet-5-5',input_price=args.input_price_per_million,output_price=args.output_price_per_million,yes=args.yes,research_steps=args.research_steps,policy=args.policy,task_ids=args.task_ids.split(',') if args.task_ids else None)
+            except ValueError as exc:parser.error(str(exc))
+        else:
+            if args.tasks is not None and not 1<=args.tasks<=20:parser.error('Offline tasks must be 1–20')
+            result=offline(args.tasks if args.tasks is not None else 20)
+    elif args.codex_scale:
         if __package__:
             from .codex_benchmark import codex_benchmark
         else:

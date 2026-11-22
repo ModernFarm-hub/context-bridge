@@ -1,0 +1,23 @@
+[
+ {"id":"java-current-prefix","text":"Java prefix traversal: use the current prefix to append characters.\n```java\nString currentPrefix = prefix; // current API version 2.3\n```","expected":false},
+ {"id":"rsu-percentages","text":"The RSU allocation is 6.25% initially, then 62.5 percent after vesting.","expected":false},
+ {"id":"options-valuation","text":"Negotiate stock options at a $5 billion valuation with a $1 strike.","expected":true},
+ {"id":"plain-decimals","text":"Measurements are 6.25 and 62.5 units.","expected":false},
+ {"id":"inline-code","text":"Read `current API version 3.1` and `latest_price` in this example.","expected":false},
+ {"id":"identifiers","text":"current_version latestPrice api_version_2_3 currentPrefix","expected":false},
+ {"id":"electrical-current","text":"The electric current flows through this circuit.","expected":false},
+ {"id":"qualified-current","text":"Check the current published API version.","expected":true},
+ {"id":"qualified-latest","text":"The latest available Python release is ready.","expected":true},
+ {"id":"qualified-now","text":"The plan now allows access.","expected":true},
+ {"id":"v-prefix","text":"Install v2.3.","expected":true},
+ {"id":"semver","text":"Install 1.2.3.","expected":true},
+ {"id":"python-decimal","text":"Use Python 3.11.","expected":true},
+ {"id":"api-percent","text":"The API yields 6.25 percent success and 62.5% utilization.","expected":false},
+ {"id":"currency-codes","text":"Budget USD 50 or 20 EUR.","expected":true},
+ {"id":"rupee-symbol","text":"The subscription costs ₹500.","expected":true},
+ {"id":"written-scale","text":"The offer values it at 5 billion dollars.","expected":true},
+ {"id":"salary","text":"Discuss salary and rate assumptions.","expected":true},
+ {"id":"stable-count","text":"Retry five attempts over 45 days.","expected":false},
+ {"id":"unsupported-slang","text":"The subscription costs twenty bucks.","expected":true,"documented_miss":true},
+ {"id":"unsupported-wording","text":"The newest platform build changes behavior.","expected":true,"documented_miss":true}
+]

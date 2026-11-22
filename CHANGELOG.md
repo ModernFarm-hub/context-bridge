@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.0b1 — local reuse accounting and automatic consultation (unpublished)
+
+- Use conservative lower-bound research credit: cumulative assistant outputs plus nonnegative context growth above the first assistant turn, for Claude Code and Codex. Deduplicate repeated message IDs, retain all-in counters as upper bounds including fixed context overhead, and preserve negative net estimates. Rebuild source accounting baselines; legacy usage snapshots without baselines receive output-only credit.
+- Refuse noninteractive hook installation/removal cleanly without changing settings or printing a traceback.
+- Record profile-local lookup metadata and estimated response tokens, with no query text by default; add usage controls and deletion.
+- Add conservative savings reports: recorded Claude Code/Codex counters when available, clearly labelled visible-text estimates for exports, conversation deduplication and all lookup overhead subtracted. Dollar estimates require a user-supplied price.
+- Add compact search results without changing the default full format. Measure both formats in a synthetic offline benchmark with stale, wrong and cheap-redo negative cases.
+- Add a printed agent guide and opt-in Claude Code hook with a settings diff, explicit confirmation, backups and uninstall. Bound lexical consultation to three results, a minimum score, content budgets and a 200 ms worker timeout; fail open with no context on misses/timeouts.
+- Tighten volatility hints: ignore code/identifiers and plain decimals, require software context for versions and volatile nouns near current/latest/now, exclude percentages, and recognize financial amounts/terms including rupees. Add a 21-case fixture retaining documented misses; clarify that high stakes with volatility OR conflicting evidence independently requires REDO.
+- Add risk-weighted economical/balanced/cautious reuse guides, bounded hook guidance, local age/volatility/uncertainty hints (conflict detection disabled), decision-labelled fixtures and fake-provider decision metrics. Document both historical old-guide paid runs without a savings claim.
+- Fix the live synthetic harness: positive-first tasks, separately labelled negatives, configurable sequential research depth, product agent-guide in the reuse arm, explicit consultation/refusal/truncation reporting, 2,048-token thinking-aware requests, depth-based turn caps and separate input/output prices. Test only with fake responses.
+- Add a separately gated, capped Anthropic agent experiment; never run paid mode in CI and never run it without --yes and a user-supplied price. No live results are claimed in this release.
+
 ## 0.8.1 — first-run polish (unpublished)
 
 - Replace the research demo with ten disposable synthetic conversations across ChatGPT, Claude and Claude Code; run three cited searches offline and print the exact Claude Code setup command.

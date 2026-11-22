@@ -1,0 +1,384 @@
+[
+  {
+    "id": "aster",
+    "title": "Aster queue retry budget",
+    "question": "How many attempts are allowed by the Aster queue retry budget?",
+    "reference": "five attempts",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 4800,
+      "output_tokens": 1100,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "willow",
+    "title": "Willow record retention",
+    "question": "What is the Willow record retention period?",
+    "reference": "45 days",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding. Current retention policy.",
+    "recorded_usage": {
+      "input_tokens": 4900,
+      "output_tokens": 1120,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "high",
+    "volatility": "volatile",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": true,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "comet",
+    "title": "Comet release approval",
+    "question": "Who approves a Comet production release?",
+    "reference": "the release owner",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 5000,
+      "output_tokens": 1140,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "harbor",
+    "title": "Harbor rollback target",
+    "question": "What image is used for a Harbor rollback?",
+    "reference": "the previous signed image",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding. Current production release rollback target.",
+    "recorded_usage": {
+      "input_tokens": 5100,
+      "output_tokens": 1160,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "high",
+    "volatility": "volatile",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": true,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "lantern",
+    "title": "Lantern backup schedule",
+    "question": "How often does Lantern make backups?",
+    "reference": "every seven days",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding. Current schedule, recorded in 2026.",
+    "recorded_usage": {
+      "input_tokens": 5200,
+      "output_tokens": 1180,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "expected_time_sensitive": true,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "orbit",
+    "title": "Orbit webhook replay window",
+    "question": "How long is the Orbit webhook replay window?",
+    "reference": "ten minutes",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding. Latest settings, version v2.3.",
+    "recorded_usage": {
+      "input_tokens": 5300,
+      "output_tokens": 1200,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "expected_time_sensitive": true,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "pebble",
+    "title": "Pebble pagination limit",
+    "question": "What is the Pebble pagination limit?",
+    "reference": "50 items",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 5400,
+      "output_tokens": 1220,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "quartz",
+    "title": "Quartz cache expiry",
+    "question": "When does the Quartz cache expire?",
+    "reference": "after 20 minutes",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 5500,
+      "output_tokens": 1240,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "rocket",
+    "title": "Rocket request rate limit",
+    "question": "What is the Rocket request rate limit?",
+    "reference": "100 requests per minute",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 5600,
+      "output_tokens": 1260,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "expected_time_sensitive": true,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "spruce",
+    "title": "Spruce key rotation",
+    "question": "How often are Spruce keys rotated?",
+    "reference": "every 30 days",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 5700,
+      "output_tokens": 1280,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "high",
+    "volatility": "volatile",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "meadow",
+    "title": "Meadow upload limit",
+    "question": "What is the Meadow upload limit?",
+    "reference": "eight megabytes",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 5800,
+      "output_tokens": 1300,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "nimbus",
+    "title": "Nimbus socket timeout",
+    "question": "What socket timeout does Nimbus use?",
+    "reference": "15 seconds",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 5900,
+      "output_tokens": 1320,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "finch",
+    "title": "Finch error alert threshold",
+    "question": "What error threshold alerts Finch?",
+    "reference": "two percent",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 6000,
+      "output_tokens": 1340,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "dune",
+    "title": "Dune worker concurrency",
+    "question": "How many Dune workers run concurrently?",
+    "reference": "four workers",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 6100,
+      "output_tokens": 1360,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "coral",
+    "title": "Coral autoscaling floor",
+    "question": "What is the Coral autoscaling floor?",
+    "reference": "two replicas",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 6200,
+      "output_tokens": 1380,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "ivy",
+    "title": "Ivy session inactivity",
+    "question": "When does an inactive Ivy session expire?",
+    "reference": "after 25 minutes",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 6300,
+      "output_tokens": 1400,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "lotus",
+    "title": "Lotus audit retention",
+    "question": "How long does Lotus retain audit events?",
+    "reference": "120 days",
+    "condition": "valid",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 6400,
+      "output_tokens": 1420,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "stakes": "high",
+    "volatility": "volatile",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "mint",
+    "title": "Mint short calculation",
+    "question": "What is two plus two in the Mint example?",
+    "reference": "four",
+    "condition": "cheap-redo",
+    "past_note": "Invented benchmark research, not a real finding.",
+    "recorded_usage": {
+      "input_tokens": 35,
+      "output_tokens": 10,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0
+    },
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "pine",
+    "title": "Pine current API status",
+    "question": "What is the current Pine API status?",
+    "reference": "version three is supported",
+    "condition": "stale",
+    "past_note": "Historical answer; the API version is time-sensitive and must be rechecked.",
+    "recorded_usage": {
+      "input_tokens": 6600,
+      "output_tokens": 1460,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "past_answer": "version one is supported",
+    "stakes": "high",
+    "volatility": "volatile",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": true,
+    "expected_uncertainty": false
+  },
+  {
+    "id": "reef",
+    "title": "Reef password minimum",
+    "question": "What is the Reef password minimum?",
+    "reference": "16 characters",
+    "condition": "wrong",
+    "past_note": "An unverified historical claim; check the primary benchmark reference before use. I think this might be wrong.",
+    "recorded_usage": {
+      "input_tokens": 6700,
+      "output_tokens": 1480,
+      "cache_read_input_tokens": 6000,
+      "cache_creation_input_tokens": 1500
+    },
+    "past_answer": "eight characters",
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "expected_time_sensitive": false,
+    "expected_uncertainty": true
+  }
+]

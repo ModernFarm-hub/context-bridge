@@ -127,11 +127,11 @@ class IndependentRetestFixTests(unittest.TestCase):
     def test_warm_refresh_does_not_reread_profile_resolve_paths_or_write_metadata(self):
         import_export('chatgpt',self.export('chatgpt',['CACHE842']),self.library)
         service=self.service()
-        service.call('context_search',{'query':'CACHE842'})
+        service.call('context_search',{'query':'CACHE842'},log=False)
         statements=[]
         service.bridge.db.set_trace_callback(statements.append)
         with patch.object(Path,'read_text',side_effect=AssertionError('profile reread')), patch.object(Path,'resolve',side_effect=AssertionError('path re-resolved')), patch.object(service.bridge,'set_source',side_effect=AssertionError('metadata rewritten')):
-            self.assertTrue(service.call('context_search',{'query':'CACHE842'})['results'])
+            self.assertTrue(service.call('context_search',{'query':'CACHE842'},log=False)['results'])
         self.assertFalse(any(sql.startswith('INSERT') or sql.startswith('UPDATE') for sql in statements))
         self.assertLessEqual(statements.count('COMMIT'),1)
 
@@ -163,7 +163,7 @@ class IndependentRetestFixTests(unittest.TestCase):
                 stream.write(json.dumps({'type':'user','uuid':'fresh','sessionId':str(i),'message':{'role':'user','content':'NEWFRESH842'}})+'\n')
         statements=[]
         service.bridge.db.set_trace_callback(statements.append)
-        self.assertEqual(len(service.call('context_search',{'query':'NEWFRESH842'})['results']),2)
+        self.assertEqual(len(service.call('context_search',{'query':'NEWFRESH842'},log=False)['results']),2)
         self.assertEqual(statements.count('COMMIT'),1)
 
     def test_new_sessions_discovered_only_inside_approved_project(self):

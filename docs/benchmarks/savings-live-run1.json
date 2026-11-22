@@ -1,0 +1,869 @@
+{
+  "mode": "live-paid-synthetic",
+  "model": "claude-sonnet-5-5",
+  "research_steps": 4,
+  "step_cap_per_arm": 6,
+  "max_output_tokens_per_call": 2048,
+  "prices": {
+    "input_usd_per_million": 2.0,
+    "output_usd_per_million": 10.0
+  },
+  "method": "Same neutral question in both arms; sequential synthetic notes available to both. Reuse arm adds the product agent-guide system prompt and Context Bridge tools. Positive tasks run first; negative cases are reported separately. Provider usage and wall time measured only when explicitly run.",
+  "limits": [
+    "Synthetic tasks, fixed assumed research depth and small n cannot establish real-world savings. Artificial note volume and sequential gating influence the outcome.",
+    "Reference-substring scoring can reject correct paraphrases or accept text without reasoning.",
+    "Tool choice is model-dependent; report actual search/read calls, refusals and truncation. No guarantee of reuse or lower cost.",
+    "User input/output prices are not an invoice; input rate is applied to cache tokens without discounts or creation surcharges. Failed responses may have unreported charges. Advisory input size is not a hard cap.",
+    "No real private library is sent; only synthetic materials go to Anthropic after --yes."
+  ],
+  "advisory_pre_run_tokens": 2540160,
+  "advisory_pre_run_usd": 6.06336,
+  "assumed_input_tokens_per_call": 40288,
+  "positive_results": [
+    {
+      "id": "aster",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42853,
+        "output_tokens": 381,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43234,
+      "calls": 5,
+      "seconds": 12.063,
+      "answer": "According to the research notebooks, the Aster queue retry budget allows **five attempts**.\n\nThe first three steps were filler with no answer. The figure comes from a single line at step 4, \"Current reference: five attempts\". The notebooks are described as invented synthetic material, so I couldn't check this against any real-world source.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.089516
+    },
+    {
+      "id": "aster",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 48618,
+        "output_tokens": 438,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 49056,
+      "calls": 5,
+      "seconds": 11.876,
+      "answer": "**The Aster queue retry budget allows five attempts.**\n\nThis comes from the final step of the research notebooks, which gave \"Current reference: five attempts\". The earlier steps were filler with no answer in them. These notebooks are invented sources, so the figure isn't confirmed against any real Aster documentation.\n\nMy search of past conversations found only one match, a Claude Code session labeled 'aster', and it just repeated your question without an answer.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.101616
+    },
+    {
+      "id": "willow",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42782,
+        "output_tokens": 387,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43169,
+      "calls": 5,
+      "seconds": 9.781,
+      "answer": "According to the research notebooks, the Willow record retention period is **45 days**.\n\nThis came from the final step (step 4), which was the only one that contained an answer. Steps 1-3 held only filler entries. The notebooks are described as invented source material, so I couldn't check the figure against any other source. It's worth confirming against Willow's actual retention policy if you need to rely on it.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.089434
+    },
+    {
+      "id": "willow",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 51686,
+        "output_tokens": 601,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 52287,
+      "calls": 5,
+      "seconds": 10.681,
+      "answer": "**The Willow record retention period is 45 days.**\n\nThis comes from two places:\n- **Your past conversation:** the Claude Code session labeled 'willow' ([link](urn:context-bridge:record:7470548048394db4a9d8277288f200d3)) states \"Willow record retention: 45 days.\"\n- **The research tool:** its final step returned \"Current reference: 45 days.\"\n\nBoth sources describe this figure as invented benchmark research, not a real product policy. Don't rely on it as an actual Willow retention policy. If you need the real policy, check Willow's official documentation or your contract.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.109382
+    },
+    {
+      "id": "comet",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42785,
+        "output_tokens": 416,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43201,
+      "calls": 5,
+      "seconds": 10.244,
+      "answer": "According to the research notebooks, a Comet production release is approved by **the release owner**. The source gives only that role, with no name, team, or further approval steps, so I can't say who holds the role or whether anyone else must sign off.\n\nThe first three steps were only placeholder text. The answer came from a single line at the end of step 4, labeled \"Current reference\". The material was labeled as invented, so I'd confirm this against your team's actual release process documentation before relying on it.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.08973
+    },
+    {
+      "id": "comet",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 56040,
+        "output_tokens": 635,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 56675,
+      "calls": 5,
+      "seconds": 11.838,
+      "answer": "**The release owner** approves a Comet production release.\n\nTwo sources agree on this:\n- **Saved Claude Code session 'comet'** ([link](urn:context-bridge:record:283724b221e54dd5988d16a696ac0da5)): \"Comet release approval: the release owner.\"\n- **The research notebook**, whose final step (4) gives \"Current reference: the release owner.\"\n\nBoth sources describe themselves as invented benchmark material, not a real product policy. Treat this as the answer within this test setup, not as verified real-world policy. Neither source names a specific person or team, only the role.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.11843
+    }
+  ],
+  "negative_results": [
+    {
+      "id": "mint",
+      "case_group": "negative",
+      "condition": "cheap-redo",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42802,
+        "output_tokens": 383,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43185,
+      "calls": 5,
+      "seconds": 8.832,
+      "answer": "Two plus two is **four**, according to the final notebook step, which gave the current reference as \"four.\"\n\nNone of the four notebook steps mentioned a \"Mint example\" by name. They were all filler entries with no content, so I can't confirm which example the answer was meant for. Two plus two is four in ordinary arithmetic regardless.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.089434
+    },
+    {
+      "id": "mint",
+      "case_group": "negative",
+      "condition": "cheap-redo",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 51781,
+        "output_tokens": 552,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 52333,
+      "calls": 5,
+      "seconds": 10.37,
+      "answer": "**Four.** In the Mint example, two plus two is four.\n\nThis comes from your saved Claude Code conversation labeled \"mint\" ([link](urn:context-bridge:record:93a5933c33c2405f85b1584af61b99c3)), which says \"Mint short calculation: four.\" The research notebook's final step gave the same answer (\"Current reference: four\").\n\nBoth sources describe this as an invented benchmark example, not a real product policy.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.109082
+    },
+    {
+      "id": "pine",
+      "case_group": "negative",
+      "condition": "stale",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42788,
+        "output_tokens": 462,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43250,
+      "calls": 5,
+      "seconds": 11.369,
+      "answer": "According to the research notebooks, the current Pine API reference says **version three is supported**. That is all the final step said, with nothing about uptime, outages, deprecations, or other status details.\n\nThe four notebooks were synthetic, invented material rather than real-world sources. The result also doesn't say what \"version three\" refers to, such as an API version or a Pine Script version, or what date it applies to. I wouldn't treat it as verified, live status information.\n\nFor real-time status, check the official documentation or status page for the specific Pine product you mean. If you tell me which Pine API you're asking about, I can help work out where to look.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.090196
+    },
+    {
+      "id": "pine",
+      "case_group": "negative",
+      "condition": "stale",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 51812,
+        "output_tokens": 656,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 52468,
+      "calls": 5,
+      "seconds": 11.831,
+      "answer": "According to the research tool, the current reference is that **version three** of the Pine API is supported. The tool's notebooks are invented sources, not real-world facts, so I can't confirm this against a live Pine service or documentation.\n\nYour earlier \"pine\" Claude Code conversation (dated 2026-10-01) said that version one was supported ([Claude Code \u00b7 'pine'](urn:context-bridge:record:ed3ad476d141480bafbddd9306484b81)). That answer was marked as historical and in need of a recheck, so version three replaces it.\n\nIf you need this for a real integration, check the official Pine API documentation or status page.",
+      "accuracy_reference_substring": false,
+      "tools_used": [
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.110184
+    }
+  ],
+  "results": [
+    {
+      "id": "aster",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42853,
+        "output_tokens": 381,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43234,
+      "calls": 5,
+      "seconds": 12.063,
+      "answer": "According to the research notebooks, the Aster queue retry budget allows **five attempts**.\n\nThe first three steps were filler with no answer. The figure comes from a single line at step 4, \"Current reference: five attempts\". The notebooks are described as invented synthetic material, so I couldn't check this against any real-world source.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.089516
+    },
+    {
+      "id": "aster",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 48618,
+        "output_tokens": 438,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 49056,
+      "calls": 5,
+      "seconds": 11.876,
+      "answer": "**The Aster queue retry budget allows five attempts.**\n\nThis comes from the final step of the research notebooks, which gave \"Current reference: five attempts\". The earlier steps were filler with no answer in them. These notebooks are invented sources, so the figure isn't confirmed against any real Aster documentation.\n\nMy search of past conversations found only one match, a Claude Code session labeled 'aster', and it just repeated your question without an answer.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.101616
+    },
+    {
+      "id": "willow",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42782,
+        "output_tokens": 387,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43169,
+      "calls": 5,
+      "seconds": 9.781,
+      "answer": "According to the research notebooks, the Willow record retention period is **45 days**.\n\nThis came from the final step (step 4), which was the only one that contained an answer. Steps 1-3 held only filler entries. The notebooks are described as invented source material, so I couldn't check the figure against any other source. It's worth confirming against Willow's actual retention policy if you need to rely on it.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.089434
+    },
+    {
+      "id": "willow",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 51686,
+        "output_tokens": 601,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 52287,
+      "calls": 5,
+      "seconds": 10.681,
+      "answer": "**The Willow record retention period is 45 days.**\n\nThis comes from two places:\n- **Your past conversation:** the Claude Code session labeled 'willow' ([link](urn:context-bridge:record:7470548048394db4a9d8277288f200d3)) states \"Willow record retention: 45 days.\"\n- **The research tool:** its final step returned \"Current reference: 45 days.\"\n\nBoth sources describe this figure as invented benchmark research, not a real product policy. Don't rely on it as an actual Willow retention policy. If you need the real policy, check Willow's official documentation or your contract.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.109382
+    },
+    {
+      "id": "comet",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42785,
+        "output_tokens": 416,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43201,
+      "calls": 5,
+      "seconds": 10.244,
+      "answer": "According to the research notebooks, a Comet production release is approved by **the release owner**. The source gives only that role, with no name, team, or further approval steps, so I can't say who holds the role or whether anyone else must sign off.\n\nThe first three steps were only placeholder text. The answer came from a single line at the end of step 4, labeled \"Current reference\". The material was labeled as invented, so I'd confirm this against your team's actual release process documentation before relying on it.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.08973
+    },
+    {
+      "id": "comet",
+      "case_group": "positive",
+      "condition": "valid",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 56040,
+        "output_tokens": 635,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 56675,
+      "calls": 5,
+      "seconds": 11.838,
+      "answer": "**The release owner** approves a Comet production release.\n\nTwo sources agree on this:\n- **Saved Claude Code session 'comet'** ([link](urn:context-bridge:record:283724b221e54dd5988d16a696ac0da5)): \"Comet release approval: the release owner.\"\n- **The research notebook**, whose final step (4) gives \"Current reference: the release owner.\"\n\nBoth sources describe themselves as invented benchmark material, not a real product policy. Treat this as the answer within this test setup, not as verified real-world policy. Neither source names a specific person or team, only the role.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.11843
+    },
+    {
+      "id": "mint",
+      "case_group": "negative",
+      "condition": "cheap-redo",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42802,
+        "output_tokens": 383,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43185,
+      "calls": 5,
+      "seconds": 8.832,
+      "answer": "Two plus two is **four**, according to the final notebook step, which gave the current reference as \"four.\"\n\nNone of the four notebook steps mentioned a \"Mint example\" by name. They were all filler entries with no content, so I can't confirm which example the answer was meant for. Two plus two is four in ordinary arithmetic regardless.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.089434
+    },
+    {
+      "id": "mint",
+      "case_group": "negative",
+      "condition": "cheap-redo",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 51781,
+        "output_tokens": 552,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 52333,
+      "calls": 5,
+      "seconds": 10.37,
+      "answer": "**Four.** In the Mint example, two plus two is four.\n\nThis comes from your saved Claude Code conversation labeled \"mint\" ([link](urn:context-bridge:record:93a5933c33c2405f85b1584af61b99c3)), which says \"Mint short calculation: four.\" The research notebook's final step gave the same answer (\"Current reference: four\").\n\nBoth sources describe this as an invented benchmark example, not a real product policy.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.109082
+    },
+    {
+      "id": "pine",
+      "case_group": "negative",
+      "condition": "stale",
+      "reuse_available": false,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 42788,
+        "output_tokens": 462,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 43250,
+      "calls": 5,
+      "seconds": 11.369,
+      "answer": "According to the research notebooks, the current Pine API reference says **version three is supported**. That is all the final step said, with nothing about uptime, outages, deprecations, or other status details.\n\nThe four notebooks were synthetic, invented material rather than real-world sources. The result also doesn't say what \"version three\" refers to, such as an API version or a Pine Script version, or what date it applies to. I wouldn't treat it as verified, live status information.\n\nFor real-time status, check the official documentation or status page for the specific Pine product you mean. If you tell me which Pine API you're asking about, I can help work out where to look.",
+      "accuracy_reference_substring": true,
+      "tools_used": [
+        "research",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": false,
+      "called_context_read": false,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.090196
+    },
+    {
+      "id": "pine",
+      "case_group": "negative",
+      "condition": "stale",
+      "reuse_available": true,
+      "model": "claude-sonnet-5-5",
+      "resolved_model": "claude-sonnet-5-5",
+      "final_answer_observed": true,
+      "turn_limit_reached": false,
+      "usage": {
+        "input_tokens": 51812,
+        "output_tokens": 656,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0
+      },
+      "measured_total_tokens": 52468,
+      "calls": 5,
+      "seconds": 11.831,
+      "answer": "According to the research tool, the current reference is that **version three** of the Pine API is supported. The tool's notebooks are invented sources, not real-world facts, so I can't confirm this against a live Pine service or documentation.\n\nYour earlier \"pine\" Claude Code conversation (dated 2026-10-01) said that version one was supported ([Claude Code \u00b7 'pine'](urn:context-bridge:record:ed3ad476d141480bafbddd9306484b81)). That answer was marked as historical and in need of a recheck, so version three replaces it.\n\nIf you need this for a real integration, check the official Pine API documentation or status page.",
+      "accuracy_reference_substring": false,
+      "tools_used": [
+        "context_search",
+        "research",
+        "context_read",
+        "research",
+        "research",
+        "research"
+      ],
+      "called_context_search": true,
+      "called_context_read": true,
+      "research_steps_completed": 4,
+      "stop_reasons": [
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "tool_use",
+        "end_turn"
+      ],
+      "refused": false,
+      "truncated": false,
+      "error": null,
+      "user_priced_usd": 0.110184
+    }
+  ],
+  "target_passed": true
+}

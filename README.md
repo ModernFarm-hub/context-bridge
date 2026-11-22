@@ -6,7 +6,7 @@
 
 ![Synthetic import, search and citation demo](https://raw.githubusercontent.com/ModernFarm-hub/context-bridge/main/docs/assets/demo.gif)
 
-0.8.1 · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
+0.9.0b1 · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
 
 ## Try it in 60 seconds
 
@@ -50,6 +50,10 @@ uvx --from context-bridge-local context-bridge import codex
 
 Connect [ChatGPT desktop, Claude Desktop or Cursor](docs/CLIENTS.md). [Profiles, account checks and removal](docs/USAGE.md).
 
+## Save tokens
+
+Reuse can be cheaper than repeating research—but lookups also cost context tokens. Run `context-bridge savings --explain` for local estimates, or `context-bridge benchmark --savings` for a free, offline synthetic comparison. The risk-weighted agent guide offers economical, balanced (default) and cautious presets, choosing REUSE, CHECK or REDO according to risk rather than savings alone. Query text is not logged by default. `context-bridge agent-guide` prints reusable consultation instructions; an [optional, bounded Claude Code hook](docs/USAGE.md#automatic-consultation) checks history on prompts. [Methods, negative cases and reproducible results](docs/benchmarks/savings.md).
+
 ## How is this different?
 
 - [claude-historian-mcp](https://github.com/Vvkmnn/claude-historian-mcp) searches Claude Code history. Context Bridge also imports ChatGPT and Claude.ai exports and approved desktop/Codex threads.
@@ -64,7 +68,7 @@ Results are grouped by conversation. `context_read` returns surrounding indexed 
 
 ## Contribute
 
-[Installation](docs/INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](docs/ROADMAP.md) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/verification/0.8.1/README.md) · [Third-party notices](THIRD_PARTY.md)
+[Installation](docs/INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](docs/ROADMAP.md) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/verification/0.9.0b1/README.md) · [Third-party notices](THIRD_PARTY.md)
 
 Tests use synthetic conversations: `PYTHONPATH=prototype python3 -m unittest discover -s prototype/tests -v`. Historical experiments are [archived](research/README.md) and are not public CLI commands. Original project code is licensed under [Apache-2.0](LICENSE).
 

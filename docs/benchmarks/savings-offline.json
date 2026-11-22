@@ -1,0 +1,979 @@
+{
+  "version": "0.9.0b1",
+  "fixture_sha256": "b077d3c1de1467b1393626c72979ac5cf28c9ee72a1251b72c7c23b7c7e47150",
+  "runtime": {
+    "python": "3.9.6",
+    "sqlite": "3.51.0",
+    "platform": "Darwin arm64"
+  },
+  "sampling": "One search/read pipeline per task per format; one hook invocation per task. No model generation.",
+  "mode": "offline-synthetic",
+  "tasks": 20,
+  "signal_metrics": {
+    "time_sensitive": {
+      "true_positive": 6,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "uncertainty": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "expanded_volatility_fixture": {
+    "cases": 21,
+    "true_positive": 11,
+    "false_positive": 0,
+    "false_negative": 2,
+    "precision": 1.0,
+    "recall": 0.8461538461538461,
+    "misses": [
+      "unsupported-slang",
+      "unsupported-wording"
+    ],
+    "false_positives": [],
+    "notice": "Synthetic real-shaped cases; not measured real-library precision. Deliberate unsupported phrasing remains in recall denominator."
+  },
+  "compact_signal_fields": [
+    "age_days",
+    "time_sensitive",
+    "time_sensitive_terms"
+  ],
+  "method": "Synthetic conservative lower-bound research credit (outputs plus context growth) versus measured tool response text estimates; no model ran and no API was called. Alternatives are separate arms, not additive savings. Invalid past answers receive zero credit.",
+  "limits": [
+    "Counterfactual assumes one research redo per task. Counters are invented; fixed first-turn context is excluded from credit and all-in totals are upper bounds only. Character token estimates exclude request/model generation, setup and CPU costs.",
+    "Passage/reference checks are not generated answer accuracy. No real-library or dollar savings claim.",
+    "Hook overhead counts additionalContext only; Claude Code host framing and request serialization are excluded. Byte ceiling is conservative for ordinary byte-token models, not exact tokenizer measurement."
+  ],
+  "top_1_valid": 1.0,
+  "top_5_valid": 1.0,
+  "all_in_upper_bound_including_fixed_context_tokens": 244165,
+  "hypothetical_redo_credit_tokens": 95687,
+  "full_lookup_tokens": 20750,
+  "compact_lookup_tokens": 14422,
+  "hook_overhead_tokens": 1720,
+  "answer_passage_check_rate_all": 0.9,
+  "full_estimated_tokens_avoided": 74937,
+  "compact_estimated_tokens_avoided": 81265,
+  "compact_plus_hook_estimated_tokens_avoided": 79545,
+  "average_compact_search_tokens_without_signals": 139.15,
+  "compact_signal_added_tokens_per_search": 35.2,
+  "average_full_search_tokens": 490.75,
+  "average_compact_search_tokens": 174.35,
+  "average_hook_overhead_tokens": 86.0,
+  "hook_wall_p95_ms": 105.616,
+  "hook_worker_timeout_ms": 200,
+  "negative_cases": [
+    "mint",
+    "pine",
+    "reef"
+  ],
+  "results": [
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "aster",
+      "question": "How many attempts are allowed by the Aster queue retry budget?",
+      "reference": "five attempts",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5200,
+        "incremental_research_tokens": 5200,
+        "all_in_upper_bound_including_fixed_context_tokens": 13400,
+        "credit_tokens": 5200,
+        "lookup_tokens": 1059,
+        "estimated_tokens_avoided": 4141,
+        "answer_passage_correct": true,
+        "seconds": 0.016456,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5200,
+        "incremental_research_tokens": 5200,
+        "all_in_upper_bound_including_fixed_context_tokens": 13400,
+        "credit_tokens": 5200,
+        "lookup_tokens": 731,
+        "estimated_tokens_avoided": 4469,
+        "answer_passage_correct": true,
+        "seconds": 0.002237,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 91,
+        "characters": 364,
+        "conservative_byte_token_ceiling": 370,
+        "wall_ms": 105.616,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4378
+    },
+    {
+      "stakes": "high",
+      "volatility": "volatile",
+      "expected_decision": "REDO",
+      "id": "willow",
+      "question": "What is the Willow record retention period?",
+      "reference": "45 days",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5254,
+        "incremental_research_tokens": 5254,
+        "all_in_upper_bound_including_fixed_context_tokens": 13520,
+        "credit_tokens": 5254,
+        "lookup_tokens": 1288,
+        "estimated_tokens_avoided": 3966,
+        "answer_passage_correct": true,
+        "seconds": 0.002822,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5254,
+        "incremental_research_tokens": 5254,
+        "all_in_upper_bound_including_fixed_context_tokens": 13520,
+        "credit_tokens": 5254,
+        "lookup_tokens": 832,
+        "estimated_tokens_avoided": 4422,
+        "answer_passage_correct": true,
+        "seconds": 0.001943,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 86,
+        "characters": 344,
+        "conservative_byte_token_ceiling": 350,
+        "wall_ms": 98.421,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4336
+    },
+    {
+      "stakes": "high",
+      "volatility": "stable",
+      "expected_decision": "REDO",
+      "id": "comet",
+      "question": "Who approves a Comet production release?",
+      "reference": "the release owner",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5308,
+        "incremental_research_tokens": 5308,
+        "all_in_upper_bound_including_fixed_context_tokens": 13640,
+        "credit_tokens": 5308,
+        "lookup_tokens": 1077,
+        "estimated_tokens_avoided": 4231,
+        "answer_passage_correct": true,
+        "seconds": 0.002549,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5308,
+        "incremental_research_tokens": 5308,
+        "all_in_upper_bound_including_fixed_context_tokens": 13640,
+        "credit_tokens": 5308,
+        "lookup_tokens": 745,
+        "estimated_tokens_avoided": 4563,
+        "answer_passage_correct": true,
+        "seconds": 0.001847,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 85,
+        "characters": 340,
+        "conservative_byte_token_ceiling": 346,
+        "wall_ms": 97.697,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4478
+    },
+    {
+      "stakes": "high",
+      "volatility": "volatile",
+      "expected_decision": "REDO",
+      "id": "harbor",
+      "question": "What image is used for a Harbor rollback?",
+      "reference": "the previous signed image",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5360,
+        "incremental_research_tokens": 5360,
+        "all_in_upper_bound_including_fixed_context_tokens": 13760,
+        "credit_tokens": 5360,
+        "lookup_tokens": 842,
+        "estimated_tokens_avoided": 4518,
+        "answer_passage_correct": true,
+        "seconds": 0.002475,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5360,
+        "incremental_research_tokens": 5360,
+        "all_in_upper_bound_including_fixed_context_tokens": 13760,
+        "credit_tokens": 5360,
+        "lookup_tokens": 647,
+        "estimated_tokens_avoided": 4713,
+        "answer_passage_correct": true,
+        "seconds": 0.001798,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 86,
+        "characters": 341,
+        "conservative_byte_token_ceiling": 347,
+        "wall_ms": 97.906,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4627
+    },
+    {
+      "stakes": "low",
+      "volatility": "volatile",
+      "expected_decision": "CHECK",
+      "id": "lantern",
+      "question": "How often does Lantern make backups?",
+      "reference": "every seven days",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5414,
+        "incremental_research_tokens": 5414,
+        "all_in_upper_bound_including_fixed_context_tokens": 13880,
+        "credit_tokens": 5414,
+        "lookup_tokens": 1044,
+        "estimated_tokens_avoided": 4370,
+        "answer_passage_correct": true,
+        "seconds": 0.00261,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5414,
+        "incremental_research_tokens": 5414,
+        "all_in_upper_bound_including_fixed_context_tokens": 13880,
+        "credit_tokens": 5414,
+        "lookup_tokens": 724,
+        "estimated_tokens_avoided": 4690,
+        "answer_passage_correct": true,
+        "seconds": 0.001887,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 85,
+        "characters": 337,
+        "conservative_byte_token_ceiling": 343,
+        "wall_ms": 98.006,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4605
+    },
+    {
+      "stakes": "low",
+      "volatility": "volatile",
+      "expected_decision": "CHECK",
+      "id": "orbit",
+      "question": "How long is the Orbit webhook replay window?",
+      "reference": "ten minutes",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5468,
+        "incremental_research_tokens": 5468,
+        "all_in_upper_bound_including_fixed_context_tokens": 14000,
+        "credit_tokens": 5468,
+        "lookup_tokens": 1055,
+        "estimated_tokens_avoided": 4413,
+        "answer_passage_correct": true,
+        "seconds": 0.002564,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5468,
+        "incremental_research_tokens": 5468,
+        "all_in_upper_bound_including_fixed_context_tokens": 14000,
+        "credit_tokens": 5468,
+        "lookup_tokens": 732,
+        "estimated_tokens_avoided": 4736,
+        "answer_passage_correct": true,
+        "seconds": 0.001941,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 88,
+        "characters": 349,
+        "conservative_byte_token_ceiling": 355,
+        "wall_ms": 97.222,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4648
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "pebble",
+      "question": "What is the Pebble pagination limit?",
+      "reference": "50 items",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5520,
+        "incremental_research_tokens": 5520,
+        "all_in_upper_bound_including_fixed_context_tokens": 14120,
+        "credit_tokens": 5520,
+        "lookup_tokens": 1245,
+        "estimated_tokens_avoided": 4275,
+        "answer_passage_correct": true,
+        "seconds": 0.002616,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5520,
+        "incremental_research_tokens": 5520,
+        "all_in_upper_bound_including_fixed_context_tokens": 14120,
+        "credit_tokens": 5520,
+        "lookup_tokens": 799,
+        "estimated_tokens_avoided": 4721,
+        "answer_passage_correct": true,
+        "seconds": 0.001919,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 85,
+        "characters": 337,
+        "conservative_byte_token_ceiling": 343,
+        "wall_ms": 101.137,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4636
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "quartz",
+      "question": "When does the Quartz cache expire?",
+      "reference": "after 20 minutes",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5574,
+        "incremental_research_tokens": 5574,
+        "all_in_upper_bound_including_fixed_context_tokens": 14240,
+        "credit_tokens": 5574,
+        "lookup_tokens": 1029,
+        "estimated_tokens_avoided": 4545,
+        "answer_passage_correct": true,
+        "seconds": 0.002714,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5574,
+        "incremental_research_tokens": 5574,
+        "all_in_upper_bound_including_fixed_context_tokens": 14240,
+        "credit_tokens": 5574,
+        "lookup_tokens": 712,
+        "estimated_tokens_avoided": 4862,
+        "answer_passage_correct": true,
+        "seconds": 0.001949,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 83,
+        "characters": 331,
+        "conservative_byte_token_ceiling": 337,
+        "wall_ms": 100.089,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4779
+    },
+    {
+      "stakes": "low",
+      "volatility": "volatile",
+      "expected_decision": "CHECK",
+      "id": "rocket",
+      "question": "What is the Rocket request rate limit?",
+      "reference": "100 requests per minute",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5628,
+        "incremental_research_tokens": 5628,
+        "all_in_upper_bound_including_fixed_context_tokens": 14360,
+        "credit_tokens": 5628,
+        "lookup_tokens": 1252,
+        "estimated_tokens_avoided": 4376,
+        "answer_passage_correct": true,
+        "seconds": 0.002755,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5628,
+        "incremental_research_tokens": 5628,
+        "all_in_upper_bound_including_fixed_context_tokens": 14360,
+        "credit_tokens": 5628,
+        "lookup_tokens": 805,
+        "estimated_tokens_avoided": 4823,
+        "answer_passage_correct": true,
+        "seconds": 0.002343,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 86,
+        "characters": 341,
+        "conservative_byte_token_ceiling": 347,
+        "wall_ms": 100.294,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4737
+    },
+    {
+      "stakes": "high",
+      "volatility": "volatile",
+      "expected_decision": "REDO",
+      "id": "spruce",
+      "question": "How often are Spruce keys rotated?",
+      "reference": "every 30 days",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5680,
+        "incremental_research_tokens": 5680,
+        "all_in_upper_bound_including_fixed_context_tokens": 14480,
+        "credit_tokens": 5680,
+        "lookup_tokens": 1030,
+        "estimated_tokens_avoided": 4650,
+        "answer_passage_correct": true,
+        "seconds": 0.002701,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5680,
+        "incremental_research_tokens": 5680,
+        "all_in_upper_bound_including_fixed_context_tokens": 14480,
+        "credit_tokens": 5680,
+        "lookup_tokens": 710,
+        "estimated_tokens_avoided": 4970,
+        "answer_passage_correct": true,
+        "seconds": 0.001736,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 83,
+        "characters": 331,
+        "conservative_byte_token_ceiling": 337,
+        "wall_ms": 103.962,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4887
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "meadow",
+      "question": "What is the Meadow upload limit?",
+      "reference": "eight megabytes",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5734,
+        "incremental_research_tokens": 5734,
+        "all_in_upper_bound_including_fixed_context_tokens": 14600,
+        "credit_tokens": 5734,
+        "lookup_tokens": 1241,
+        "estimated_tokens_avoided": 4493,
+        "answer_passage_correct": true,
+        "seconds": 0.002961,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5734,
+        "incremental_research_tokens": 5734,
+        "all_in_upper_bound_including_fixed_context_tokens": 14600,
+        "credit_tokens": 5734,
+        "lookup_tokens": 796,
+        "estimated_tokens_avoided": 4938,
+        "answer_passage_correct": true,
+        "seconds": 0.002003,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 83,
+        "characters": 329,
+        "conservative_byte_token_ceiling": 335,
+        "wall_ms": 106.977,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 4855
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "nimbus",
+      "question": "What socket timeout does Nimbus use?",
+      "reference": "15 seconds",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5788,
+        "incremental_research_tokens": 5788,
+        "all_in_upper_bound_including_fixed_context_tokens": 14720,
+        "credit_tokens": 5788,
+        "lookup_tokens": 821,
+        "estimated_tokens_avoided": 4967,
+        "answer_passage_correct": true,
+        "seconds": 0.002493,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5788,
+        "incremental_research_tokens": 5788,
+        "all_in_upper_bound_including_fixed_context_tokens": 14720,
+        "credit_tokens": 5788,
+        "lookup_tokens": 628,
+        "estimated_tokens_avoided": 5160,
+        "answer_passage_correct": true,
+        "seconds": 0.001864,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 84,
+        "characters": 335,
+        "conservative_byte_token_ceiling": 341,
+        "wall_ms": 101.21,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 5076
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "finch",
+      "question": "What error threshold alerts Finch?",
+      "reference": "two percent",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5840,
+        "incremental_research_tokens": 5840,
+        "all_in_upper_bound_including_fixed_context_tokens": 14840,
+        "credit_tokens": 5840,
+        "lookup_tokens": 831,
+        "estimated_tokens_avoided": 5009,
+        "answer_passage_correct": true,
+        "seconds": 0.002474,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5840,
+        "incremental_research_tokens": 5840,
+        "all_in_upper_bound_including_fixed_context_tokens": 14840,
+        "credit_tokens": 5840,
+        "lookup_tokens": 634,
+        "estimated_tokens_avoided": 5206,
+        "answer_passage_correct": true,
+        "seconds": 0.001779,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 85,
+        "characters": 339,
+        "conservative_byte_token_ceiling": 345,
+        "wall_ms": 101.627,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 5121
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "dune",
+      "question": "How many Dune workers run concurrently?",
+      "reference": "four workers",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5894,
+        "incremental_research_tokens": 5894,
+        "all_in_upper_bound_including_fixed_context_tokens": 14960,
+        "credit_tokens": 5894,
+        "lookup_tokens": 1046,
+        "estimated_tokens_avoided": 4848,
+        "answer_passage_correct": true,
+        "seconds": 0.002797,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5894,
+        "incremental_research_tokens": 5894,
+        "all_in_upper_bound_including_fixed_context_tokens": 14960,
+        "credit_tokens": 5894,
+        "lookup_tokens": 723,
+        "estimated_tokens_avoided": 5171,
+        "answer_passage_correct": true,
+        "seconds": 0.001861,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 85,
+        "characters": 340,
+        "conservative_byte_token_ceiling": 346,
+        "wall_ms": 101.667,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 5086
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "coral",
+      "question": "What is the Coral autoscaling floor?",
+      "reference": "two replicas",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 5948,
+        "incremental_research_tokens": 5948,
+        "all_in_upper_bound_including_fixed_context_tokens": 15080,
+        "credit_tokens": 5948,
+        "lookup_tokens": 825,
+        "estimated_tokens_avoided": 5123,
+        "answer_passage_correct": true,
+        "seconds": 0.002617,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 5948,
+        "incremental_research_tokens": 5948,
+        "all_in_upper_bound_including_fixed_context_tokens": 15080,
+        "credit_tokens": 5948,
+        "lookup_tokens": 631,
+        "estimated_tokens_avoided": 5317,
+        "answer_passage_correct": true,
+        "seconds": 0.001805,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 85,
+        "characters": 337,
+        "conservative_byte_token_ceiling": 343,
+        "wall_ms": 100.873,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 5232
+    },
+    {
+      "stakes": "high",
+      "volatility": "stable",
+      "expected_decision": "REDO",
+      "id": "ivy",
+      "question": "When does an inactive Ivy session expire?",
+      "reference": "after 25 minutes",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 6000,
+        "incremental_research_tokens": 6000,
+        "all_in_upper_bound_including_fixed_context_tokens": 15200,
+        "credit_tokens": 6000,
+        "lookup_tokens": 1033,
+        "estimated_tokens_avoided": 4967,
+        "answer_passage_correct": true,
+        "seconds": 0.002536,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 6000,
+        "incremental_research_tokens": 6000,
+        "all_in_upper_bound_including_fixed_context_tokens": 15200,
+        "credit_tokens": 6000,
+        "lookup_tokens": 716,
+        "estimated_tokens_avoided": 5284,
+        "answer_passage_correct": true,
+        "seconds": 0.001831,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 86,
+        "characters": 341,
+        "conservative_byte_token_ceiling": 347,
+        "wall_ms": 101.714,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 5198
+    },
+    {
+      "stakes": "high",
+      "volatility": "volatile",
+      "expected_decision": "REDO",
+      "id": "lotus",
+      "question": "How long does Lotus retain audit events?",
+      "reference": "120 days",
+      "condition": "valid",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 6054,
+        "incremental_research_tokens": 6054,
+        "all_in_upper_bound_including_fixed_context_tokens": 15320,
+        "credit_tokens": 6054,
+        "lookup_tokens": 1039,
+        "estimated_tokens_avoided": 5015,
+        "answer_passage_correct": true,
+        "seconds": 0.002678,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 6054,
+        "incremental_research_tokens": 6054,
+        "all_in_upper_bound_including_fixed_context_tokens": 15320,
+        "credit_tokens": 6054,
+        "lookup_tokens": 717,
+        "estimated_tokens_avoided": 5337,
+        "answer_passage_correct": true,
+        "seconds": 0.001794,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 85,
+        "characters": 339,
+        "conservative_byte_token_ceiling": 345,
+        "wall_ms": 100.033,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": 5252
+    },
+    {
+      "stakes": "low",
+      "volatility": "stable",
+      "expected_decision": "REUSE",
+      "id": "mint",
+      "question": "What is two plus two in the Mint example?",
+      "reference": "four",
+      "condition": "cheap-redo",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 23,
+        "incremental_research_tokens": 23,
+        "all_in_upper_bound_including_fixed_context_tokens": 45,
+        "credit_tokens": 23,
+        "lookup_tokens": 1282,
+        "estimated_tokens_avoided": -1259,
+        "answer_passage_correct": true,
+        "seconds": 0.002982,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 23,
+        "incremental_research_tokens": 23,
+        "all_in_upper_bound_including_fixed_context_tokens": 45,
+        "credit_tokens": 23,
+        "lookup_tokens": 825,
+        "estimated_tokens_avoided": -802,
+        "answer_passage_correct": true,
+        "seconds": 0.00237,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 86,
+        "characters": 341,
+        "conservative_byte_token_ceiling": 347,
+        "wall_ms": 101.127,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": -888
+    },
+    {
+      "stakes": "high",
+      "volatility": "volatile",
+      "expected_decision": "REDO",
+      "id": "pine",
+      "question": "What is the current Pine API status?",
+      "reference": "version three is supported",
+      "condition": "stale",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 6160,
+        "incremental_research_tokens": 6160,
+        "all_in_upper_bound_including_fixed_context_tokens": 15560,
+        "credit_tokens": 0,
+        "lookup_tokens": 875,
+        "estimated_tokens_avoided": -875,
+        "answer_passage_correct": false,
+        "seconds": 0.002528,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 6160,
+        "incremental_research_tokens": 6160,
+        "all_in_upper_bound_including_fixed_context_tokens": 15560,
+        "credit_tokens": 0,
+        "lookup_tokens": 671,
+        "estimated_tokens_avoided": -671,
+        "answer_passage_correct": false,
+        "seconds": 0.001943,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 99,
+        "characters": 394,
+        "conservative_byte_token_ceiling": 400,
+        "wall_ms": 99.466,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": -770
+    },
+    {
+      "stakes": "high",
+      "volatility": "stable",
+      "expected_decision": "REDO",
+      "id": "reef",
+      "question": "What is the Reef password minimum?",
+      "reference": "16 characters",
+      "condition": "wrong",
+      "methods": {
+        "original": "invented Claude Code usage counters, not a measured provider bill",
+        "lookup": "actual returned tool text, ceil(characters/4)",
+        "answer_check": "case-insensitive reference substring in the read passage; not model answer accuracy"
+      },
+      "rank": 1,
+      "full": {
+        "original_tokens": 6214,
+        "incremental_research_tokens": 6214,
+        "all_in_upper_bound_including_fixed_context_tokens": 15680,
+        "credit_tokens": 0,
+        "lookup_tokens": 836,
+        "estimated_tokens_avoided": -836,
+        "answer_passage_correct": false,
+        "seconds": 0.002413,
+        "original_method": "claude-code-recorded"
+      },
+      "compact": {
+        "original_tokens": 6214,
+        "incremental_research_tokens": 6214,
+        "all_in_upper_bound_including_fixed_context_tokens": 15680,
+        "credit_tokens": 0,
+        "lookup_tokens": 644,
+        "estimated_tokens_avoided": -644,
+        "answer_passage_correct": false,
+        "seconds": 0.001777,
+        "original_method": "claude-code-recorded"
+      },
+      "hook": {
+        "estimated_overhead_tokens": 84,
+        "characters": 333,
+        "conservative_byte_token_ceiling": 339,
+        "wall_ms": 100.128,
+        "injected": true
+      },
+      "compact_plus_hook_estimated_tokens_avoided": -728
+    }
+  ],
+  "target_passed": true
+}
