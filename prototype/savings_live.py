@@ -36,7 +36,7 @@ def live(count=5,model='claude-sonnet-5-5',input_price=None,output_price=None,ye
     if not 1<=research_steps<=10:raise ValueError('--research-steps must be 1–10')
     if any(price is None or not math.isfinite(price) or price<0 for price in (input_price,output_price)):
         raise ValueError('Supply --input-price-per-million and --output-price-per-million for a live cost estimate')
-    step_cap=research_steps+2
+    step_cap=research_steps+4
     # Growing notes, assistant/tool framing and product guide are included approximately.
     assumed_input_per_call=12000+research_steps*4000+step_cap*2048
     calls_cap=count*2*step_cap
@@ -94,12 +94,15 @@ def live(count=5,model='claude-sonnet-5-5',input_price=None,output_price=None,ye
                                 else:output='Unknown tool'
                                 pending.append({'type':'tool_result','tool_use_id':block['id'],'content':output})
                             if not pending:
-                                final=data.get('stop_reason','end_turn')=='end_turn'
+                                final=data.get('stop_reason','end_turn')=='end_turn' and bool(answer.strip())
                                 break
                             messages.append({'role':'user','content':pending})
                     except Exception as exc:error=type(exc).__name__
                     total=sum(totals.values())
-                    results.append({'id':task['id'],'stakes':task['stakes'],'volatility':task['volatility'],'expected_decision':task['expected_decision'],'decision':parse_decision(decision_text),'decision_correct':parse_decision(decision_text)==task['expected_decision'],'case_group':'positive' if task['condition']=='valid' else 'negative','condition':task['condition'],'reuse_available':reuse,'model':model,'resolved_model':resolved_model,'final_answer_observed':final,'turn_limit_reached':calls==step_cap and not final,'usage':totals,'measured_total_tokens':total,'calls':calls,'seconds':round(time.perf_counter()-start,3),'answer':answer,'accuracy_reference_substring':final and task['reference'].casefold() in answer.casefold(),'tools_used':tool_names,'called_context_search':'context_search' in tool_names,'called_context_read':'context_read' in tool_names,'research_steps_completed':research_completed,'stop_reasons':stop_reasons,'refused':'refusal' in stop_reasons,'truncated':'max_tokens' in stop_reasons,'error':error,'user_priced_usd':((totals['input_tokens']+totals['cache_read_input_tokens']+totals['cache_creation_input_tokens'])*input_price+totals['output_tokens']*output_price)/1e6})
+                    cap_reached=calls==step_cap and not final
+                    decision=parse_decision(decision_text)
+                    correct=task['reference'].casefold() in answer.casefold() if final else None
+                    results.append({'id':task['id'],'stakes':task['stakes'],'volatility':task['volatility'],'expected_decision':task['expected_decision'],'decision':decision,'decision_compliant':decision is not None if reuse else None,'decision_correct':decision==task['expected_decision'],'case_group':'positive' if task['condition']=='valid' else 'negative','condition':task['condition'],'reuse_available':reuse,'model':model,'resolved_model':resolved_model,'final_answer_observed':final,'cap_reached':cap_reached,'turn_limit_reached':cap_reached,'answer_status':'no_answer' if not final else ('correct' if correct else 'wrong'),'usage':totals,'measured_total_tokens':total,'calls':calls,'seconds':round(time.perf_counter()-start,3),'answer':answer,'accuracy_reference_substring':correct,'tools_used':tool_names,'called_context_search':'context_search' in tool_names,'called_context_read':'context_read' in tool_names,'research_steps_completed':research_completed,'stop_reasons':stop_reasons,'refused':'refusal' in stop_reasons,'truncated':'max_tokens' in stop_reasons,'error':error,'user_priced_usd':((totals['input_tokens']+totals['cache_read_input_tokens']+totals['cache_creation_input_tokens'])*input_price+totals['output_tokens']*output_price)/1e6})
         finally:
             if service.bridge:service.bridge.db.close()
     return {'mode':'live-paid-synthetic','model':model,'policy':policy,'decision_metrics':decision_report(results),'research_steps':research_steps,'step_cap_per_arm':step_cap,'max_output_tokens_per_call':2048,'prices':{'input_usd_per_million':input_price,'output_usd_per_million':output_price},
@@ -111,4 +114,4 @@ def live(count=5,model='claude-sonnet-5-5',input_price=None,output_price=None,ye
       'No real private library is sent; only synthetic materials go to Anthropic after --yes.'],
       'advisory_pre_run_tokens':estimated_budget,'advisory_pre_run_usd':advisory_usd,'assumed_input_tokens_per_call':assumed_input_per_call,
       'positive_results':[r for r in results if r['case_group']=='positive'],'negative_results':[r for r in results if r['case_group']=='negative'],
-      'results':results,'target_passed':all(row['error'] is None and row['final_answer_observed'] and not row['refused'] and not row['truncated'] for row in results)}
+      'results':results,'target_passed':all(row['error'] is None and row['final_answer_observed'] and not row['refused'] and not row['truncated'] and (not row['reuse_available'] or row['decision_compliant']) for row in results)}

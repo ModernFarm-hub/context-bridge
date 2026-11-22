@@ -1,6 +1,6 @@
 # 0.9.0b1 local verification
 
-212 tests passed with the existing local model suites enabled. The dependency-free run passes with 29 optional model tests skipped. New tests cover local accounting, client identity and exact response-text sizes over real stdio; default/opt-in query privacy; profile-scoped clearing; recorded usage, incremental cache accounting, legacy snapshot reinterpretation, the synthetic 37,000-cache-read trivial turn and read-window math; compact/full compatibility; hook diff/confirmation/backups/uninstall and noninteractive/EOF refusal; relevance/empty-output/timeout/budgets; offline negative cases; and paid-mode guards using fake provider responses only.
+213 tests passed with the existing local model suites enabled. The dependency-free run passes with 29 optional model tests skipped. New tests cover local accounting, client identity and exact response-text sizes over real stdio; default/opt-in query privacy; profile-scoped clearing; recorded usage, incremental cache accounting, legacy snapshot reinterpretation, the synthetic 37,000-cache-read trivial turn and read-window math; compact/full compatibility; hook diff/confirmation/backups/uninstall and noninteractive/EOF refusal; relevance/empty-output/timeout/budgets; offline negative cases; and paid-mode guards using fake provider responses only.
 
 The [offline experiment](../../benchmarks/savings.md) uses twenty synthetic sessions and a disposable profile. Its original-cost counters are deliberately invented and its lookup tokens are character estimates. It is not a measured real-user savings claim. Three negative-net examples are retained. The paid Anthropic harness was not run; no API key or external paid service was used. No hook was installed in actual user settings. Tests use temporary settings files only.
 
@@ -75,3 +75,21 @@ python3 prototype/benchmark.py --savings --output /tmp/signal-precision-savings.
 ```
 
 Inspect expanded_volatility_fixture in the benchmark JSON for precision/recall and the retained miss IDs. No live mode is needed.
+
+## Run 3 harness correction
+
+213 tests pass with local model suites enabled; dependency-free tests pass with 29 optional model tests skipped. Build, artifact payload checks and offline uvx quickstart pass. All new live-harness execution uses fake provider responses; no paid mode was run for this change.
+
+Both arms now have research_steps + 4 calls (eight by default). Each reports cap_reached; a capped incomplete arm has answer_status=no_answer and null accuracy, not a wrong final answer. Missing/ambiguous decisions are explicitly non-compliant for reuse arms; baseline compliance is not applicable. The guide requires the decision before the final answer; word counts are economical 166, balanced 169, cautious 169. Fake regressions cover seven-call completion, cap exhaustion in both arms, final completion on the eighth call, and a correct but non-compliant answer.
+
+The [run 3 documentation and label review](../../benchmarks/savings.md#run-3--balanced-guide-before-call-cap-correction) retain the recorded $0.775910 result and both capped no-answer outcomes. Aster/Willow/Comet labels remain unchanged, with risk/evidence reasons documented independently of observed model choices. The raw run JSON was not modified. The advisory now budgets 80 calls by default; at supplied input/output prices of $2/$10 per million it estimates $8.739840, not a guaranteed spending cap.
+
+[Full 213-test output](call-cap-tests.log), [dependency-free output](call-cap-default-tests.log), [build and offline quickstart output](call-cap-build.log).
+
+```sh
+PYTHONPATH=prototype python3 -m unittest discover -s prototype/tests -v
+# Advisory only: expected refusal without --yes; no network call:
+python3 prototype/benchmark.py --savings --live --input-price-per-million 2 --output-price-per-million 10
+```
+
+Version remains 0.9.0b1. No tags, pushes, publication, issues or PRs.

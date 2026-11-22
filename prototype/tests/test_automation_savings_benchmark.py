@@ -17,7 +17,7 @@ from session_manager import Sessions
 
 class AutomationTests(unittest.TestCase):
     def test_guide_is_short_uses_valid_tools_and_requires_verification(self):
-        self.assertLessEqual(len(AGENT_GUIDE.split()),180)
+        self.assertLessEqual(len(AGENT_GUIDE.split()),170)
         for text in ('context_search','format="compact"','context_read','cite','Re-verify','untrusted'):
             self.assertIn(text,AGENT_GUIDE)
 
@@ -140,7 +140,7 @@ class SavingsBenchmarkTests(unittest.TestCase):
         def respond(request,timeout):
             body=json.loads(request.data);self.assertEqual(body['model'],'claude-sonnet-5-5');self.assertEqual(body['max_tokens'],2048)
             n[0]+=1
-            content=[{'type':'tool_use','id':'tool','name':'research','input':{'step':1}}] if n[0]%2 else [{'type':'text','text':'five attempts'}]
+            content=[{'type':'tool_use','id':'tool','name':'research','input':{'step':1}}] if n[0]%2 else [{'type':'text','text':'Reuse decision: REUSE — stable synthetic finding\nfive attempts'}]
             return Fake({'content':content,'usage':{'input_tokens':100,'output_tokens':10}})
         with patch.dict(os.environ,{'ANTHROPIC_API_KEY':'synthetic-never-sent'},clear=True),patch('urllib.request.urlopen',side_effect=respond),redirect_stdout(io.StringIO()):result=live(1,input_price=2,output_price=10,yes=True)
         self.assertEqual(n[0],4)
@@ -189,7 +189,7 @@ class SavingsBenchmarkTests(unittest.TestCase):
         self.assertTrue(result['target_passed'])
         self.assertEqual([r['id'] for r in result['positive_results']],[name for name in ('aster','willow','comet') for _ in range(2)])
         self.assertEqual([r['id'] for r in result['negative_results']],[name for name in ('mint','pine') for _ in range(2)])
-        self.assertEqual(result['research_steps'],4);self.assertEqual(result['step_cap_per_arm'],6)
+        self.assertEqual(result['research_steps'],4);self.assertEqual(result['step_cap_per_arm'],8)
         for row in result['results']:
             self.assertEqual(row['called_context_search'],row['reuse_available'])
             self.assertEqual(row['called_context_read'],row['reuse_available'])
@@ -205,7 +205,7 @@ class SavingsBenchmarkTests(unittest.TestCase):
             def __exit__(self,*args):pass
         with patch.dict(os.environ,{'ANTHROPIC_API_KEY':'synthetic-never-sent'},clear=True),patch('urllib.request.urlopen',side_effect=[Fake('refusal'),Fake('max_tokens')]),redirect_stdout(io.StringIO()):
             result=live(1,input_price=2,output_price=10,yes=True,research_steps=3)
-        self.assertFalse(result['target_passed']);self.assertEqual(result['step_cap_per_arm'],5)
+        self.assertFalse(result['target_passed']);self.assertEqual(result['step_cap_per_arm'],7)
         self.assertTrue(result['results'][0]['refused']);self.assertTrue(result['results'][1]['truncated'])
         self.assertTrue(all(not r['final_answer_observed'] for r in result['results']))
         with patch('urllib.request.urlopen',side_effect=AssertionError('No paid call')):
@@ -213,4 +213,4 @@ class SavingsBenchmarkTests(unittest.TestCase):
         script=str(Path(__file__).resolve().parents[1]/'benchmark.py')
         run=subprocess.run([sys.executable,script,'--savings','--live','--tasks','3','--research-steps','3','--input-price-per-million','2','--output-price-per-million','10'],capture_output=True,text=True,env={key:value for key,value in os.environ.items() if key not in ('CI','ANTHROPIC_API_KEY')})
         self.assertNotEqual(run.returncode,0);self.assertIn('research depth 3',run.stdout)
-        self.assertIn('at most 30 API calls',run.stdout);self.assertIn('--yes',run.stderr)
+        self.assertIn('at most 42 API calls',run.stdout);self.assertIn('--yes',run.stderr)
