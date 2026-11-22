@@ -208,7 +208,7 @@ class SavingsBenchmarkTests(unittest.TestCase):
         self.assertFalse(result['target_passed']);self.assertEqual(result['step_cap_per_arm'],7)
         self.assertTrue(result['results'][0]['refused']);self.assertTrue(result['results'][1]['truncated'])
         self.assertTrue(all(not r['final_answer_observed'] for r in result['results']))
-        with patch('urllib.request.urlopen',side_effect=AssertionError('No paid call')):
+        with patch.dict(os.environ,{},clear=True),patch('urllib.request.urlopen',side_effect=AssertionError('No paid call')):
             with self.assertRaisesRegex(ValueError,'research-steps'):live(input_price=2,output_price=10,research_steps=11)
         script=str(Path(__file__).resolve().parents[1]/'benchmark.py')
         run=subprocess.run([sys.executable,script,'--savings','--live','--tasks','3','--research-steps','3','--input-price-per-million','2','--output-price-per-million','10'],capture_output=True,text=True,env={key:value for key,value in os.environ.items() if key not in ('CI','ANTHROPIC_API_KEY')})
