@@ -15,7 +15,7 @@ Last updated: 2026-11-22. Context Bridge is a free, open-source, local-first pro
 - An offer to enable semantic search after the first import; embeddings built during import.
 - Legacy research commands removed from the product CLI.
 
-## 0.9.0b1: implemented locally, pending release
+## 0.10.0b1: implemented locally, pending release
 
 Local accounting, compact results, printed agent guidance and an opt-in bounded hook are implemented. The goal is to make the cost of reuse visible, including failures; no universal or measured real-user savings claim is made.
 
@@ -46,3 +46,11 @@ Local accounting, compact results, printed agent guidance and an opt-in bounded 
 - Scraping chatgpt.com or claude.ai. Web history arrives only through official exports until providers offer a history API.
 
 Risk-weighted reuse guidance and heuristic search signals now distinguish REUSE/CHECK/REDO. Historical small-n synthetic live runs used the old guide; the new policy is tested with fake responses only. Next validation should measure decision accuracy and high-risk answer failures by class, not just token totals. Conflict detection remains disabled pending validation.
+
+### 0.10.0b1: realistic experiment and repeat opportunities
+
+- Forty frozen public-document tasks, actual version-change cases, cached original sessions, isolated Context Bridge comparisons and paired bootstrap analysis. [Protocol](benchmarks/savings-real-guide.md). Only fake-provider verification has run; no paid savings claim.
+- Local repeat research reporting with provider breakdowns, conservative cost estimates, title-only chains and sample review. Repetition measures opportunity, not savings.
+- Explicit approval of existing project folders before their first Claude Code or Codex thread.
+
+Cost-control verification keeps 0.10.0b1: automatic caching, explicit input/output/cache rates, a required paid-run dollar budget, pilot projections, a runtime wheel below 500000 bytes with source-only corpus, and repeat-report sensitivity with local review. Only fake-provider and synthetic-library verification has run.

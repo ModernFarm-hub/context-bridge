@@ -1,0 +1,835 @@
+{
+  "method": "Mean paired per-task ratio of medians; task bootstrap percentile interval, 10000 draws, seed 104729. Accuracy: mean of three binary repetitions per task, paired task bootstrap. Failures count incorrect.",
+  "overall": {
+    "tasks": 40,
+    "mean_paired_ratio": 0.9820987654320987,
+    "ratio_95_interval": [
+      0.8972222222222223,
+      1.0669753086419753
+    ],
+    "fewer_tokens_percent": 1.790123456790127,
+    "fewer_tokens_95_interval_percent": [
+      -6.697530864197532,
+      10.277777777777775
+    ],
+    "baseline_accuracy": 1,
+    "reuse_accuracy": 1,
+    "accuracy_difference": 0,
+    "accuracy_difference_95_interval": [
+      0,
+      0
+    ],
+    "decision_accuracy": 1,
+    "reuse_loses_tasks": [
+      "research-21",
+      "research-22",
+      "research-23",
+      "research-24",
+      "research-25",
+      "research-26",
+      "research-27",
+      "research-28",
+      "research-29",
+      "research-30"
+    ]
+  },
+  "per_variant": {
+    "same": {
+      "tasks": 10,
+      "mean_paired_ratio": 0.8123456790123457,
+      "ratio_95_interval": [
+        0.8123456790123457,
+        0.8123456790123457
+      ],
+      "fewer_tokens_percent": 18.765432098765434,
+      "fewer_tokens_95_interval_percent": [
+        18.765432098765434,
+        18.765432098765434
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 1,
+      "reuse_loses_tasks": []
+    },
+    "paraphrase": {
+      "tasks": 10,
+      "mean_paired_ratio": 0.8123456790123457,
+      "ratio_95_interval": [
+        0.8123456790123457,
+        0.8123456790123457
+      ],
+      "fewer_tokens_percent": 18.765432098765434,
+      "fewer_tokens_95_interval_percent": [
+        18.765432098765434,
+        18.765432098765434
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 1,
+      "reuse_loses_tasks": []
+    },
+    "related": {
+      "tasks": 10,
+      "mean_paired_ratio": 1.491358024691358,
+      "ratio_95_interval": [
+        1.491358024691358,
+        1.491358024691358
+      ],
+      "fewer_tokens_percent": -49.135802469135804,
+      "fewer_tokens_95_interval_percent": [
+        -49.135802469135804,
+        -49.135802469135804
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 1,
+      "reuse_loses_tasks": [
+        "research-21",
+        "research-22",
+        "research-23",
+        "research-24",
+        "research-25",
+        "research-26",
+        "research-27",
+        "research-28",
+        "research-29",
+        "research-30"
+      ]
+    },
+    "stale": {
+      "tasks": 10,
+      "mean_paired_ratio": 0.8123456790123457,
+      "ratio_95_interval": [
+        0.8123456790123457,
+        0.8123456790123457
+      ],
+      "fewer_tokens_percent": 18.765432098765434,
+      "fewer_tokens_95_interval_percent": [
+        18.765432098765434,
+        18.765432098765434
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 1,
+      "reuse_loses_tasks": []
+    }
+  },
+  "per_expected_decision": {
+    "REUSE": {
+      "tasks": 20,
+      "mean_paired_ratio": 0.8123456790123457,
+      "ratio_95_interval": [
+        0.8123456790123457,
+        0.8123456790123457
+      ],
+      "fewer_tokens_percent": 18.765432098765434,
+      "fewer_tokens_95_interval_percent": [
+        18.765432098765434,
+        18.765432098765434
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 1,
+      "reuse_loses_tasks": []
+    },
+    "CHECK": {
+      "tasks": 10,
+      "mean_paired_ratio": 0.8123456790123457,
+      "ratio_95_interval": [
+        0.8123456790123457,
+        0.8123456790123457
+      ],
+      "fewer_tokens_percent": 18.765432098765434,
+      "fewer_tokens_95_interval_percent": [
+        18.765432098765434,
+        18.765432098765434
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 1,
+      "reuse_loses_tasks": []
+    },
+    "REDO": {
+      "tasks": 10,
+      "mean_paired_ratio": 1.491358024691358,
+      "ratio_95_interval": [
+        1.491358024691358,
+        1.491358024691358
+      ],
+      "fewer_tokens_percent": -49.135802469135804,
+      "fewer_tokens_95_interval_percent": [
+        -49.135802469135804,
+        -49.135802469135804
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 1,
+      "reuse_loses_tasks": [
+        "research-21",
+        "research-22",
+        "research-23",
+        "research-24",
+        "research-25",
+        "research-26",
+        "research-27",
+        "research-28",
+        "research-29",
+        "research-30"
+      ]
+    }
+  },
+  "paired_tasks": [
+    {
+      "id": "research-01",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-02",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-03",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-04",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-05",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-06",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-07",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-08",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-09",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-10",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-11",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-12",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-13",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-14",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-15",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-16",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-17",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-18",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-19",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-20",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-21",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-22",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-23",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-24",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-25",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-26",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-27",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-28",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-29",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-30",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.491358024691358,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 604,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-31",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-32",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-33",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-34",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-35",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-36",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-37",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-38",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-39",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    },
+    {
+      "id": "research-40",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 0.8123456790123457,
+      "baseline_median_tokens": 405,
+      "reuse_median_tokens": 329,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 1
+    }
+  ],
+  "incomplete_tasks": [],
+  "counts": {
+    "baseline": {
+      "cap_reached": 0,
+      "refused": 0,
+      "truncated": 0,
+      "error": 0
+    },
+    "reuse": {
+      "cap_reached": 0,
+      "refused": 0,
+      "truncated": 0,
+      "error": 0
+    }
+  },
+  "phase_a": {
+    "sessions": 40,
+    "correct": 40,
+    "cap_reached": 0,
+    "refused": 0,
+    "truncated": 0,
+    "error": 0
+  },
+  "user_priced_costs": {
+    "A": {
+      "input_tokens": 12000,
+      "cache_read_input_tokens": 1360,
+      "cache_creation_input_tokens": 440,
+      "output_tokens": 2400,
+      "total_input_tokens": 13800,
+      "total_usd": 0.049372,
+      "input_usd": 0.024,
+      "cache_read_input_usd": 0.000272,
+      "cache_creation_input_usd": 0.0011,
+      "output_usd": 0.024
+    },
+    "B": {
+      "input_tokens": 65250,
+      "cache_read_input_tokens": 12240,
+      "cache_creation_input_tokens": 2640,
+      "output_tokens": 16200,
+      "total_input_tokens": 80130,
+      "total_usd": 0.301548,
+      "input_usd": 0.1305,
+      "cache_read_input_usd": 0.002448,
+      "cache_creation_input_usd": 0.0066,
+      "output_usd": 0.162
+    },
+    "grader": {
+      "input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 0,
+      "total_input_tokens": 0,
+      "total_usd": 0.0,
+      "input_usd": 0.0,
+      "cache_read_input_usd": 0.0,
+      "cache_creation_input_usd": 0.0,
+      "output_usd": 0.0
+    }
+  },
+  "mean_characters_read_per_session": 20020.52857142857,
+  "accuracy_noninferiority_passed": true,
+  "stale_safety_passed": true,
+  "claim_eligible": false,
+  "resolved_models": [
+    "FAKE-NOT-A-MEASUREMENT"
+  ],
+  "model": "claude-sonnet-5-5",
+  "mode": "fake-provider",
+  "pilot": false,
+  "notice": "FAKE provider fixtures: no measured savings claim.",
+  "run": {
+    "costs_sha256": "aa5d406e4ff53eab1c3c21ab1e62c780b31b42fba096a42fda4c982e2cdea1b8",
+    "max_usd": 10.0,
+    "prices": {
+      "input_tokens": "2.0",
+      "cache_read_input_tokens": "0.2",
+      "cache_creation_input_tokens": "2.5",
+      "output_tokens": "10.0"
+    },
+    "grader_prices": {
+      "input_tokens": "0",
+      "cache_read_input_tokens": "0",
+      "cache_creation_input_tokens": "0",
+      "output_tokens": "0"
+    },
+    "fake": true,
+    "pilot": false,
+    "model": "claude-sonnet-5-5",
+    "grader_model": null,
+    "call_cap": 12,
+    "total_cap": 4000,
+    "input_price": 2.0,
+    "output_price": 10.0,
+    "grader_input_price": 0,
+    "grader_output_price": 0,
+    "tasks_sha256": "8f565ed553927e1df52166dd0c394f8a79dd6550d3160ccd3ebe2c572125df8b",
+    "analysis_sha256": "456a2a4405bb63b185873effbdf952a5187a648fd265a3606edf4728f299bd22",
+    "runner_sha256": "58dd8fa83c2c4aafa3e60d635737850bf88ce95d8623a575e5feef30637da262",
+    "manifest_sha256": "71955c475704e1978ed52f39b96d56d292982109a75c6ad35b1551f892443bfe"
+  },
+  "budget": {
+    "max_usd": 10.0,
+    "recorded_usd": 0.35092,
+    "unresolved_calls": 0,
+    "stop_reason": null,
+    "basis": "Supplied rates; conservative text-byte plus framing reservations, no assumed cache hits. Not an external billing-service limit."
+  },
+  "usage_observations": {
+    "mean_tokens_per_call": {
+      "input_tokens": 71.52777777777777,
+      "cache_read_input_tokens": 12.592592592592593,
+      "cache_creation_input_tokens": 2.8518518518518516,
+      "output_tokens": 17.22222222222222
+    },
+    "mean_tokens_per_session": {
+      "input_tokens": 275.89285714285717,
+      "cache_read_input_tokens": 48.57142857142857,
+      "cache_creation_input_tokens": 11.0,
+      "output_tokens": 66.42857142857143
+    },
+    "grader_mean_tokens_per_call": {
+      "input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 0
+    },
+    "by_phase_arm": {
+      "A-original": {
+        "sessions": 40,
+        "mean_tokens_per_session": {
+          "input_tokens": 300.0,
+          "cache_read_input_tokens": 34.0,
+          "cache_creation_input_tokens": 11.0,
+          "output_tokens": 60.0
+        }
+      },
+      "B-baseline": {
+        "sessions": 120,
+        "mean_tokens_per_session": {
+          "input_tokens": 300.0,
+          "cache_read_input_tokens": 34.0,
+          "cache_creation_input_tokens": 11.0,
+          "output_tokens": 60.0
+        }
+      },
+      "B-reuse": {
+        "sessions": 120,
+        "mean_tokens_per_session": {
+          "input_tokens": 243.75,
+          "cache_read_input_tokens": 68.0,
+          "cache_creation_input_tokens": 11.0,
+          "output_tokens": 75.0
+        }
+      }
+    },
+    "mean_characters_read_per_session": 20020.52857142857,
+    "full_run_projected_tokens": {
+      "input_tokens": 77250.0,
+      "cache_read_input_tokens": 13600.0,
+      "cache_creation_input_tokens": 3080.0,
+      "output_tokens": 18600.0
+    },
+    "full_run_estimated_research_usd": 0.35092,
+    "full_run_estimated_grader_usd": 0.0,
+    "full_run_estimated_usd": 0.35092,
+    "full_run_worst_case_usd": 8468.8128,
+    "full_run_call_limit": 3360,
+    "notice": "Measured pilot extrapolation by phase/arm, not a guarantee or confidence interval. Grader estimate assumes 240 judgments (no deduplication savings). Fake tokens remain fabricated; use a separate full-run directory."
+  },
+  "call_accounting": {
+    "reserved": 1080,
+    "unresolved": 0,
+    "cost_coverage": "Recorded successful responses only; unresolved requests may have unknown billable usage."
+  },
+  "secondary_grading": null
+}

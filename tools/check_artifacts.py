@@ -9,11 +9,13 @@ import zipfile
 
 def check(path):
     if path.suffix=='.whl':
+        if path.stat().st_size>=500_000:raise ValueError('Wheel exceeds 500000-byte size budget')
         with zipfile.ZipFile(path) as archive:
             members=[(info.filename,archive.read(info)) for info in archive.infolist() if not info.is_dir()]
     else:
         with tarfile.open(path,'r:gz') as archive:
             members=[(info.name,archive.extractfile(info).read()) for info in archive.getmembers() if info.isfile()]
+    if path.suffix=='.whl' and any('/evals/savings-real/corpus/' in name for name,_ in members):raise ValueError('Benchmark corpus must not be in the wheel')
     for name,body in members:
         parts=PurePosixPath(name).parts
         if any(part in {'evaluation','research','releases','work','__pycache__','.venv'} for part in parts) or name.endswith(('.jsonl','.db','.log','.pyc')) or PurePosixPath(name).name in {'profile.json','enrollment.json','.env'}:

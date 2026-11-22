@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "context-bridge-local"
-version = "0.9.0b1"
+version = "0.10.0b1"
 description = "Local-first MCP search across Claude and ChatGPT conversations, with citations"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -28,7 +28,7 @@ license-files = ["LICENSE", "NOTICE"]
 context_bridge = "prototype"
 
 [tool.setuptools.package-data]
-context_bridge = ["evals/*.json", "evals/*.md", "requirements-semantic-lock.txt"]
+context_bridge = ["evals/savings-real/*.json", "evals/savings-real/*.md", "evals/savings-real/licenses/*.txt", "evals/*.json", "evals/*.md", "requirements-semantic-lock.txt"]
 
 [project.urls]
 Repository = "https://github.com/ModernFarm-hub/context-bridge"

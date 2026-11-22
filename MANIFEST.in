@@ -14,3 +14,6 @@ prune prototype/__pycache__
 recursive-exclude * __pycache__ *.pyc *.jsonl *.db *.log
 
 include server.json
+
+recursive-include prototype/evals/savings-real *.rst *.txt
+include docs/benchmarks/savings-real-fake-spot-check.csv

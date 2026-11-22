@@ -1,0 +1,1269 @@
+[
+  {
+    "id": "research-01",
+    "question": "When storing a JSON file in a ZIP archive, what is the default JSON ensure_ascii value and the default ZIP compression method?",
+    "original_question": "When storing a JSON file in a ZIP archive, what is the default JSON ensure_ascii value and the default ZIP compression method?",
+    "reference_answer": {
+      "ensure_ascii": "true",
+      "compression": "ZIP_STORED"
+    },
+    "original_reference_answer": {
+      "ensure_ascii": "true",
+      "compression": "ZIP_STORED"
+    },
+    "required_facts": {
+      "ensure_ascii": "true",
+      "compression": "ZIP_STORED"
+    },
+    "sections": [
+      {
+        "path": "library/json.rst",
+        "anchor": "ensure_ascii"
+      },
+      {
+        "path": "library/zipfile.rst",
+        "anchor": "ZIP_STORED"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "JSON files"
+  },
+  {
+    "id": "research-02",
+    "question": "For a CSV pipeline using an in-memory text stream, what is the default CSV delimiter and which io class accepts text?",
+    "original_question": "For a CSV pipeline using an in-memory text stream, what is the default CSV delimiter and which io class accepts text?",
+    "reference_answer": {
+      "delimiter": ",",
+      "stream": "StringIO"
+    },
+    "original_reference_answer": {
+      "delimiter": ",",
+      "stream": "StringIO"
+    },
+    "required_facts": {
+      "delimiter": ",",
+      "stream": "StringIO"
+    },
+    "sections": [
+      {
+        "path": "library/csv.rst",
+        "anchor": "delimiter"
+      },
+      {
+        "path": "library/io.rst",
+        "anchor": "StringIO"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "CSV in memory"
+  },
+  {
+    "id": "research-03",
+    "question": "For sorting dataclass records by two attributes, which operator helper accepts multiple attribute names and is Python sorting stable?",
+    "original_question": "For sorting dataclass records by two attributes, which operator helper accepts multiple attribute names and is Python sorting stable?",
+    "reference_answer": {
+      "helper": "attrgetter",
+      "stable": "true"
+    },
+    "original_reference_answer": {
+      "helper": "attrgetter",
+      "stable": "true"
+    },
+    "required_facts": {
+      "helper": "attrgetter",
+      "stable": "true"
+    },
+    "sections": [
+      {
+        "path": "library/operator.rst",
+        "anchor": "attrgetter"
+      },
+      {
+        "path": "library/stdtypes.rst",
+        "anchor": "stable"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "Sorting records"
+  },
+  {
+    "id": "research-04",
+    "question": "To write JSON to a temporary text file, what mode does NamedTemporaryFile default to and does json.dump produce str or bytes?",
+    "original_question": "To write JSON to a temporary text file, what mode does NamedTemporaryFile default to and does json.dump produce str or bytes?",
+    "reference_answer": {
+      "mode": "w+b",
+      "json_type": "str"
+    },
+    "original_reference_answer": {
+      "mode": "w+b",
+      "json_type": "str"
+    },
+    "required_facts": {
+      "mode": "w+b",
+      "json_type": "str"
+    },
+    "sections": [
+      {
+        "path": "library/tempfile.rst",
+        "anchor": "NamedTemporaryFile"
+      },
+      {
+        "path": "library/json.rst",
+        "anchor": "str"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "Temporary JSON"
+  },
+  {
+    "id": "research-05",
+    "question": "When packing network data and encoding it, what struct byte-order marker means network order and what does base64.b64encode return?",
+    "original_question": "When packing network data and encoding it, what struct byte-order marker means network order and what does base64.b64encode return?",
+    "reference_answer": {
+      "network_marker": "!",
+      "return_type": "bytes"
+    },
+    "original_reference_answer": {
+      "network_marker": "!",
+      "return_type": "bytes"
+    },
+    "required_facts": {
+      "network_marker": "!",
+      "return_type": "bytes"
+    },
+    "sections": [
+      {
+        "path": "library/struct.rst",
+        "anchor": "network"
+      },
+      {
+        "path": "library/base64.rst",
+        "anchor": "b64encode"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "Binary packing"
+  },
+  {
+    "id": "research-06",
+    "question": "For a log parser, what is the default datetime.strptime date for unspecified components and what method decodes a JSON document from a string?",
+    "original_question": "For a log parser, what is the default datetime.strptime date for unspecified components and what method decodes a JSON document from a string?",
+    "reference_answer": {
+      "default_date": "1900-01-01",
+      "method": "loads"
+    },
+    "original_reference_answer": {
+      "default_date": "1900-01-01",
+      "method": "loads"
+    },
+    "required_facts": {
+      "default_date": "1900-01-01",
+      "method": "loads"
+    },
+    "sections": [
+      {
+        "path": "library/datetime.rst",
+        "anchor": "1900"
+      },
+      {
+        "path": "library/json.rst",
+        "anchor": "loads"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "Date parsing"
+  },
+  {
+    "id": "research-07",
+    "question": "For counting tokens then taking frequent entries, which collections class counts hashable objects and what heapq function finds n largest values?",
+    "original_question": "For counting tokens then taking frequent entries, which collections class counts hashable objects and what heapq function finds n largest values?",
+    "reference_answer": {
+      "class": "Counter",
+      "function": "nlargest"
+    },
+    "original_reference_answer": {
+      "class": "Counter",
+      "function": "nlargest"
+    },
+    "required_facts": {
+      "class": "Counter",
+      "function": "nlargest"
+    },
+    "sections": [
+      {
+        "path": "library/collections.rst",
+        "anchor": "Counter"
+      },
+      {
+        "path": "library/heapq.rst",
+        "anchor": "nlargest"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "Counters"
+  },
+  {
+    "id": "research-08",
+    "question": "For recursively finding files then matching their names, which pathlib method uses a recursive glob and does fnmatch.fnmatch normalize case?",
+    "original_question": "For recursively finding files then matching their names, which pathlib method uses a recursive glob and does fnmatch.fnmatch normalize case?",
+    "reference_answer": {
+      "method": "rglob",
+      "normalizes_case": "true"
+    },
+    "original_reference_answer": {
+      "method": "rglob",
+      "normalizes_case": "true"
+    },
+    "required_facts": {
+      "method": "rglob",
+      "normalizes_case": "true"
+    },
+    "sections": [
+      {
+        "path": "library/pathlib.rst",
+        "anchor": "rglob"
+      },
+      {
+        "path": "library/fnmatch.rst",
+        "anchor": "normcase"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "File traversal"
+  },
+  {
+    "id": "research-09",
+    "question": "To compare two config texts with regular expressions, what difflib function produces a unified diff and what re flag enables case-insensitive matching?",
+    "original_question": "To compare two config texts with regular expressions, what difflib function produces a unified diff and what re flag enables case-insensitive matching?",
+    "reference_answer": {
+      "diff": "unified_diff",
+      "flag": "IGNORECASE"
+    },
+    "original_reference_answer": {
+      "diff": "unified_diff",
+      "flag": "IGNORECASE"
+    },
+    "required_facts": {
+      "diff": "unified_diff",
+      "flag": "IGNORECASE"
+    },
+    "sections": [
+      {
+        "path": "library/difflib.rst",
+        "anchor": "unified_diff"
+      },
+      {
+        "path": "library/re.rst",
+        "anchor": "IGNORECASE"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "Text diff"
+  },
+  {
+    "id": "research-10",
+    "question": "To iterate over all combinations and stop at a sentinel, which itertools function produces r-length combinations and how many arguments does the sentinel form of iter take?",
+    "original_question": "To iterate over all combinations and stop at a sentinel, which itertools function produces r-length combinations and how many arguments does the sentinel form of iter take?",
+    "reference_answer": {
+      "function": "combinations",
+      "arguments": "2"
+    },
+    "original_reference_answer": {
+      "function": "combinations",
+      "arguments": "2"
+    },
+    "required_facts": {
+      "function": "combinations",
+      "arguments": "2"
+    },
+    "sections": [
+      {
+        "path": "library/itertools.rst",
+        "anchor": "combinations"
+      },
+      {
+        "path": "library/functions.rst",
+        "anchor": "sentinel"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "same",
+    "corpus_version": "v1",
+    "topic": "Iterators"
+  },
+  {
+    "id": "research-11",
+    "question": "I need to split and then reconstruct URLs. Which urllib.parse function returns five components, and which function reverses it?",
+    "original_question": "How can I break a URL into five parts and reconstruct the original URL using urllib.parse?",
+    "reference_answer": {
+      "split": "urlsplit",
+      "join": "urlunsplit"
+    },
+    "original_reference_answer": {
+      "split": "urlsplit",
+      "join": "urlunsplit"
+    },
+    "required_facts": {
+      "split": "urlsplit",
+      "join": "urlunsplit"
+    },
+    "sections": [
+      {
+        "path": "library/urllib.parse.rst",
+        "anchor": "urlsplit"
+      },
+      {
+        "path": "library/urllib.parse.rst",
+        "anchor": "urlunsplit"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "URL components"
+  },
+  {
+    "id": "research-12",
+    "question": "Which textwrap helper removes common indentation, and which inspect helper cleans a docstring?",
+    "original_question": "What functions strip a common margin from multiline text and clean indentation from Python docstrings?",
+    "reference_answer": {
+      "dedent": "dedent",
+      "clean": "cleandoc"
+    },
+    "original_reference_answer": {
+      "dedent": "dedent",
+      "clean": "cleandoc"
+    },
+    "required_facts": {
+      "dedent": "dedent",
+      "clean": "cleandoc"
+    },
+    "sections": [
+      {
+        "path": "library/textwrap.rst",
+        "anchor": "dedent"
+      },
+      {
+        "path": "library/inspect.rst",
+        "anchor": "cleandoc"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Text wrappers"
+  },
+  {
+    "id": "research-13",
+    "question": "For a queue-backed worker coordinated by an event, what does Queue maxsize <= 0 mean and what is the initial Event flag?",
+    "original_question": "If I construct an unbounded worker Queue and a new threading Event, what maxsize setting allows infinite capacity and is the event initially set?",
+    "reference_answer": {
+      "capacity": "infinite",
+      "event": "false"
+    },
+    "original_reference_answer": {
+      "capacity": "infinite",
+      "event": "false"
+    },
+    "required_facts": {
+      "capacity": "infinite",
+      "event": "false"
+    },
+    "sections": [
+      {
+        "path": "library/queue.rst",
+        "anchor": "maxsize"
+      },
+      {
+        "path": "library/threading.rst",
+        "anchor": "Event"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Queues"
+  },
+  {
+    "id": "research-14",
+    "question": "For checking floating computations, what is math.isclose default rel_tol and what is Decimal default precision?",
+    "original_question": "What relative tolerance does math.isclose assume when omitted, and how many significant digits does a default Decimal context keep?",
+    "reference_answer": {
+      "rel_tol": "1e-09",
+      "precision": "28"
+    },
+    "original_reference_answer": {
+      "rel_tol": "1e-09",
+      "precision": "28"
+    },
+    "required_facts": {
+      "rel_tol": "1e-09",
+      "precision": "28"
+    },
+    "sections": [
+      {
+        "path": "library/math.rst",
+        "anchor": "isclose"
+      },
+      {
+        "path": "library/decimal.rst",
+        "anchor": "prec"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Floating arithmetic"
+  },
+  {
+    "id": "research-15",
+    "question": "For caching parsed records, what is lru_cache default maxsize and does functools.wraps preserve __name__?",
+    "original_question": "When I decorate a parser with the default lru_cache and use wraps, how big is its cache and will the wrapped function keep its name?",
+    "reference_answer": {
+      "maxsize": "128",
+      "preserves_name": "true"
+    },
+    "original_reference_answer": {
+      "maxsize": "128",
+      "preserves_name": "true"
+    },
+    "required_facts": {
+      "maxsize": "128",
+      "preserves_name": "true"
+    },
+    "sections": [
+      {
+        "path": "library/functools.rst",
+        "anchor": "lru_cache"
+      },
+      {
+        "path": "library/functools.rst",
+        "anchor": "wraps"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Memoization"
+  },
+  {
+    "id": "research-16",
+    "question": "For a small CLI, what is the default root logger level and which warnings function issues a warning?",
+    "original_question": "Without configuring logging, what level does the root logger start at, and how do I emit a warning through the warnings module?",
+    "reference_answer": {
+      "level": "WARNING",
+      "function": "warn"
+    },
+    "original_reference_answer": {
+      "level": "WARNING",
+      "function": "warn"
+    },
+    "required_facts": {
+      "level": "WARNING",
+      "function": "warn"
+    },
+    "sections": [
+      {
+        "path": "library/logging.rst",
+        "anchor": "WARNING"
+      },
+      {
+        "path": "library/warnings.rst",
+        "anchor": "warn"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Logging warning"
+  },
+  {
+    "id": "research-17",
+    "question": "For composing a mail message from text, which email.message class is the central API and what mimetypes function guesses MIME type from a URL?",
+    "original_question": "What email class should hold a newly composed message, and what mimetypes helper infers a content type from a URL?",
+    "reference_answer": {
+      "class": "EmailMessage",
+      "function": "guess_type"
+    },
+    "original_reference_answer": {
+      "class": "EmailMessage",
+      "function": "guess_type"
+    },
+    "required_facts": {
+      "class": "EmailMessage",
+      "function": "guess_type"
+    },
+    "sections": [
+      {
+        "path": "library/email.message.rst",
+        "anchor": "EmailMessage"
+      },
+      {
+        "path": "library/mimetypes.rst",
+        "anchor": "guess_type"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Email messages"
+  },
+  {
+    "id": "research-18",
+    "question": "For serializable records, does dataclass default frozen to true or false, and what json function converts an object to a string?",
+    "original_question": "Are ordinary dataclass instances frozen by default, and which JSON encoder helper returns text instead of writing a file?",
+    "reference_answer": {
+      "frozen": "false",
+      "function": "dumps"
+    },
+    "original_reference_answer": {
+      "frozen": "false",
+      "function": "dumps"
+    },
+    "required_facts": {
+      "frozen": "false",
+      "function": "dumps"
+    },
+    "sections": [
+      {
+        "path": "library/dataclasses.rst",
+        "anchor": "frozen"
+      },
+      {
+        "path": "library/json.rst",
+        "anchor": "dumps"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Data containers"
+  },
+  {
+    "id": "research-19",
+    "question": "For exact arithmetic and descriptive statistics, which fractions class represents rational numbers and what statistics function computes the median?",
+    "original_question": "Which standard class stores a ratio exactly, and which statistics helper returns the central value of a data sequence?",
+    "reference_answer": {
+      "class": "Fraction",
+      "function": "median"
+    },
+    "original_reference_answer": {
+      "class": "Fraction",
+      "function": "median"
+    },
+    "required_facts": {
+      "class": "Fraction",
+      "function": "median"
+    },
+    "sections": [
+      {
+        "path": "library/fractions.rst",
+        "anchor": "Fraction"
+      },
+      {
+        "path": "library/statistics.rst",
+        "anchor": "median"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "Rational statistics"
+  },
+  {
+    "id": "research-20",
+    "question": "Which shlex function splits shell-like syntax and which configparser class reads INI files?",
+    "original_question": "How do I tokenize a shell-style command line and parse an INI settings file with standard-library APIs?",
+    "reference_answer": {
+      "split": "split",
+      "class": "ConfigParser"
+    },
+    "original_reference_answer": {
+      "split": "split",
+      "class": "ConfigParser"
+    },
+    "required_facts": {
+      "split": "split",
+      "class": "ConfigParser"
+    },
+    "sections": [
+      {
+        "path": "library/shlex.rst",
+        "anchor": "split"
+      },
+      {
+        "path": "library/configparser.rst",
+        "anchor": "ConfigParser"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "stable",
+    "expected_decision": "REUSE",
+    "variant": "paraphrase",
+    "corpus_version": "v1",
+    "topic": "String parsing"
+  },
+  {
+    "id": "research-21",
+    "question": "For a production TLS client, which SSL helper creates a context with secure defaults and does it load default CA certificates?",
+    "original_question": "Which ssl helper constructs a context with secure defaults?",
+    "reference_answer": {
+      "function": "create_default_context",
+      "loads_ca": "true"
+    },
+    "original_reference_answer": {
+      "function": "create_default_context"
+    },
+    "required_facts": {
+      "function": "create_default_context",
+      "loads_ca": "true"
+    },
+    "sections": [
+      {
+        "path": "library/ssl.rst",
+        "anchor": "create_default_context"
+      },
+      {
+        "path": "library/ssl.rst",
+        "anchor": "load_default_certs"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "TLS verification"
+  },
+  {
+    "id": "research-22",
+    "question": "For security-sensitive tokens, which module should replace random and which secrets function generates a URL-safe token?",
+    "original_question": "Which Python module generates cryptographically strong random values?",
+    "reference_answer": {
+      "module": "secrets",
+      "function": "token_urlsafe"
+    },
+    "original_reference_answer": {
+      "module": "secrets"
+    },
+    "required_facts": {
+      "module": "secrets",
+      "function": "token_urlsafe"
+    },
+    "sections": [
+      {
+        "path": "library/random.rst",
+        "anchor": "security"
+      },
+      {
+        "path": "library/secrets.rst",
+        "anchor": "token_urlsafe"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Secret tokens"
+  },
+  {
+    "id": "research-23",
+    "question": "For a privacy-sensitive service, is unpickling untrusted data safe and does JSON inherently have the same arbitrary-code vulnerability?",
+    "original_question": "Is loading untrusted pickle data safe?",
+    "reference_answer": {
+      "pickle_safe": "false",
+      "json_same_risk": "false"
+    },
+    "original_reference_answer": {
+      "pickle_safe": "false"
+    },
+    "required_facts": {
+      "pickle_safe": "false",
+      "json_same_risk": "false"
+    },
+    "sections": [
+      {
+        "path": "library/pickle.rst",
+        "anchor": "untrusted"
+      },
+      {
+        "path": "library/json.rst",
+        "anchor": "pickle"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Untrusted serialization"
+  },
+  {
+    "id": "research-24",
+    "question": "For a security-sensitive digest comparison, what hmac function avoids content-based short-circuiting and what secrets function exposes a similar comparison?",
+    "original_question": "Which hmac helper compares digests without content-based short circuiting?",
+    "reference_answer": {
+      "hmac": "compare_digest",
+      "secrets": "compare_digest"
+    },
+    "original_reference_answer": {
+      "hmac": "compare_digest"
+    },
+    "required_facts": {
+      "hmac": "compare_digest",
+      "secrets": "compare_digest"
+    },
+    "sections": [
+      {
+        "path": "library/hmac.rst",
+        "anchor": "compare_digest"
+      },
+      {
+        "path": "library/secrets.rst",
+        "anchor": "compare_digest"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Password comparison"
+  },
+  {
+    "id": "research-25",
+    "question": "For a production subprocess wrapper on POSIX, what subprocess shell default applies and what shlex helper quotes one argument?",
+    "original_question": "What is the default value of subprocess shell?",
+    "reference_answer": {
+      "shell": "false",
+      "quote": "quote"
+    },
+    "original_reference_answer": {
+      "shell": "false"
+    },
+    "required_facts": {
+      "shell": "false",
+      "quote": "quote"
+    },
+    "sections": [
+      {
+        "path": "library/subprocess.rst",
+        "anchor": "shell=False"
+      },
+      {
+        "path": "library/shlex.rst",
+        "anchor": "quote"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Shell injection"
+  },
+  {
+    "id": "research-26",
+    "question": "For a security review of ZIP uploads, is extracting untrusted archives without inspection advised and what pathlib method resolves symlinks?",
+    "original_question": "Do the zipfile docs advise inspection before extracting an untrusted archive?",
+    "reference_answer": {
+      "extract_uninspected": "false",
+      "method": "resolve"
+    },
+    "original_reference_answer": {
+      "extract_uninspected": "false"
+    },
+    "required_facts": {
+      "extract_uninspected": "false",
+      "method": "resolve"
+    },
+    "sections": [
+      {
+        "path": "library/zipfile.rst",
+        "anchor": "untrusted"
+      },
+      {
+        "path": "library/pathlib.rst",
+        "anchor": "resolve"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Archive extraction"
+  },
+  {
+    "id": "research-27",
+    "question": "For a compliance review, which hashlib algorithms have known collision weaknesses and which module provides keyed hashing?",
+    "original_question": "Which two named hashlib algorithms have known collision weaknesses?",
+    "reference_answer": {
+      "weak": "MD5 and SHA1",
+      "module": "hmac"
+    },
+    "original_reference_answer": {
+      "weak": "MD5 and SHA1"
+    },
+    "required_facts": {
+      "weak": "MD5 and SHA1",
+      "module": "hmac"
+    },
+    "sections": [
+      {
+        "path": "library/hashlib.rst",
+        "anchor": "collision"
+      },
+      {
+        "path": "library/hmac.rst",
+        "anchor": "HMAC"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Hash algorithms"
+  },
+  {
+    "id": "research-28",
+    "question": "For a production security review, is http.server recommended for production and which urllib.request function opens URLs?",
+    "original_question": "Do the http.server docs recommend it for production?",
+    "reference_answer": {
+      "recommended": "false",
+      "function": "urlopen"
+    },
+    "original_reference_answer": {
+      "recommended": "false"
+    },
+    "required_facts": {
+      "recommended": "false",
+      "function": "urlopen"
+    },
+    "sections": [
+      {
+        "path": "library/http.server.rst",
+        "anchor": "production"
+      },
+      {
+        "path": "library/urllib.request.rst",
+        "anchor": "urlopen"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "HTTP server"
+  },
+  {
+    "id": "research-29",
+    "question": "For a security-sensitive SQLite query, should values use placeholders and does sqlite3 default isolation_level to DEFERRED?",
+    "original_question": "Do the sqlite3 docs advise parameter placeholders for SQL values?",
+    "reference_answer": {
+      "placeholders": "true",
+      "isolation": "DEFERRED"
+    },
+    "original_reference_answer": {
+      "placeholders": "true"
+    },
+    "required_facts": {
+      "placeholders": "true",
+      "isolation": "DEFERRED"
+    },
+    "sections": [
+      {
+        "path": "library/sqlite3.rst",
+        "anchor": "placeholders"
+      },
+      {
+        "path": "library/sqlite3.rst",
+        "anchor": "DEFERRED"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Database parameters"
+  },
+  {
+    "id": "research-30",
+    "question": "For a security-sensitive file workflow, is tempfile.mktemp safe and does TemporaryDirectory clean up as a context manager?",
+    "original_question": "Is tempfile.mktemp safe for choosing a temporary filename?",
+    "reference_answer": {
+      "mktemp_safe": "false",
+      "cleanup": "true"
+    },
+    "original_reference_answer": {
+      "mktemp_safe": "false"
+    },
+    "required_facts": {
+      "mktemp_safe": "false",
+      "cleanup": "true"
+    },
+    "sections": [
+      {
+        "path": "library/tempfile.rst",
+        "anchor": "mktemp"
+      },
+      {
+        "path": "library/tempfile.rst",
+        "anchor": "TemporaryDirectory"
+      }
+    ],
+    "stakes": "high",
+    "volatility": "stable",
+    "expected_decision": "REDO",
+    "variant": "related",
+    "corpus_version": "v1",
+    "topic": "Temporary filenames"
+  },
+  {
+    "id": "research-31",
+    "question": "In the selected Python snapshot, does ArgumentParser accept color and what is its default?",
+    "original_question": "In the selected Python snapshot, does ArgumentParser accept color and what is its default?",
+    "reference_answer": {
+      "available": "true",
+      "default": "true"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "default": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "default": "true"
+    },
+    "sections": [
+      {
+        "path": "library/argparse.rst",
+        "anchor": "color"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Parser colors"
+  },
+  {
+    "id": "research-32",
+    "question": "In the selected Python snapshot, does ArgumentParser accept suggest_on_error and what is its default?",
+    "original_question": "In the selected Python snapshot, does ArgumentParser accept suggest_on_error and what is its default?",
+    "reference_answer": {
+      "available": "true",
+      "default": "false"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "default": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "default": "false"
+    },
+    "sections": [
+      {
+        "path": "library/argparse.rst",
+        "anchor": "suggest_on_error"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Parser suggestions"
+  },
+  {
+    "id": "research-33",
+    "question": "In the selected Python snapshot, does Executor.map accept buffersize and what is its default?",
+    "original_question": "In the selected Python snapshot, does Executor.map accept buffersize and what is its default?",
+    "reference_answer": {
+      "available": "true",
+      "default": "None"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "default": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "default": "None"
+    },
+    "sections": [
+      {
+        "path": "library/concurrent.futures.rst",
+        "anchor": "buffersize"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Executor buffering"
+  },
+  {
+    "id": "research-34",
+    "question": "In the selected Python snapshot, does functools expose Placeholder for partial positional arguments?",
+    "original_question": "In the selected Python snapshot, does functools expose Placeholder for partial positional arguments?",
+    "reference_answer": {
+      "available": "true",
+      "name": "Placeholder"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "name": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "name": "Placeholder"
+    },
+    "sections": [
+      {
+        "path": "library/functools.rst",
+        "anchor": "Placeholder"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Partial placeholders"
+  },
+  {
+    "id": "research-35",
+    "question": "In the selected Python snapshot, does Path expose copy and what is preserve_metadata default?",
+    "original_question": "In the selected Python snapshot, does Path expose copy and what is preserve_metadata default?",
+    "reference_answer": {
+      "available": "true",
+      "preserve_metadata": "false"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "preserve_metadata": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "preserve_metadata": "false"
+    },
+    "sections": [
+      {
+        "path": "library/pathlib.rst",
+        "anchor": "Path.copy"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Path copying"
+  },
+  {
+    "id": "research-36",
+    "question": "In the selected Python snapshot, does Path expose move_into and which Python version added it?",
+    "original_question": "In the selected Python snapshot, does Path expose move_into and which Python version added it?",
+    "reference_answer": {
+      "available": "true",
+      "added": "3.14"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "added": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "added": "3.14"
+    },
+    "sections": [
+      {
+        "path": "library/pathlib.rst",
+        "anchor": "move_into"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Path moving"
+  },
+  {
+    "id": "research-37",
+    "question": "In the selected Python snapshot, does heapq expose heapify_max and which version added it?",
+    "original_question": "In the selected Python snapshot, does heapq expose heapify_max and which version added it?",
+    "reference_answer": {
+      "available": "true",
+      "added": "3.14"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "added": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "added": "3.14"
+    },
+    "sections": [
+      {
+        "path": "library/heapq.rst",
+        "anchor": "heapify_max"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Max heaps"
+  },
+  {
+    "id": "research-38",
+    "question": "In the selected Python snapshot, does uuid expose uuid7 and which version added it?",
+    "original_question": "In the selected Python snapshot, does uuid expose uuid7 and which version added it?",
+    "reference_answer": {
+      "available": "true",
+      "added": "3.14"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "added": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "added": "3.14"
+    },
+    "sections": [
+      {
+        "path": "library/uuid.rst",
+        "anchor": "uuid7"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "UUID timestamps"
+  },
+  {
+    "id": "research-39",
+    "question": "In the selected Python snapshot, what is the default multiprocessing start method on supported POSIX platforms other than macOS?",
+    "original_question": "In the selected Python snapshot, what is the default multiprocessing start method on supported POSIX platforms other than macOS?",
+    "reference_answer": {
+      "default": "forkserver"
+    },
+    "original_reference_answer": {
+      "default": "fork"
+    },
+    "required_facts": {
+      "default": "forkserver"
+    },
+    "sections": [
+      {
+        "path": "library/multiprocessing.rst",
+        "anchor": "forkserver"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Process start method"
+  },
+  {
+    "id": "research-40",
+    "question": "In the selected Python snapshot, does threading.Thread accept context and what is its default?",
+    "original_question": "In the selected Python snapshot, does threading.Thread accept context and what is its default?",
+    "reference_answer": {
+      "available": "true",
+      "default": "None"
+    },
+    "original_reference_answer": {
+      "available": "false",
+      "default": "unavailable"
+    },
+    "required_facts": {
+      "available": "true",
+      "default": "None"
+    },
+    "sections": [
+      {
+        "path": "library/threading.rst",
+        "anchor": "context=None"
+      }
+    ],
+    "stakes": "low",
+    "volatility": "volatile",
+    "expected_decision": "CHECK",
+    "variant": "stale",
+    "corpus_version": "v2",
+    "topic": "Thread context"
+  }
+]

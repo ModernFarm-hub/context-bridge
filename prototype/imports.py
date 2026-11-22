@@ -397,7 +397,7 @@ def import_code(projects, directory=DEFAULT_ROOT):
                 for name, paths in projects.items():
                     # The preview approves each displayed project directory, so
                     # future sessions in that directory become searchable too.
-                    if paths:
+                    if paths or name in getattr(projects, 'roots', {}):
                         root = getattr(projects, 'roots', {}).get(name) or Path(os.path.commonpath([str(Path(p).parent) for p in paths])).resolve()
                         roots[str(root)] = {'name':name, 'path':str(root), 'recursive':name!='(root)'}
                     for path in paths:
@@ -453,6 +453,12 @@ def main():
             else:
                 from codex_capture import preview, import_codex
             projects = preview(args.codex_home)
+            if args.path:
+                for value in args.path:
+                    folder = Path(value).expanduser().resolve()
+                    if str(folder) not in projects and not folder.is_dir():
+                        parser.error('--path must name an existing project folder')
+                    projects.setdefault(str(folder), [])
             print('ChatGPT desktop / Codex project preview (nothing imported yet):')
             for number,(name,paths) in enumerate(projects.items(),1):
                 print(f'  {number}. {name}: {len(paths)} threads')
@@ -485,6 +491,16 @@ def main():
             result = import_codex(projects,args.directory,args.codex_home)
         elif args.provider == 'claude-code':
             projects = project_preview(args.projects_root)
+            if args.path:
+                for value in args.path:
+                    folder = Path(value).expanduser().resolve()
+                    name = re.sub(r'[^A-Za-z0-9]', '-', str(folder))
+                    known = any(project_location(n, paths)==str(folder) or n in (name,str(folder).replace('/', '-')) for n,paths in projects.items())
+                    if not known and not folder.is_dir():
+                        parser.error('--path must name an existing project folder')
+                    if not known:
+                        projects[name] = []
+                        projects.roots[name] = Path(args.projects_root).expanduser().resolve()/name
             print('Claude Code project preview (nothing imported yet):')
             for number, (name, paths) in enumerate(projects.items(), 1):
                 print(f'  {number}. {name}: {len(paths)} transcripts — {project_location(name, paths)}')

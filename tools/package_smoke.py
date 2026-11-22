@@ -24,6 +24,10 @@ def main():
         assert not (root/'state').exists(), 'Demo touched the real library'
         help_text=run(['--help'],env,root)
         assert 'semantic' in help_text and 'live-test' not in help_text and 'evaluate' not in help_text
+        # The lightweight runtime wheel carries the harness, not its public corpus.
+        missing=subprocess.run([str(Path(sys.executable).parent/'context-bridge'),'savings-real','--fake','--pilot','--output',str(root/'benchmark')],env=env,cwd=root,capture_output=True,text=True)
+        assert missing.returncode!=0 and '--corpus-dir' in missing.stderr,missing.stderr
+        assert not (root/'benchmark').exists(), 'Missing corpus created benchmark state'
         archive=root/'export.zip'
         with zipfile.ZipFile(archive,'w') as z:
             z.writestr('conversations.json',json.dumps([{'uuid':'package-smoke','name':'Synthetic package check','chat_messages':[{'uuid':'message-1','sender':'human','text':'PACKAGE842 requires approval. KEY=syntheticSecret842'}]}]))

@@ -170,3 +170,39 @@ Injected content is capped at 1,200 characters and a conservative 400 UTF-8-byte
 Install and uninstall require an interactive terminal for confirmation; noninteractive calls refuse without changing settings. Use `--print` to inspect the configuration.
 
 Installing enables automatic sharing of selected approved passages with your Claude Code client on prompts. Choose the profile intentionally. Context Bridge makes no network calls in the hook and never transmits the usage log, but your AI client may send injected passages to its model provider. Nothing is installed by default. Reinstall the hook if you move the checkout, remove its Python environment, or clear the uvx runtime cache that its absolute command references. Start/restart Claude Code so settings changes take effect.
+
+## Repeat-research opportunity (local, no API calls)
+
+```sh
+context-bridge repeats --profile personal
+context-bridge repeats --profile personal --json
+context-bridge repeats --profile personal --min-similarity 0.90
+context-bridge repeats --profile personal --review
+```
+
+This reports **opportunity for reuse, not proof of savings**. It reads only imported/approved indexed conversations in the selected profile; it neither imports other chats nor contacts a model API. Existing local hybrid mode is used when enabled, without downloading models. Otherwise it uses BM25/Porter over opening questions with a stricter overlap threshold. Hybrid's existing private Python runtime is honored. A missing local runtime/model produces an error rather than a download.
+
+The denominator is conversations with indexed records. Each conversation contributes its first two indexed user turns (up to 1,000 characters each); these are opening-turn proxies, not guaranteed questions. Only strictly earlier dated conversations can match: creation time is preferred, otherwise the first available message timestamp. Unknown dates and equal timestamps cannot establish ordering and do not count as repeats. The report shows unknown-date counts. Different providers can match; a conversation cannot match itself. Each repeat gets its best earlier match, breaking score ties toward the most recent earlier conversation. Connected chains are grouped into repeated topics. Topic labels are conversation titles only; ten highest-scoring sample pairs (or fewer if unavailable) show titles and dates only, never questions, answers, snippets, IDs or local paths.
+
+BM25 selects at most 100 earlier candidate conversations using opening text only. Its score threshold is content-token Jaccard overlap (default 0.85) with at least three shared terms; raw BM25 scores are not calibrated similarity. Hybrid scores all earlier opening-question vectors using 85% local cosine similarity plus 15% token overlap (default 0.78). `--min-similarity` overrides the mode's threshold in [0,1]; lowering it increases false-positive risk. Scores are heuristics, not probabilities and not comparable between modes. A negation-mismatch veto rejects obvious opposite intents, but cannot reliably understand intent or entity differences. Short questions, paraphrases in lexical mode, truncated opening turns and questions occurring later in a chat can be missed. Similar questions can be legitimate follow-ups, routine recurring work, changed requirements or unrelated lookalikes.
+
+The report includes conversation and repeat counts/rates, per-provider totals, and the estimated research cost of each repeated conversation counted once through its final indexed message. Claude Code/Codex use the same conservative lower-bound output-plus-context-growth rule as `savings`; exports and transcripts without usage counters use lower-quality visible-text estimates. Cost methods are broken out by provider. This is **research cost attached to possible repeats**, not avoidable tokens, a bill, actual reuse, or net savings. No dollar conversion or hypothetical lookup deduction is made. The report also shows the share with any time-sensitive hint or high-stakes term in indexed turns. This intentionally broad **likely-REDO proxy** can include cases the actual policy would CHECK; it is not a decision verdict and prevents presenting every match as safely reusable.
+
+`--review` is the recommended way to choose a threshold and requires an interactive terminal. It offers up to ten title/date-only pairs down to 0.4 (or your lower selected threshold), even if the default finds zero. When there are more than ten, it covers score bands before filling the sample; this is still selection-biased. Enter y (real repeat), n (not a repeat), or s (skip). Labels persist locally in the profile database as hashed provider/conversation pairs, a yes/no value and review time: no titles or message text are copied into the label table. EOF ends review cleanly, retaining prior labels. Precision is confirmed repeats divided by labelled pairs still present in the current report; unreviewed pairs are not counted. These top-score, user-selected labels are selection-biased and do not measure recall or population precision. Labels do not change the algorithmic repeat rate. Profiles remain isolated; removed sources no longer appear, while historical hashed labels contain no recoverable conversation text.
+
+Everything stays local unless you deliberately save/share output (for example redirecting `--json`). Titles can themselves be sensitive. Similarity vectors are computed locally in memory; large hybrid reports compare all earlier pairs and can take substantially longer than ordinary search. No performance or accuracy guarantee is claimed for large libraries. Report thresholds and review precision before interpreting a repeat rate.
+
+Existing folders can be approved before they have their first thread:
+
+```sh
+context-bridge import codex --path /path/to/existing-project --yes
+context-bridge import claude-code --path /path/to/existing-project --yes
+```
+
+`--yes` confirms approval for future sessions in that folder. Without it, the CLI asks interactively or leaves the preview unchanged. A new approval requires an existing project folder; previously captured projects can still be selected after their original folder moves. Claude Code's future transcript directory is inferred from its standard encoded project-folder name.
+
+For the isolated public-document savings experiment, see [the benchmark guide](benchmarks/savings-real-guide.md). Its fake-provider mode makes no API calls and uses a disposable library.
+
+Every report also shows a sensitivity table at 0.4, 0.5, 0.6 and 0.7, plus the selected threshold. Each row includes repeats/rate, reviewed count, labelled precision, and review coverage. An unreviewed row has null precision, never zero or assumed perfect precision. Matching is computed once; all rows use the same best strictly earlier match for each conversation. Rates can change substantially across thresholds. Zero at the default does not show that no research was repeated.
+
+Thresholds are **library-dependent**. Defaults remain hybrid 0.78 and lexical 0.85: conservative starting points checked against synthetic exact-positive chains and a negated lookalike, not empirically calibrated probabilities or optimized thresholds for real libraries. Keeping a high starting cutoff favors precision in those fixtures and can miss real paraphrases. The sensitivity tests also include controlled synthetic scores crossing the lower cutoffs; they verify reporting and label accounting, not a real embedding model's precision. No default was tuned to a particular user's data. Start with `context-bridge repeats --review`, inspect precision and coverage across thresholds, and select an appropriate `--min-similarity`. Re-review as your library changes. A handful of hand-picked labels is not population precision or recall; follow-up questions can legitimately resemble earlier research.

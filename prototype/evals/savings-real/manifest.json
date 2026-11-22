@@ -1,0 +1,4134 @@
+{
+  "v2_fallback": "v1",
+  "description": "v2 overlays ten Python 3.14 module documents on the frozen 3.13.1 corpus; version refers to each document, not a runnable Python distribution. No invented facts.",
+  "files": [
+    {
+      "path": "corpus/v1/README.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/README.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "cb7019df5bf42107feea8fd25305e299d6f81a4ee83630aaafd0675905d4d21b"
+    },
+    {
+      "path": "corpus/v1/about.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/about.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dcc0e6549fdb1ea3414f47ea41c509c75d881e7b70b48c7f8f756212139ccd33"
+    },
+    {
+      "path": "corpus/v1/bugs.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/bugs.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1e0ec95ac1dd6b660606c580980d763c3a1fe19416636b4be45e83f0028bf35f"
+    },
+    {
+      "path": "corpus/v1/c-api/abstract.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/abstract.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9007684a8881d791d3edad252aa0900522d741deab27e3bcdd6977912213d378"
+    },
+    {
+      "path": "corpus/v1/c-api/allocation.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/allocation.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2030d2a194438d3fd2ce51a8046be051e9bfbcb48b2271778405f5de902a79b8"
+    },
+    {
+      "path": "corpus/v1/c-api/apiabiversion.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/apiabiversion.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ef23fbcb9469cff3e56a6c81a6d720d61d5b96369a94493748f781d25931e919"
+    },
+    {
+      "path": "corpus/v1/c-api/arg.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/arg.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "549a06e1524b58b0dadfe03356f6a26243e1cffb6f4c439800c16eb107024ce3"
+    },
+    {
+      "path": "corpus/v1/c-api/bool.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/bool.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "29f7b14a3d56b0a85c6d33a216887d82c63e21cdb7f025df8224ba5e0833cccc"
+    },
+    {
+      "path": "corpus/v1/c-api/buffer.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/buffer.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ff93fb5ccdb99f3467ea74af159a70e0efc940ef30844b4336597938784fd63b"
+    },
+    {
+      "path": "corpus/v1/c-api/bytearray.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/bytearray.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "eea9bc0e70285fac5019b5b43c073a197033ebb1538301d72ff47b54158a5e1a"
+    },
+    {
+      "path": "corpus/v1/c-api/bytes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/bytes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "04585e2c5bfe0cdd99ff36d9c00e0cda2fb052604143532a5d5e05083e9157b0"
+    },
+    {
+      "path": "corpus/v1/c-api/call.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/call.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b58466ab9e767688d3336352afcd55c6b81aa17fa482efc6628fda13e7426d6b"
+    },
+    {
+      "path": "corpus/v1/c-api/capsule.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/capsule.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4478f1fcab5ebff38fa5462e696067256304f55da4a241c94318e306d723a62c"
+    },
+    {
+      "path": "corpus/v1/c-api/cell.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/cell.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "88ef89941bd61b1dd8bbe55e39a08f6ac838b8ec837fc094cdaee20a65d79c75"
+    },
+    {
+      "path": "corpus/v1/c-api/code.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/code.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "26438a00c89ca3848adf5dc6671cac4d81cb0f06851e69779fcde78633c466f3"
+    },
+    {
+      "path": "corpus/v1/c-api/codec.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/codec.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "837b291c5a7963aa1d83a3efd9f7ea892ad33b2c4e4cee5cc43c43069a1f7aa7"
+    },
+    {
+      "path": "corpus/v1/c-api/complex.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/complex.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0148c6a063a42a3de360263e35545d57d30de7fcdfa390b7dc9cb761210f2f62"
+    },
+    {
+      "path": "corpus/v1/c-api/concrete.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/concrete.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "cb1438d204ad551a95010e0879d01270000432f6ce434c270a1ce43a8a0e1e65"
+    },
+    {
+      "path": "corpus/v1/c-api/contextvars.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/contextvars.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3ff51ed85ae7a57224d73390f88a75ab16e012b3223ee636ecfcc25f702cb001"
+    },
+    {
+      "path": "corpus/v1/c-api/conversion.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/conversion.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0aa87567df32a5606357404825873a5eaf2d0141edad8c9fd7ad103dc79a58d8"
+    },
+    {
+      "path": "corpus/v1/c-api/coro.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/coro.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3609a7e5c15cddb3d7f3fa42a15ff6e70fa7ebd8dbac361958e8570df60ee998"
+    },
+    {
+      "path": "corpus/v1/c-api/datetime.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/datetime.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b811161e5033d0897a0bd49fdfd4b714a706e8c16c4102ace036bc11816aa587"
+    },
+    {
+      "path": "corpus/v1/c-api/descriptor.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/descriptor.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fb38cbd6ef4eb9569fb86a4acaa3a463b3f0b5bb7c94e3514d2d2735f817a784"
+    },
+    {
+      "path": "corpus/v1/c-api/dict.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/dict.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4422e890e4054bedf0159557f91cd47ea5ff5d3283a3a3a773750e20759da080"
+    },
+    {
+      "path": "corpus/v1/c-api/exceptions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/exceptions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a6c7c19c0d314f6214582a41662407a8ce1462cfe82e2ec6862fdc40d63573b4"
+    },
+    {
+      "path": "corpus/v1/c-api/file.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/file.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d8c12ecd621d061ae9ecbe064e94036b029d3a9024e5cd51e95289561ffe9022"
+    },
+    {
+      "path": "corpus/v1/c-api/float.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/float.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "945b53a0efa4c4eaf2c85e533402d4dcbd628e47a84c3014e11756bb84c7541e"
+    },
+    {
+      "path": "corpus/v1/c-api/frame.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/frame.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "da752b78befcffd877acabeee805f6c23b775c2adbae269a5443aeda85ef017a"
+    },
+    {
+      "path": "corpus/v1/c-api/function.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/function.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f4ef624f05663febbc234573996d4b6198499eb3678b596b05932d193856d34c"
+    },
+    {
+      "path": "corpus/v1/c-api/gcsupport.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/gcsupport.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d684d142c56caf4d9bcaa0a7b8742f7672a95fe9832201f14f360c30c4aad3cc"
+    },
+    {
+      "path": "corpus/v1/c-api/gen.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/gen.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e63110c59578bfab41b26d8a26d5a531a656c752ad1438f5e3fb859d79eefe3d"
+    },
+    {
+      "path": "corpus/v1/c-api/hash.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/hash.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c81884e1b69d535f1e104462a12c00c312a4d2776e0d3854d61ca21e860de3c5"
+    },
+    {
+      "path": "corpus/v1/c-api/import.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/import.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "10e557dcc92aa8c443f5461b5bbbc6742ed9b136641c8ff21f51448c84f1af1f"
+    },
+    {
+      "path": "corpus/v1/c-api/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9fd96e2f0fd66fb73cf6951c935b657aed95ac150c5cf71caf5efcfcca23eefc"
+    },
+    {
+      "path": "corpus/v1/c-api/init.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/init.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b9e5893372c4fe6f6259d4f992015f532d850a475ea2a5664e45b9be2f690678"
+    },
+    {
+      "path": "corpus/v1/c-api/init_config.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/init_config.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4e78da2593986d3cbca9394c5c23a6431b1137b5b1c2aa5115c3446dc700b90f"
+    },
+    {
+      "path": "corpus/v1/c-api/intro.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/intro.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6b152e6dff3749b0e579ed8ac063aef14276301e06451c59820499184f293b23"
+    },
+    {
+      "path": "corpus/v1/c-api/iter.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/iter.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bddf66490fca89a54e0e66dbf33eb8f00f4b7822ae62dbfa23057456ce4c8f1f"
+    },
+    {
+      "path": "corpus/v1/c-api/iterator.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/iterator.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "da35aa2ac970356fea620a6752830eb1af114b7671fb3c0d7afe8c58ea5adac2"
+    },
+    {
+      "path": "corpus/v1/c-api/list.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/list.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5e15780710783a1c47119e4d652bde97d750323e6bee551bd2fd88621d2e3913"
+    },
+    {
+      "path": "corpus/v1/c-api/long.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/long.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "19999b5f18819c944a8e6c075e7dc7c940960e162a5284b12e99a8f1ae42d570"
+    },
+    {
+      "path": "corpus/v1/c-api/mapping.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/mapping.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d9ae63656459322da86025143227c72a268900180311b67aff3ab2884db80df2"
+    },
+    {
+      "path": "corpus/v1/c-api/marshal.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/marshal.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ba9315a9e6f22c4fadcfb4c09411951bd223c157c90cbd08eb4f0b41b257ed19"
+    },
+    {
+      "path": "corpus/v1/c-api/memory.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/memory.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ab8ee67f309ecf268123bcc79c68d8c0d76cf32f14b33896289ce43cd1bfc5ec"
+    },
+    {
+      "path": "corpus/v1/c-api/memoryview.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/memoryview.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "747942cc3d83eda108cea2316affc201a2e68af0d728c72766a5a5cf727d110b"
+    },
+    {
+      "path": "corpus/v1/c-api/method.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/method.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5877545fe391eb30bd571f728a24d8adb3018cad6967d6193ffd04651b9c38ef"
+    },
+    {
+      "path": "corpus/v1/c-api/module.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/module.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e97c5b2ed5c4c398c326e85609746bfdea965cc3018312e7cd9a7e6b1c7f04c7"
+    },
+    {
+      "path": "corpus/v1/c-api/monitoring.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/monitoring.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "66ee0d1f1fd1915bda2cb19a94c054177f1bef0864bce8eb32ee494a27a6127a"
+    },
+    {
+      "path": "corpus/v1/c-api/none.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/none.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c7deb8d080b97f198d6b026810c729115ec0882ef83f9d2ff62153a3978b17b1"
+    },
+    {
+      "path": "corpus/v1/c-api/number.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/number.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3e4709df11afc6cc04764f37d450fd1335e0eb12eee9132a206323ef58f79c94"
+    },
+    {
+      "path": "corpus/v1/c-api/object.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/object.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c2b4618b21186ed72c39a3b3ae77dfe614f5ac02d2f11160b902291e283beab9"
+    },
+    {
+      "path": "corpus/v1/c-api/objimpl.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/objimpl.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ed0283f56545f15e96c70c2ba956c396bdce78b890f1dca9d9b6640e7722efa5"
+    },
+    {
+      "path": "corpus/v1/c-api/perfmaps.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/perfmaps.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3fc27b010ea5f9094159eb9225a07350a55dfb7c4ef1282d1fc8f20fdc8863e7"
+    },
+    {
+      "path": "corpus/v1/c-api/refcounting.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/refcounting.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a6eddc314c37e1b42bae7d6a515f49d627e488adb9c07a1bdc068290e3cba860"
+    },
+    {
+      "path": "corpus/v1/c-api/reflection.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/reflection.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4b5cfc68b84b98f9bac574b5b600232642707fcc832705032a7f7ab69be2fd82"
+    },
+    {
+      "path": "corpus/v1/c-api/sequence.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/sequence.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ae80c2c151faa41f993598e9b50eb766fc6b1c97e64ff1db7552a4e9d249d33c"
+    },
+    {
+      "path": "corpus/v1/c-api/set.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/set.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "88a119bbf017bdf83aba7119690d3bdc9512cfae416d9090fabde012926e0ae1"
+    },
+    {
+      "path": "corpus/v1/c-api/slice.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/slice.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2266dcc5ed4e3f12692edcf806099af7836524897c47a2614c482e0c1cbd8cd3"
+    },
+    {
+      "path": "corpus/v1/c-api/stable.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/stable.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8d630f385292767c3fa312dd49f0311eb3f1483031a41e1e21cd6a0fca03c109"
+    },
+    {
+      "path": "corpus/v1/c-api/structures.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/structures.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d0400bc77d6aaca9251544efa389bbae113d5de075d3f2e71d2645994f5a5800"
+    },
+    {
+      "path": "corpus/v1/c-api/sys.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/sys.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "aeb71ecae82244e284cee608775a5655299d9371bd949ef31c347219684cce90"
+    },
+    {
+      "path": "corpus/v1/c-api/time.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/time.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f82bf94b2f5072736d8ed71de46f997f5b02ac1e3125cad22af86c28cae425e5"
+    },
+    {
+      "path": "corpus/v1/c-api/tuple.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/tuple.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fc9617446dd592bb6eef09815e65487147abec189c499535a6abc9115ae31068"
+    },
+    {
+      "path": "corpus/v1/c-api/type.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/type.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a866e228cd97684fb30581965296504a085a3f3f00460b26253bafaf1372db37"
+    },
+    {
+      "path": "corpus/v1/c-api/typehints.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/typehints.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "39119f12a294cb651382d4a424f8b4874bce2d6376b3e292ef2c2564772aaa40"
+    },
+    {
+      "path": "corpus/v1/c-api/typeobj.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/typeobj.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "87ea8ce400024f9f4276516cdc6abe8241508f228e740a531125fa06f5fe5232"
+    },
+    {
+      "path": "corpus/v1/c-api/unicode.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/unicode.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fbd4938cde6e50b323b92f3348ebc7ca17292265bb28ee339a2ebc8ebe72c60a"
+    },
+    {
+      "path": "corpus/v1/c-api/utilities.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/utilities.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "335dfcee1be41a6237bb497d4bc849392c1fe9f43e4bafc7b1a0bbe90904bdbe"
+    },
+    {
+      "path": "corpus/v1/c-api/veryhigh.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/veryhigh.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3f022bef2196c5a03efbc93b0bedc265309d429799b7879819f5d777a33ac6db"
+    },
+    {
+      "path": "corpus/v1/c-api/weakref.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/c-api/weakref.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2f4addf9b0a32d6d6cfc0ba8ad15b652dd8a23ef9d34ce806f62ad22c488818e"
+    },
+    {
+      "path": "corpus/v1/contents.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/contents.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "391475c76c25e97327f56e6a89999a895ffdddef77a14b5e090c1ef02289e975"
+    },
+    {
+      "path": "corpus/v1/copyright.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/copyright.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2f455e3bd119869bf01369ab852d87d11c9e67e5351a7ebc64ab2c0af344aff6"
+    },
+    {
+      "path": "corpus/v1/deprecations/c-api-pending-removal-in-3.14.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/c-api-pending-removal-in-3.14.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5e760c10145a28ed67c1b114dac7c8153bc186cd71fd4991cf7b5acafab85832"
+    },
+    {
+      "path": "corpus/v1/deprecations/c-api-pending-removal-in-3.15.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/c-api-pending-removal-in-3.15.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8a62b67b8f3bfb176ca430da88c3d165ad6598b6dabd65bb09b1e3a6c26713bf"
+    },
+    {
+      "path": "corpus/v1/deprecations/c-api-pending-removal-in-future.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/c-api-pending-removal-in-future.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fdd06ad946ace0bf2d9a8c7d9d9da43c879fa6dc134e3800a61e2704d2fc4413"
+    },
+    {
+      "path": "corpus/v1/deprecations/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "71260377852bbaf9954d68b1e4bbed9bb6fec43bac264977af56cf4d41d5d7b6"
+    },
+    {
+      "path": "corpus/v1/deprecations/pending-removal-in-3.13.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/pending-removal-in-3.13.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e554f9e8097f156d30a5d2421fdc66d1ed1016d08b9411b53fe7f8c597cc29fc"
+    },
+    {
+      "path": "corpus/v1/deprecations/pending-removal-in-3.14.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/pending-removal-in-3.14.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7fe0c1b5b4bfc9d56faabcd0d762588369ce423d5fe4f1f7a042c093d739c457"
+    },
+    {
+      "path": "corpus/v1/deprecations/pending-removal-in-3.15.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/pending-removal-in-3.15.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ec413c5ff06a4eca8edf6e866fc68685c5ca8cdf0608e33e515dd3181f08cec0"
+    },
+    {
+      "path": "corpus/v1/deprecations/pending-removal-in-3.16.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/pending-removal-in-3.16.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "068cd4cf8535cc5d820e723276405dea9e8ec0b8560bb42a66c75a1d4ac244f0"
+    },
+    {
+      "path": "corpus/v1/deprecations/pending-removal-in-future.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/deprecations/pending-removal-in-future.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0d11630016d3a97eabd078648fbd69801feb456fb2267abaa5b640a57f46cbfc"
+    },
+    {
+      "path": "corpus/v1/distributing/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/distributing/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "005ccab558f4383f7e18208d9005120b1514df0699ca81b05fa5e135b865a2e1"
+    },
+    {
+      "path": "corpus/v1/extending/building.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/extending/building.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a8f48c11913b5ca4cc5ebf145937235ce868a7ca07a66f926f75e62abc4ad892"
+    },
+    {
+      "path": "corpus/v1/extending/embedding.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/extending/embedding.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e0cd62b61d39fd2f8eb19acd55afd333b234a9a07ad2bce949e90b7b8995dcea"
+    },
+    {
+      "path": "corpus/v1/extending/extending.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/extending/extending.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fa5f90e5e11141768a115dd30af271471f3f77a1fcbb7887177a05320d02598c"
+    },
+    {
+      "path": "corpus/v1/extending/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/extending/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "badd0186db5e074f8745c78ac464f396ab142c5f0756478e01765c0fa958e325"
+    },
+    {
+      "path": "corpus/v1/extending/newtypes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/extending/newtypes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e14e2c959dcfeffcf6b37320b6aba90178815a0f663de6e0c9955ef8c5dd363d"
+    },
+    {
+      "path": "corpus/v1/extending/newtypes_tutorial.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/extending/newtypes_tutorial.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fb17a65971db2c5673e34fa240407c0429c8c73480e1cc703153b4dd5e74fcf1"
+    },
+    {
+      "path": "corpus/v1/extending/windows.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/extending/windows.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b872544abdd13273b380047ec38f0d912f95596fbad466e3c77af70ed1e9e29f"
+    },
+    {
+      "path": "corpus/v1/faq/design.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/design.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "06cb81395caf69521b8acb85772a488849fbb5162f4b0138bcfbdb4c1e5edaa2"
+    },
+    {
+      "path": "corpus/v1/faq/extending.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/extending.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "19abebb50105d8876035e6c272f1749ae850b12e08cc9c661f534c4673f759ea"
+    },
+    {
+      "path": "corpus/v1/faq/general.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/general.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "cdeae72603b6dfbe6221bb852ccd6c7a70838e42dd5a0447096a897c909df61d"
+    },
+    {
+      "path": "corpus/v1/faq/gui.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/gui.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ccc6f91c46b211b696749634a5ed28cf79ea6b1d1340b89bf4d05f82adb9caa6"
+    },
+    {
+      "path": "corpus/v1/faq/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3cf75d195de125769cc55b8b9c3d0a8cf1653d0aa3538fd4e0738f7eea04e56c"
+    },
+    {
+      "path": "corpus/v1/faq/installed.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/installed.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c204a8fe1873944f79fdc052aed8e3b1c15c40fe9dfe377e65c072a9303c54a2"
+    },
+    {
+      "path": "corpus/v1/faq/library.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/library.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fe417617fd50a4942e6e55316677f99ed570a1cd03edddcf816ce57d8bee41f0"
+    },
+    {
+      "path": "corpus/v1/faq/programming.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/programming.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "70085e4199348a5d5a8e6a633d3c4269bb44b09fa2c35785000df2b4f4d55b42"
+    },
+    {
+      "path": "corpus/v1/faq/windows.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/faq/windows.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fc614953032cd7f2e31ba19a63a8a012dcc034e56aa5b93fb866eb70c7e24d7d"
+    },
+    {
+      "path": "corpus/v1/glossary.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/glossary.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "beb09eca0bfeb7ce00ae307ee902a747fd36dfc220eec0ad8f699834b45588fe"
+    },
+    {
+      "path": "corpus/v1/howto/annotations.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/annotations.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "91e743fbeb3f978015c2bf67af5118a141b86eb8f0f9eacf363f40d376fb9f47"
+    },
+    {
+      "path": "corpus/v1/howto/argparse-optparse.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/argparse-optparse.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3e8149b7ed5c04b430c6158adabc016b0162bf7437b1989d9d5d46237bb62d7a"
+    },
+    {
+      "path": "corpus/v1/howto/argparse.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/argparse.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5287242ef954fe8b151b5be0f78df1fccfe177ac7db5858b6cbff3ea92257aab"
+    },
+    {
+      "path": "corpus/v1/howto/clinic.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/clinic.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1ac95a02c346fff5cc8000206bcada3152bbf7460c22d08ca479a56d34b571f7"
+    },
+    {
+      "path": "corpus/v1/howto/cporting.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/cporting.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3500051a6db9b1dbf837cf8f473e937253e7cacd3b85d967b86c480b3f9c398e"
+    },
+    {
+      "path": "corpus/v1/howto/curses.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/curses.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "57e21a41116b4f52ee0105ecd05e63d690981852ed11d9d5c960f495b6fcaf03"
+    },
+    {
+      "path": "corpus/v1/howto/descriptor.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/descriptor.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "933f80ca3a9bbe22c832a64e6ffbeb80042f087e217bcb021f95b5ea6bbcb8bc"
+    },
+    {
+      "path": "corpus/v1/howto/enum.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/enum.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "272d2ca1725daad7e0773e719c2630aeb529eda3682a3c08d63ff6da23935a12"
+    },
+    {
+      "path": "corpus/v1/howto/free-threading-extensions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/free-threading-extensions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "106772971754b49dadf0010d3e3b8d9bb189ea1f7fec2018827c3e5426bcc66e"
+    },
+    {
+      "path": "corpus/v1/howto/free-threading-python.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/free-threading-python.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e434670a7f36d8c3f28a8b69551bdded96f330bd66c6d43f90ecfb2887c26f8a"
+    },
+    {
+      "path": "corpus/v1/howto/functional.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/functional.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "305cd09fcfb7da6b0b4a1ed4a66a9085eb7a6677a57a3ea0c9dfe3c896795115"
+    },
+    {
+      "path": "corpus/v1/howto/gdb_helpers.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/gdb_helpers.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8d1093fe0402e287000815594feff95d1d63b2ca38b6873af634f2b07ed64ef0"
+    },
+    {
+      "path": "corpus/v1/howto/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "46ac40a00ec320fc5e19239902780eea6ce5e8de290db75bd1b4dabe31c6b059"
+    },
+    {
+      "path": "corpus/v1/howto/instrumentation.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/instrumentation.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3e6c91a9bff1b53ec380208c8c51894849fcd3cbb6eacebce54c280c3f892ac0"
+    },
+    {
+      "path": "corpus/v1/howto/ipaddress.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/ipaddress.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b709a6233364441fd0a651f32e26bb148b303db9706012aa2c2a43aeda6f5b12"
+    },
+    {
+      "path": "corpus/v1/howto/isolating-extensions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/isolating-extensions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0367b682e79b7ce898591855687fb35b691ceca13574d6dc2c9867d3e34fb097"
+    },
+    {
+      "path": "corpus/v1/howto/logging-cookbook.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/logging-cookbook.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6a9f8bcd5e7a1848cb4acd4c0b6e570b9ae38d3bfbfe6ceb67d10a56688ff195"
+    },
+    {
+      "path": "corpus/v1/howto/logging.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/logging.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7259bee51523be4fb21db259425b9766b8fbc05a4e24b8e9475a604eb5759b00"
+    },
+    {
+      "path": "corpus/v1/howto/mro.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/mro.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "19db9dd23633e0ec4626e87ad1d9d8566d93a1572be7ba9ccebed3d569948f47"
+    },
+    {
+      "path": "corpus/v1/howto/perf_profiling.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/perf_profiling.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9c927c018a73daf08c92e5c462273f0a50cee367446978ad69a4d763a87ad5cd"
+    },
+    {
+      "path": "corpus/v1/howto/pyporting.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/pyporting.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c896d18556a7434410f68af377868a5d02876e9ba7d6c30d33ddf505c2337511"
+    },
+    {
+      "path": "corpus/v1/howto/regex.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/regex.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "69fd30034444ac74f456b3e9c14e852b6f127f08c9620bf703915450457c729b"
+    },
+    {
+      "path": "corpus/v1/howto/sockets.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/sockets.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e9f69766062b95b2f0d842e9a8f46d7c18bb867de6c422576e3e21d6cce8b4a9"
+    },
+    {
+      "path": "corpus/v1/howto/sorting.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/sorting.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c0e38a56c301e6968f5630a01e27048f07ca1288ffec45d37e6335fd909d2e4d"
+    },
+    {
+      "path": "corpus/v1/howto/timerfd.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/timerfd.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ee5c776f84b793e90c33de3e7774ec5a20e52b9ccd4ee2adcdd8b74f1cfc3ade"
+    },
+    {
+      "path": "corpus/v1/howto/unicode.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/unicode.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c5cf5081618e2b06a519d2ede00fb52a53922c5a8d636c4be337810fed2bd17c"
+    },
+    {
+      "path": "corpus/v1/howto/urllib2.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/howto/urllib2.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3623450637a44259c0f708970a7930c0ac5d1564be67b323e0fb54ea6c370530"
+    },
+    {
+      "path": "corpus/v1/includes/wasm-mobile-notavail.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/includes/wasm-mobile-notavail.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "15e718b77c7d0c3f2aa3dee5c290528f299848963b6b40cdb39514b05151f8c7"
+    },
+    {
+      "path": "corpus/v1/includes/wasm-notavail.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/includes/wasm-notavail.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a4a8af3d0363010f74a70dff76de74a13aca916cc57537b64a379931726b68d5"
+    },
+    {
+      "path": "corpus/v1/installing/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/installing/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3c1dfb2b8168f126bf68f5b3cad7c30202da0f36c3199f0cda4f5907209e3006"
+    },
+    {
+      "path": "corpus/v1/library/__future__.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/__future__.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a62882bf159d7683c4d28d586b7fa388c63f7dd81b0a0d67ac6200e154f89283"
+    },
+    {
+      "path": "corpus/v1/library/__main__.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/__main__.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bcd43de5b51094b23121035e5a9867f1f54f34bed1ab6555b03557c9e6f0acef"
+    },
+    {
+      "path": "corpus/v1/library/_thread.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/_thread.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "502fa719ef25539ee4a0e57dd3efa87bd5b11d2e8525e7b0072b38af1b3865cd"
+    },
+    {
+      "path": "corpus/v1/library/abc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/abc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "124ff7dc89ab97ce8bff3e2507b8678a5569505f83b84cdcceb27a3e998cd446"
+    },
+    {
+      "path": "corpus/v1/library/aifc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/aifc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f2e8f78435b8784052bc63b4193db554cf8c1a9d335a84276d52310d4f5fd803"
+    },
+    {
+      "path": "corpus/v1/library/allos.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/allos.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0e9cd6cf3f89d99e904b2e831ca88dfa4a867819b7551f8244b21358a6bf124f"
+    },
+    {
+      "path": "corpus/v1/library/archiving.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/archiving.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4873b5ee8d71e0e957b250dedf389460ffa03a7468341f0b7b9b666d763c7c2c"
+    },
+    {
+      "path": "corpus/v1/library/argparse.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/argparse.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "98751ff285f31a8a6270372244aa392f48840aa80fe9842a514fb8f3867cebbe"
+    },
+    {
+      "path": "corpus/v1/library/array.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/array.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9a2fec1539f7ea7d2c7db8cc314830533653b85d45cc2d69da6d7035b4b365a4"
+    },
+    {
+      "path": "corpus/v1/library/ast.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ast.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "234508e454a3bd5d1afed1e8f2ec487bd9f521a2926eeb72969caaa4a97f411e"
+    },
+    {
+      "path": "corpus/v1/library/asynchat.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asynchat.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bba1f5c2e72fe946b982c90dbdf2efaa630414e7c1220ccbefd179eda3ee88b3"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-api-index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-api-index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d1e486620655c1b7e302655392af21a5b6c70317baa423fd51c74a9a8f09712d"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-dev.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-dev.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7b5b152cfc9a2e536affa78a3dfc54cfa1cb454f31c2114e82d96cccb6e47074"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-eventloop.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-eventloop.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "da7f069f7a373d5c4286f8a446160b7c852ea458a545100233e052bac600c965"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-exceptions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-exceptions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b8463e591b76956ba1c61ef3ffc6f4a09186386cec1457b86842113f4e00ca86"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-extending.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-extending.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f59ca0ddb13771f67c84fc58eeafd8005e4b3a809f354d5421b047c8366098c1"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-future.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-future.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3666265d657742f6957418e745bc347dcf53518719cf04276c2c6e6dc7017a63"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-llapi-index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-llapi-index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "99b652f9ca703b3239be8a318ac4ab223d5c1f6d3a0318947a17fdf456083254"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-platforms.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-platforms.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "10208e8733adc4f0c1933e770b1fa3405225468fdb2b02cedd6b89403b0a1236"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-policy.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-policy.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b0dfe5a77a9bc4739b38f421db0fb6265f91f04c569ee65553d35e97126af49c"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-protocol.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-protocol.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0c614e324b3eb19e86ccfaadb0ec227be4aeefd8bbb0f0fae436db6a535e44c5"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-queue.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-queue.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "da1b0d5d1426237b5891ccb50b55bc9e38b9087f7e5378b482b294d617446901"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-runner.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-runner.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f24cc625cd3f6429f16f4465482c5bf1b9425144fc66e26bc06d1799b1237d31"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-stream.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-stream.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bdb4cc5de11b8397b1e8288c7449d071082b149f38ac5132f77dab088d61e91e"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-subprocess.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-subprocess.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "19ed82270039edfc4f7a767224a297fd1b43f439e7477386d1dc971ea79ab661"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-sync.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-sync.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7e205516c22215d1a6571c76d229e1dd72ff24b735999cf0723486c34be752dd"
+    },
+    {
+      "path": "corpus/v1/library/asyncio-task.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio-task.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5c12e0501aeeb698944c81be9c8d96dbe498440f8b2b34bef0ec3620b8842c8c"
+    },
+    {
+      "path": "corpus/v1/library/asyncio.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncio.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d174c1e012d07e684fbe5dc09af117522948bcd2869fadfda8b21ce64cb50c5b"
+    },
+    {
+      "path": "corpus/v1/library/asyncore.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/asyncore.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "50d2a360e7e46c7e96efc4f3943775c2c55fb861fe686158ee90647cdd95d6ce"
+    },
+    {
+      "path": "corpus/v1/library/atexit.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/atexit.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e927d28a2e3a4dbb954830c129e779bd697084f6e4687bc4e213c25674676ae0"
+    },
+    {
+      "path": "corpus/v1/library/audioop.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/audioop.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0450d75b991bc7e0f24fee28fe284cf3ca0cbab1eadecb3486f00ef7014203fa"
+    },
+    {
+      "path": "corpus/v1/library/audit_events.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/audit_events.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bb2e59ad95c9b64ae99bedc2c38848a72e8ee5a8c01f140d083b522d78d95112"
+    },
+    {
+      "path": "corpus/v1/library/base64.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/base64.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "04e9a9d0b348b6f8995840e895bd4032a86192258e8e4290c7035ee0b091104b"
+    },
+    {
+      "path": "corpus/v1/library/bdb.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/bdb.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2b73c9dc98b2c91db25c2390f2f123fc409f9d7b51db7641662fd197c4b10972"
+    },
+    {
+      "path": "corpus/v1/library/binary.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/binary.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dbfdb3afe5e2d52945a996f6b725cdf9ff2f2c9e7e4e585a4d453591aab8401d"
+    },
+    {
+      "path": "corpus/v1/library/binascii.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/binascii.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "425a243373c7f7c16b242f8a32ad25405a146dcb832abc9b00e60d958293e935"
+    },
+    {
+      "path": "corpus/v1/library/bisect.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/bisect.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1fb2fa097a86e3bd92049f3e6b791a9bbf3bdf54a1098fcbb369d3e0e5c56a5c"
+    },
+    {
+      "path": "corpus/v1/library/builtins.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/builtins.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "951d14797a1a1105c6cf159f4ee334f317766bb3acb615879d0fc10b61bb6c76"
+    },
+    {
+      "path": "corpus/v1/library/bz2.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/bz2.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bf31bfad910f4dc338a286174db692d2e9ff1403022287f945cacf6e73634348"
+    },
+    {
+      "path": "corpus/v1/library/calendar.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/calendar.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "521bf20c81511e2351b76351df9241875b6f0e1d33090e97e103a44577b958ae"
+    },
+    {
+      "path": "corpus/v1/library/cgi.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/cgi.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ff3004584bc0583acee03ec1c36f4ac2487c8e1906302556eef70c280c0a812d"
+    },
+    {
+      "path": "corpus/v1/library/cgitb.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/cgitb.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5c9060771dc706be09c902d42c955c3af08edea64e6c1f1e838cfe627a092f14"
+    },
+    {
+      "path": "corpus/v1/library/chunk.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/chunk.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d48a1aacc0428fe33b2d9ffc4612ab5a8996eb6f5500613d652d45ec49cceb6e"
+    },
+    {
+      "path": "corpus/v1/library/cmath.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/cmath.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "401bb2eb0fe5600f8afbe19e3f41aaf2b906b57e95ce6c02291e7ca014bc371c"
+    },
+    {
+      "path": "corpus/v1/library/cmd.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/cmd.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "17ec0be92564c3f997937ab738266b7e4e570d20bff44258226bee37e435aed4"
+    },
+    {
+      "path": "corpus/v1/library/cmdline.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/cmdline.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9730b43b8c136baea19c35eb7ad3fcbac10042b10802fad9b303dd1d9ae7d527"
+    },
+    {
+      "path": "corpus/v1/library/code.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/code.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1cf6ce3b18256ef111aaccfeba08810ede197d1eced82293e7701459eb9319a7"
+    },
+    {
+      "path": "corpus/v1/library/codecs.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/codecs.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d7bdbe1e9d3151c4f34d0281d3cb2cbb3eebfec5dd9811545bf381b3cb21549d"
+    },
+    {
+      "path": "corpus/v1/library/codeop.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/codeop.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "530312cb51dafeb93914acaab059f3f5f4102d2d5ef47c615a1c84b6658e949f"
+    },
+    {
+      "path": "corpus/v1/library/collections.abc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/collections.abc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a590db0ba92f7212cc55330b1d546960ef78642114dcdf9c8ab67490ee0e2534"
+    },
+    {
+      "path": "corpus/v1/library/collections.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/collections.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f3fbc075aa4c22982715ae62b226230a36b09454a7af1ee9afb7f535df8bd770"
+    },
+    {
+      "path": "corpus/v1/library/colorsys.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/colorsys.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "79d2da918049cfc63ca956758ed68debe66e0bee104f7cb4221600da763437d9"
+    },
+    {
+      "path": "corpus/v1/library/compileall.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/compileall.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d9e3c7711867f4ac6649812918484fbf2b6c9b7856ea734079c6cd68f02f3d3b"
+    },
+    {
+      "path": "corpus/v1/library/concurrency.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/concurrency.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "617fd046bbe402bdb91d004222a004480f3dfb9311149d25c357552bf06313b2"
+    },
+    {
+      "path": "corpus/v1/library/concurrent.futures.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/concurrent.futures.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b2dd50b0e03ae848850d8ab396d3a06b52081366acdb0035e44e9bf585d7e5ba"
+    },
+    {
+      "path": "corpus/v1/library/concurrent.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/concurrent.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "390627e6ab6805a809ea68060f1835d48ad426508caeda1b94f182b2a82015b7"
+    },
+    {
+      "path": "corpus/v1/library/configparser.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/configparser.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0442b0cd8cac2e7b0d1a0edf1d8fc7436047f55ae22fdd9568180042c0c9ca00"
+    },
+    {
+      "path": "corpus/v1/library/constants.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/constants.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "482314058fc2d2a6c708dbb81379507ef148053f471e6cc1bf3b87ff52dd0747"
+    },
+    {
+      "path": "corpus/v1/library/contextlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/contextlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b71c680794ae0e32000e25e9986d3f9a09b0964e7716bf42ce1744bdc7e7f4d7"
+    },
+    {
+      "path": "corpus/v1/library/contextvars.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/contextvars.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "811b4455ac51d4d85b8c3f4005586347a858a10d61627446917a4f6d5e193d5b"
+    },
+    {
+      "path": "corpus/v1/library/copy.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/copy.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "935088f74e08fa47f652f9d803ab512ca5a961de655739eaa21919a6623ecfba"
+    },
+    {
+      "path": "corpus/v1/library/copyreg.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/copyreg.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6b6f2253191b64801391910cad40b79b349ecba4f128f209078e295d20a5a9dc"
+    },
+    {
+      "path": "corpus/v1/library/crypt.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/crypt.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9f4b22114e53b6e15cc35394ab3c7aefe04621b73b81fecc4e9c872ed53e0573"
+    },
+    {
+      "path": "corpus/v1/library/crypto.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/crypto.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b7d45eb2b2214684202a0a4e8d7ed66c880d78c001e8eb7bbbe749fe7fe94614"
+    },
+    {
+      "path": "corpus/v1/library/csv.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/csv.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "855994acbf3d91832e7e9206ef1d37f5dbaa8e7a2a30237e737e58071098dd8b"
+    },
+    {
+      "path": "corpus/v1/library/ctypes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ctypes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d75ce27d283967001f6f21b6a0d1854fe95080f4e58f131c1e1220f350e7e834"
+    },
+    {
+      "path": "corpus/v1/library/curses.ascii.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/curses.ascii.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "edaa5f9af6544786e19f189a5519c98fae4d18ee0caa5c259c3eddbbebc074ea"
+    },
+    {
+      "path": "corpus/v1/library/curses.panel.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/curses.panel.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "db52c7b2346390bb5ffcd1e0b9c826c5f7054325341162c8565db8e4a31d4c78"
+    },
+    {
+      "path": "corpus/v1/library/curses.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/curses.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7ddee0e25f561a9d861617df6b9b73818fec1637bc13af6850124390f71dfd6e"
+    },
+    {
+      "path": "corpus/v1/library/custominterp.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/custominterp.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "78a4d38337a11a0842e1ccdc1959ed11fe27bfe417f7ab9a1826d18df77ecf42"
+    },
+    {
+      "path": "corpus/v1/library/dataclasses.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/dataclasses.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23"
+    },
+    {
+      "path": "corpus/v1/library/datatypes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/datatypes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "637739e18b14be9aed90b0272d5e27fc9206dbeb3e406f131e51ed4b5503cc0c"
+    },
+    {
+      "path": "corpus/v1/library/datetime.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/datetime.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "01c546324e5436cd8ac2b05ba684a1cdc41724f357946b61cfbe39d40da94ef6"
+    },
+    {
+      "path": "corpus/v1/library/dbm.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/dbm.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ee04bd69c3f47a821cccd3582ec0b3cfa135351e317bfe8544e98b8962d6964a"
+    },
+    {
+      "path": "corpus/v1/library/debug.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/debug.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "37a1b8053e37232e117857e98b08705ad8d0dce3eab55aee644a656f08228c3c"
+    },
+    {
+      "path": "corpus/v1/library/decimal.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/decimal.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca"
+    },
+    {
+      "path": "corpus/v1/library/development.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/development.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ead241705b83d87a96fedb5837f37e67c068f14c6092a0a9a893d5e0e8005f63"
+    },
+    {
+      "path": "corpus/v1/library/devmode.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/devmode.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0f84cfa3341e20805279f3c759136621031c3abdbf0a6ff7bdbaf1f462aeed3f"
+    },
+    {
+      "path": "corpus/v1/library/dialog.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/dialog.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1a9ad8c971275ad49ffe23b4ab60cb46feb7623f273ded67e6120000a66e5bda"
+    },
+    {
+      "path": "corpus/v1/library/difflib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/difflib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f7469d71e0c586667d8ebca345f7b2a6fea7d206c5a01930ce798075e92d3117"
+    },
+    {
+      "path": "corpus/v1/library/dis.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/dis.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4649995da9d893e8fb6cd226063ea30ef70ff18f083709dcf4f46092e95b4e2a"
+    },
+    {
+      "path": "corpus/v1/library/distribution.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/distribution.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "13f4015ee13fd7c5eaf6e6d8406cd9b4126d2f645cf53bd4ffe0dc3a57eab9fa"
+    },
+    {
+      "path": "corpus/v1/library/distutils.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/distutils.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076"
+    },
+    {
+      "path": "corpus/v1/library/doctest.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/doctest.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f63aa2e0f5d2a7e4b8382083effcd4d09441a506b5943f6163133ae938e95815"
+    },
+    {
+      "path": "corpus/v1/library/email.charset.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.charset.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "10bf72207a86701e309219b249114817f625caa0b8e1694afefcd736fee645bd"
+    },
+    {
+      "path": "corpus/v1/library/email.compat32-message.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.compat32-message.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f7da26d9dae2f9d30f71630363c2105c7d032c20cb5ddaf9892f9cecd27d4431"
+    },
+    {
+      "path": "corpus/v1/library/email.contentmanager.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.contentmanager.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7a05f2003cbc55d33209f08d8ff8f9ddb3da10959001c74623ef8bba7423b45a"
+    },
+    {
+      "path": "corpus/v1/library/email.encoders.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.encoders.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3384fc50cebe53db5a96ec74218ab52e2a600e90e50b549b0c1e9723b15863d3"
+    },
+    {
+      "path": "corpus/v1/library/email.errors.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.errors.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b19e5e8772c0ce9f6dc8e29b3a82fc4bbe16ee073c2ff815d4091a6fc2629722"
+    },
+    {
+      "path": "corpus/v1/library/email.examples.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.examples.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "47c55388c21f6fcbf4116349be2e5539033417310dc30b1fae02ac5779fb91a3"
+    },
+    {
+      "path": "corpus/v1/library/email.generator.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.generator.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2b6a95c844f01e41b93c0da478b519f5a20997927e520d3c1594fdc253dabc95"
+    },
+    {
+      "path": "corpus/v1/library/email.header.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.header.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ca94fde13cd0591c89a19aaf5b0813dd7f547b9d9ad14d1edba5842dc5a6ab53"
+    },
+    {
+      "path": "corpus/v1/library/email.headerregistry.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.headerregistry.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5ce11cf6d73e9a13656acd1e03d11b1f6ad73aa6ee90fa0a45e7e705e69f390e"
+    },
+    {
+      "path": "corpus/v1/library/email.iterators.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.iterators.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e2cadb65d1106445a81e3b23a416cf13a831f05ceeb9c03dbd92686fcbe852ba"
+    },
+    {
+      "path": "corpus/v1/library/email.message.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.message.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a6e04175e071d0fe077e4fe34720c4a89093dc72b2b0d810459d74f01c8e3218"
+    },
+    {
+      "path": "corpus/v1/library/email.mime.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.mime.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e71b7fdd679f858ccc43d012912fba0217b1006c7d3b77ef267aeb809bb7c74d"
+    },
+    {
+      "path": "corpus/v1/library/email.parser.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.parser.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "738c7475085f4fdf72afe2d4718a2d75debd469d2281cc620eb62fb2eb6ecd88"
+    },
+    {
+      "path": "corpus/v1/library/email.policy.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.policy.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "782f4ac929ac11b1096f04c1ffcf4d51f983b3c1e24a64c0fff2d412852d11cd"
+    },
+    {
+      "path": "corpus/v1/library/email.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b675ccef5e54324580c5b3d1562c5939c30fc80f8fe03689d047b2c32b3af006"
+    },
+    {
+      "path": "corpus/v1/library/email.utils.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/email.utils.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2c31e9eb7c3d2edd74488dd0aa797475ade6f714a2c4ec64170c2d7301396077"
+    },
+    {
+      "path": "corpus/v1/library/ensurepip.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ensurepip.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ca7151b19ab7b8d8deae66bc5deb3c67fc78973a78bdc89d865148ee4f58dd1d"
+    },
+    {
+      "path": "corpus/v1/library/enum.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/enum.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3caf36bec0c1b32917d5d5bf9644c302d0a5eed66b5e1ebe480e6da62ccec2bd"
+    },
+    {
+      "path": "corpus/v1/library/errno.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/errno.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "747e308b8f2348b8d9b15267655f2adfaf780ab45eff23478cdd5b19f5cb55b6"
+    },
+    {
+      "path": "corpus/v1/library/exceptions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/exceptions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "29e9908770df61e4b12ebcc95ed3bd386b7fd83c025c9d9758246a597d14a69c"
+    },
+    {
+      "path": "corpus/v1/library/faulthandler.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/faulthandler.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6ca105599408cf2ad04efede7c2906b15cc78fffb8b7d9124027bf009c9a4875"
+    },
+    {
+      "path": "corpus/v1/library/fcntl.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/fcntl.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4ff9020dfd96a4f30ee4698523bd3ff57fa80ed7ee2729cd88e577b0cb914592"
+    },
+    {
+      "path": "corpus/v1/library/filecmp.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/filecmp.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d6af3df3cf30181acfc212fb1f832c039fd6350e1bf2b410f4e5b6c7ac27c820"
+    },
+    {
+      "path": "corpus/v1/library/fileformats.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/fileformats.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a619581fcb30c6a9e8a0ea1871144be9a638d57dacfcf0e1f6df6b582c733479"
+    },
+    {
+      "path": "corpus/v1/library/fileinput.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/fileinput.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0e871ad34ce7218c91deeffd09c2c054c79ebb0c3edc865016f1f23921da816a"
+    },
+    {
+      "path": "corpus/v1/library/filesys.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/filesys.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "519406cf0e57cc40524979b3515447d4886a0909739213e1439886e3ceb08836"
+    },
+    {
+      "path": "corpus/v1/library/fnmatch.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/fnmatch.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dd0a219c6baf46396127fb033bc38c5403e6d8612fb8792a1123a904c55e2a0d"
+    },
+    {
+      "path": "corpus/v1/library/fractions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/fractions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a6e8b83e86e04f821549eb5ac9b1829dd88f8ba5528bd3e9345462e7724b2574"
+    },
+    {
+      "path": "corpus/v1/library/frameworks.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/frameworks.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c238aaa370ceb534da8b688dff8470889973eddce208d2ea971891a9f2908d7f"
+    },
+    {
+      "path": "corpus/v1/library/ftplib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ftplib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e31e229366b6c00a04d265497f212768089ce6ac3b4a706e549f2e39acb5e304"
+    },
+    {
+      "path": "corpus/v1/library/functional.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/functional.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4ab99304b526dcb08b837809efac51fc6a60f57de90f17470c26b80de37a1884"
+    },
+    {
+      "path": "corpus/v1/library/functions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/functions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "16d96fe7107571a37e4cece43fa4cdf3fc3c4f96eee4978be34a663e52fb9d77"
+    },
+    {
+      "path": "corpus/v1/library/functools.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/functools.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a3f0dffd4973d3c0902107dbb67ead54af934a1d43ba5552e590c69f233f817a"
+    },
+    {
+      "path": "corpus/v1/library/gc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/gc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d37ee08781a4cfe7781d7f024aa984a0f1a779e59b021cb6c3233f74f8ab92bc"
+    },
+    {
+      "path": "corpus/v1/library/getopt.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/getopt.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a2bca8eb46a4bdfb50b2c54aa7ed1b868075fb3088e6f40f8d2cde31542fe0da"
+    },
+    {
+      "path": "corpus/v1/library/getpass.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/getpass.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1685810922abf3ba1b03f651592f50d7c16b6b61432cf6f68246eb05b6ac4775"
+    },
+    {
+      "path": "corpus/v1/library/gettext.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/gettext.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0183d0e093f3d47a8b7b6a261d6f9872be486b291de902d4924928e80cc9e194"
+    },
+    {
+      "path": "corpus/v1/library/glob.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/glob.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "23c3a12fa5c93775f3fba24241acb8456a75ac4d90f47efd707c9758c19585a7"
+    },
+    {
+      "path": "corpus/v1/library/graphlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/graphlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4bad5b7eb3c24538907c6358ab2223e23f75bc127b4402bfe14241e33e9f4f3e"
+    },
+    {
+      "path": "corpus/v1/library/grp.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/grp.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d3f49476971c0f643419ff16fccc1ceee8f4d44dd73a021ead860e08df6cb428"
+    },
+    {
+      "path": "corpus/v1/library/gzip.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/gzip.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3878f855f0611005361b1d597af4730e9050174f90ebac7e5201d6fa2e013688"
+    },
+    {
+      "path": "corpus/v1/library/hashlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/hashlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f0def26afca689ae4c4999687dd5f1d5f462ade87a131528529b75220bea2404"
+    },
+    {
+      "path": "corpus/v1/library/heapq.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/heapq.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c9d819c44d892c812f65b07ab9de1d13ec30dcdfc8af8423a754c2506d136e53"
+    },
+    {
+      "path": "corpus/v1/library/hmac.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/hmac.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d864cc3f67d40f4a8cc55b29835fa3e4345102f8db53d7bd943e4595fc32c614"
+    },
+    {
+      "path": "corpus/v1/library/html.entities.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/html.entities.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f61479c7c54d379982355eba576652e6ce84c3defa19416f1ff72bce26e28c55"
+    },
+    {
+      "path": "corpus/v1/library/html.parser.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/html.parser.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9b5430ccb7dc3a222bf6a122f732d8a931982680e9bf1a3bd451d59a5a38cf28"
+    },
+    {
+      "path": "corpus/v1/library/html.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/html.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "180bbed9e0ac1a39485df810d68d53e85666a79dd214f80586b1dbe1b61e11ab"
+    },
+    {
+      "path": "corpus/v1/library/http.client.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/http.client.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8bd45541b038a81bacb2cf3f71ff277828351e6cd15377dddd91173d81a02216"
+    },
+    {
+      "path": "corpus/v1/library/http.cookiejar.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/http.cookiejar.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "26a63f6d61396da90af2e9a977f5914884868ded7a4e453cfcfbb473cc8b4157"
+    },
+    {
+      "path": "corpus/v1/library/http.cookies.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/http.cookies.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8484a2baa4374eb6d0297a460f6ea648664444b8ceec9585ad3ea1eefb64df7b"
+    },
+    {
+      "path": "corpus/v1/library/http.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/http.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ff926f738f2013b7c957aea0516bc1f1020893ba870ab44131ebecf7fd3c8994"
+    },
+    {
+      "path": "corpus/v1/library/http.server.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/http.server.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2bba3a2dfa5d50922e521b13af2d8afb2d10fddf7a515fa39ec6ddf6793ed7ab"
+    },
+    {
+      "path": "corpus/v1/library/i18n.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/i18n.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "69096e0e9a744f748b6cd7b6591437b7d94d93b1c363f1a2a328b6ccf684b014"
+    },
+    {
+      "path": "corpus/v1/library/idle.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/idle.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f08bceab950a7e00e2d03fe70ccd2207880b0f847786ce30a9ecba28bc30afac"
+    },
+    {
+      "path": "corpus/v1/library/imaplib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/imaplib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0c20d38f39c3d4e31b1989e95560e21707873db2d4af988726c393db4f944c0e"
+    },
+    {
+      "path": "corpus/v1/library/imghdr.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/imghdr.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f5fffcfade05e8d7e38484bcb9038b3ae1f932bf8db0138faa0c92162d221bca"
+    },
+    {
+      "path": "corpus/v1/library/imp.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/imp.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f4f7d96ceb3b37e7cd39ed1be08fef7adfe2c6190d1505a93cb1a571e0fe8733"
+    },
+    {
+      "path": "corpus/v1/library/importlib.metadata.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/importlib.metadata.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "551c3245567a3c216ccc7524467eca7ab6a8af2daa258a9f63b1a3baaaa3071c"
+    },
+    {
+      "path": "corpus/v1/library/importlib.resources.abc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/importlib.resources.abc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6eb28fad472ff51217d4a4fd158e88dc55c1b2f50cc6477a851bdc32c69cdfa6"
+    },
+    {
+      "path": "corpus/v1/library/importlib.resources.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/importlib.resources.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "86f791d94756a82d45bf487549745d6e3c93e49eedb45918b8e5c5d494fa3e9c"
+    },
+    {
+      "path": "corpus/v1/library/importlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/importlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "eae5b811a9ec275cbe3179152fb99207dd073708d3c9f5c072f657dfbb1ae6c2"
+    },
+    {
+      "path": "corpus/v1/library/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "947662b3566e2cff9c5890b5d5df3f9dc5c78c36394ea4730721eae34c09d663"
+    },
+    {
+      "path": "corpus/v1/library/inspect.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/inspect.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2bf0d638cc500c99895af2a09448b8ef4c3c04dbaf4d1a290b71508e0121454a"
+    },
+    {
+      "path": "corpus/v1/library/internet.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/internet.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "de1286d4adf2e8b4e1dff1a28e7543944886a4ce5b1af102571392a22a42c129"
+    },
+    {
+      "path": "corpus/v1/library/intro.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/intro.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ae8e261808ea078178b11201ba95bf544807d1a8eecfbeaff4c0b5726fb9603b"
+    },
+    {
+      "path": "corpus/v1/library/io.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/io.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6f9739389fe7d1499472a892fc6ba25a1c96a5d980e03437f8b29a37dabef9a1"
+    },
+    {
+      "path": "corpus/v1/library/ipaddress.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ipaddress.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "128a97fa2cb6fa7318d45c64531654156abfb8b0c41ac7b74ac5d118ce9e2141"
+    },
+    {
+      "path": "corpus/v1/library/ipc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ipc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5c3ae81eebcce8c08ebcbf4f6607c7fdeb32b09057985c375cc3cef3bbb9b728"
+    },
+    {
+      "path": "corpus/v1/library/itertools.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/itertools.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0bf2ed5286440c84167b3981aa9382695089b7fd055eb363072979c39b9b9900"
+    },
+    {
+      "path": "corpus/v1/library/json.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/json.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6533f6d5be67f903194ba4b92335d079552edb69c4c8fd45d6215de60358dd8e"
+    },
+    {
+      "path": "corpus/v1/library/keyword.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/keyword.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "096fa0f3c1e8f4f0038552f064de99c2bafd558db74d9eb7907c20103ccc8a61"
+    },
+    {
+      "path": "corpus/v1/library/language.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/language.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "906c6f165f4bf782b18565406d5ab4e4d9d474848b4b28714d6a034ae2d9fedc"
+    },
+    {
+      "path": "corpus/v1/library/linecache.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/linecache.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "77e255e8f69920eef334a202f89227e1951fabc03d57f2dccbae7bf778806dbb"
+    },
+    {
+      "path": "corpus/v1/library/locale.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/locale.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "210faa3447e47e88ea136bf7c3c130757185aedf73b7bba462b7a972031c3bd2"
+    },
+    {
+      "path": "corpus/v1/library/logging.config.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/logging.config.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8bd959a78f1dd772bc820ce8276bf95951d14bcc81f999e687460c8e2d620369"
+    },
+    {
+      "path": "corpus/v1/library/logging.handlers.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/logging.handlers.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9f3585c62541881a0067bd335388ce435f77d0ccf1db35d8b4eba49f20a052b0"
+    },
+    {
+      "path": "corpus/v1/library/logging.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/logging.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "98ddcad24e955f94b18c06a5970a8efa27a87f9caf8c84b61e87ae7b9256523a"
+    },
+    {
+      "path": "corpus/v1/library/lzma.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/lzma.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fd0001a09c76ef3f12ed3f3f98c093b7e42027ebd4e471e8cc1f47ae7d5a255d"
+    },
+    {
+      "path": "corpus/v1/library/mailbox.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/mailbox.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8b94fc02e36fdb7b5995bf29a4a7f52064463d3f10726b5b1f712ebcdbe11084"
+    },
+    {
+      "path": "corpus/v1/library/mailcap.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/mailcap.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "54552a059a052a06070a8db3581611a3f1dc7729ec0c3ab8fbea4ece696f2e21"
+    },
+    {
+      "path": "corpus/v1/library/markup.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/markup.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fd1fb5ab3ecaf7d5b2e913406bd5bb44ad62c53b97f96d5400b06d6d441b0f08"
+    },
+    {
+      "path": "corpus/v1/library/marshal.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/marshal.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a647736c2ac00094336828a0d811d95cccdf273c71902126f36ce21274a8315b"
+    },
+    {
+      "path": "corpus/v1/library/math.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/math.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5c31cf59aa912f596496d9be069ce80d8e8dccce11b884b52bf88bd4b916e6ac"
+    },
+    {
+      "path": "corpus/v1/library/mimetypes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/mimetypes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dd65035d6aebcfe95b7e80dd754d1959ec4c280c292a9abf0929472cbc1002a6"
+    },
+    {
+      "path": "corpus/v1/library/mm.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/mm.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "be3120ea2b46f614b9a7aa5b85b1644aa24bcce0dff48ac7058a48201e4e1788"
+    },
+    {
+      "path": "corpus/v1/library/mmap.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/mmap.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "76d835177d78e0f06e4c972928456d8ffe7f47a0ce36b8bb211a2344bceaad1c"
+    },
+    {
+      "path": "corpus/v1/library/modulefinder.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/modulefinder.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5ab2b3553b22d42d9824a01faa4abd4d5cdd541755756f9052b48e43fdae6a2b"
+    },
+    {
+      "path": "corpus/v1/library/modules.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/modules.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f9f7bb697a335a9cad5034c22e940e1483ee9f349d8d91194c4066359696805c"
+    },
+    {
+      "path": "corpus/v1/library/msilib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/msilib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1b6cd889b3913280d767831f1fea880528ef13cbdf530ffc3edb5671b5664a11"
+    },
+    {
+      "path": "corpus/v1/library/msvcrt.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/msvcrt.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e88f7580e9a151fc052acec731203b1607f4b8c1cd856d25dcd88069f7a58131"
+    },
+    {
+      "path": "corpus/v1/library/multiprocessing.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/multiprocessing.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dd307f963282f82d632afa1056ea01a5e1b70fe38019234a66a3fa9e9361e3c9"
+    },
+    {
+      "path": "corpus/v1/library/multiprocessing.shared_memory.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/multiprocessing.shared_memory.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "10f04327f469db0cca9f84d735a5660fa03da5fa9363559bab22940385938f5c"
+    },
+    {
+      "path": "corpus/v1/library/netdata.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/netdata.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1077864d45c33565bf0e0c18d18e2ce94779d8b30faf8d787da7db0e0d139254"
+    },
+    {
+      "path": "corpus/v1/library/netrc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/netrc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "287429c2493bf76854e4bd9d7e438cfb324edd8fdf3ecb3f7b43a7e207e0a0d8"
+    },
+    {
+      "path": "corpus/v1/library/nis.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/nis.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e2fc46695a1527fb65940fc70998dce1dfd959ccd95093d132981de184ac6b06"
+    },
+    {
+      "path": "corpus/v1/library/nntplib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/nntplib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d5ee7401f8a70314e41e786285c9f12b01b9a8b86ba4727e8f408538e85841f9"
+    },
+    {
+      "path": "corpus/v1/library/numbers.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/numbers.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7552319142231fc2d1f80fce608721a05d32ffdc42c3e2c9a94cbf6ba7c6f422"
+    },
+    {
+      "path": "corpus/v1/library/numeric.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/numeric.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "561ed7f28344fef0888752322989f5ef07f74130af78a8d8fa5cb3e2d9046c80"
+    },
+    {
+      "path": "corpus/v1/library/operator.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/operator.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "22cdd91ab578514af76a9a20aebb1173c583285fa2147e1505ecb38cf7923324"
+    },
+    {
+      "path": "corpus/v1/library/optparse.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/optparse.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7de20dab95f04aa48217e421af9167a8c2f7adf70469e83515190f8e249d6c74"
+    },
+    {
+      "path": "corpus/v1/library/os.path.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/os.path.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f042a62b03dd246db4c41bf0b559ada601b5fe999650e3dccab7f9deb74dd53f"
+    },
+    {
+      "path": "corpus/v1/library/os.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/os.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c2b5dc3bf50e0f159081e6d829e4fa5d223f9137e34b8b548b232a3a8d43372a"
+    },
+    {
+      "path": "corpus/v1/library/ossaudiodev.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ossaudiodev.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ab4af2f31a2110d2fe41f6abc3bd0f885d5d58fb400ef06983e524588194938d"
+    },
+    {
+      "path": "corpus/v1/library/pathlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pathlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c"
+    },
+    {
+      "path": "corpus/v1/library/pdb.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pdb.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dd7e745a1b1d94a88f150a9b797020a338ce72a15ab2872314a019d2ff8ea9c2"
+    },
+    {
+      "path": "corpus/v1/library/persistence.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/persistence.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "41ff7a8bf895b77f42812c4c5fe4eb1f3d64ecbc7b6857aae51786bfeee2d361"
+    },
+    {
+      "path": "corpus/v1/library/pickle.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pickle.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bb78864232bb4481bb1eae4ffe2a9f8b3734bcfe56d992b5cda59cde82d1093d"
+    },
+    {
+      "path": "corpus/v1/library/pickletools.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pickletools.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e4e8760a9003b826088bc36d926693970e182e278e46fcf7291c0c6de335bcc2"
+    },
+    {
+      "path": "corpus/v1/library/pipes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pipes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "93dc6b7ba1fbb9d0b32009779487ac4d1c7e0c13741414281dfe9ff7388b7419"
+    },
+    {
+      "path": "corpus/v1/library/pkgutil.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pkgutil.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1d5d5dfaf22638d137f70daadbee53202c74f733ed7a1b48bbcd629f3fbfc6a0"
+    },
+    {
+      "path": "corpus/v1/library/platform.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/platform.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e8962711c4bf71a0a04699f3296df0c329eb48be671783f922fa0e90a59f87e3"
+    },
+    {
+      "path": "corpus/v1/library/plistlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/plistlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a65ec813a1a65743f6be7ae31f335f751b90e6c53ce8a3d2736ccb35348044b4"
+    },
+    {
+      "path": "corpus/v1/library/poplib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/poplib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0b91969e6439731b255510f38e25a78e03c6fcb2680a6e362da395cc5c809621"
+    },
+    {
+      "path": "corpus/v1/library/posix.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/posix.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e5f608aa3b51b922e8bb90a5797f0e549c8628fec4dc2ccc0ba81b4e5d0e632c"
+    },
+    {
+      "path": "corpus/v1/library/pprint.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pprint.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "344c2a722714fee5dd415e8e5b3de024f118e554b122a8dea88e8ebf02e49fe2"
+    },
+    {
+      "path": "corpus/v1/library/profile.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/profile.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d8e87e735b74badad65feb890710a8ce6ba6409a6fa0fda440229063fb18c4a0"
+    },
+    {
+      "path": "corpus/v1/library/pty.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pty.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "94dc4ea284990ff0d75b3f2f256aff6df4fc1ed30305752fe3bf77dc01b7c78d"
+    },
+    {
+      "path": "corpus/v1/library/pwd.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pwd.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "45cfa3b93331fb91a9631f53c1b37636b8eed409915422e7e3509ea409f3303c"
+    },
+    {
+      "path": "corpus/v1/library/py_compile.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/py_compile.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3f54b29302d7b8684a4483964fe53190978c830219d13cbb7109ac5ea3e3481c"
+    },
+    {
+      "path": "corpus/v1/library/pyclbr.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pyclbr.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "03a52be500d1751514bcc8e2acc0c5e31e183aa5afd660e3d82d0f5a6dbe799e"
+    },
+    {
+      "path": "corpus/v1/library/pydoc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pydoc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c84f9d1d42dc8a521f3ace0d263a57e5c550b89fca05d24df5c677c15c171f66"
+    },
+    {
+      "path": "corpus/v1/library/pyexpat.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/pyexpat.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "79c9e23bc811d3c6d551be46755cf38c0eccd1bc9b8f12c4463fb59014ba9468"
+    },
+    {
+      "path": "corpus/v1/library/python.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/python.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1c662a64145f9aed820725797d91ff2d6cad177d561f28616fb69a61d84ef6b6"
+    },
+    {
+      "path": "corpus/v1/library/queue.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/queue.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0"
+    },
+    {
+      "path": "corpus/v1/library/quopri.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/quopri.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6d3a3bb73e8cf5009f999c2f5825340c58ee60043e2ddb71c2278975dddf0115"
+    },
+    {
+      "path": "corpus/v1/library/random.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/random.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0e4555270dce6c17843880236a1a52dc59348bb5ea03633c41e479b50ce96ce1"
+    },
+    {
+      "path": "corpus/v1/library/re.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/re.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b078d803d7c50ffde3013c3adf8eb59935cfa71b2a80e08db08f0dd81bfd31d1"
+    },
+    {
+      "path": "corpus/v1/library/readline.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/readline.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "44c3a06ab27bffd3d7e34051538895ae98f3ce6c1552e22a6bd75135fa2f2c2b"
+    },
+    {
+      "path": "corpus/v1/library/removed.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/removed.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "76ac1e3d34f61c6fb4da6eb89b2ca618358bf87f7c17b93a49b72d76db625d4c"
+    },
+    {
+      "path": "corpus/v1/library/reprlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/reprlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ae50f9473763edafb517f88eafdcc531a2f4488ddde1fb98087b49ae7a0c9b00"
+    },
+    {
+      "path": "corpus/v1/library/resource.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/resource.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4fcebb9c8ac45647e8ebc0b38c17d731f786e275ab0b5ab33f9641560cb384d0"
+    },
+    {
+      "path": "corpus/v1/library/rlcompleter.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/rlcompleter.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3ae02ce77624409528637b8c3faaa840a98f2dccff828ea96d8d32addf85ceb9"
+    },
+    {
+      "path": "corpus/v1/library/runpy.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/runpy.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e7ffa3a47eaf0534f45caf28507ae1a5d0af0bdaab498412ac64dfca42efddfd"
+    },
+    {
+      "path": "corpus/v1/library/sched.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/sched.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b642e5d40163c27f824c09c503f0927ef89946cee79fe23bd83f1d1be45dec0b"
+    },
+    {
+      "path": "corpus/v1/library/secrets.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/secrets.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7ff635fec32608dd8de4b410d97fe94aae33e7b2cf6967349f4e835d413d6e77"
+    },
+    {
+      "path": "corpus/v1/library/security_warnings.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/security_warnings.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "136f030386f02b8e2fedd582e39f3c44b74b37394b06bb51ecf002edf57bf4b8"
+    },
+    {
+      "path": "corpus/v1/library/select.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/select.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7331c9e4099fd1554ca04c0ba8c9a3bc395edf634796c5b8adae8b53c6f0f0bd"
+    },
+    {
+      "path": "corpus/v1/library/selectors.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/selectors.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "441a30809ab4d99521ab9c6f8e29d683e76913a7c52601f1a6a742bb04f55db1"
+    },
+    {
+      "path": "corpus/v1/library/shelve.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/shelve.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "49f915373ae5a8a0383484b6ffd4880fa022b19768b53a2f2bccf6402306a6ff"
+    },
+    {
+      "path": "corpus/v1/library/shlex.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/shlex.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "410347ec8db377807cb66ae9467b7f7531b17373ad1693845191f80330f0ab40"
+    },
+    {
+      "path": "corpus/v1/library/signal.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/signal.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ffff6220c30da5e4f79b6e1f0f495c9f79d60b4398fcf44c2d09c2b2ed115057"
+    },
+    {
+      "path": "corpus/v1/library/site.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/site.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0ce9420cf4f52f5ed361c0e6764d427f192b47c28bab1eaab7441c0e8f637ae2"
+    },
+    {
+      "path": "corpus/v1/library/smtpd.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/smtpd.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "be744989daa9c69399c8202d86ec19ca03243d93e8b81bc396d3e571167d74f2"
+    },
+    {
+      "path": "corpus/v1/library/smtplib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/smtplib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f991439aad22443feb6847eea1ce5bc3fb27404eb76ade3faf2c9a7d20f998a0"
+    },
+    {
+      "path": "corpus/v1/library/sndhdr.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/sndhdr.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "950d4b7c53c08a43de6d6766d326bc6b7f5c965fa9e45ebeca2638af353d4b46"
+    },
+    {
+      "path": "corpus/v1/library/socket.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/socket.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "cfcea7f4576341c0741a91b217f4bfb23900a047945100f1d43ba10405a2f09a"
+    },
+    {
+      "path": "corpus/v1/library/socketserver.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/socketserver.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6e68464eeaba244f78957b49390733140ac0c46a6eb617318e7435007fafd2c8"
+    },
+    {
+      "path": "corpus/v1/library/spwd.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/spwd.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e733b19829775aa0ebfaa07646a38da9beba66cd0d3f6983d8400b635f60fede"
+    },
+    {
+      "path": "corpus/v1/library/sqlite3.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/sqlite3.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "05a11c5e7c36ce26695fda5246a4e6bcfc397646fbe5c31873b635bc3755c7fb"
+    },
+    {
+      "path": "corpus/v1/library/ssl.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/ssl.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d96277407c364e6300c7f11941da9d9e912cb992e8e8e77687397c00bec1bf55"
+    },
+    {
+      "path": "corpus/v1/library/stat.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/stat.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d405432e4350af0340b62d6c4897f529c96230c41e6926b162d1544f92e6f0e0"
+    },
+    {
+      "path": "corpus/v1/library/statistics.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/statistics.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "97a7ce318597d6cb9a7f8bfc1f123cd70077249bef13e21e58e1334a72902bbb"
+    },
+    {
+      "path": "corpus/v1/library/stdtypes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/stdtypes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "584a7e46f33d33e22df0d72d2e53cd4f20b68df9efdfb29a71f5f8061d2b0f4b"
+    },
+    {
+      "path": "corpus/v1/library/string.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/string.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b208dac3f12f61b842a0887d8d3e3143870966ac5dc60fd1ab94dc9fb1358cb5"
+    },
+    {
+      "path": "corpus/v1/library/stringprep.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/stringprep.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ef239271794a15edc8d004d7a5167e5422e84b6b774a84d10721f3b0aeae8c9c"
+    },
+    {
+      "path": "corpus/v1/library/struct.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/struct.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2e669ebd5d6bb35e0e7774a7e4cb8a346753be210d7a43f5a36425ef85b4e741"
+    },
+    {
+      "path": "corpus/v1/library/subprocess.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/subprocess.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f0576b87ff819aefceaff21ccf80194fa31c5792d0e878eb7cd86bfa5b95b537"
+    },
+    {
+      "path": "corpus/v1/library/sunau.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/sunau.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3969583e07da282d7772a4da42d6245d49d09db9e0150bd46bfd461ae49d452a"
+    },
+    {
+      "path": "corpus/v1/library/superseded.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/superseded.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "abef9da5f7bec1ea547280f13d5514baa9c657743391315066166604b72dd00c"
+    },
+    {
+      "path": "corpus/v1/library/symtable.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/symtable.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "adb1d5ecd63429816ea473ff687d81be41fa76bea5e61b77130a22f58662fe61"
+    },
+    {
+      "path": "corpus/v1/library/sys.monitoring.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/sys.monitoring.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "37065317c8ca54049adf9d85f0184197d0ac1860cc17909684666536ebdb2c40"
+    },
+    {
+      "path": "corpus/v1/library/sys.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/sys.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4e9467bcadea67323ad09b04275cdb3c35b16ab040b8d084dfa6305b6688a78a"
+    },
+    {
+      "path": "corpus/v1/library/sys_path_init.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/sys_path_init.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f836f39191c1edeb5bd58bd8827420900b643fb6ea31d828932e313b3539b620"
+    },
+    {
+      "path": "corpus/v1/library/syslog.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/syslog.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "27219851fc0610aeff1c981939cd159002e45c6f94e5018a87c9f5ad396640e5"
+    },
+    {
+      "path": "corpus/v1/library/tabnanny.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tabnanny.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f3edc97199ccc0f650f98f039df6448235e17b3a9d733bac54a4eb92d7bbfba0"
+    },
+    {
+      "path": "corpus/v1/library/tarfile.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tarfile.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3"
+    },
+    {
+      "path": "corpus/v1/library/telnetlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/telnetlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fe5253192ea9f7b4e2d6f5de542cc8e1d83a7abbbc899564f8fa44295800a05b"
+    },
+    {
+      "path": "corpus/v1/library/tempfile.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tempfile.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "487aeabf01be281fd1e2534b326c33cca4d9fab4db1c04d32e58439c9f6346bc"
+    },
+    {
+      "path": "corpus/v1/library/termios.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/termios.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3153dc2f41afb2666c300b65b23692d77155c7fe9adb7527577c9896893f0501"
+    },
+    {
+      "path": "corpus/v1/library/test.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/test.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5205c22c05a53ae336e967e7ebc2bb38dcfc33dd24fe1eb83ed447ae0b2805fa"
+    },
+    {
+      "path": "corpus/v1/library/text.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/text.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2a533a428c8671375811d5c847fad85158278744b803e1e2212d40ffdee9855b"
+    },
+    {
+      "path": "corpus/v1/library/textwrap.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/textwrap.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "142a4f6f32eb18030b42583e996fa878b681ece03b049845173d847708d0407d"
+    },
+    {
+      "path": "corpus/v1/library/threading.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/threading.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5612236bbe320182e07354fad4deca41673d5b2d511345d83d59562df017bda8"
+    },
+    {
+      "path": "corpus/v1/library/time.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/time.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8cf7b0e8d0eb51d2a5f5a2b9ce9b8436a3816ba55742b9a9e3c307800c6471a1"
+    },
+    {
+      "path": "corpus/v1/library/timeit.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/timeit.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6c0117bac69e37fc6b3fa659799f1544ef3a473ca892e9862ab398e8f69e9cc9"
+    },
+    {
+      "path": "corpus/v1/library/tk.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tk.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "364e4db243505ddc49e5e20b08de38179925cd9b7df517a90bd28cedc993e705"
+    },
+    {
+      "path": "corpus/v1/library/tkinter.colorchooser.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tkinter.colorchooser.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3f20223f9bf3e5ec2143bb90c96b13c91822af48142c6572adee6a2aa009c65d"
+    },
+    {
+      "path": "corpus/v1/library/tkinter.dnd.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tkinter.dnd.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "50b4bd4f4011510c1e82d045fc0b8fb22c1049bfefb8f674cf2ac50d64f3d2ff"
+    },
+    {
+      "path": "corpus/v1/library/tkinter.font.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tkinter.font.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "33c91f45d32fce0fcfcd7adf529b1504bf3d891e2b337e73e3ff02a58cdde0e1"
+    },
+    {
+      "path": "corpus/v1/library/tkinter.messagebox.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tkinter.messagebox.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "eec0d90ce6ca067c858e579ff486504d3cc9c516fc2714579df10e16816e70c0"
+    },
+    {
+      "path": "corpus/v1/library/tkinter.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tkinter.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d78fe882ae10aea22715c216bed567c905e856751f8dcc9c52510b97e7aef5b6"
+    },
+    {
+      "path": "corpus/v1/library/tkinter.scrolledtext.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tkinter.scrolledtext.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "48d80c86bc9245067d97a9fe21b74c1cd08c789107778b737fcff267d7bfcfb8"
+    },
+    {
+      "path": "corpus/v1/library/tkinter.ttk.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tkinter.ttk.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "75b826aff52c93da12aa0d4321eadbdbddd97bb5dc68e8c62cf940032203019a"
+    },
+    {
+      "path": "corpus/v1/library/token.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/token.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7b2cc57626621ccc0fad8cbaeca284909d606a3ed60d4e19371c36c16ebce5aa"
+    },
+    {
+      "path": "corpus/v1/library/tokenize.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tokenize.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0228e942d4d494e1db729c5d85d1956c7615e1c5eea3d36d8649505015ef1745"
+    },
+    {
+      "path": "corpus/v1/library/tomllib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tomllib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "22a430dea1dc64889a48b391c0384311e4b47430e131eeb216b2b829a4a44576"
+    },
+    {
+      "path": "corpus/v1/library/trace.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/trace.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "341dde378cdf29dda5d8bc6dfb35b37d92daae2ef5182010298a7e80986861a2"
+    },
+    {
+      "path": "corpus/v1/library/traceback.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/traceback.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1fbc7dc7cc2c5804b032db248cd93915abc27ce9b2782a3c99d29e9b1af1e00c"
+    },
+    {
+      "path": "corpus/v1/library/tracemalloc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tracemalloc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ca374192331c5977f78af1a28fe5f72fa879532201f20feab4137511a0f9389a"
+    },
+    {
+      "path": "corpus/v1/library/tty.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/tty.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a9e5ea520ced2198181c8698beda985a7dc0fa6a4b9816d55258b7d27ac111ae"
+    },
+    {
+      "path": "corpus/v1/library/turtle.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/turtle.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e288410a5576efa730976fdfbeca7f58b4276dad72c9910f098ba4079d11aae2"
+    },
+    {
+      "path": "corpus/v1/library/types.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/types.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f3b05fa3b8116802a707f192ead943d872f6d0c5a9583db0a2f106314b04f60d"
+    },
+    {
+      "path": "corpus/v1/library/typing.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/typing.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dd068079d5949086bf88b28432792e85e9dfaa27ab08f65abbc3dd75f328a9fe"
+    },
+    {
+      "path": "corpus/v1/library/unicodedata.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/unicodedata.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "847bec0aed725f4af0af2ddace282dfa15e6d8490466f21eed3dfcffdeb06f7f"
+    },
+    {
+      "path": "corpus/v1/library/unittest.mock-examples.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/unittest.mock-examples.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "66fc8df7f12cfe624add6f853fa6e6457bf6e1ab95e3aa4df69415adbee93189"
+    },
+    {
+      "path": "corpus/v1/library/unittest.mock.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/unittest.mock.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1e08a80b019c38779bcf646e0c0dff5b64ccf6580ce001ee1c2a3a4482d0e3b3"
+    },
+    {
+      "path": "corpus/v1/library/unittest.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/unittest.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c582c777f4605bf749cd3cddd21a24cdbeab592c8995135d0cc38b7c51f106bf"
+    },
+    {
+      "path": "corpus/v1/library/unix.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/unix.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "be87450080433bd092388451722a152cb05c5f4f68ac0c769c12afbc6336830e"
+    },
+    {
+      "path": "corpus/v1/library/urllib.error.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/urllib.error.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1df88f32db7635c6c9d9382fe7b7627e46de6de05e9f63fddd82a76798b7943a"
+    },
+    {
+      "path": "corpus/v1/library/urllib.parse.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/urllib.parse.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ac3847df2710b9b12b9c5b8529467f27d0248749e892bbec658e8a5e595701a0"
+    },
+    {
+      "path": "corpus/v1/library/urllib.request.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/urllib.request.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "bd7e33bd66aafe819c6834b18b183a862a8e3a744a4c3fca96f1c2674b35acb3"
+    },
+    {
+      "path": "corpus/v1/library/urllib.robotparser.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/urllib.robotparser.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f115b16a5cbf7b924c5b02f1fc40e3f50b42e8e965b3a861b6925c566d499a4d"
+    },
+    {
+      "path": "corpus/v1/library/urllib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/urllib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "48c69fa071d45f29fd8b1482ed8755c2b39099cb3843d8998facfd8e77b771e7"
+    },
+    {
+      "path": "corpus/v1/library/uu.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/uu.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "df9c347c5279bacf87532de5318a48b929aa67bda94de84687b8d9db06410a91"
+    },
+    {
+      "path": "corpus/v1/library/uuid.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/uuid.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5f2a51ad5f56ba7007c2f2318508d2c85fea9a733b5bc9bb2870f44c58781943"
+    },
+    {
+      "path": "corpus/v1/library/venv.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/venv.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "35c393c585003dd1587cb8d4ed8fb8ad7222bac3a803ae91117157cdf14de4d8"
+    },
+    {
+      "path": "corpus/v1/library/warnings.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/warnings.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "132d6059703e07900e467774cbf73cfc1349d303cc0289dc16a31a215ef5f47a"
+    },
+    {
+      "path": "corpus/v1/library/wave.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/wave.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a48b6b5659177c690d44d20d0c80cbb9dbf2fdda29556bba78129e024d396bc9"
+    },
+    {
+      "path": "corpus/v1/library/weakref.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/weakref.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0ef492312caae331776ef5f24dca5cb8c23df5cb17b3847c562eed6046528c03"
+    },
+    {
+      "path": "corpus/v1/library/webbrowser.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/webbrowser.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "eab4155af70851fb47d210062023bbe28a01a40cb91e2f859e87654b59191f76"
+    },
+    {
+      "path": "corpus/v1/library/windows.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/windows.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ba812f21bfd994c221cc43750469c8ea164701cf5b5fcf58b76d48a2c880f77c"
+    },
+    {
+      "path": "corpus/v1/library/winreg.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/winreg.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "63326c95d34fa21fd2440bce99806bd46b477abb962777a9ef6df54478f7a900"
+    },
+    {
+      "path": "corpus/v1/library/winsound.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/winsound.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b927e1502649d64cdc793d27c33115279aee42c2f0342986d7a33934df8bff9f"
+    },
+    {
+      "path": "corpus/v1/library/wsgiref.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/wsgiref.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5d827dd15c60554bd9a949c51294748b543505def8686df26e97b27e737dff55"
+    },
+    {
+      "path": "corpus/v1/library/xdrlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xdrlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c064ae05d08371481140b9a0a32999cc2fb8d812c5c2b9906aeb70774efd59f5"
+    },
+    {
+      "path": "corpus/v1/library/xml.dom.minidom.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.dom.minidom.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ad4fb4f2db735ff0b70852f148e1726d577c8c9879c2b0b865ca6bf9a42e8092"
+    },
+    {
+      "path": "corpus/v1/library/xml.dom.pulldom.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.dom.pulldom.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8d59f52f46263abe0eb40224924e05b08382fab14490e02f9d321eb57930706b"
+    },
+    {
+      "path": "corpus/v1/library/xml.dom.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.dom.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "354ba39088df52fe9e2c8b4d71b7ce7c9867863ec2670e2e3643c8b38c95c7e9"
+    },
+    {
+      "path": "corpus/v1/library/xml.etree.elementtree.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.etree.elementtree.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "21550a51a048d3c8aea5c4d923135f26eb1e38ee76f62331d9e6308e534407ca"
+    },
+    {
+      "path": "corpus/v1/library/xml.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "640006902074264bf25e9a726351a8a437059d69d932361cfae53546a6f6bda9"
+    },
+    {
+      "path": "corpus/v1/library/xml.sax.handler.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.sax.handler.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "89dd9c1731a62f6cbe73fb11e1944625e0a0b161e6ebeb83771fe8a2dd57fc73"
+    },
+    {
+      "path": "corpus/v1/library/xml.sax.reader.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.sax.reader.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5c42eb30722dada102ba224436d185306657891c8bb4da80f9663288477e166b"
+    },
+    {
+      "path": "corpus/v1/library/xml.sax.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.sax.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "0e3820f13c871afe4e7c022fb19777e8213805b23d614118fc3b56b9509ea00e"
+    },
+    {
+      "path": "corpus/v1/library/xml.sax.utils.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xml.sax.utils.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fc2804d96d463022a48b73a577872246aed0076419d5992410851df3f50f034a"
+    },
+    {
+      "path": "corpus/v1/library/xmlrpc.client.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xmlrpc.client.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c99eea572c19ebd9ed31631f0bed4c1552520d4ce08d8c5cfaf11080cc33c12a"
+    },
+    {
+      "path": "corpus/v1/library/xmlrpc.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xmlrpc.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6e888f204675d0fb34f11d937e877a20d1da80ee88dc1ef7a855560245b94e16"
+    },
+    {
+      "path": "corpus/v1/library/xmlrpc.server.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/xmlrpc.server.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a6c3b000a365ff3a2bae5ca8219b3ea0ff3b510f128766ed42a0b3405320c591"
+    },
+    {
+      "path": "corpus/v1/library/zipapp.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/zipapp.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d8c49523a8dda18c5f46db58558e00d621ba4777a22efa3b1b58f3e7d58262b7"
+    },
+    {
+      "path": "corpus/v1/library/zipfile.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/zipfile.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "dd4e9b0f0ffff8ef8d6296ad5f744782e18ff4bf34424f23d12046a072dcdc41"
+    },
+    {
+      "path": "corpus/v1/library/zipimport.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/zipimport.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3f28ec5d825a8e6a5fa187b79ea9bd8a7271bdbd7dec6a231dede70988815a81"
+    },
+    {
+      "path": "corpus/v1/library/zlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/zlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "103751661a879f581f74bdad9ff16205ac86763958f3ea33f5205a3f4a90c11d"
+    },
+    {
+      "path": "corpus/v1/library/zoneinfo.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/library/zoneinfo.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "84e81652d1971ee8c54fcf5b3745539d23b4bea80318a8822980b5bfe002f474"
+    },
+    {
+      "path": "corpus/v1/license.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/license.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde"
+    },
+    {
+      "path": "corpus/v1/reference/compound_stmts.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/compound_stmts.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "459b2fc491a90783765255897154ca133856d4219b8d7127bceadbaa3ddfc916"
+    },
+    {
+      "path": "corpus/v1/reference/datamodel.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/datamodel.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "72d7d0f6471e371933773ce3cc7b52fbb9d2dfaa49d99c3ba4b47b39d072070d"
+    },
+    {
+      "path": "corpus/v1/reference/executionmodel.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/executionmodel.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8b1d3089a333482eb737055ccaabdb9c20b343bb118d9ebd9fcb5bafd2a70f7c"
+    },
+    {
+      "path": "corpus/v1/reference/expressions.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/expressions.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c772edc19e2d50d27d906ae4d9f2981823ce7337d6d32dba7f63575d9e75f9dd"
+    },
+    {
+      "path": "corpus/v1/reference/grammar.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/grammar.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9def8b44e47dd2d240a865f54b542b29beb036eb39f112edc2bc7a0ae8adab7f"
+    },
+    {
+      "path": "corpus/v1/reference/import.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/import.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "aa88d16c170875cdc843d3f52b713174ef1e6f0c99fa5444b8e3c833a3d2f53c"
+    },
+    {
+      "path": "corpus/v1/reference/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "75dc6f4adc71981e2f4b966a5f0f13fa1ebc1c03192f9bd29f36b0ae2d714f90"
+    },
+    {
+      "path": "corpus/v1/reference/introduction.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/introduction.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "41aa1f7bcef53ac043e336112a6bb44ec17e99aa1bb77dbb0830a946965f9295"
+    },
+    {
+      "path": "corpus/v1/reference/lexical_analysis.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/lexical_analysis.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "d6016478a19d6adb56fc89d386c4186318b9c0f29d5e0faba07ff26c61d06c79"
+    },
+    {
+      "path": "corpus/v1/reference/simple_stmts.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/simple_stmts.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "a9740934a527d2dd5114d5906fd1ff4c86b247bbf478b46bddfb0186bc4c6483"
+    },
+    {
+      "path": "corpus/v1/reference/toplevel_components.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/reference/toplevel_components.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f7800f5c5a731c818b37a5f6f05ad8a79866cfbfaca23c99bf1da38e9eb42e62"
+    },
+    {
+      "path": "corpus/v1/tutorial/appendix.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/appendix.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "50fd6e5509d6c21023178915984e99220f6bab75fa76c71c2674fa2f4066d046"
+    },
+    {
+      "path": "corpus/v1/tutorial/appetite.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/appetite.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c5766ddd864601b50b54a1882f2fbec67945d421339ddea67cd545d3b0ffad55"
+    },
+    {
+      "path": "corpus/v1/tutorial/classes.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/classes.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "fd28b82a81acda33c4997dc931ab63d5a4fea4ef65d820b579dcf2d4bf7304a4"
+    },
+    {
+      "path": "corpus/v1/tutorial/controlflow.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/controlflow.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1e589edc233e3654a8a64073e1cce668304453c1d64e163955df8e08dec73f66"
+    },
+    {
+      "path": "corpus/v1/tutorial/datastructures.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/datastructures.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f54ef650be44719660b0d5f0f53c71a4b05a691c972e0748ac2889ec06f2fb47"
+    },
+    {
+      "path": "corpus/v1/tutorial/errors.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/errors.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "77b6fbae30c5ab25d00efd089737bde813bda9a789606f8b1cff26856dc3d711"
+    },
+    {
+      "path": "corpus/v1/tutorial/floatingpoint.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/floatingpoint.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8e648340d27e4ad469e40a53f8b47389d8490a7b10ea828f0bc76186c3863a55"
+    },
+    {
+      "path": "corpus/v1/tutorial/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "cbe35a0878b649eca9d05bbc27c6fa69aec607a4e8698343883f4ca27d187d69"
+    },
+    {
+      "path": "corpus/v1/tutorial/inputoutput.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/inputoutput.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "210f867a77f007c622ca3b268c0962fb49550adec8bedea5f7bb2926a6443795"
+    },
+    {
+      "path": "corpus/v1/tutorial/interactive.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/interactive.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9e89a965c17c29e7ae69b7fda7b0845644f846a81d11fe4f2d04ccf8c1ddde4e"
+    },
+    {
+      "path": "corpus/v1/tutorial/interpreter.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/interpreter.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "8f8d649e94b4058e2485a625cd43c0b3edfeb3c4c69e0c674dded783cd241698"
+    },
+    {
+      "path": "corpus/v1/tutorial/introduction.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/introduction.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e9b5f55a7c57b170a7894de6aa0a5e852af83316fab028108a74c01e7cdfc146"
+    },
+    {
+      "path": "corpus/v1/tutorial/modules.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/modules.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "5103a4f1a7571e79382299c36e77fddaffc6744c232616438f8678e123aaac03"
+    },
+    {
+      "path": "corpus/v1/tutorial/stdlib.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/stdlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f0f425a1346f45d5510b531295ac54c5f3c46e560712a51df7e7fafa833d0947"
+    },
+    {
+      "path": "corpus/v1/tutorial/stdlib2.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/stdlib2.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b38c38bd657b4f74b3a1d4168cd93dbbc233a78c9d8d4971cbfbec4a2143e183"
+    },
+    {
+      "path": "corpus/v1/tutorial/whatnow.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/tutorial/whatnow.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f2f4243d916a0403c405cfc74f643e715af121223b771fd620ff7361cfbeff38"
+    },
+    {
+      "path": "corpus/v1/using/android.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/android.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3b09d8fa68fe0eccf7019ad7260813c13c757b532bc5ed487d801caaa71c3cce"
+    },
+    {
+      "path": "corpus/v1/using/cmdline.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/cmdline.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "558b886de43d34cddd52dc238d9fbe9a8391c77e50a9107fe6e472756de0f66a"
+    },
+    {
+      "path": "corpus/v1/using/configure.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/configure.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "e9245c9a23b32326224b8d578d11c890ecc30ce00799e455a5aa65364ba57c73"
+    },
+    {
+      "path": "corpus/v1/using/editors.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/editors.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "808244cff1b35346204892a1955d9c2ffe7c8203cb50dfb6ce2e3a1dae108e1c"
+    },
+    {
+      "path": "corpus/v1/using/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "52addf1667e8b4fe7e7382e278e4698aae0068bd330118a78af13e39c386525d"
+    },
+    {
+      "path": "corpus/v1/using/ios.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/ios.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "f26d27964bed4c0a627e4c044f65fc73b60d3c04b70091d47f7b8c077c374b5e"
+    },
+    {
+      "path": "corpus/v1/using/mac.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/mac.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9403dd802020ed141c7f4131a287648622cf772bf6fa87bd4469d38057a2717b"
+    },
+    {
+      "path": "corpus/v1/using/unix.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/unix.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c6cd5a17d81d741c22c50b291fcddf567bd92ba15c96645607c86505b0e9aed4"
+    },
+    {
+      "path": "corpus/v1/using/windows.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/using/windows.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "c8a182006cd6930f0096efc25767895a034b0f9cc5e0584a12c47ad8b76414f6"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.0.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.0.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "409ce7ec4cb280ccf96f895255cd831d66f7059e45d027dc45bfb5678f4bdf88"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.1.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.1.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "438429eeb3c704092ab7cb58890cec6b12c9304f5106031cb5519d4d617df9a7"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.2.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.2.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "435457a839c684092abc55222fe37e33ae1f5c2b8be03a8bb1e6be63154955d8"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.3.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.3.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "098b2f95ba2e7cf438042ecbd7a714c33bf4df397dd115948f2acb62a48cd383"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.4.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.4.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "9305e4016b121f708e28fe01af701c00795d3ca18ba8bde45e3750311dca2d73"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.5.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.5.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "ddd47618ed73e67233ac7b7bc3c844e0cb3f8cb9eb37302598ff3e1d12679d29"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.6.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.6.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "455d77d7b6f1879442d1f2db73b83d0aee4cdf7e01430b6a3f6c5165d5852791"
+    },
+    {
+      "path": "corpus/v1/whatsnew/2.7.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/2.7.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "df3085333ec68e200a2016acd4dd146f970b13afbcdb96189c8fe0ee7550a6e8"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.0.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.0.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "2cff2de98d19cea2f740de312622a8725fb7fbd0561929ecf9805c5ade546773"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.1.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.1.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "4f0ba3a533b9f89170c58c0e7c2f06c234816cf88efa3fa741bc8942ab42a68f"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.10.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.10.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "6f8c3d1d3bc3c1c46c240e444c861f0f07a8b21b3df06036421267eba2309e11"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.11.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.11.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "12c9a1516911c76c2f68eb33ad5896d0b391315445425a9214e8f239dbda7f28"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.12.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.12.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "3610d4d64ab5e6b658331f9e52cfb0e04ec374a31a93f8b256f5d2baf942ff62"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.13.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.13.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1517d48aa57a12e80f98cdc89cb90d3057e647d1ef8ca068e59a53f0ae9af7d6"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.3.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.3.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "b15a77dc9c106a8084498f93d3f775517c019e22d246e95e77b6ea129f631e43"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.4.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.4.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "99a19e3feb84478395e6103b237a3b093b651e5b2a3c3f6834d98667a2dbc2e3"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.5.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.5.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "63bec56435c6650799bfa63a711e448667129f782be8e0275c23bdbe3af162d3"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.6.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.6.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "df07bdb27a2065c41cff96412c4cf67e73c4e1111dcb3fef1bddea26e03a8aa2"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.7.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.7.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "7f8b78aadcd85d3a14bad558b4b24497b85b535abfb9227f887035819f1787e7"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.8.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.8.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "1bb8a64bc435cae0c31c79361eddf116c61f1f112b24c1865a0647bd60b540c8"
+    },
+    {
+      "path": "corpus/v1/whatsnew/3.9.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/3.9.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "138da06708c6cf980a251d94ffc755fef16e973ccfd7b233784e701b4a18e44a"
+    },
+    {
+      "path": "corpus/v1/whatsnew/changelog.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/changelog.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "50f4abfae6fea1bf8ae7d8e1ea78cef244840e992d68232fdd7411c7dc5273fa"
+    },
+    {
+      "path": "corpus/v1/whatsnew/index.rst",
+      "version": "3.13.1",
+      "source_url": "https://github.com/python/cpython/blob/v3.13.1/Doc/whatsnew/index.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.13.1.txt",
+      "sha256": "12c06f8f73f7ccc055e50805b987daec366d569cf1c9445df7aaaef44a9e4d85"
+    },
+    {
+      "path": "corpus/v2/howto/argparse.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/howto/argparse.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "b1d9195f239ad23ccfac10f6612be0b6c4f6a2a86a744efa549f3852c8ed8686"
+    },
+    {
+      "path": "corpus/v2/library/annotationlib.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/annotationlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "50496c330fd445555bda305f8974001be0c389a1459f658dc1add83da6150d0c"
+    },
+    {
+      "path": "corpus/v2/library/argparse.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/argparse.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "46c9dc41aa479d4f068b644149ca4cb12c4076ef25ddd2e547e50becb611c40a"
+    },
+    {
+      "path": "corpus/v2/library/concurrent.futures.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/concurrent.futures.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "ec446948198e8376eb0d806296e2c055397f9fb3eac8c5ee4bf4a2566dfd5da4"
+    },
+    {
+      "path": "corpus/v2/library/functools.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/functools.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "4dc7d9e24c1b1279c8995dbb905ce18d1b816efbb4c3574e2366a222b91adb47"
+    },
+    {
+      "path": "corpus/v2/library/heapq.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/heapq.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "676347c86a675a3f9071e92276e823c496e763176dccd563a5e051dd09044225"
+    },
+    {
+      "path": "corpus/v2/library/multiprocessing.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/multiprocessing.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "a071ff2219887d41c480df9902663d2375e8b125a5453dfc93d894fbb08974ff"
+    },
+    {
+      "path": "corpus/v2/library/os.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/os.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "7bab91c6d5dcc0f88e476567d190388e94ddb3940768e0713c70f0280130e964"
+    },
+    {
+      "path": "corpus/v2/library/pathlib.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/pathlib.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "9b243c8ba9bf1d6af953550d228c4df4daec0af5584659d026111a4167a2534b"
+    },
+    {
+      "path": "corpus/v2/library/threading.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/threading.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "35bc2547d513b1ee02b9917391408068f6d8dde044ef2378042b8abc170e07d7"
+    },
+    {
+      "path": "corpus/v2/library/uuid.rst",
+      "version": "3.14.0",
+      "source_url": "https://github.com/python/cpython/blob/v3.14.0/Doc/library/uuid.rst",
+      "license": "PSF-2.0",
+      "license_file": "licenses/Python-3.14.0.txt",
+      "sha256": "f0436d9eb5a00325d0eeea35a194c4d011fe553d5f05a42df06e90134ce749c8"
+    }
+  ]
+}

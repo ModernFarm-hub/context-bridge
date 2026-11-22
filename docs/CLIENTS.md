@@ -114,10 +114,10 @@ Enable installs optional `[semantic]` packages in an isolated runtime when missi
 
 ## Pin a version
 
-To use this beta explicitly, replace `context-bridge-local` in the uvx arguments with `context-bridge-local==0.9.0b1`:
+To use this beta explicitly, replace `context-bridge-local` in the uvx arguments with `context-bridge-local==0.10.0b1`:
 
 ```sh
-uvx --from 'context-bridge-local==0.9.0b1' context-bridge mcp
+uvx --from 'context-bridge-local==0.10.0b1' context-bridge mcp
 ```
 
 The package source is explicit because the PyPI name `context-bridge` belongs to a different project. [uv's package/command naming documentation](https://docs.astral.sh/uv/guides/tools/#commands-with-different-package-names).

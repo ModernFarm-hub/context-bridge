@@ -1,6 +1,6 @@
 # 0.9.0b1 local verification
 
-213 tests passed with the existing local model suites enabled. The dependency-free run passes with 29 optional model tests skipped. New tests cover local accounting, client identity and exact response-text sizes over real stdio; default/opt-in query privacy; profile-scoped clearing; recorded usage, incremental cache accounting, legacy snapshot reinterpretation, the synthetic 37,000-cache-read trivial turn and read-window math; compact/full compatibility; hook diff/confirmation/backups/uninstall and noninteractive/EOF refusal; relevance/empty-output/timeout/budgets; offline negative cases; and paid-mode guards using fake provider responses only.
+218 tests passed with the existing local model suites enabled. The dependency-free run passes with 29 optional model tests skipped. New tests cover local accounting, client identity and exact response-text sizes over real stdio; default/opt-in query privacy; profile-scoped clearing; recorded usage, incremental cache accounting, legacy snapshot reinterpretation, the synthetic 37,000-cache-read trivial turn and read-window math; compact/full compatibility; hook diff/confirmation/backups/uninstall and noninteractive/EOF refusal; relevance/empty-output/timeout/budgets; offline negative cases; and paid-mode guards using fake provider responses only.
 
 The [offline experiment](../../benchmarks/savings.md) uses twenty synthetic sessions and a disposable profile. Its original-cost counters are deliberately invented and its lookup tokens are character estimates. It is not a measured real-user savings claim. Three negative-net examples are retained. The paid Anthropic harness was not run; no API key or external paid service was used. No hook was installed in actual user settings. Tests use temporary settings files only.
 
@@ -93,3 +93,23 @@ python3 prototype/benchmark.py --savings --live --input-price-per-million 2 --ou
 ```
 
 Version remains 0.9.0b1. No tags, pushes, publication, issues or PRs.
+
+## Local repeat-research opportunity
+
+218 tests pass with local model suites enabled; dependency-free tests pass with 29 optional model tests skipped. Build, clean package payload and offline uvx quickstart checks pass. Tests use temporary synthetic libraries only; no actual user library was inspected and no API calls were made.
+
+`context-bridge repeats` reports only possible repeat-research opportunities, never proven savings. Opening user turns are compared across strictly earlier distinct conversations, with BM25/Porter candidate selection and stricter lexical overlap by default, or existing offline hybrid embeddings when enabled. Chains, provider totals, conservative recorded/export cost methods, and an intentionally broad likely-REDO proxy are included. Ten sample pairs at most show titles/dates only. Interactive review persists only profile-scoped pair hashes, labels and time, and reports precision over labelled current pairs.
+
+New tests cover a cross-provider chain spanning ChatGPT, Claude, Claude Code and Codex, a negated lookalike, missing dates, recorded Claude Code/Codex lower-bound costs, lower-quality export estimates, title-only JSON and review prompts, deterministic offline hybrid stand-in vectors, real CLI profile isolation, noninteractive review refusal and interactive pseudo-terminal review persistence. Review precision is explicitly selection-biased and similarity is not intent.
+
+[Full 218-test output](repeats-tests.log), [dependency-free output](repeats-default-tests.log), [build and offline quickstart output](repeats-build.log), [usage and interpretation](../../USAGE.md#repeat-research-opportunity-local-no-api-calls).
+
+```sh
+context-bridge repeats --profile personal
+context-bridge repeats --profile personal --json
+context-bridge repeats --profile personal --min-similarity 0.90
+context-bridge repeats --profile personal --review
+PYTHONPATH=prototype python3 -m unittest discover -s prototype/tests -p test_repeats.py -v
+```
+
+The commands use your existing imported/approved profile; they do not import, approve, download or send conversation content. Large hybrid reports compare all earlier pairs and may be slower than ordinary search. Version remains 0.9.0b1; no paid mode, tag, push, publication, issue or PR.

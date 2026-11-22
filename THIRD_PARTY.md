@@ -18,3 +18,9 @@ The Apache-2.0 declaration covers original Context Bridge source. It does not re
 No competitor implementation was vendored into the prototype. Code snapshots under the ignored evaluation directory are earlier versions of this project's own implementation. Before distributing binary installers or bundling model/dependency assets, produce the corresponding complete dependency notice/license inventory; this source-preparation note is not that audit.
 
 Claude Code and any other configured AI client are external software with their own terms and billing. An MCP connection does not transfer ownership of their code or change their data-handling policies. No endorsement by these vendors is implied.
+
+## Public research benchmark corpus (0.10.0b1)
+
+`prototype/evals/savings-real/corpus` contains unmodified reStructuredText documentation selected from the official Python 3.13.1 and 3.14.0 source distributions. The Python documentation is distributed under the PSF License; full upstream license and attribution texts accompany it in `prototype/evals/savings-real/licenses/`. The per-file manifest records the source URL, release, license file and content hash. This third-party documentation retains its upstream licensing; the project's Apache-2.0 license applies to the benchmark code, not a relicensing of the corpus. Four unrelated documents containing upstream example user paths are omitted to preserve the package's existing private-path payload checks. The corpus builder pins both source-archive hashes.
+
+The research corpus is included in the repository and source distribution only, and is omitted from the runtime wheel. An installed wheel can select the extracted source data with `savings-real --corpus-dir`.

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.10.0b1
+
+- Add automatic prompt caching, four-rate pricing, a required paid-run dollar cap, conservative next-request reservations, and pilot-derived full-run projections. Record actual document characters read.
+- Keep the benchmark corpus in repository/source distributions; enforce a wheel size budget below 500000 bytes and explain explicit source-corpus selection.
+- Add repeat-rate sensitivity and per-threshold labelled precision/coverage; recommend local review without changing defaults to fit a personal library.
+
+- Add a frozen public-document research benchmark with recorded calls, isolated Phase A history, paired analysis and fake-provider tests. No paid results are claimed.
+- Support approval of existing project folders before their first Claude Code or Codex session.
+- Include the local repeat-research opportunity report and precision review.
+
 ## 0.9.0b1 — local reuse accounting and automatic consultation (unpublished)
 
 - Use conservative lower-bound research credit: cumulative assistant outputs plus nonnegative context growth above the first assistant turn, for Claude Code and Codex. Deduplicate repeated message IDs, retain all-in counters as upper bounds including fixed context overhead, and preserve negative net estimates. Rebuild source accounting baselines; legacy usage snapshots without baselines receive output-only credit.
@@ -8,6 +18,7 @@
 - Add conservative savings reports: recorded Claude Code/Codex counters when available, clearly labelled visible-text estimates for exports, conversation deduplication and all lookup overhead subtracted. Dollar estimates require a user-supplied price.
 - Add compact search results without changing the default full format. Measure both formats in a synthetic offline benchmark with stale, wrong and cheap-redo negative cases.
 - Add a printed agent guide and opt-in Claude Code hook with a settings diff, explicit confirmation, backups and uninstall. Bound lexical consultation to three results, a minimum score, content budgets and a 200 ms worker timeout; fail open with no context on misses/timeouts.
+- Add a profile-local repeat-opportunity report with opening-question BM25/hybrid matching, chronological chains, conservative cost/method and provider breakdowns, likely-REDO proxy, title/date-only samples and hashed local review labels. No API calls or savings claim.
 - Raise the shared live per-arm cap to research depth + four, update the advisory, report cap_reached/no-answer separately from wrong answers, and explicitly report missing decision-line non-compliance. Require the decision before the final answer in guides of at most 170 words. Document balanced run 3 and retain the independently reviewed Aster/Willow/Comet labels. Fake-provider tests only.
 - Tighten volatility hints: ignore code/identifiers and plain decimals, require software context for versions and volatile nouns near current/latest/now, exclude percentages, and recognize financial amounts/terms including rupees. Add a 21-case fixture retaining documented misses; clarify that high stakes with volatility OR conflicting evidence independently requires REDO.
 - Add risk-weighted economical/balanced/cautious reuse guides, bounded hook guidance, local age/volatility/uncertainty hints (conflict detection disabled), decision-labelled fixtures and fake-provider decision metrics. Document both historical old-guide paid runs without a savings claim.

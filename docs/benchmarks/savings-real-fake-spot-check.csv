@@ -1,0 +1,31 @@
+arm,task_id,repetition,answer,human_correct,notes
+baseline,research-13,2,"{""facts"": {""capacity"": ""infinite"", ""event"": ""false""}}",,
+baseline,research-38,2,"{""facts"": {""available"": ""true"", ""added"": ""3.14""}}",,
+baseline,research-34,2,"{""facts"": {""available"": ""true"", ""name"": ""Placeholder""}}",,
+baseline,research-12,0,"{""facts"": {""dedent"": ""dedent"", ""clean"": ""cleandoc""}}",,
+baseline,research-32,1,"{""facts"": {""available"": ""true"", ""default"": ""false""}}",,
+baseline,research-14,1,"{""facts"": {""rel_tol"": ""1e-09"", ""precision"": ""28""}}",,
+baseline,research-28,0,"{""facts"": {""recommended"": ""false"", ""function"": ""urlopen""}}",,
+baseline,research-33,1,"{""facts"": {""available"": ""true"", ""default"": ""None""}}",,
+baseline,research-10,0,"{""facts"": {""function"": ""combinations"", ""arguments"": ""2""}}",,
+baseline,research-23,1,"{""facts"": {""pickle_safe"": ""false"", ""json_same_risk"": ""false""}}",,
+reuse,research-26,2,"{""facts"": {""extract_uninspected"": ""false"", ""method"": ""resolve""}}
+Reuse decision: REDO — fixture only.",,
+reuse,research-03,2,"{""facts"": {""helper"": ""attrgetter"", ""stable"": ""true""}}
+Reuse decision: REUSE — fixture only.",,
+reuse,research-33,2,"{""facts"": {""available"": ""true"", ""default"": ""None""}}
+Reuse decision: CHECK — fixture only.",,
+reuse,research-05,0,"{""facts"": {""network_marker"": ""!"", ""return_type"": ""bytes""}}
+Reuse decision: REUSE — fixture only.",,
+reuse,research-14,2,"{""facts"": {""rel_tol"": ""1e-09"", ""precision"": ""28""}}
+Reuse decision: REUSE — fixture only.",,
+reuse,research-16,0,"{""facts"": {""level"": ""WARNING"", ""function"": ""warn""}}
+Reuse decision: REUSE — fixture only.",,
+reuse,research-37,2,"{""facts"": {""available"": ""true"", ""added"": ""3.14""}}
+Reuse decision: CHECK — fixture only.",,
+reuse,research-04,1,"{""facts"": {""mode"": ""w+b"", ""json_type"": ""str""}}
+Reuse decision: REUSE — fixture only.",,
+reuse,research-11,2,"{""facts"": {""split"": ""urlsplit"", ""join"": ""urlunsplit""}}
+Reuse decision: REUSE — fixture only.",,
+reuse,research-40,1,"{""facts"": {""available"": ""true"", ""default"": ""None""}}
+Reuse decision: CHECK — fixture only.",,
