@@ -1,0 +1,39 @@
+{
+  "characters_read": 3500,
+  "phase": "A",
+  "task_id": "research-01",
+  "arm": "original",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 10,
+    "cache_read_input_tokens": 10948,
+    "cache_creation_input_tokens": 7680,
+    "output_tokens": 624
+  },
+  "answer": "```json\n{\"facts\": {\"ensure_ascii\": \"true\", \"compression\": \"ZIP_STORED\"}}\n```\n\n**Explanation:** `json.dump` has the signature `dump(obj, fp, *, skipkeys=False, ensure_ascii=True, ...)`, so non-ASCII characters are escaped by default. `zipfile.ZipFile` has the signature `ZipFile(file, mode='r', compression=ZIP_STORED, ...)`, and the docs state \"The default is ZIP_STORED\". That means members are stored uncompressed unless you pass `ZIP_DEFLATED` or another method.\n\n**Sources:**\n- `library/json.rst`\n- `library/zipfile.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "read_doc"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

@@ -1,5 +1,7 @@
 # Public-document research savings experiment
 
+Status update, 2026-11-22: a real five-task pilot was subsequently supplied. The original registration and pre-pilot cost-control amendment below are retained as historical records. The dated formatting amendment at the end supersedes only answer normalization, the missing-JSON fallback and decision parsing. No confirmatory run has occurred.
+
 Registered before any paid run, 2026-11-22. Only fake-provider tests have been authorized. No observed paid outcomes informed these tasks or this analysis.
 
 Hypotheses: balanced reuse reduces research tokens overall; improvements vary by variant and decision. Related and stale questions can lose through lookup/verification overhead or mistakes. Report every losing task. This is a controlled corpus benchmark, not a representative sample of all research or proof that a particular user saved money.
@@ -31,3 +33,28 @@ Pilots report mean uncached/output/cache-read/cache-write tokens per call and pe
 - prototype/evals/savings-real/tasks.json: `8f565ed553927e1df52166dd0c394f8a79dd6550d3160ccd3ebe2c572125df8b`
 - prototype/savings_real_analysis.py: `456a2a4405bb63b185873effbdf952a5187a648fd265a3606edf4728f299bd22`
 - prototype/savings_real_costs.py: `aa5d406e4ff53eab1c3c21ab1e62c780b31b42fba096a42fda4c982e2cdea1b8`
+
+## 2026-11-22 formatting amendment (after pilot, before confirmatory run)
+
+Reason: **pilot found formatting-only false negatives**. The real five-task claude-sonnet-5-5 pilot cost approximately $0.29 and was observed before this amendment. These are post-pilot measurement fixes, not a prospectively untouched pilot analysis. Re-grade only the saved responses; do not request new model outputs or a new model grader judgment. The original saved artifacts and labels remain unchanged; sidecars show each session's original and amended correctness, decision, compliance, tokens and calls.
+
+There is no change to the forty tasks, questions, variants, labels, stakes, corpus, arms, neutral prompt, balanced agent guide, model settings, call caps, repetitions, bootstrap procedure, primary paired token-ratio metric, accuracy metric, non-inferiority margin or stale safety rule. Only the deterministic measurement parsing below changes. Pilot results remain exploratory and cannot qualify for a confirmatory claim.
+
+Fact values: strip surrounding matching quotes/backticks and whitespace; compare identifiers case-insensitively. A module-qualified identifier may match a bare reference only if the entire suffix after its final dot matches exactly. Qualified references are not reduced; numbers and other values retain exact matching. JSON booleans match the string references true/false. No fuzzy matching, semantic aliases or changed reference facts are allowed: urlparse does not match urlsplit. The original grader already handled JSON booleans through case-folded strings; the explicit boolean regression test preserves that behavior.
+
+When a valid facts JSON object exists, all required keys and values must match; prose cannot repair a wrong or incomplete facts object. If no valid facts object exists, extract each exact required value from the final answer text with the same normalization, whole-value boundaries and a limited explicit-negation veto. Explicit field/value assignments cannot be rescued by the value appearing under another field; unlabeled mixed boolean literals are treated as ambiguous. Punctuation-only values must be quoted/code-delimited, not incidental punctuation. This fallback is a surface check, not semantic judging; contradictions or values mentioned incidentally still require human spot checking. A missing value fails. Refusal, truncation and nonfinal output remain incorrect. Report the number/share using fallback (including failed fallback checks), overall and by phase/arm; the denominator is final answers actually graded by JSON or fallback. Historical rows lacking method metadata are reported as such, not inferred to be structured.
+
+Decision parsing: one unambiguous Reuse decision: REUSE|CHECK|REDO marker anywhere in the final answer, case-insensitive, followed by an em dash, hyphen, colon or end of line. Retain acceptance of the existing en dash. Repeated markers remain ambiguous. A period followed by prose is not among the specified separators and remains non-compliant. Only final-answer text supplies the decision. Report compliance separately from decision accuracy and answer correctness; a well-formed but incorrect policy decision is compliant yet wrong. The balanced guide text and secondary model-grader rubric are unchanged.
+
+The supplied saved pilot has facts JSON in all fifteen final sessions, so its observed text-fallback share is zero. Regression fixtures include the real module-qualified/boolean answers and clearly labelled prose-only renderings/excerpts; these do not imply a missing-JSON final occurred in this saved pilot. The colon example becomes parseable; two period-form markers remain unsupported. This limitation must stay visible in the before/after report.
+
+Regrading is implemented by prototype/savings_real_regrade.py. It checks the saved task/corpus hashes and cross-checks final answer text, usage and call counts against raw recorded responses. It reads no library and never constructs a provider. It emits new sidecars only. Original answers, tokens, prices and source labels are retained unchanged. The registered analysis formulas are unchanged; the analysis file hash changes solely to add fallback and compliance diagnostics to reports.
+
+Current registered hashes (the final occurrence for each path is authoritative):
+
+
+- prototype/evals/savings-real/tasks.json: `8f565ed553927e1df52166dd0c394f8a79dd6550d3160ccd3ebe2c572125df8b`
+- prototype/savings_real_analysis.py: `cbe0a18b258eb3c3c96a6cab90f74e26f4715f65932768e115754ff6d6e03c81`
+- prototype/savings_real_grading.py: `37bd6385ef46515a05bc591cb54ad0f7e643975f5b6018e01509b84789acc939`
+- prototype/reuse_policy.py: `96b6d4eee55a20bbd9cf37da13e9b8899d0eed36f5760e0ae381907fbf3d1f20`
+- prototype/savings_real_regrade.py: `a2fc33f5e6655852482efc13ed5b21082db80b513789f2eef801e2be277a3cec`

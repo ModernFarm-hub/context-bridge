@@ -1,0 +1,122 @@
+arm,task_id,repetition,answer,human_correct,notes
+baseline,research-11,0,"`urlsplit` is the function that returns five components, and `urlunsplit` reverses it.
+
+```json
+{""facts"": {""split"": ""urlsplit"", ""join"": ""urlunsplit""}}
+```
+
+`urlunsplit(parts)` combines the elements of a tuple as returned by `urlsplit()` into a complete URL string, and `parts` can be any five-item iterable. I did not read the `urlsplit` entry itself, so the five-component claim rests on that ""five-item"" wording plus the 2.7 whatsnew example, which shows `urlsplit` returning a five-element tuple. The snippet also notes the round trip may produce a slightly different but equivalent URL, for example by dropping an empty fragment.
+
+`urlparse` is the related function that returns six components, since it also splits out the path parameters.
+
+Sources: `library/urllib.parse.rst` (the `urlunsplit` entry and the `urlsplit` example); `whatsnew/2.7.rst` (the five-element tuple example).",,
+baseline,research-01,0,"The corpus shows `ensure_ascii=True` in the `json.dump` signature. For ZIP, the only constructor signature I found is `PyZipFile`'s, which defaults to `compression=ZIP_STORED`. The docs state that `PyZipFile` takes the same parameters as `ZipFile`, so the `ZipFile` default is the same.
+
+```json
+{""facts"": {""ensure_ascii"": ""true"", ""compression"": ""ZIP_STORED""}}
+```
+
+- **`ensure_ascii`:** the `json.dump` signature is `dump(obj, fp, *, skipkeys=False, ensure_ascii=True, ...)`.
+- **Compression:** `ZIP_STORED` means the files are stored uncompressed.
+
+Sources:
+- `library/json.rst`
+- `library/zipfile.rst`",,
+baseline,research-31,0,"Yes. In this snapshot `ArgumentParser` accepts `color`, and its default is `True`.
+
+```json
+{""facts"": {""available"": ""true"", ""default"": ""true""}}
+```
+
+The class signature in `library/argparse.rst` ends with `*, suggest_on_error=False, color=True)`. The same file's version note says ""versionchanged:: 3.14: *suggest_on_error* and *color* parameters were added.""
+
+Sources: `library/argparse.rst`",,
+baseline,research-21,0,"The helper is `ssl.create_default_context()`, and it does load default CA certificates.
+
+The ""Best defaults"" section of `library/ssl.rst` recommends it for client use when you have no special security requirements. It says the function loads the system's trusted CA certificates and enables certificate validation and hostname checking.
+
+```json
+{""facts"": {""function"": ""ssl.create_default_context"", ""loads_ca"": true}}
+```
+
+Sources: `library/ssl.rst`. `whatsnew/3.13.rst` also says `ssl.create_default_context()` selects the operating system's trusted CA certificates.",,
+baseline,research-40,0,"Yes. In this snapshot, `threading.Thread` accepts `context`, and its default is `None`.
+
+```json
+{""facts"": {""available"": ""true"", ""default"": ""None""}}
+```
+
+The signature in `library/threading.rst` reads `Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None, context=None)`. The same file carries a ""Changed in version 3.14: Added the *context* parameter"" note.
+
+Source: `library/threading.rst`",,
+reuse,research-11,0,"The function that splits a URL into five components is `urllib.parse.urlsplit`, and `urllib.parse.urlunsplit` reverses it. The corpus describes `urlunsplit(parts)` as combining the elements of a tuple returned by `urlsplit()` into a complete URL string, where *parts* can be any five-item iterable.
+
+The five components are scheme, netloc, path, query and fragment. `urlparse` returns six, because it also splits out path parameters.
+
+```json
+{
+  ""facts"": {
+    ""split"": ""urllib.parse.urlsplit"",
+    ""join"": ""urllib.parse.urlunsplit""
+  }
+}
+```
+
+The docs add that the round trip may produce a slightly different but equivalent URL, for example by dropping an empty query.
+
+Sources: `library/urllib.parse.rst` (the `urlunsplit` definition). The `whatsnew/2.7.rst` example shows `urlsplit` returning a five-item tuple.
+
+Reuse decision: CHECK — a prior conversation note (""URL components"", Claude Code, urn:context-bridge:record:94f151337d1c46d5aec43917304e97fc) gave the same answer, and I confirmed it against the corpus docs.",,
+reuse,research-21,0,"Use `ssl.create_default_context()`. It returns a new context with secure default settings, and it does load default CA certificates. The docs say it loads CA certificates when at least one of `cafile`, `capath` or `cadata` is given. Otherwise it calls `SSLContext.load_default_certs()` to load the default CA certificates. With no arguments, as in a typical client, it therefore loads the system defaults.
+
+```json
+{""facts"": {""function"": ""ssl.create_default_context"", ""loads_ca"": true}}
+```
+
+Sources:
+- `library/ssl.rst`: describes the helper and the CA-loading behavior.
+- `whatsnew/3.4.rst`: introduced the function and `load_default_certs`.
+- `whatsnew/3.13.rst`: notes the function selects the operating system's trusted CA certificates.
+
+Reuse decision: REUSE: an earlier conversation reached the same function name, but I confirmed the CA-loading behavior directly from the corpus docs.",,
+reuse,research-31,0,"Yes. In the selected snapshot, `ArgumentParser` accepts `color`, and its default is `True`.
+
+```json
+{""facts"": {""available"": ""true"", ""default"": ""true""}}
+```
+
+The `ArgumentParser` signature in `library/argparse.rst` ends with `*, suggest_on_error=False, color=True)`. The same file has a version note saying ""3.14: *suggest_on_error* and *color* parameters were added.""
+
+I did not read the prose description of `color` itself. The default comes from the signature.
+
+Sources: `library/argparse.rst`
+
+Reuse decision: REDO. The earlier conversation hits did not match this question, so I verified directly against the corpus.",,
+reuse,research-40,0,"Yes. In the v2 snapshot, `threading.Thread` accepts `context`, and its default is `None`.
+
+The signature in `library/threading.rst` is `Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None, context=None)`. The same page has a ""Changed in 3.14"" note saying the *context* parameter was added.
+
+The earlier v1 answer I found in my notes said `context` was unavailable. That was a different snapshot, so I did not reuse it.
+
+```json
+{""facts"": {""available"": true, ""default"": ""None""}}
+```
+
+Source path: `library/threading.rst`
+
+Reuse decision: REDO — the earlier v1 note was for a different snapshot, so I re-verified against v2.",,
+reuse,research-01,0,"Both defaults are confirmed in the corpus.
+
+```json
+{""facts"": {""ensure_ascii"": ""true"", ""compression"": ""ZIP_STORED""}}
+```
+
+**Explanation:**
+- In `json.dump`/`json.dumps`, `ensure_ascii` defaults to true, so non-ASCII characters are escaped in the output.
+- In the `zipfile` signature, `compression` defaults to `ZIP_STORED`, which means the data is archived without compression. The snippet I retrieved shows this for `PyZipFile`, which follows the same `ZipFile` signature. I did not open the `ZipFile` entry itself.
+
+**Sources:**
+- `library/json.rst`
+- `library/zipfile.rst`
+
+Reuse decision: CHECK. A prior Claude Code conversation (urn:context-bridge:record:c50f069562734b8eb9a9d325ec1569e1) gave the same defaults. I re-verified them against the corpus rather than relying on it.",,

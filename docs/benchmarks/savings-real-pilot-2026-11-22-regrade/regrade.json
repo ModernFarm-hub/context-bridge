@@ -1,0 +1,1092 @@
+{
+  "amendment": "2026-11-22-formatting-only",
+  "reason": "pilot found formatting-only false negatives",
+  "source_run": "savings-real-pilot-2026-11-22",
+  "source_file_sha256": {
+    "run.json": "5dd03d70ab2e9731126f4cce2c0a02590c2c7edc5f0105741c33a1ce9498a15a",
+    "results.jsonl": "cc8a0f7493d90107c021dbab9f02857d9aa1c77f97142d582bddab1446dec3ae",
+    "summary.json": "9bdd7b83b1a2565b1b99d56ec213a4c32cb2eb03e502c92146ff1ce48f30b624",
+    "raw-calls.jsonl": "5c0de0c01b76d85f1dbafbdd390475ec0563ec87fcec6a230f6c361c127e0304"
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "source_is_fake": false,
+  "no_new_api_calls": true,
+  "claim_eligible": false,
+  "registered_hashes": {
+    "savings_real_analysis.py": "cbe0a18b258eb3c3c96a6cab90f74e26f4715f65932768e115754ff6d6e03c81",
+    "savings_real_grading.py": "37bd6385ef46515a05bc591cb54ad0f7e643975f5b6018e01509b84789acc939",
+    "reuse_policy.py": "96b6d4eee55a20bbd9cf37da13e9b8899d0eed36f5760e0ae381907fbf3d1f20",
+    "savings_real_regrade.py": "a2fc33f5e6655852482efc13ed5b21082db80b513789f2eef801e2be277a3cec"
+  },
+  "sessions": [
+    {
+      "phase": "A",
+      "task_id": "research-01",
+      "arm": "original",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "7649c07991021bbdbd66d217896930873d4630ff4f90edc07db97afb6b6e6163",
+      "tokens": 19262,
+      "calls": 4
+    },
+    {
+      "phase": "A",
+      "task_id": "research-11",
+      "arm": "original",
+      "repetition": 0,
+      "before_correct": false,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "af51a6009629c59da66e4d037ac602a029edb11089b5ee78e28d203a53de0f08",
+      "tokens": 8544,
+      "calls": 3
+    },
+    {
+      "phase": "A",
+      "task_id": "research-21",
+      "arm": "original",
+      "repetition": 0,
+      "before_correct": false,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "19330ec11d3d764bad54a46807bab0fb3a28837e3523cbe3f1bbf46bc9233fa0",
+      "tokens": 3461,
+      "calls": 2
+    },
+    {
+      "phase": "A",
+      "task_id": "research-31",
+      "arm": "original",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "644f613e1b7abf4aafdc6b7afb36d3f556e00bb08282125205c08c3a3e8f7e57",
+      "tokens": 8485,
+      "calls": 3
+    },
+    {
+      "phase": "A",
+      "task_id": "research-40",
+      "arm": "original",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "405154fd9f591e707c2443c207bb57b82def00bbbb64d8f99193ea8ab5fb06ff",
+      "tokens": 7806,
+      "calls": 3
+    },
+    {
+      "phase": "B",
+      "task_id": "research-21",
+      "arm": "reuse",
+      "repetition": 0,
+      "before_correct": false,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": "REUSE",
+      "before_compliant": false,
+      "after_compliant": true,
+      "expected_decision": "REDO",
+      "after_decision_correct": false,
+      "answer_sha256": "cd0c317f90b700c097740ff0a649d86c047427473f10faebf3edfd45a7d7644a",
+      "tokens": 13269,
+      "calls": 3
+    },
+    {
+      "phase": "B",
+      "task_id": "research-11",
+      "arm": "reuse",
+      "repetition": 0,
+      "before_correct": false,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": "CHECK",
+      "after_decision": "CHECK",
+      "before_compliant": true,
+      "after_compliant": true,
+      "expected_decision": "REUSE",
+      "after_decision_correct": false,
+      "answer_sha256": "27b67cbb70d49ff53f9b9ed983aecc357a12b1223e59fb11b7c51cbb85fecf88",
+      "tokens": 13095,
+      "calls": 3
+    },
+    {
+      "phase": "B",
+      "task_id": "research-01",
+      "arm": "baseline",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "e7add9bf20076c70e4fa94a102f08a1b21e84d5fbf99b5eb4cc62c0304282481",
+      "tokens": 11505,
+      "calls": 3
+    },
+    {
+      "phase": "B",
+      "task_id": "research-11",
+      "arm": "baseline",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "e77de1b901f5f0131c404576136698a1404f3bfe5fbc9e4e7bac218c01f7d216",
+      "tokens": 8226,
+      "calls": 3
+    },
+    {
+      "phase": "B",
+      "task_id": "research-40",
+      "arm": "reuse",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": "REDO",
+      "after_decision": "REDO",
+      "before_compliant": true,
+      "after_compliant": true,
+      "expected_decision": "CHECK",
+      "after_decision_correct": false,
+      "answer_sha256": "f0e3bb40ef5eeefe365fd8f1457fceee57790928360b1d0d2b90c8be63a57515",
+      "tokens": 14384,
+      "calls": 3
+    },
+    {
+      "phase": "B",
+      "task_id": "research-31",
+      "arm": "reuse",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": false,
+      "after_compliant": false,
+      "expected_decision": "CHECK",
+      "after_decision_correct": false,
+      "answer_sha256": "36d3f80bc4a82610b5e2d4521277d19e3b7098a91cffca96b6a841f08b4a630c",
+      "tokens": 24087,
+      "calls": 4
+    },
+    {
+      "phase": "B",
+      "task_id": "research-40",
+      "arm": "baseline",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "aa359b21509f99461bda1f6986dab95f2f9163289bafc8a0a1aa64e23dd48f89",
+      "tokens": 7664,
+      "calls": 3
+    },
+    {
+      "phase": "B",
+      "task_id": "research-21",
+      "arm": "baseline",
+      "repetition": 0,
+      "before_correct": false,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "1c88da30e4444eaa707efa2fa7d4a9b0acf8f901d652e76926f45626d503a7a7",
+      "tokens": 3426,
+      "calls": 2
+    },
+    {
+      "phase": "B",
+      "task_id": "research-01",
+      "arm": "reuse",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": false,
+      "after_compliant": false,
+      "expected_decision": "REUSE",
+      "after_decision_correct": false,
+      "answer_sha256": "b51adcb586f00f7ddb83e07d69db66b1634c8a26095a1d46b8f28d49c9e613bd",
+      "tokens": 9213,
+      "calls": 2
+    },
+    {
+      "phase": "B",
+      "task_id": "research-31",
+      "arm": "baseline",
+      "repetition": 0,
+      "before_correct": true,
+      "after_correct": true,
+      "grading_method": "facts_json",
+      "missing_facts": [],
+      "before_decision": null,
+      "after_decision": null,
+      "before_compliant": null,
+      "after_compliant": null,
+      "expected_decision": null,
+      "after_decision_correct": null,
+      "answer_sha256": "8ddc2e2f01ae607f943dca86ea7f9d711ff1c9fcb33e1a2bde335af4862a8121",
+      "tokens": 8897,
+      "calls": 3
+    }
+  ],
+  "before": {
+    "fallback_grading": {
+      "overall": {
+        "sessions": 15,
+        "graded_final_answers": 0,
+        "fallback_sessions": 0,
+        "fallback_share": null,
+        "method_not_recorded": 15,
+        "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+      },
+      "by_phase_arm": {
+        "A-original": {
+          "sessions": 5,
+          "graded_final_answers": 0,
+          "fallback_sessions": 0,
+          "fallback_share": null,
+          "method_not_recorded": 5,
+          "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+        },
+        "B-baseline": {
+          "sessions": 5,
+          "graded_final_answers": 0,
+          "fallback_sessions": 0,
+          "fallback_share": null,
+          "method_not_recorded": 5,
+          "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+        },
+        "B-reuse": {
+          "sessions": 5,
+          "graded_final_answers": 0,
+          "fallback_sessions": 0,
+          "fallback_share": null,
+          "method_not_recorded": 5,
+          "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+        }
+      }
+    },
+    "decision_compliance": {
+      "applicable_sessions": 5,
+      "compliant": 2,
+      "missing_or_ambiguous": 3,
+      "compliance_rate": 0.4,
+      "notice": "A parsed final-answer decision is compliant even if the decision itself is wrong. Decision accuracy remains separate."
+    },
+    "method": "Mean paired per-task ratio of medians; task bootstrap percentile interval, 10000 draws, seed 104729. Accuracy: mean of three binary repetitions per task, paired task bootstrap. Failures count incorrect.",
+    "overall": {
+      "tasks": 5,
+      "mean_paired_ratio": 2.169971911265907,
+      "ratio_95_interval": [
+        1.3324397398641814,
+        3.173602152834138
+      ],
+      "fewer_tokens_percent": -116.9971911265907,
+      "fewer_tokens_95_interval_percent": [
+        -217.3602152834138,
+        -33.24397398641814
+      ],
+      "baseline_accuracy": 0.8,
+      "reuse_accuracy": 0.6,
+      "accuracy_difference": -0.2,
+      "accuracy_difference_95_interval": [
+        -0.6,
+        0
+      ],
+      "decision_accuracy": 0,
+      "reuse_loses_tasks": [
+        "research-11",
+        "research-21",
+        "research-31",
+        "research-40"
+      ]
+    },
+    "per_variant": {
+      "same": {
+        "tasks": 1,
+        "mean_paired_ratio": 0.8007822685788788,
+        "ratio_95_interval": [
+          0.8007822685788788,
+          0.8007822685788788
+        ],
+        "fewer_tokens_percent": 19.92177314211212,
+        "fewer_tokens_95_interval_percent": [
+          19.92177314211212,
+          19.92177314211212
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": []
+      },
+      "paraphrase": {
+        "tasks": 1,
+        "mean_paired_ratio": 1.5919037199124726,
+        "ratio_95_interval": [
+          1.5919037199124726,
+          1.5919037199124726
+        ],
+        "fewer_tokens_percent": -59.19037199124726,
+        "fewer_tokens_95_interval_percent": [
+          -59.19037199124726,
+          -59.19037199124726
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 0,
+        "accuracy_difference": -1,
+        "accuracy_difference_95_interval": [
+          -1,
+          -1
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-11"
+        ]
+      },
+      "related": {
+        "tasks": 1,
+        "mean_paired_ratio": 3.873029772329247,
+        "ratio_95_interval": [
+          3.873029772329247,
+          3.873029772329247
+        ],
+        "fewer_tokens_percent": -287.3029772329247,
+        "fewer_tokens_95_interval_percent": [
+          -287.3029772329247,
+          -287.3029772329247
+        ],
+        "baseline_accuracy": 0,
+        "reuse_accuracy": 0,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-21"
+        ]
+      },
+      "stale": {
+        "tasks": 2,
+        "mean_paired_ratio": 2.292071897754468,
+        "ratio_95_interval": [
+          1.8768267223382047,
+          2.707317073170732
+        ],
+        "fewer_tokens_percent": -129.2071897754468,
+        "fewer_tokens_95_interval_percent": [
+          -170.7317073170732,
+          -87.68267223382047
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-31",
+          "research-40"
+        ]
+      }
+    },
+    "per_expected_decision": {
+      "REUSE": {
+        "tasks": 2,
+        "mean_paired_ratio": 1.1963429942456756,
+        "ratio_95_interval": [
+          0.8007822685788788,
+          1.5919037199124726
+        ],
+        "fewer_tokens_percent": -19.63429942456756,
+        "fewer_tokens_95_interval_percent": [
+          -59.19037199124726,
+          19.92177314211212
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 0.5,
+        "accuracy_difference": -0.5,
+        "accuracy_difference_95_interval": [
+          -1,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-11"
+        ]
+      },
+      "CHECK": {
+        "tasks": 2,
+        "mean_paired_ratio": 2.292071897754468,
+        "ratio_95_interval": [
+          1.8768267223382047,
+          2.707317073170732
+        ],
+        "fewer_tokens_percent": -129.2071897754468,
+        "fewer_tokens_95_interval_percent": [
+          -170.7317073170732,
+          -87.68267223382047
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-31",
+          "research-40"
+        ]
+      },
+      "REDO": {
+        "tasks": 1,
+        "mean_paired_ratio": 3.873029772329247,
+        "ratio_95_interval": [
+          3.873029772329247,
+          3.873029772329247
+        ],
+        "fewer_tokens_percent": -287.3029772329247,
+        "fewer_tokens_95_interval_percent": [
+          -287.3029772329247,
+          -287.3029772329247
+        ],
+        "baseline_accuracy": 0,
+        "reuse_accuracy": 0,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-21"
+        ]
+      }
+    },
+    "paired_tasks": [
+      {
+        "id": "research-01",
+        "variant": "same",
+        "expected_decision": "REUSE",
+        "ratio": 0.8007822685788788,
+        "baseline_median_tokens": 11505,
+        "reuse_median_tokens": 9213,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-11",
+        "variant": "paraphrase",
+        "expected_decision": "REUSE",
+        "ratio": 1.5919037199124726,
+        "baseline_median_tokens": 8226,
+        "reuse_median_tokens": 13095,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 0,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-21",
+        "variant": "related",
+        "expected_decision": "REDO",
+        "ratio": 3.873029772329247,
+        "baseline_median_tokens": 3426,
+        "reuse_median_tokens": 13269,
+        "baseline_accuracy": 0,
+        "reuse_accuracy": 0,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-31",
+        "variant": "stale",
+        "expected_decision": "CHECK",
+        "ratio": 2.707317073170732,
+        "baseline_median_tokens": 8897,
+        "reuse_median_tokens": 24087,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-40",
+        "variant": "stale",
+        "expected_decision": "CHECK",
+        "ratio": 1.8768267223382047,
+        "baseline_median_tokens": 7664,
+        "reuse_median_tokens": 14384,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      }
+    ],
+    "incomplete_tasks": [],
+    "counts": {
+      "baseline": {
+        "cap_reached": 0,
+        "refused": 0,
+        "truncated": 0,
+        "error": 0
+      },
+      "reuse": {
+        "cap_reached": 0,
+        "refused": 0,
+        "truncated": 0,
+        "error": 0
+      }
+    },
+    "phase_a": {
+      "sessions": 5,
+      "correct": 3,
+      "cap_reached": 0,
+      "refused": 0,
+      "truncated": 0,
+      "error": 0
+    },
+    "user_priced_costs": {
+      "A": {
+        "input_tokens": 40,
+        "cache_read_input_tokens": 22322,
+        "cache_creation_input_tokens": 22697,
+        "output_tokens": 2499,
+        "total_input_tokens": 45059,
+        "total_usd": 0.0862769,
+        "input_usd": 8e-05,
+        "cache_read_input_usd": 0.0044644,
+        "cache_creation_input_usd": 0.0567425,
+        "output_usd": 0.02499
+      },
+      "B": {
+        "input_tokens": 78,
+        "cache_read_input_tokens": 53394,
+        "cache_creation_input_tokens": 54994,
+        "output_tokens": 5300,
+        "total_input_tokens": 108466,
+        "total_usd": 0.2013198,
+        "input_usd": 0.000156,
+        "cache_read_input_usd": 0.0106788,
+        "cache_creation_input_usd": 0.137485,
+        "output_usd": 0.053
+      },
+      "grader": {
+        "input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 0,
+        "total_input_tokens": 0,
+        "total_usd": 0.0,
+        "input_usd": 0.0,
+        "cache_read_input_usd": 0.0,
+        "cache_creation_input_usd": 0.0,
+        "output_usd": 0.0
+      }
+    },
+    "mean_characters_read_per_session": 673.4,
+    "accuracy_noninferiority_passed": false,
+    "stale_safety_passed": true,
+    "claim_eligible": false
+  },
+  "after": {
+    "fallback_grading": {
+      "overall": {
+        "sessions": 15,
+        "graded_final_answers": 15,
+        "fallback_sessions": 0,
+        "fallback_share": 0.0,
+        "method_not_recorded": 0,
+        "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+      },
+      "by_phase_arm": {
+        "A-original": {
+          "sessions": 5,
+          "graded_final_answers": 5,
+          "fallback_sessions": 0,
+          "fallback_share": 0.0,
+          "method_not_recorded": 0,
+          "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+        },
+        "B-baseline": {
+          "sessions": 5,
+          "graded_final_answers": 5,
+          "fallback_sessions": 0,
+          "fallback_share": 0.0,
+          "method_not_recorded": 0,
+          "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+        },
+        "B-reuse": {
+          "sessions": 5,
+          "graded_final_answers": 5,
+          "fallback_sessions": 0,
+          "fallback_share": 0.0,
+          "method_not_recorded": 0,
+          "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+        }
+      }
+    },
+    "decision_compliance": {
+      "applicable_sessions": 5,
+      "compliant": 3,
+      "missing_or_ambiguous": 2,
+      "compliance_rate": 0.6,
+      "notice": "A parsed final-answer decision is compliant even if the decision itself is wrong. Decision accuracy remains separate."
+    },
+    "method": "Mean paired per-task ratio of medians; task bootstrap percentile interval, 10000 draws, seed 104729. Accuracy: mean of three binary repetitions per task, paired task bootstrap. Failures count incorrect.",
+    "overall": {
+      "tasks": 5,
+      "mean_paired_ratio": 2.169971911265907,
+      "ratio_95_interval": [
+        1.3324397398641814,
+        3.173602152834138
+      ],
+      "fewer_tokens_percent": -116.9971911265907,
+      "fewer_tokens_95_interval_percent": [
+        -217.3602152834138,
+        -33.24397398641814
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 0,
+      "reuse_loses_tasks": [
+        "research-11",
+        "research-21",
+        "research-31",
+        "research-40"
+      ]
+    },
+    "per_variant": {
+      "same": {
+        "tasks": 1,
+        "mean_paired_ratio": 0.8007822685788788,
+        "ratio_95_interval": [
+          0.8007822685788788,
+          0.8007822685788788
+        ],
+        "fewer_tokens_percent": 19.92177314211212,
+        "fewer_tokens_95_interval_percent": [
+          19.92177314211212,
+          19.92177314211212
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": []
+      },
+      "paraphrase": {
+        "tasks": 1,
+        "mean_paired_ratio": 1.5919037199124726,
+        "ratio_95_interval": [
+          1.5919037199124726,
+          1.5919037199124726
+        ],
+        "fewer_tokens_percent": -59.19037199124726,
+        "fewer_tokens_95_interval_percent": [
+          -59.19037199124726,
+          -59.19037199124726
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-11"
+        ]
+      },
+      "related": {
+        "tasks": 1,
+        "mean_paired_ratio": 3.873029772329247,
+        "ratio_95_interval": [
+          3.873029772329247,
+          3.873029772329247
+        ],
+        "fewer_tokens_percent": -287.3029772329247,
+        "fewer_tokens_95_interval_percent": [
+          -287.3029772329247,
+          -287.3029772329247
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-21"
+        ]
+      },
+      "stale": {
+        "tasks": 2,
+        "mean_paired_ratio": 2.292071897754468,
+        "ratio_95_interval": [
+          1.8768267223382047,
+          2.707317073170732
+        ],
+        "fewer_tokens_percent": -129.2071897754468,
+        "fewer_tokens_95_interval_percent": [
+          -170.7317073170732,
+          -87.68267223382047
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-31",
+          "research-40"
+        ]
+      }
+    },
+    "per_expected_decision": {
+      "REUSE": {
+        "tasks": 2,
+        "mean_paired_ratio": 1.1963429942456756,
+        "ratio_95_interval": [
+          0.8007822685788788,
+          1.5919037199124726
+        ],
+        "fewer_tokens_percent": -19.63429942456756,
+        "fewer_tokens_95_interval_percent": [
+          -59.19037199124726,
+          19.92177314211212
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-11"
+        ]
+      },
+      "CHECK": {
+        "tasks": 2,
+        "mean_paired_ratio": 2.292071897754468,
+        "ratio_95_interval": [
+          1.8768267223382047,
+          2.707317073170732
+        ],
+        "fewer_tokens_percent": -129.2071897754468,
+        "fewer_tokens_95_interval_percent": [
+          -170.7317073170732,
+          -87.68267223382047
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-31",
+          "research-40"
+        ]
+      },
+      "REDO": {
+        "tasks": 1,
+        "mean_paired_ratio": 3.873029772329247,
+        "ratio_95_interval": [
+          3.873029772329247,
+          3.873029772329247
+        ],
+        "fewer_tokens_percent": -287.3029772329247,
+        "fewer_tokens_95_interval_percent": [
+          -287.3029772329247,
+          -287.3029772329247
+        ],
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "accuracy_difference": 0,
+        "accuracy_difference_95_interval": [
+          0,
+          0
+        ],
+        "decision_accuracy": 0,
+        "reuse_loses_tasks": [
+          "research-21"
+        ]
+      }
+    },
+    "paired_tasks": [
+      {
+        "id": "research-01",
+        "variant": "same",
+        "expected_decision": "REUSE",
+        "ratio": 0.8007822685788788,
+        "baseline_median_tokens": 11505,
+        "reuse_median_tokens": 9213,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-11",
+        "variant": "paraphrase",
+        "expected_decision": "REUSE",
+        "ratio": 1.5919037199124726,
+        "baseline_median_tokens": 8226,
+        "reuse_median_tokens": 13095,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-21",
+        "variant": "related",
+        "expected_decision": "REDO",
+        "ratio": 3.873029772329247,
+        "baseline_median_tokens": 3426,
+        "reuse_median_tokens": 13269,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-31",
+        "variant": "stale",
+        "expected_decision": "CHECK",
+        "ratio": 2.707317073170732,
+        "baseline_median_tokens": 8897,
+        "reuse_median_tokens": 24087,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      },
+      {
+        "id": "research-40",
+        "variant": "stale",
+        "expected_decision": "CHECK",
+        "ratio": 1.8768267223382047,
+        "baseline_median_tokens": 7664,
+        "reuse_median_tokens": 14384,
+        "baseline_accuracy": 1,
+        "reuse_accuracy": 1,
+        "decision_accuracy": 0
+      }
+    ],
+    "incomplete_tasks": [],
+    "counts": {
+      "baseline": {
+        "cap_reached": 0,
+        "refused": 0,
+        "truncated": 0,
+        "error": 0
+      },
+      "reuse": {
+        "cap_reached": 0,
+        "refused": 0,
+        "truncated": 0,
+        "error": 0
+      }
+    },
+    "phase_a": {
+      "sessions": 5,
+      "correct": 5,
+      "cap_reached": 0,
+      "refused": 0,
+      "truncated": 0,
+      "error": 0
+    },
+    "user_priced_costs": {
+      "A": {
+        "input_tokens": 40,
+        "cache_read_input_tokens": 22322,
+        "cache_creation_input_tokens": 22697,
+        "output_tokens": 2499,
+        "total_input_tokens": 45059,
+        "total_usd": 0.0862769,
+        "input_usd": 8e-05,
+        "cache_read_input_usd": 0.0044644,
+        "cache_creation_input_usd": 0.0567425,
+        "output_usd": 0.02499
+      },
+      "B": {
+        "input_tokens": 78,
+        "cache_read_input_tokens": 53394,
+        "cache_creation_input_tokens": 54994,
+        "output_tokens": 5300,
+        "total_input_tokens": 108466,
+        "total_usd": 0.2013198,
+        "input_usd": 0.000156,
+        "cache_read_input_usd": 0.0106788,
+        "cache_creation_input_usd": 0.137485,
+        "output_usd": 0.053
+      },
+      "grader": {
+        "input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 0,
+        "total_input_tokens": 0,
+        "total_usd": 0.0,
+        "input_usd": 0.0,
+        "cache_read_input_usd": 0.0,
+        "cache_creation_input_usd": 0.0,
+        "output_usd": 0.0
+      }
+    },
+    "mean_characters_read_per_session": 673.4,
+    "accuracy_noninferiority_passed": true,
+    "stale_safety_passed": true,
+    "claim_eligible": false
+  },
+  "per_task_tokens": [
+    {
+      "task_id": "research-01",
+      "baseline_tokens": 11505,
+      "reuse_tokens": 9213,
+      "reuse_to_baseline_ratio": 0.8007822685788788,
+      "reuse_costs_more_tokens": false,
+      "baseline_calls": 3,
+      "reuse_calls": 2
+    },
+    {
+      "task_id": "research-11",
+      "baseline_tokens": 8226,
+      "reuse_tokens": 13095,
+      "reuse_to_baseline_ratio": 1.5919037199124726,
+      "reuse_costs_more_tokens": true,
+      "baseline_calls": 3,
+      "reuse_calls": 3
+    },
+    {
+      "task_id": "research-21",
+      "baseline_tokens": 3426,
+      "reuse_tokens": 13269,
+      "reuse_to_baseline_ratio": 3.873029772329247,
+      "reuse_costs_more_tokens": true,
+      "baseline_calls": 2,
+      "reuse_calls": 3
+    },
+    {
+      "task_id": "research-31",
+      "baseline_tokens": 8897,
+      "reuse_tokens": 24087,
+      "reuse_to_baseline_ratio": 2.707317073170732,
+      "reuse_costs_more_tokens": true,
+      "baseline_calls": 3,
+      "reuse_calls": 4
+    },
+    {
+      "task_id": "research-40",
+      "baseline_tokens": 7664,
+      "reuse_tokens": 14384,
+      "reuse_to_baseline_ratio": 1.8768267223382047,
+      "reuse_costs_more_tokens": true,
+      "baseline_calls": 3,
+      "reuse_calls": 3
+    }
+  ],
+  "correctness_changes": 5,
+  "reported_source_usd": 0.2875967,
+  "notice": "Before correctness and decisions are the original saved labels. After labels come only from local final-answer regrading. Tokens, prices, calls and answers were not changed. Pilot is exploratory, never confirmatory. No library was loaded; no secondary model grader was called."
+}

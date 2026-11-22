@@ -1,0 +1,36 @@
+{
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-01",
+  "arm": "baseline",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 5890,
+    "cache_creation_input_tokens": 5084,
+    "output_tokens": 523
+  },
+  "answer": "The corpus shows `ensure_ascii=True` in the `json.dump` signature. For ZIP, the only constructor signature I found is `PyZipFile`'s, which defaults to `compression=ZIP_STORED`. The docs state that `PyZipFile` takes the same parameters as `ZipFile`, so the `ZipFile` default is the same.\n\n```json\n{\"facts\": {\"ensure_ascii\": \"true\", \"compression\": \"ZIP_STORED\"}}\n```\n\n- **`ensure_ascii`:** the `json.dump` signature is `dump(obj, fp, *, skipkeys=False, ensure_ascii=True, ...)`.\n- **Compression:** `ZIP_STORED` means the files are stored uncompressed.\n\nSources:\n- `library/json.rst`\n- `library/zipfile.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

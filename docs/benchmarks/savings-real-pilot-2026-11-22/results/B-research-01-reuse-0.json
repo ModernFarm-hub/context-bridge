@@ -1,0 +1,34 @@
+{
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-01",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 2152,
+    "cache_creation_input_tokens": 6484,
+    "output_tokens": 571
+  },
+  "answer": "Both defaults are confirmed in the corpus.\n\n```json\n{\"facts\": {\"ensure_ascii\": \"true\", \"compression\": \"ZIP_STORED\"}}\n```\n\n**Explanation:**\n- In `json.dump`/`json.dumps`, `ensure_ascii` defaults to true, so non-ASCII characters are escaped in the output.\n- In the `zipfile` signature, `compression` defaults to `ZIP_STORED`, which means the data is archived without compression. The snippet I retrieved shows this for `PyZipFile`, which follows the same `ZipFile` signature. I did not open the `ZipFile` entry itself.\n\n**Sources:**\n- `library/json.rst`\n- `library/zipfile.rst`\n\nReuse decision: CHECK. A prior Claude Code conversation (urn:context-bridge:record:c50f069562734b8eb9a9d325ec1569e1) gave the same defaults. I re-verified them against the corpus rather than relying on it.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

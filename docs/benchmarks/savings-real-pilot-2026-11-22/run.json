@@ -1,0 +1,30 @@
+{
+  "costs_sha256": "aa5d406e4ff53eab1c3c21ab1e62c780b31b42fba096a42fda4c982e2cdea1b8",
+  "max_usd": 5.0,
+  "prices": {
+    "input_tokens": "2.0",
+    "cache_read_input_tokens": "0.2",
+    "cache_creation_input_tokens": "2.5",
+    "output_tokens": "10.0"
+  },
+  "grader_prices": {
+    "input_tokens": "0",
+    "cache_read_input_tokens": "0",
+    "cache_creation_input_tokens": "0",
+    "output_tokens": "0"
+  },
+  "fake": false,
+  "pilot": true,
+  "model": "claude-sonnet-5-5",
+  "grader_model": null,
+  "call_cap": 12,
+  "total_cap": 4000,
+  "input_price": 2.0,
+  "output_price": 10.0,
+  "grader_input_price": 0,
+  "grader_output_price": 0,
+  "tasks_sha256": "8f565ed553927e1df52166dd0c394f8a79dd6550d3160ccd3ebe2c572125df8b",
+  "analysis_sha256": "456a2a4405bb63b185873effbdf952a5187a648fd265a3606edf4728f299bd22",
+  "runner_sha256": "58dd8fa83c2c4aafa3e60d635737850bf88ce95d8623a575e5feef30637da262",
+  "manifest_sha256": "71955c475704e1978ed52f39b96d56d292982109a75c6ad35b1551f892443bfe"
+}

@@ -1,0 +1,36 @@
+{
+  "characters_read": 0,
+  "phase": "A",
+  "task_id": "research-11",
+  "arm": "original",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 3590,
+    "cache_creation_input_tokens": 4240,
+    "output_tokens": 706
+  },
+  "answer": "Use `urlsplit()` to break the URL into five parts and `urlunsplit()` to put it back together.\n\n```json\n{\n  \"facts\": {\n    \"split\": \"urllib.parse.urlsplit\",\n    \"join\": \"urllib.parse.urlunsplit\"\n  }\n}\n```\n\n**Explanation:** `urlsplit(url)` returns a named tuple with five parts: scheme, netloc, path, query and fragment. `urlunsplit(parts)` combines those five items back into a complete URL string. The corpus says its *parts* argument can be any five-item iterable. For example:\n\n```python\nfrom urllib.parse import urlsplit, urlunsplit\nparts = urlsplit(url)\noriginal = urlunsplit(parts)   # or parts.geturl()\n```\n\nThe result object also has a `geturl()` method that does the same thing. The round trip may not be character-for-character identical, because the docs note it can drop redundant parts. For example, `'HTTP://www.Python.org/doc/#'` becomes `'http://www.Python.org/doc/'`. The result is equivalent and stays unchanged if parsed and rebuilt again.\n\n`urlparse()` is the six-part variant, which adds a separate `params` field. I did not open its section.\n\n**Sources:**\n- `library/urllib.parse.rst` (the `urlunsplit` definition and the `geturl()` example)\n\nI did not read the `urlsplit` definition itself. The five field names above come from my own knowledge rather than from the retrieved text.",
+  "correct": false,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "list_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

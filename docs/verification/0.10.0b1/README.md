@@ -1,6 +1,6 @@
 # 0.10.0b1 local verification
 
-Cost-control revision, 2026-11-22, Python 3.9 / macOS. No paid benchmark, personal-library analysis, publication, push, tag, issue or PR.
+Historical cost-control verification, 2026-11-22, Python 3.9 / macOS. That verification made no paid calls or personal-library analysis. An independent real pilot was subsequently supplied; its grading amendment is documented below. No publication, push, tag, issue or PR.
 
 - Full suite with CI unset: 240 tests, passed; 29 optional skips.
 - Full suite with CI=true: 240 tests, passed; 29 optional skips.
@@ -15,3 +15,16 @@ Cost-control revision, 2026-11-22, Python 3.9 / macOS. No paid benchmark, person
 [Full fake summary](../../benchmarks/savings-real-fake.json), [pilot fake summary](../../benchmarks/savings-real-pilot-fake.json), [fake review sheet](../../benchmarks/savings-real-fake-spot-check.csv), [generated report](../../benchmarks/savings-real.md), [protocol and limits](../../benchmarks/savings-real-guide.md).
 
 The dollar cap uses supplied prices and a conservative text-byte/framing bound; it is not an account-wide provider billing limit. No personal repeat-rate measurement or measured paid savings claim is made.
+
+## Post-pilot formatting amendment, 2026-11-22
+
+Reason: **pilot found formatting-only false negatives**. The analysis, deterministic grader, decision parser and offline regrader are re-registered in [the amendment](../../../prototype/evals/savings-real/PREREGISTRATION.md). The secondary model-grader rubric is unchanged; no secondary model grading was invoked.
+
+- 246 tests pass both with CI unset and CI=true (29 optional skips). New fixtures cover real pilot JSON and labelled prose excerpts, module suffixes/booleans/quotes, wrong identifiers, negation, swapped fields, separate fallback and compliance reporting, and provider-free regrading.
+- Original analysis statements and metric expressions, token/bootstrap functions, neutral prompt, research tools, balanced guide and model constants were compared structurally and are unchanged. Frozen task and corpus hashes are unchanged.
+- Fifteen real pilot sessions were regraded using only saved responses. Final text, usage and call counts were cross-checked against raw calls. Five correctness labels change; correctness is 10/15 → 15/15. The independent pilot source files remain unchanged; no library was read or regenerated and no new API calls occurred.
+- Decision compliance is 2/5 → 3/5, independently of decision accuracy (0/5). Two period-form markers remain unsupported. All saved final answers have facts JSON: observed fallback use is 0/15; prose-only fixtures are clearly labelled excerpts.
+- Reuse used more tokens in four of five comparisons. The documentation lookup sessions were short; ZIP is a higher-token exception to the approximate 3–9k range. Deeper research is a separate future question, not a claim supported by this pilot.
+- The new before/after sidecars are scanned for local absolute paths and keys. The task corpus, labels, arms, call caps, metric formulas and thresholds are unchanged. The pilot remains exploratory and non-qualifying.
+
+[Per-session before/after report](../../benchmarks/savings-real-pilot-2026-11-22-regrade/regrade.md) · [JSON sidecar](../../benchmarks/savings-real-pilot-2026-11-22-regrade/regrade.json) · [Pilot interpretation](../../benchmarks/savings-real-guide.md#independent-real-pilot-and-formatting-amendment-2026-11-22).

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pilot-qualified-name-and-boolean",
+    "source": "Real pilot research-21 baseline/reuse facts object (verbatim).",
+    "answer": "{\"facts\": {\"function\": \"ssl.create_default_context\", \"loads_ca\": true}}",
+    "reference": {"function": "create_default_context", "loads_ca": "true"},
+    "correct": true,
+    "method": "facts_json"
+  },
+  {
+    "id": "pilot-prose-only-helper-excerpt",
+    "source": "Real pilot research-21 original answer's opening sentence, excerpted as a prose-only regression fixture. The saved full answer also contains JSON.",
+    "answer": "The helper is `ssl.create_default_context()`.",
+    "reference": {"function": "create_default_context"},
+    "correct": true,
+    "method": "text_fallback"
+  },
+  {
+    "id": "pilot-prose-only-url-excerpt",
+    "source": "Real pilot research-11 reuse answer's opening sentence, excerpted as a prose-only regression fixture. The saved full answer also contains JSON.",
+    "answer": "The function that splits a URL into five components is `urllib.parse.urlsplit`, and `urllib.parse.urlunsplit` reverses it.",
+    "reference": {"split": "urlsplit", "join": "urlunsplit"},
+    "correct": true,
+    "method": "text_fallback"
+  }
+]

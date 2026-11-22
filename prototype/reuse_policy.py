@@ -61,8 +61,11 @@ def signals(body,timestamp=None,now=None):
             'conflicts':False}  # Disabled: numeric disagreement alone is not reliable evidence of conflict.
 
 def parse_decision(answer):
-    choices=re.findall(r'^\s*Reuse decision:\s*(REUSE|CHECK|REDO)\s*[—–-]\s*\S[^\n]*',answer,re.M)
-    return choices[0] if len(choices)==1 else None
+    # One unambiguous marker, anywhere in the final answer. A period is not
+    # one of the registered separators; repeated markers remain non-compliant.
+    choices=re.findall(r'(?<!\w)Reuse[ \t]+decision:[ \t]*(REUSE|CHECK|REDO)(?=[ \t]*(?:[—–:-]|$))',answer,re.I|re.M)
+    return choices[0].upper() if len(choices)==1 else None
+
 
 def decision_report(rows):
     reuse=[r for r in rows if r['reuse_available']]

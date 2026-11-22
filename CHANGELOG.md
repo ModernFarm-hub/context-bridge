@@ -2,6 +2,9 @@
 
 ## 0.10.0b1
 
+- Register the dated post-pilot formatting amendment: exact identifier-suffix normalization, explicit boolean/quote handling, reported prose fallback, and final-answer decision parsing with separate compliance. Preserve frozen tasks, corpus, metrics and thresholds.
+- Add a provider-free saved-pilot regrader and per-session before/after sidecars; document that reuse used more tokens in four of five cheap documentation lookups.
+
 - Add automatic prompt caching, four-rate pricing, a required paid-run dollar cap, conservative next-request reservations, and pilot-derived full-run projections. Record actual document characters read.
 - Keep the benchmark corpus in repository/source distributions; enforce a wheel size budget below 500000 bytes and explain explicit source-corpus selection.
 - Add repeat-rate sensitivity and per-threshold labelled precision/coverage; recommend local review without changing defaults to fit a personal library.

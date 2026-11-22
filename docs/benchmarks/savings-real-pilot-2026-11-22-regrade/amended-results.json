@@ -1,0 +1,570 @@
+[
+  {
+    "characters_read": 3500,
+    "phase": "A",
+    "task_id": "research-01",
+    "arm": "original",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 10,
+      "cache_read_input_tokens": 10948,
+      "cache_creation_input_tokens": 7680,
+      "output_tokens": 624
+    },
+    "answer": "```json\n{\"facts\": {\"ensure_ascii\": \"true\", \"compression\": \"ZIP_STORED\"}}\n```\n\n**Explanation:** `json.dump` has the signature `dump(obj, fp, *, skipkeys=False, ensure_ascii=True, ...)`, so non-ASCII characters are escaped by default. `zipfile.ZipFile` has the signature `ZipFile(file, mode='r', compression=ZIP_STORED, ...)`, and the docs state \"The default is ZIP_STORED\". That means members are stored uncompressed unless you pass `ZIP_DEFLATED` or another method.\n\n**Sources:**\n- `library/json.rst`\n- `library/zipfile.rst`",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "search_docs",
+      "search_docs",
+      "read_doc"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "A",
+    "task_id": "research-11",
+    "arm": "original",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 3590,
+      "cache_creation_input_tokens": 4240,
+      "output_tokens": 706
+    },
+    "answer": "Use `urlsplit()` to break the URL into five parts and `urlunsplit()` to put it back together.\n\n```json\n{\n  \"facts\": {\n    \"split\": \"urllib.parse.urlsplit\",\n    \"join\": \"urllib.parse.urlunsplit\"\n  }\n}\n```\n\n**Explanation:** `urlsplit(url)` returns a named tuple with five parts: scheme, netloc, path, query and fragment. `urlunsplit(parts)` combines those five items back into a complete URL string. The corpus says its *parts* argument can be any five-item iterable. For example:\n\n```python\nfrom urllib.parse import urlsplit, urlunsplit\nparts = urlsplit(url)\noriginal = urlunsplit(parts)   # or parts.geturl()\n```\n\nThe result object also has a `geturl()` method that does the same thing. The round trip may not be character-for-character identical, because the docs note it can drop redundant parts. For example, `'HTTP://www.Python.org/doc/#'` becomes `'http://www.Python.org/doc/'`. The result is equivalent and stays unchanged if parsed and rebuilt again.\n\n`urlparse()` is the six-part variant, which adds a separate `params` field. I did not open its section.\n\n**Sources:**\n- `library/urllib.parse.rst` (the `urlunsplit` definition and the `geturl()` example)\n\nI did not read the `urlsplit` definition itself. The five field names above come from my own knowledge rather than from the retrieved text.",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "list_docs",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "A",
+    "task_id": "research-21",
+    "arm": "original",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 6,
+      "cache_read_input_tokens": 821,
+      "cache_creation_input_tokens": 2322,
+      "output_tokens": 312
+    },
+    "answer": "The helper is `ssl.create_default_context()`. The ssl documentation says it \"returns a new context with secure default settings\", and the \"What's New in 3.4\" notes describe it as a standard way to get an `SSLContext` whose settings balance compatibility and security. Those settings are more stringent than the defaults of the `SSLContext` constructor. The 3.13 notes add that it now sets `VERIFY_X509_PARTIAL_CHAIN` and `VERIFY_X509_STRICT` as default flags.\n\n```json\n{\"facts\": {\"function\": \"ssl.create_default_context\"}}\n```\n\nSources:\n- library/ssl.rst\n- whatsnew/3.4.rst\n- whatsnew/3.13.rst",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 3500,
+    "phase": "A",
+    "task_id": "research-31",
+    "arm": "original",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 3670,
+      "cache_creation_input_tokens": 4325,
+      "output_tokens": 482
+    },
+    "answer": "No. In this snapshot, `ArgumentParser` does not accept a `color` parameter, so it has no default.\n\nThe class signature in `library/argparse.rst` ends with `add_help=True, allow_abbrev=True, exit_on_error=True`. `color` is not in that list or in the parameter summary that follows it. A search for \"ArgumentParser color\" found only unrelated uses of the word, such as a `--color` option in a `collections` example and the `curses` and `enum` documentation.\n\n```json\n{\"facts\": {\"available\": \"false\", \"default\": \"unavailable\"}}\n```\n\nSources:\n- `library/argparse.rst`\n- `library/collections.rst` (the `--color` hit; it is an example option, not an `ArgumentParser` parameter)",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "list_docs",
+      "read_doc"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "A",
+    "task_id": "research-40",
+    "arm": "original",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 3293,
+      "cache_creation_input_tokens": 4130,
+      "output_tokens": 375
+    },
+    "answer": "No. In this snapshot (v1), `threading.Thread` does not accept a `context` parameter, so the default is unavailable.\n\nThe signature documented in `library/threading.rst` is `Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)`. It has no `context` parameter.\n\n```json\n{\"facts\": {\"available\": \"false\", \"default\": \"unavailable\"}}\n```\n\nSources: `library/threading.rst`",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "list_docs",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "B",
+    "task_id": "research-21",
+    "arm": "reuse",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 6620,
+      "cache_creation_input_tokens": 6031,
+      "output_tokens": 610
+    },
+    "answer": "Use `ssl.create_default_context()`. It returns a new context with secure default settings, and it does load default CA certificates. The docs say it loads CA certificates when at least one of `cafile`, `capath` or `cadata` is given. Otherwise it calls `SSLContext.load_default_certs()` to load the default CA certificates. With no arguments, as in a typical client, it therefore loads the system defaults.\n\n```json\n{\"facts\": {\"function\": \"ssl.create_default_context\", \"loads_ca\": true}}\n```\n\nSources:\n- `library/ssl.rst`: describes the helper and the CA-loading behavior.\n- `whatsnew/3.4.rst`: introduced the function and `load_default_certs`.\n- `whatsnew/3.13.rst`: notes the function selects the operating system's trusted CA certificates.\n\nReuse decision: REUSE: an earlier conversation reached the same function name, but I confirmed the CA-loading behavior directly from the corpus docs.",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "context_search",
+      "search_docs",
+      "search_docs"
+    ],
+    "decision": "REUSE",
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "B",
+    "task_id": "research-11",
+    "arm": "reuse",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 6540,
+      "cache_creation_input_tokens": 5845,
+      "output_tokens": 702
+    },
+    "answer": "The function that splits a URL into five components is `urllib.parse.urlsplit`, and `urllib.parse.urlunsplit` reverses it. The corpus describes `urlunsplit(parts)` as combining the elements of a tuple returned by `urlsplit()` into a complete URL string, where *parts* can be any five-item iterable.\n\nThe five components are scheme, netloc, path, query and fragment. `urlparse` returns six, because it also splits out path parameters.\n\n```json\n{\n  \"facts\": {\n    \"split\": \"urllib.parse.urlsplit\",\n    \"join\": \"urllib.parse.urlunsplit\"\n  }\n}\n```\n\nThe docs add that the round trip may produce a slightly different but equivalent URL, for example by dropping an empty query.\n\nSources: `library/urllib.parse.rst` (the `urlunsplit` definition). The `whatsnew/2.7.rst` example shows `urlsplit` returning a five-item tuple.\n\nReuse decision: CHECK \u2014 a prior conversation note (\"URL components\", Claude Code, urn:context-bridge:record:94f151337d1c46d5aec43917304e97fc) gave the same answer, and I confirmed it against the corpus docs.",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "context_search",
+      "search_docs",
+      "search_docs"
+    ],
+    "decision": "CHECK",
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "B",
+    "task_id": "research-01",
+    "arm": "baseline",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 5890,
+      "cache_creation_input_tokens": 5084,
+      "output_tokens": 523
+    },
+    "answer": "The corpus shows `ensure_ascii=True` in the `json.dump` signature. For ZIP, the only constructor signature I found is `PyZipFile`'s, which defaults to `compression=ZIP_STORED`. The docs state that `PyZipFile` takes the same parameters as `ZipFile`, so the `ZipFile` default is the same.\n\n```json\n{\"facts\": {\"ensure_ascii\": \"true\", \"compression\": \"ZIP_STORED\"}}\n```\n\n- **`ensure_ascii`:** the `json.dump` signature is `dump(obj, fp, *, skipkeys=False, ensure_ascii=True, ...)`.\n- **Compression:** `ZIP_STORED` means the files are stored uncompressed.\n\nSources:\n- `library/json.rst`\n- `library/zipfile.rst`",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "search_docs",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "B",
+    "task_id": "research-11",
+    "arm": "baseline",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 3490,
+      "cache_creation_input_tokens": 4231,
+      "output_tokens": 497
+    },
+    "answer": "`urlsplit` is the function that returns five components, and `urlunsplit` reverses it.\n\n```json\n{\"facts\": {\"split\": \"urlsplit\", \"join\": \"urlunsplit\"}}\n```\n\n`urlunsplit(parts)` combines the elements of a tuple as returned by `urlsplit()` into a complete URL string, and `parts` can be any five-item iterable. I did not read the `urlsplit` entry itself, so the five-component claim rests on that \"five-item\" wording plus the 2.7 whatsnew example, which shows `urlsplit` returning a five-element tuple. The snippet also notes the round trip may produce a slightly different but equivalent URL, for example by dropping an empty fragment.\n\n`urlparse` is the related function that returns six components, since it also splits out the path parameters.\n\nSources: `library/urllib.parse.rst` (the `urlunsplit` entry and the `urlsplit` example); `whatsnew/2.7.rst` (the five-element tuple example).",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 1,
+    "phase": "B",
+    "task_id": "research-40",
+    "arm": "reuse",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 7067,
+      "cache_creation_input_tokens": 6706,
+      "output_tokens": 603
+    },
+    "answer": "Yes. In the v2 snapshot, `threading.Thread` accepts `context`, and its default is `None`.\n\nThe signature in `library/threading.rst` is `Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None, context=None)`. The same page has a \"Changed in 3.14\" note saying the *context* parameter was added.\n\nThe earlier v1 answer I found in my notes said `context` was unavailable. That was a different snapshot, so I did not reuse it.\n\n```json\n{\"facts\": {\"available\": true, \"default\": \"None\"}}\n```\n\nSource path: `library/threading.rst`\n\nReuse decision: REDO \u2014 the earlier v1 note was for a different snapshot, so I re-verified against v2.",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "context_search",
+      "search_docs",
+      "read_doc",
+      "search_docs"
+    ],
+    "decision": "REDO",
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 2100,
+    "phase": "B",
+    "task_id": "research-31",
+    "arm": "reuse",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 10,
+      "cache_read_input_tokens": 13960,
+      "cache_creation_input_tokens": 9376,
+      "output_tokens": 741
+    },
+    "answer": "Yes. In the selected snapshot, `ArgumentParser` accepts `color`, and its default is `True`.\n\n```json\n{\"facts\": {\"available\": \"true\", \"default\": \"true\"}}\n```\n\nThe `ArgumentParser` signature in `library/argparse.rst` ends with `*, suggest_on_error=False, color=True)`. The same file has a version note saying \"3.14: *suggest_on_error* and *color* parameters were added.\"\n\nI did not read the prose description of `color` itself. The default comes from the signature.\n\nSources: `library/argparse.rst`\n\nReuse decision: REDO. The earlier conversation hits did not match this question, so I verified directly against the corpus.",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "context_search",
+      "read_doc",
+      "search_docs",
+      "read_doc",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "B",
+    "task_id": "research-40",
+    "arm": "baseline",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 3262,
+      "cache_creation_input_tokens": 4011,
+      "output_tokens": 383
+    },
+    "answer": "Yes. In this snapshot, `threading.Thread` accepts `context`, and its default is `None`.\n\n```json\n{\"facts\": {\"available\": \"true\", \"default\": \"None\"}}\n```\n\nThe signature in `library/threading.rst` reads `Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None, context=None)`. The same file carries a \"Changed in version 3.14: Added the *context* parameter\" note.\n\nSource: `library/threading.rst`",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "list_docs",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "B",
+    "task_id": "research-21",
+    "arm": "baseline",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 6,
+      "cache_read_input_tokens": 843,
+      "cache_creation_input_tokens": 2301,
+      "output_tokens": 276
+    },
+    "answer": "The helper is `ssl.create_default_context()`, and it does load default CA certificates.\n\nThe \"Best defaults\" section of `library/ssl.rst` recommends it for client use when you have no special security requirements. It says the function loads the system's trusted CA certificates and enables certificate validation and hostname checking.\n\n```json\n{\"facts\": {\"function\": \"ssl.create_default_context\", \"loads_ca\": true}}\n```\n\nSources: `library/ssl.rst`. `whatsnew/3.13.rst` also says `ssl.create_default_context()` selects the operating system's trusted CA certificates.",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 0,
+    "phase": "B",
+    "task_id": "research-01",
+    "arm": "reuse",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 6,
+      "cache_read_input_tokens": 2152,
+      "cache_creation_input_tokens": 6484,
+      "output_tokens": 571
+    },
+    "answer": "Both defaults are confirmed in the corpus.\n\n```json\n{\"facts\": {\"ensure_ascii\": \"true\", \"compression\": \"ZIP_STORED\"}}\n```\n\n**Explanation:**\n- In `json.dump`/`json.dumps`, `ensure_ascii` defaults to true, so non-ASCII characters are escaped in the output.\n- In the `zipfile` signature, `compression` defaults to `ZIP_STORED`, which means the data is archived without compression. The snippet I retrieved shows this for `PyZipFile`, which follows the same `ZipFile` signature. I did not open the `ZipFile` entry itself.\n\n**Sources:**\n- `library/json.rst`\n- `library/zipfile.rst`\n\nReuse decision: CHECK. A prior Claude Code conversation (urn:context-bridge:record:c50f069562734b8eb9a9d325ec1569e1) gave the same defaults. I re-verified them against the corpus rather than relying on it.",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "context_search",
+      "search_docs",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  },
+  {
+    "characters_read": 1000,
+    "phase": "B",
+    "task_id": "research-31",
+    "arm": "baseline",
+    "repetition": 0,
+    "usage": {
+      "input_tokens": 8,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 4925,
+      "output_tokens": 394
+    },
+    "answer": "Yes. In this snapshot `ArgumentParser` accepts `color`, and its default is `True`.\n\n```json\n{\"facts\": {\"available\": \"true\", \"default\": \"true\"}}\n```\n\nThe class signature in `library/argparse.rst` ends with `*, suggest_on_error=False, color=True)`. The same file's version note says \"versionchanged:: 3.14: *suggest_on_error* and *color* parameters were added.\"\n\nSources: `library/argparse.rst`",
+    "correct": true,
+    "final": true,
+    "cap_reached": false,
+    "refused": false,
+    "truncated": false,
+    "error": null,
+    "stop_reasons": [
+      "tool_use",
+      "tool_use",
+      "end_turn"
+    ],
+    "tools_used": [
+      "search_docs",
+      "read_doc",
+      "search_docs"
+    ],
+    "decision": null,
+    "resolved_models": [
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "grading_method": "facts_json",
+    "grading_amendment": "2026-11-22-formatting-only"
+  }
+]

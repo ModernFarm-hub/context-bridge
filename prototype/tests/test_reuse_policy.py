@@ -52,7 +52,7 @@ class ReusePolicyTests(unittest.TestCase):
 
     def test_decision_parser_and_class_report(self):
         self.assertEqual(parse_decision('Answer\nReuse decision: CHECK — verify price\nmore'),'CHECK')
-        for text in ('REUSE','Reuse decision: MAYBE — unsure','Reuse decision: REDO','Reuse decision: REUSE — yes\nReuse decision: REDO — no'):
+        for text in ('REUSE','Reuse decision: MAYBE — unsure','Reuse decision: REDONE','Reuse decision: REUSE — yes\nReuse decision: REDO — no'):
             self.assertIsNone(parse_decision(text))
         rows=[]
         for choice in ('REUSE','CHECK','REDO'):

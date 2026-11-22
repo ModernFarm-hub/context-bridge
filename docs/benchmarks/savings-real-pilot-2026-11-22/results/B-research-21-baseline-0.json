@@ -1,0 +1,32 @@
+{
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-21",
+  "arm": "baseline",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 843,
+    "cache_creation_input_tokens": 2301,
+    "output_tokens": 276
+  },
+  "answer": "The helper is `ssl.create_default_context()`, and it does load default CA certificates.\n\nThe \"Best defaults\" section of `library/ssl.rst` recommends it for client use when you have no special security requirements. It says the function loads the system's trusted CA certificates and enables certificate validation and hostname checking.\n\n```json\n{\"facts\": {\"function\": \"ssl.create_default_context\", \"loads_ca\": true}}\n```\n\nSources: `library/ssl.rst`. `whatsnew/3.13.rst` also says `ssl.create_default_context()` selects the operating system's trusted CA certificates.",
+  "correct": false,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

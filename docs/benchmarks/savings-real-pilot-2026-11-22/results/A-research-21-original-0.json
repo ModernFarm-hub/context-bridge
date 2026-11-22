@@ -1,0 +1,32 @@
+{
+  "characters_read": 0,
+  "phase": "A",
+  "task_id": "research-21",
+  "arm": "original",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 821,
+    "cache_creation_input_tokens": 2322,
+    "output_tokens": 312
+  },
+  "answer": "The helper is `ssl.create_default_context()`. The ssl documentation says it \"returns a new context with secure default settings\", and the \"What's New in 3.4\" notes describe it as a standard way to get an `SSLContext` whose settings balance compatibility and security. Those settings are more stringent than the defaults of the `SSLContext` constructor. The 3.13 notes add that it now sets `VERIFY_X509_PARTIAL_CHAIN` and `VERIFY_X509_STRICT` as default flags.\n\n```json\n{\"facts\": {\"function\": \"ssl.create_default_context\"}}\n```\n\nSources:\n- library/ssl.rst\n- whatsnew/3.4.rst\n- whatsnew/3.13.rst",
+  "correct": false,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

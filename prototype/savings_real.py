@@ -16,12 +16,14 @@ import sys
 import urllib.request
 if __package__:
     from .savings_real_costs import BudgetExceeded, rates, amount, reservation, observations, planning_worst_case, recorded_costs
+    from .savings_real_grading import grade, grade_details, AMENDMENT
     from .savings_real_analysis import analyze, export, USAGE_FIELDS
     from .session_manager import Sessions, atomic_write
     from .mcp_server import ContextService, public_result, TOOLS
     from .reuse_policy import agent_guide, parse_decision
 else:
     from savings_real_costs import BudgetExceeded, rates, amount, reservation, observations, planning_worst_case, recorded_costs
+    from savings_real_grading import grade, grade_details, AMENDMENT
     from savings_real_analysis import analyze, export, USAGE_FIELDS
     from session_manager import Sessions, atomic_write
     from mcp_server import ContextService, public_result, TOOLS
@@ -92,17 +94,6 @@ RESEARCH_TOOLS=[
  {'name':'search_docs','description':'Lexical search over the selected public corpus. Returns ranked snippets and character offsets. Read relevant sections to verify facts.','input_schema':{'type':'object','properties':{'query':{'type':'string'}},'required':['query'],'additionalProperties':False}},
  {'name':'read_doc','description':'Read a corpus document section using character offsets. Maximum length 12000.','input_schema':{'type':'object','properties':{'path':{'type':'string'},'start':{'type':'integer','minimum':0},'length':{'type':'integer','minimum':1,'maximum':12000}},'required':['path'],'additionalProperties':False}}]
 
-def grade(answer,reference):
-    # Exact structured values avoid substring acceptance of negated/wrong answers.
-    decoder=json.JSONDecoder()
-    for m in re.finditer(r'\{',answer):
-        try:obj,_=decoder.raw_decode(answer[m.start():])
-        except ValueError:continue
-        facts=obj.get('facts') if isinstance(obj,dict) else None
-        if not isinstance(facts,dict):continue
-        normalize=lambda v:str(v).strip().casefold()
-        return all(k in facts and normalize(facts[k])==normalize(v) for k,v in reference.items())
-    return False
 
 def prompt(task,phase):
     ref=task['original_reference_answer'] if phase=='A' else task['required_facts']
@@ -251,7 +242,8 @@ def run_session(task,phase,arm,repetition,corpus,service,journal,provider,model,
         msg={'role':'user','content':pending};messages.append(msg)
         transcript.append({'type':'user','uuid':name+'-tools-'+str(step),'sessionId':name,'timestamp':datetime.now(timezone.utc).isoformat(),'message':msg})
     reference=task['original_reference_answer'] if phase=='A' else task['required_facts']
-    result={'characters_read':characters_read,'phase':phase,'task_id':task['id'],'arm':arm,'repetition':repetition,'usage':usage,'answer':answer,'correct':final and grade(answer,reference),'final':final,'cap_reached':len(reasons)==call_cap and not final,'refused':'refusal' in reasons,'truncated':'max_tokens' in reasons,'error':None,'stop_reasons':reasons,'tools_used':names,'decision':parse_decision(all_text),'resolved_models':resolved}
+    grading=grade_details(answer,reference,final=final)
+    result={'grading_method':grading['method'],'grading_amendment':AMENDMENT,'characters_read':characters_read,'phase':phase,'task_id':task['id'],'arm':arm,'repetition':repetition,'usage':usage,'answer':answer,'correct':grading['correct'],'final':final,'cap_reached':len(reasons)==call_cap and not final,'refused':'refusal' in reasons,'truncated':'max_tokens' in reasons,'error':None,'stop_reasons':reasons,'tools_used':names,'decision':parse_decision(answer) if final else None,'resolved_models':resolved}
     if phase=='A':
         path=root/'transcripts'/(task['id']+'.jsonl');path.parent.mkdir(exist_ok=True)
         path.write_text(''.join(json.dumps(r)+'\n' for r in transcript))
@@ -298,8 +290,10 @@ def benchmark(root,fake=False,pilot=False,yes=False,model=MODEL,grader_model=Non
     prices=rates(input_price,output_price,cache_read_price or 0,cache_write_price or 0)
     grader_prices=rates(grader_input_price,grader_output_price,grader_cache_read_price or 0,grader_cache_write_price or 0)
     prereg=(Path(data)/'PREREGISTRATION.md').read_text()
-    for p in (Path(data)/'tasks.json',Path(__file__).with_name('savings_real_analysis.py'),Path(__file__).with_name('savings_real_costs.py')):
-        if sha(p) not in prereg:raise ValueError('Preregistration hash mismatch: '+p.name)
+    registered=[('prototype/evals/savings-real/tasks.json',Path(data)/'tasks.json')]+[('prototype/'+name,Path(__file__).with_name(name)) for name in ('savings_real_analysis.py','savings_real_costs.py','savings_real_grading.py','reuse_policy.py')]
+    for label,path in registered:
+        hashes=re.findall(r'^- '+re.escape(label)+r': `([a-f0-9]{64})`',prereg,re.M)
+        if not hashes or hashes[-1]!=sha(path):raise ValueError('Preregistration hash mismatch: '+path.name)
     root=Path(root).resolve()
     if root.exists() and any(root.iterdir()) and not (root/'run.json').is_file():raise ValueError('Use a fresh empty benchmark output directory')
     root.mkdir(parents=True,exist_ok=True)
@@ -310,7 +304,7 @@ def benchmark(root,fake=False,pilot=False,yes=False,model=MODEL,grader_model=Non
         lock.close();raise RuntimeError('Another benchmark process holds this output directory')
     journal=Journal(root/'calls',total_cap,max_usd,prices,grader_prices);service=None;corpora={};rows=[]
     try:
-        frozen={'costs_sha256':sha(Path(__file__).with_name('savings_real_costs.py')),'max_usd':max_usd,'prices':prices,'grader_prices':grader_prices,'fake':fake,'pilot':pilot,'model':model,'grader_model':grader_model,'call_cap':call_cap,'total_cap':total_cap,'input_price':input_price,'output_price':output_price,'grader_input_price':grader_input_price,'grader_output_price':grader_output_price,'tasks_sha256':sha(Path(data)/'tasks.json'),'analysis_sha256':sha(Path(__file__).with_name('savings_real_analysis.py')),'runner_sha256':sha(__file__),'manifest_sha256':sha(Path(data)/'manifest.json')}
+        frozen={'grading_amendment':AMENDMENT,'grader_sha256':sha(Path(__file__).with_name('savings_real_grading.py')),'decision_parser_sha256':sha(Path(__file__).with_name('reuse_policy.py')),'costs_sha256':sha(Path(__file__).with_name('savings_real_costs.py')),'max_usd':max_usd,'prices':prices,'grader_prices':grader_prices,'fake':fake,'pilot':pilot,'model':model,'grader_model':grader_model,'call_cap':call_cap,'total_cap':total_cap,'input_price':input_price,'output_price':output_price,'grader_input_price':grader_input_price,'grader_output_price':grader_output_price,'tasks_sha256':sha(Path(data)/'tasks.json'),'analysis_sha256':sha(Path(__file__).with_name('savings_real_analysis.py')),'runner_sha256':sha(__file__),'manifest_sha256':sha(Path(data)/'manifest.json')}
         runfile=root/'run.json'
         if runfile.exists() and json.loads(runfile.read_text())!=frozen:raise ValueError('Resume configuration differs')
         atomic_write(runfile,frozen);(root/'results').mkdir(exist_ok=True)
@@ -326,7 +320,7 @@ def benchmark(root,fake=False,pilot=False,yes=False,model=MODEL,grader_model=Non
         for task,arm,r in jobs:
             row=run_session(task,'B',arm,r,corpora[task['corpus_version']],service,journal,provider(task,'B',arm),model,call_cap,root);rows.append(row)
             if grader_model:
-                blind=re.sub(r'^\s*Reuse decision:.*$','',row['answer'],flags=re.M)
+                blind=re.sub(r'(?<!\w)Reuse[ \t]+decision:.*$','',row['answer'],flags=re.I|re.M)
                 body={'cache_control':{'type':'ephemeral'},'model':grader_model,'max_tokens':2048,'messages':[{'role':'user','content':RUBRIC+'\n'+json.dumps({'reference':task['reference_answer'],'candidate':blind})}]}
                 if fake:
                     grader=lambda b:{'model':'FAKE','content':[{'type':'text','text':json.dumps({'correct':row['correct']})}],'usage':{'input_tokens':10,'output_tokens':5},'stop_reason':'end_turn'}
