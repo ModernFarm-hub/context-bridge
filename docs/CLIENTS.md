@@ -114,17 +114,17 @@ Enable installs optional `[semantic]` packages in an isolated runtime when missi
 
 ## Pin a version
 
-To use this beta explicitly, replace `context-bridge-local` in the uvx arguments with `context-bridge-local==0.8.0b1`:
+To use this beta explicitly, replace `context-bridge-local` in the uvx arguments with `context-bridge-local==0.8.1`:
 
 ```sh
-uvx --from 'context-bridge-local==0.8.0b1' context-bridge mcp
+uvx --from 'context-bridge-local==0.8.1' context-bridge mcp
 ```
 
 The package source is explicit because the PyPI name `context-bridge` belongs to a different project. [uv's package/command naming documentation](https://docs.astral.sh/uv/guides/tools/#commands-with-different-package-names).
 
 ## Alternative: installed command
 
-If you installed with `uv tool install context-bridge-local`, `pipx install context-bridge-local`, the `~/.context-bridge` virtual environment from the README, or a contributor checkout, use that executable's absolute path (`which context-bridge` shows it for tool installs; the README's environment uses `~/.context-bridge/bin/context-bridge`, written out in full):
+If you installed with `uv tool install context-bridge-local`, `pipx install context-bridge-local`, the `~/.context-bridge` virtual environment from the [installation guide](INSTALL.md), or a contributor checkout, use that executable's absolute path (`which context-bridge` shows it for tool installs; that environment uses `~/.context-bridge/bin/context-bridge`, written out in full):
 
 ```sh
 claude mcp add --transport stdio context-bridge -- /absolute/path/to/context-bridge mcp
@@ -143,7 +143,7 @@ Claude Desktop and Cursor accept the equivalent entry:
 }
 ```
 
-Do not commit a user-specific executable path into a shared repository. Contributor installation is documented in the README's “Install from source” section.
+Do not commit a user-specific executable path into a shared repository. Contributor installation is documented in [Install from source](INSTALL.md#install-from-source).
 
 ## Storage overrides and troubleshooting
 

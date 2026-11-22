@@ -213,4 +213,9 @@ def import_codex(projects, directory=DEFAULT_ROOT, home=None):
                 atomic_write(manager.config,data)
         finally:
             bridge.db.close()
+    if __package__:
+        from .import_lifecycle import finish_import
+    else:
+        from import_lifecycle import finish_import
+    finish_import(manager.root)
     return {'provider':'codex','transcripts_imported':added,'projects_imported':len(projects),'new_sessions_auto_discovered':True}

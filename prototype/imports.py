@@ -28,6 +28,12 @@ else:
     from local_profile import local_identity, profile_directory
 
 
+if __package__:
+    from .import_lifecycle import finish_import,offer_semantic
+else:
+    from import_lifecycle import finish_import,offer_semantic
+
+
 MAX_EXPORT_BYTES = 512 * 1024 * 1024
 
 
@@ -239,6 +245,7 @@ def import_export(provider, archive, directory=DEFAULT_ROOT, progress=None, conf
                 path.unlink(missing_ok=True)
         finally:
             bridge.db.close()
+    finish_import(manager.root)
     return {'provider':provider, 'conversations_imported':count, 'conversations_excluded':excluded_count, 'messages_imported':messages, 'conversations_removed':len(removed), 'pruning_skipped':not authoritative, 'account_check':account_check, 'skipped':skipped}
 
 
@@ -409,6 +416,7 @@ def import_code(projects, directory=DEFAULT_ROOT):
                 atomic_write(manager.config, data)
         finally:
             bridge.db.close()
+    finish_import(manager.root)
     return {'provider':'claude-code', 'transcripts_imported':imported, 'projects_imported':len(projects), 'new_sessions_auto_discovered':True}
 
 
@@ -531,8 +539,10 @@ def main():
                 if input('Replace this provider snapshot and remove absent conversations? [y/N] ').strip().casefold() not in ('y','yes'):
                     raise ValueError('Account switch cancelled. No imported conversations were changed.')
                 result = import_export(args.provider, args.archive, args.directory, progress=progress, confirm_account_switch=True)
+        if result.get('conversations_imported',result.get('transcripts_imported',0))>0:
+            offer_semantic(args.directory)
         print(json.dumps(result, indent=2))
-    except (ValueError, OSError, KeyError, zipfile.BadZipFile) as exc:
+    except (ValueError, OSError, KeyError, RuntimeError, zipfile.BadZipFile) as exc:
         parser.exit(1, str(exc) + '\n')
 
 

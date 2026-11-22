@@ -37,7 +37,7 @@ jobs:
           python -m build
           python -m twine check --strict dist/*
           python tools/check_artifacts.py dist
-      - name: uvx package smoke test
+      - name: README quickstart and uvx offline package smoke test
         run: python tools/uvx_smoke.py dist
       - name: Installed package smoke test
         run: |

@@ -203,7 +203,9 @@ class IndependentRetestFixTests(unittest.TestCase):
     def test_readme_upgrades_pip_before_source_install(self):
         readme=(Path(__file__).parents[2]/'README.md').read_text()
         self.assertIn('Python 3.9',readme)
-        self.assertLess(readme.index('pip install -U pip'),readme.index('pip install .'))
+        self.assertIn('docs/INSTALL.md',readme)
+        install=(Path(__file__).parents[2]/'docs/INSTALL.md').read_text()
+        self.assertLess(install.index('pip install -U pip'),install.index('pip install .'))
 
     def test_provider_link_cannot_remove_another_provider_with_same_id(self):
         project=self.root/'projects/approved'

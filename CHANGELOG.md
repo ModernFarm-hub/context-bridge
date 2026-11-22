@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.1 — first-run polish (unpublished)
+
+- Replace the research demo with ten disposable synthetic conversations across ChatGPT, Claude and Claude Code; run three cited searches offline and print the exact Claude Code setup command.
+- Put the demo and Claude Code quickstart first in the README. Move installation details to INSTALL.md and profile/account/removal details to USAGE.md; add a factual comparison and retain privacy boundaries.
+- Offer optional local semantic search once after a successful interactive import, remember declines, and never prompt or download automatically from noninteractive imports.
+- Backfill local embeddings during imports when hybrid mode is enabled, using the configured runtime and progress on stderr.
+- Remove legacy research commands from public CLI dispatch and mark research documentation archived. Keep the prototype/ source directory unchanged tracked in [issue #1](https://github.com/ModernFarm-hub/context-bridge/issues/1).
+- Test the offline demo, consent, import-time embedding and README quickstart through the existing CI smoke scripts.
+
 ## 0.8.0b1 — paraphrase recall and desktop capture (unpublished)
 
 - Make Codex classification header-only and stop at the thread ID/project cwd. Cache unapproved/failed classifications across restarts using size, nanosecond mtime, inode and an approval/exclusion hash; never cache chat text. Read title excerpts only after project approval.

@@ -19,6 +19,11 @@ def main():
         root=Path(tmp)
         env={**os.environ,'CONTEXT_BRIDGE_HOME':str(root/'state')}
         env.pop('PYTHONPATH',None)
+        demo=run(['demo'],env,root)
+        assert '10 invented conversations' in demo and 'paraphrased question' in demo
+        assert not (root/'state').exists(), 'Demo touched the real library'
+        help_text=run(['--help'],env,root)
+        assert 'semantic' in help_text and 'live-test' not in help_text and 'evaluate' not in help_text
         archive=root/'export.zip'
         with zipfile.ZipFile(archive,'w') as z:
             z.writestr('conversations.json',json.dumps([{'uuid':'package-smoke','name':'Synthetic package check','chat_messages':[{'uuid':'message-1','sender':'human','text':'PACKAGE842 requires approval. KEY=syntheticSecret842'}]}]))

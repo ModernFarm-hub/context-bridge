@@ -80,7 +80,7 @@ class ProjectAccountFixTests(unittest.TestCase):
     def test_interactive_number_picker_only_approves_selected_project(self):
         import imports
         argv=['context-bridge import','claude-code','--projects-root',str(self.projects),'--directory',str(self.base)]
-        with patch.object(sys,'argv',argv), patch.object(sys.stdin,'isatty',return_value=True), patch('builtins.input',side_effect=['1','yes']), redirect_stdout(io.StringIO()):
+        with patch.object(sys,'argv',argv), patch.object(sys.stdin,'isatty',return_value=True), patch('builtins.input',side_effect=['1','yes','no']), redirect_stdout(io.StringIO()):
             imports.main()
         data=json.loads(Sessions(self.base).config.read_text())
         self.assertEqual(len(data['sources']),1)

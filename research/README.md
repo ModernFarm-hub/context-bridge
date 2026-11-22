@@ -1,4 +1,4 @@
-# Historical research — frozen
+# Archived research
 
 Product work takes priority: reliable imports, local search, citations and distribution. No new model comparison, claim-support experiment, or retrieval evaluation set is planned until the product milestones ship.
 
@@ -10,4 +10,4 @@ Historical notes:
 - [Query-labeling workflow](docs/LABELING-QUERIES.md)
 - [Dated development record](docs/DEVELOPMENT.md)
 
-Existing research implementation and synthetic fixtures remain under `prototype/` for compatibility with existing tests. They are not part of the default MCP workflow. Legacy advanced commands remain callable for reproducibility, but are removed from the primary CLI help. Generated reports and internal notes remain excluded from distribution. Do not interpret historical tuned benchmark results as real-user validation.
+Existing research implementation and synthetic fixtures remain under `prototype/` for compatibility with existing tests. They are not part of the default MCP workflow. Legacy research commands have been removed from the public CLI dispatch. Historical modules can be run directly from this checkout when needed; older command examples in this archived folder may no longer apply. Generated reports and internal notes remain excluded from distribution. Do not interpret historical tuned benchmark results as real-user validation.
