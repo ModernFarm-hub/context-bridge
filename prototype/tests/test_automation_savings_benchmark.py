@@ -56,7 +56,9 @@ class AutomationTests(unittest.TestCase):
             self.assertEqual(missing.returncode,0);self.assertEqual(missing.stdout,'')
             # A hybrid profile still uses the bounded lexical hook, without a cold model load.
             config=json.loads(manager.config.read_text());config['retrieval']={'mode':'hybrid','model_directory':'/synthetic/unavailable-model'};manager.config.write_text(json.dumps(config))
-            found=subprocess.run([sys.executable,script,'hook','run','--directory',str(manager.root)],input=json.dumps({'prompt':tasks()[0]['question']}),text=True,capture_output=True,timeout=1)
+            # Call the worker directly: `hook run` deliberately gives it only 200 ms,
+            # which a cold CI runner can exceed (then nothing is injected, by design).
+            found=subprocess.run([sys.executable,script,'hook','worker','--config',str(manager.config)],input=json.dumps({'prompt':tasks()[0]['question']}),text=True,capture_output=True,timeout=10)
             self.assertEqual(found.returncode,0,found.stderr);self.assertTrue(found.stdout)
             text=json.loads(found.stdout)['hookSpecificOutput']['additionalContext']
             self.assertLessEqual(len(text.encode()),400);self.assertIn('record_id=',text)
