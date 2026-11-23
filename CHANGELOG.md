@@ -2,6 +2,8 @@
 
 ## 0.10.0b1
 
+- Register the outcome-blind timeout amendment: explicit per-key abandoned reservations with permanent conservative charges and one deterministic resend, staged connect/read handling, frozen timeouts and metadata-only legacy adoption. No partial outcomes were inspected and no real run was resumed.
+
 - Register the dated post-pilot formatting amendment: exact identifier-suffix normalization, explicit boolean/quote handling, reported prose fallback, and final-answer decision parsing with separate compliance. Preserve frozen tasks, corpus, metrics and thresholds.
 - Add a provider-free saved-pilot regrader and per-session before/after sidecars; document that reuse used more tokens in four of five cheap documentation lookups.
 

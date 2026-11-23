@@ -28,3 +28,16 @@ Reason: **pilot found formatting-only false negatives**. The analysis, determini
 - The new before/after sidecars are scanned for local absolute paths and keys. The task corpus, labels, arms, call caps, metric formulas and thresholds are unchanged. The pilot remains exploratory and non-qualifying.
 
 [Per-session before/after report](../../benchmarks/savings-real-pilot-2026-11-22-regrade/regrade.md) · [JSON sidecar](../../benchmarks/savings-real-pilot-2026-11-22-regrade/regrade.json) · [Pilot interpretation](../../benchmarks/savings-real-guide.md#independent-real-pilot-and-formatting-amendment-2026-11-22).
+
+## Outcome-blind transport amendment, 2026-11-22
+
+No partial results from the reported full run were opened or analyzed. The actual run directory was not inspected, abandoned, migrated or resumed; no paid/API calls were made. Source commit 0d0bec6 was inspected only as code to register its exact legacy runner hash.
+
+- 257 tests pass with CI unset and CI=true (29 optional skips). All new transport tests use fake TLS connections or disposable synthetic runs.
+- Tests cover: pre-send connect failure with one automatic retry; send/read errors remaining unresolved; both-connect-fail zero charge; exact-key abandonment with who/time/reason; permanent reservation charge after restart and even a late response; deterministic --attempt-1 resend and tool-result replay; no third send; refusal to abandon received responses; carried charges enforcing the unchanged dollar/global caps.
+- Metadata-only legacy adoption preserves original run.json bytes and refuses protected hash changes, altered experiment configuration or a later timeout change. Offline maintenance is tested with outcome-file reads and provider construction blocked.
+- Completed full synthetic analysis still qualifies under its original rules when abandonment is disclosed; an incomplete arm/repetition does not. No analysis/grading formulas or thresholds were edited.
+- Entire task, corpus manifest, analysis, grader, cost and policy files are byte-identical to the pre-amendment source. Prompt and library-construction functions are unchanged. Session logic adds only physical-attempt cap accounting, so an abandoned send plus resend cannot exceed the existing per-session cap; grading and Message bodies remain unchanged.
+- Reports distinguish received-response dollars from permanently charged abandoned reservations. Unknown abandoned token counts are not invented. The original frozen caps remain in force.
+
+[Infrastructure amendment](../../../prototype/evals/savings-real/PREREGISTRATION.md#2026-11-22-outcome-blind-infrastructure-amendment) · [Offline recovery instructions](../../benchmarks/savings-real-guide.md#outcome-blind-infrastructure-amendment-2026-11-22).

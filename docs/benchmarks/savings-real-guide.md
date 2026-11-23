@@ -75,3 +75,34 @@ python prototype/savings_real_regrade.py \
 ```
 
 Use a new directory for the future confirmatory run. Do not resume the old pilot with the amended grader or rewrite its source artifacts. The new run freezes the amended analysis, grader and parser hashes. Fallback share uses all final answers graded by JSON or fallback (including failed fallback checks), excludes nonfinal answers, and reports historical missing method metadata explicitly.
+
+## Outcome-blind infrastructure amendment, 2026-11-22
+
+A full run from commit `0d0bec6` was reported to have stopped on a read timeout. No partial outcomes were opened or analyzed to prepare this amendment, and implementation does not resume or alter that real run. Read [the dated amendment](../../prototype/evals/savings-real/PREREGISTRATION.md#2026-11-22-outcome-blind-infrastructure-amendment) before recovery. Tasks, labels, corpus, research arms, caps, grading and analysis are unchanged.
+
+`--abandon-unresolved EXACT_KEY` is an **offline maintenance action**, not paid mode. It requires `--abandon-by` and `--abandon-reason`, works without an API key, and sends no requests even if other paid flags are present. It reads run configuration, source hashes and the exact reservation's metadata; it does not read outcome summaries, result rows or libraries. It refuses a key with any recorded response. Supply a deliberate tester identity and an infrastructure-only reason; do not include secrets or paths in audit text.
+
+The following is a recovery example for the reported reservation. It has **not been executed** against the real run:
+
+```sh
+python prototype/savings_real.py \
+  --output "$HOME/context-bridge-benchmark-runs/full-2026-11-22" \
+  --abandon-unresolved B-research-07-baseline-0-00 \
+  --abandon-by "independent tester" \
+  --abandon-reason "read timeout; no outcomes inspected" \
+  --read-timeout 300
+```
+
+The original reservation is marked abandoned/possibly billed. Its entire stored reservation (reported as $0.06843 in this case) is permanently charged to the conservative recorded total, never refunded because of a cheaper resend, later response or restart. Audit records retain who, UTC time, reason and exact key. Repeating the same abandonment is idempotent. The ledger is authoritative even if interruption occurs before the reservation file is annotated.
+
+For the exact legacy runner from `0d0bec6`, this explicit action can adopt the registered infrastructure changes. It verifies protected task/corpus/grading/analysis/cost hashes and stores the old runner and original `run.json` hashes, adopter and reason in `infrastructure.json`. Original `run.json` remains unchanged. The code permits only this registered runner migration; any change to the experiment, caps, prices, model or protected hashes refuses resume. Do not hand-edit `run.json` to bypass the guard.
+
+After reviewing the audit, resume **separately** with the original full-run command and all its original price/budget/model/cap arguments. This is the step that can make paid calls; it was not run during implementation. Timeouts are frozen in `infrastructure.json`; omit timeout flags to reuse those stored values or repeat their exact values. The default read timeout is 300 seconds, configurable with `--read-timeout`; the separate connect timeout defaults to 30 seconds (`--connect-timeout`). The default is not silently applied over an already frozen timeout.
+
+The abandoned logical request may send the identical Messages body once under `B-research-07-baseline-0-00--attempt-1`. That new reservation consumes both the existing per-session request cap and global call cap, plus the dollar budget in addition to the original permanent charge. A completed attempt and its tool results replay from that exact new key. A second unresolved send can be explicitly abandoned and charged too, but there is no third send; missing data keeps the run incomplete. Other unresolved calls continue to block all new requests. The per-session cap remains unchanged; if the abandoned attempt has used its last slot, no resend is sent and the existing cap-reached outcome is reported.
+
+Transport separates direct TLS connection establishment from HTTP request transmission. A connect-stage failure before any HTTP headers/body are sent may automatically retry the connection once. If both connects fail, it records a definitely-not-sent zero-cost failure and stops; resume does not silently reset that automatic allowance. Any error during transmission, reading headers/body, or decoding the response remains unresolved/possibly billed; it is never automatically retried, even if its exception type also occurs during connection establishment. A read timeout is not evidence that the provider did no work.
+
+On the next separately requested resume, `summary.json` and the report disclose all abandonment keys, who/when/why, full reserved charges, response dollars, combined conservative spending and frozen timeouts. The offline action itself only changes the audit ledger and infrastructure metadata; it does not open a partial outcome report to rewrite it.
+
+An abandonment does not by itself disqualify the run. Eligibility still requires every task, both arms and all three repetitions, plus every existing non-inferiority, stale-safety and token-ratio rule, with abandonment disclosed. No task may be excluded or replaced, no cap increased, and no known response may be retried to choose a better answer. Abandoned token usage is unknown: the unchanged token analysis uses received usage counters, while conservative dollars also include the full abandoned reservation. No token counts are invented. Keep that limitation visible when interpreting any qualifying result.
