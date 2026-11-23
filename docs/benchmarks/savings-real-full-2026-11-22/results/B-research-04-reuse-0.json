@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-04",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 2148,
+    "cache_creation_input_tokens": 6257,
+    "output_tokens": 712
+  },
+  "answer": "The corpus confirms both facts. `library/tempfile.rst` gives the `NamedTemporaryFile` signature with `mode='w+b'`, and `library/json.rst` documents `json.dump(obj, fp, ...)` as writing a JSON stream to a file-like object. I did not read the `library/json.rst` page itself to confirm the `str` output; that comes from `library/json.rst` describing `dumps` as returning `str` (per an earlier note) and from `tutorial/inputoutput.rst` saying `json.dump` writes to a text file.\n\n```json\n{\"facts\": {\"mode\": \"w+b\", \"json_type\": \"str\"}}\n```\n\n`NamedTemporaryFile` defaults to binary mode `'w+b'`, while `json.dump` writes `str`. Dumping JSON into a default `NamedTemporaryFile` therefore raises a `TypeError`. To avoid that, open it with `mode='w+'` for text.\n\nSources: `library/tempfile.rst`, `library/json.rst`, `tutorial/inputoutput.rst`.\n\nReuse decision: CHECK. An earlier conversation note (Claude Code, 'Temporary JSON', urn:context-bridge:record:b812240171044c89bdc32f517df562ee) gave the same answer, and I re-verified the mode against the corpus rather than relying on it.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

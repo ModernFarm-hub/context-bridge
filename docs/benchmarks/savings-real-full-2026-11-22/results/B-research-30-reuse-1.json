@@ -1,0 +1,35 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-30",
+  "arm": "reuse",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 2156,
+    "cache_creation_input_tokens": 4561,
+    "output_tokens": 494
+  },
+  "answer": "The corpus confirms both points.\n\n```json\n{\"facts\": {\"mktemp_safe\": false, \"cleanup\": true}}\n```\n\n- **mktemp_safe:** `tempfile.mktemp` is not safe. `library/tempfile.rst` lists it under \"Deprecated functions and variables\". `library/security_warnings.rst` says \"mktemp is deprecated due to vulnerability to race conditions\". `mkstemp()` is the recommended replacement.\n- **cleanup:** `TemporaryDirectory` used as a context manager removes the directory and its contents on exit. The example in `library/tempfile.rst` has the comment \"directory and contents have been removed\" after the `with` block.\n\nSources: `library/tempfile.rst`, `library/security_warnings.rst`\n\nReuse decision: REDO. This is a security-sensitive question, so I treated the earlier conversation only as a lead and verified against the corpus directly.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

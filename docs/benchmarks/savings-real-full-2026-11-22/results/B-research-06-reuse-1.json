@@ -1,0 +1,39 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-06",
+  "arm": "reuse",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 8196,
+    "cache_creation_input_tokens": 7606,
+    "output_tokens": 791
+  },
+  "answer": "Both answers come from the corpus docs.\n\n```json\n{\"facts\": {\"default_date\": \"1900-01-01\", \"method\": \"json.loads\"}}\n```\n\n- **Default date:** for `datetime.strptime`, any component not given in the format string is taken from the default value `1900-01-01T00:00:00.000`. A time-only format like `%H:%M:%S` in a log parser therefore yields a datetime on 1900-01-01. This is in `library/datetime.rst`, and `library/time.rst` gives the matching `time.strptime` defaults of `(1900, 1, 1, 0, 0, 0, 0, 1, -1)`.\n- **Method:** `json.loads(s)` deserializes a `str`, `bytes` or `bytearray` containing a JSON document into a Python object. This is in `library/json.rst`. The same file also describes `raw_decode`, which decodes a document from a string that may have extra data at the end.\n\nReuse decision: CHECK \u2014 a prior conversation, Claude Code 'Date parsing' (urn:context-bridge:record:d11d64d311204672a0a6d7cb8e578786), pointed to the same default, and I re-verified both facts against the corpus.\n\nSources: `library/datetime.rst`, `library/time.rst`, `library/json.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": "CHECK",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

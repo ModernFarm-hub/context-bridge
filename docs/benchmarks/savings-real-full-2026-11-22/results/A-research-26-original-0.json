@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 100,
+  "phase": "A",
+  "task_id": "research-26",
+  "arm": "original",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 3211,
+    "cache_creation_input_tokens": 4177,
+    "output_tokens": 477
+  },
+  "answer": "Yes. The zipfile docs advise inspecting an untrusted archive before extracting it. The warning appears in the `ZipFile.extract` documentation, which says \"Never extract archives from untrusted sources without prior inspection.\" The snippet cuts off at \"It is possible\u2026\", so I did not read the stated reason. Since `extract_uninspected` asks whether extracting without inspection is acceptable, it is false.\n\n```json\n{\"facts\": {\"extract_uninspected\": \"false\"}}\n```\n\nSources:\n- `library/zipfile.rst`\n- `library/tarfile.rst` carries the same warning wording, which I used only as a cross-reference.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs",
+    "read_doc"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

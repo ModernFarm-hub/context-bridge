@@ -1,0 +1,39 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 1,
+  "phase": "B",
+  "task_id": "research-34",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 6608,
+    "cache_creation_input_tokens": 6252,
+    "output_tokens": 610
+  },
+  "answer": "Yes. In the selected v2 snapshot, `functools` exposes `Placeholder`.\n\n```json\n{\"facts\": {\"available\": \"true\", \"name\": \"Placeholder\"}}\n```\n\n`library/functools.rst` documents `functools.Placeholder` as a singleton sentinel that reserves a place for positional arguments when calling `partial` and `partialmethod`. It is marked `versionadded:: 3.14`. The same file shows `Placeholder` sentinels in a `partial` object being filled in by new positional arguments.\n\nSources: `library/functools.rst`\n\nReuse decision: REDO. I checked the v2 corpus directly. A past conversation's snippet said it found no `Placeholder` hit in `functools`, so I treated it as a weak lead only, and the corpus contradicts it.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "context_search",
+    "read_doc",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

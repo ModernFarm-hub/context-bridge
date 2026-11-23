@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-39",
+  "arm": "reuse",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 6783,
+    "cache_creation_input_tokens": 6084,
+    "output_tokens": 719
+  },
+  "answer": "In this snapshot the default start method on POSIX platforms other than macOS is `forkserver`.\n\n```json\n{\"facts\": {\"default\": \"forkserver\"}}\n```\n\n`library/multiprocessing.rst` has a \"versionchanged:: 3.14\" note saying that on POSIX platforms the default start method changed from *fork* to *forkserver*. `library/concurrent.futures.rst` agrees: the default process start method changed away from *fork* in 3.14, so `ProcessPoolExecutor` needs `mp_context=multiprocessing.get_context(\"fork\")` to get fork. `deprecations/pending-removal-in-3.14.rst` and `whatsnew/3.12.rst` announced this change in advance.\n\nAn earlier conversation in my history answered `fork`. That matches the older Python 3.13 behaviour, not this v2 snapshot, so I did not reuse it.\n\nReuse decision: REDO \u2014 the earlier answer was stale for the 3.14 overlay, so I re-checked the corpus.\n\nSources: `library/multiprocessing.rst`, `library/concurrent.futures.rst`, `deprecations/pending-removal-in-3.14.rst`, `whatsnew/3.12.rst`.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": "REDO",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

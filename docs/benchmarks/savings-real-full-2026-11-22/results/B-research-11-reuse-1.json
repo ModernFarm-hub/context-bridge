@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-11",
+  "arm": "reuse",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 6841,
+    "cache_creation_input_tokens": 6217,
+    "output_tokens": 652
+  },
+  "answer": "```json\n{\"facts\": {\"split\": \"urlsplit\", \"join\": \"urlunsplit\"}}\n```\n\n`urllib.parse.urlsplit()` splits a URL into five components: scheme, netloc, path, query and fragment. `urllib.parse.urlunsplit()` reverses it. The corpus describes it as combining the elements of a tuple returned by `urlsplit` into a complete URL string, and it accepts any five-item iterable.\n\nI did not read the `urlsplit` entry itself in the corpus. The five-component count rests on the `urlunsplit` entry's \"five-item iterable\" wording and on a prior note of mine.\n\nSources: `library/urllib.parse.rst` (the `urlunsplit` entry, which refers back to `urlsplit`). A previous Claude Code conversation, \"URL components\", reached the same answer (urn:context-bridge:record:5eece44c4c6242299fe672d603c51bea).\n\nReuse decision: CHECK \u2014 the earlier conversation matched, and I re-verified the `urlunsplit` entry against the corpus.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": "CHECK",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

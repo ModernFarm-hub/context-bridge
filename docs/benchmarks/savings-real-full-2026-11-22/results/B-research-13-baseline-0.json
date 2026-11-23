@@ -1,0 +1,35 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-13",
+  "arm": "baseline",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 1700,
+    "cache_creation_input_tokens": 2931,
+    "output_tokens": 413
+  },
+  "answer": "In this corpus, a `maxsize` of zero or less means the queue is unbounded, and an `Event`'s flag starts out false.\n\n```json\n{\"facts\": {\"capacity\": \"infinite\", \"event\": \"false\"}}\n```\n\n- **Queue capacity:** the docs say that if `maxsize` is less than or equal to zero, the queue size is infinite. This is stated for both `queue.Queue` and `asyncio.Queue`. For a positive `maxsize`, insertion blocks once the queue is full until items are consumed.\n- **Event flag:** the flag is false initially. `set()` makes it true, `clear()` resets it to false, and `wait()` blocks until it is true.\n\nSources:\n- `library/queue.rst`\n- `library/asyncio-queue.rst`\n- `library/threading.rst`\n- `library/asyncio-sync.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

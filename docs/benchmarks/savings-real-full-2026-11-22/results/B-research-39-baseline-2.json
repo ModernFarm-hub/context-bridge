@@ -1,0 +1,37 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-39",
+  "arm": "baseline",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 3291,
+    "cache_creation_input_tokens": 4089,
+    "output_tokens": 442
+  },
+  "answer": "```json\n{\"facts\": {\"default\": \"forkserver\"}}\n```\n\nIn this snapshot (Python 3.14), the default multiprocessing start method on supported POSIX platforms other than macOS is `forkserver`. The multiprocessing docs have a \"versionchanged 3.14\" note saying the POSIX default changed from `fork` to `forkserver`, to keep the performance but avoid common multithreaded process incompatibilities. macOS and Windows keep `spawn` as their default.\n\nSources:\n- `library/multiprocessing.rst`\n- `library/concurrent.futures.rst`, which notes the default start method changed away from `fork` in 3.14\n- `deprecations/pending-removal-in-3.14.rst` and `whatsnew/3.12.rst`, which announced the planned change",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

@@ -2,6 +2,8 @@
 
 ## 0.10.0b1
 
+- **Benchmark result:** in the pre-registered 40-task confirmatory run (claude-sonnet-5-5, $5.14), reuse used 84% more tokens than fresh research (95% interval 64–108% more), with accuracy non-inferior (97.5% vs 93.3%) and stale-answer safety passed. No savings claim is made. Results and all recorded calls are in docs/benchmarks/savings-real.md. The README now says plainly that Context Bridge is for finding past work, not for cutting model costs.
+
 - Register the outcome-blind timeout amendment: explicit per-key abandoned reservations with permanent conservative charges and one deterministic resend, staged connect/read handling, frozen timeouts and metadata-only legacy adoption. No partial outcomes were inspected and no real run was resumed.
 
 - Register the dated post-pilot formatting amendment: exact identifier-suffix normalization, explicit boolean/quote handling, reported prose fallback, and final-answer decision parsing with separate compliance. Preserve frozen tasks, corpus, metrics and thresholds.

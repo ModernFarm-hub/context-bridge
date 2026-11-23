@@ -1,0 +1,35 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-20",
+  "arm": "baseline",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 1662,
+    "cache_creation_input_tokens": 3291,
+    "output_tokens": 449
+  },
+  "answer": "The function that splits shell-like syntax is `shlex.split`, and the class that reads INI files is `configparser.ConfigParser`.\n\n```json\n{\"facts\": {\"split\": \"shlex.split\", \"class\": \"configparser.ConfigParser\"}}\n```\n\n- **`shlex.split`:** `library/subprocess.rst` says `shlex.split` can show how to break a shell command into a sequence of arguments. `library/pdb.rst` also describes splitting arguments with `shlex`. `library/shlex.rst` is the module's own page.\n- **`configparser.ConfigParser`:** `library/configparser.rst` shows `configparser.ConfigParser()` reading `.ini` files with `.read([...])`. `library/shlex.rst` describes the module as a \"parser for configuration files similar to the Windows .ini files\".\n\nI did not open the full `shlex.rst` page, so the `shlex.split` identification rests on the cross-references in `subprocess.rst` and `pdb.rst`.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

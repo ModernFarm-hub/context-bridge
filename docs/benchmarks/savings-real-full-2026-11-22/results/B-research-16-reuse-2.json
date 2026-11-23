@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-16",
+  "arm": "reuse",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 8242,
+    "cache_creation_input_tokens": 0,
+    "output_tokens": 514
+  },
+  "answer": "Both facts are confirmed in the v1 corpus.\n\n```json\n{\"facts\": {\"level\": \"warning\", \"function\": \"warnings.warn\"}}\n```\n\n- **Level:** the root logger always has an explicit level set, and it is WARNING by default. Only WARNING and above are emitted until you change it.\n- **Function:** Python code issues warnings by calling `warnings.warn()`. The C-level equivalent is `PyErr_WarnEx`, which does not apply to a small Python CLI.\n\n**Sources:**\n- `howto/logging.rst`\n- `library/warnings.rst`\n\nReuse decision: CHECK. A prior conversation (Claude Code, \"Logging warning\", urn:context-bridge:record:dc565f1f6d644263ae19a88910e2f887) reached the same answer. I re-verified both facts against the corpus rather than relying on it.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

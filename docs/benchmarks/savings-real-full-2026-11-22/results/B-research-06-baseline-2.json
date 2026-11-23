@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-06",
+  "arm": "baseline",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 4754,
+    "cache_creation_input_tokens": 5446,
+    "output_tokens": 634
+  },
+  "answer": "The corpus gives both answers.\n\n```json\n{\"facts\": {\"default_date\": \"1900-01-01T00:00:00.000\", \"method\": \"JSONDecoder.decode\"}}\n```\n\n**Default date:** `library/datetime.rst` says that for `datetime.strptime`, the default value is `1900-01-01T00:00:00.000`. Any component missing from the format string is filled in from it. `library/time.rst` agrees, giving `time.strptime` defaults of `(1900, 1, 1, 0, 0, 0, 0, 1, -1)`.\n\n**Method:** `library/json.rst` documents `JSONDecoder.decode(s)`, which returns the Python representation of `s`, a `str` containing a JSON document. It raises `JSONDecodeError` if the document is not valid. The module-level `json.loads` (mentioned in `whatsnew/3.6.rst` and `howto/logging-cookbook.rst`) also parses a JSON string, but I took `JSONDecoder.decode` as the answer because its documentation matches your wording most closely.\n\n**Sources:** `library/datetime.rst`, `library/time.rst`, `library/json.rst`",
+  "correct": false,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

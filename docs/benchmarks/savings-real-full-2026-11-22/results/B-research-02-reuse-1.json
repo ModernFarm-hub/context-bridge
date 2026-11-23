@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-02",
+  "arm": "reuse",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 8877,
+    "cache_creation_input_tokens": 3898,
+    "output_tokens": 658
+  },
+  "answer": "The default delimiter is a comma, and the `io` class that accepts text for an in-memory stream is `io.StringIO`.\n\n```json\n{\"facts\": {\"delimiter\": \",\", \"stream\": \"io.StringIO\"}}\n```\n\n- **Delimiter:** `library/csv.rst` documents `Dialect.delimiter` as \"A one-character string used to separate fields. It defaults to `','`.\"\n- **Stream:** `io.StringIO` is the in-memory text stream, and `whatsnew/3.0.rst` notes that the old `StringIO` and `cStringIO` modules were replaced by `io`. I did not open `library/io.rst` to read the `StringIO` entry itself, and I took the class name from a prior conversation's answer.\n\nReuse decision: CHECK \u2014 I re-verified the delimiter default in `library/csv.rst`. A prior conversation (Claude Code \u00b7 'CSV in memory', urn:context-bridge:record:4a9f87bc222442ab9502dd0c2600a445) gave the same answer.\n\nSources: `library/csv.rst`, `whatsnew/3.0.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": "CHECK",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

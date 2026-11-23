@@ -1,0 +1,33 @@
+{
+  "grading_amendment": "2026-11-22-formatting-only",
+  "grader_sha256": "37bd6385ef46515a05bc591cb54ad0f7e643975f5b6018e01509b84789acc939",
+  "decision_parser_sha256": "96b6d4eee55a20bbd9cf37da13e9b8899d0eed36f5760e0ae381907fbf3d1f20",
+  "costs_sha256": "aa5d406e4ff53eab1c3c21ab1e62c780b31b42fba096a42fda4c982e2cdea1b8",
+  "max_usd": 10.0,
+  "prices": {
+    "input_tokens": "2.0",
+    "cache_read_input_tokens": "0.2",
+    "cache_creation_input_tokens": "2.5",
+    "output_tokens": "10.0"
+  },
+  "grader_prices": {
+    "input_tokens": "0",
+    "cache_read_input_tokens": "0",
+    "cache_creation_input_tokens": "0",
+    "output_tokens": "0"
+  },
+  "fake": false,
+  "pilot": false,
+  "model": "claude-sonnet-5-5",
+  "grader_model": null,
+  "call_cap": 12,
+  "total_cap": 4000,
+  "input_price": 2.0,
+  "output_price": 10.0,
+  "grader_input_price": 0,
+  "grader_output_price": 0,
+  "tasks_sha256": "8f565ed553927e1df52166dd0c394f8a79dd6550d3160ccd3ebe2c572125df8b",
+  "analysis_sha256": "cbe0a18b258eb3c3c96a6cab90f74e26f4715f65932768e115754ff6d6e03c81",
+  "runner_sha256": "d00e51bd497d05ac40aca97dca98f5914074cd8219e1d7a188ba55f3faa91810",
+  "manifest_sha256": "71955c475704e1978ed52f39b96d56d292982109a75c6ad35b1551f892443bfe"
+}

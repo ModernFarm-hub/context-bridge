@@ -2,40 +2,35 @@
 
 Last updated: 2026-11-22. Context Bridge is a free, open-source, local-first project. Priorities come from public testing and user questions; they can change.
 
-## Shipped: 0.8.0b1 (2026-11-14)
+## What Context Bridge is for
 
-- Paraphrase recall: a frozen 30-query synthetic benchmark, Porter stemming and title weighting, and `semantic enable` for offline hybrid search with a pinned, checksum-verified local model. On a personal library, paraphrased questions found the right chat first in 5 of 6 cases (0.7.0b2: 1 of 6).
-- ChatGPT desktop (Codex) threads are captured automatically from approved project folders.
-- Results are grouped by conversation, and the active retrieval mode is reported.
+Finding and citing past AI work across Claude, ChatGPT and Claude Code, privately on your machine: decisions, reasons and context that only your own history contains. It is **not** a token-saving tool for quick lookups; a pre-registered benchmark found the opposite (below).
 
-## 0.8.1: first impression
+## Shipped
 
-- A `demo` command that searches a disposable synthetic library offline.
-- A shorter README with a 60-second Claude Code path and a factual comparison with related tools.
-- An offer to enable semantic search after the first import; embeddings built during import.
-- Legacy research commands removed from the product CLI.
+- **0.8.0b1 (2026-11-14):** paraphrase recall (`semantic enable`, offline hybrid search; on a personal library, paraphrased questions found the right chat first in 5 of 6 cases, up from 1 of 6), automatic ChatGPT desktop (Codex) capture, results grouped by conversation.
+- **0.8.1 (2026-11-22):** `demo`, a 60-second README path, a one-time semantic offer at first import, embeddings built during import.
+- **0.9.0b1 (2026-11-22):** local usage log and `savings` estimates (conservative lower bound), the REUSE/CHECK/REDO agent guide with presets, age and time-sensitivity hints, compact results and an opt-in Claude Code hook.
+- **0.10.0b1:** a pre-registered savings benchmark, the `repeats` opportunity report, and approval of empty project folders.
 
-## 0.10.0b1: implemented locally, pending release
+## Savings benchmark result (0.10.0b1)
 
-Local accounting, compact results, printed agent guidance and an opt-in bounded hook are implemented. The goal is to make the cost of reuse visible, including failures; no universal or measured real-user savings claim is made.
+Pre-registered before any paid run (commit `8f23796`), with dated formatting and infrastructure amendments made before the confirmatory results were seen. Forty public Python-documentation research tasks, three repetitions per arm, claude-sonnet-5-5:
 
-- **Offline proof fixture:** twenty invented research sessions, explicit synthetic usage counters, measured response character estimates, and stale/wrong/cheap-redo negative cases. [Methods and results](benchmarks/savings.md).
-- **Local savings report:** recorded Claude Code/Codex counters or lower-quality visible-text estimates, one counterfactual redo credit per conversation actually read, with all lookup overhead deducted. No query text by default, no telemetry, optional user-priced dollars only. No wall-time savings estimate for historical conversations.
-- **Automatic consultation:** a tested CLAUDE.md/AGENTS.md instruction block and an opt-in Claude Code hook. It uses bounded lexical search, not cold semantic inference, within a 200 ms worker budget; host timeout is 250 ms. Misses and timeouts add no context.
-- **Compact results:** five concise fields per result; benchmark full and compact response token estimates separately.
-- **Live validation remains opt-in and unrun:** a capped synthetic Anthropic agent harness measures provider usage, wall time and reference-substring accuracy with and without reuse tools. It requires a price, --yes and a key, and refuses CI. Public live claims require a separately consented run, including negative cases.
+- **Reuse used 84% more tokens than fresh research** (95% interval: 64% to 108% more). Reuse lost in every variant: same question, paraphrase, related and stale.
+- **Accuracy did not suffer:** 97.5% with reuse vs 93.3% without; non-inferiority passed. Stale answers were handled safely.
+- The agent guide's decision line appeared in 55% of reuse answers and matched the expected decision 4% of the time.
 
-## 0.10: trust at scale
+These tasks were quick documentation lookups (a median of 2 model calls and about 5,400 tokens of fresh research), where redoing research is cheap. Savings for long, expensive research remain untested. [Results and data](benchmarks/savings-real.md).
 
-- Encryption at rest for the local database.
-- An administrator policy file: excluded projects and folders, redaction rules and retention.
-- Windows support and deployment-friendly configuration.
-- A threat model, SBOM and security overview.
-- Large-library benchmarks (100,000+ conversations), including semantic search.
+## Next
+
+- **Real users before new features.** Gather what people actually find, miss or don't need, through GitHub Discussions and issues. No telemetry.
+- **Candidate: trace a commit to the AI session that produced it.** A local feasibility check matched 31 of 33 commits in this repository to the Claude Code or ChatGPT desktop session that made them. Explaining *why* needs the originating request and tool evidence, and links must stay at turn level so unrelated private content in the same session is never exposed. Built only if users ask for it.
 
 ## Later
 
-- Reuse across a team through a self-hosted service or a shared folder, with permissions. Never a hosted service run by this project.
+- Encryption at rest, an administrator policy file, Windows support, a threat model and SBOM.
 - More local sources, such as Cursor and Gemini CLI.
 - `context_save`: save a decision from the current session as a searchable, cited note.
 - Filters (provider, date range, project) and better titles for untitled ChatGPT conversations.
@@ -44,13 +39,4 @@ Local accounting, compact results, printed agent guidance and an opt-in bounded 
 
 - Paid tiers, hosted services or data collection.
 - Scraping chatgpt.com or claude.ai. Web history arrives only through official exports until providers offer a history API.
-
-Risk-weighted reuse guidance and heuristic search signals now distinguish REUSE/CHECK/REDO. Historical small-n synthetic live runs used the old guide; the new policy is tested with fake responses only. Next validation should measure decision accuracy and high-risk answer failures by class, not just token totals. Conflict detection remains disabled pending validation.
-
-### 0.10.0b1: realistic experiment and repeat opportunities
-
-- Forty frozen public-document tasks, actual version-change cases, cached original sessions, isolated Context Bridge comparisons and paired bootstrap analysis. [Protocol](benchmarks/savings-real-guide.md). Only fake-provider verification has run; no paid savings claim.
-- Local repeat research reporting with provider breakdowns, conservative cost estimates, title-only chains and sample review. Repetition measures opportunity, not savings.
-- Explicit approval of existing project folders before their first Claude Code or Codex thread.
-
-Cost-control verification keeps 0.10.0b1: automatic caching, explicit input/output/cache rates, a required paid-run dollar budget, pilot projections, a runtime wheel below 500000 bytes with source-only corpus, and repeat-report sensitivity with local review. Only fake-provider and synthetic-library verification has run.
+- Claims of token or cost savings without a pre-registered result that supports them.

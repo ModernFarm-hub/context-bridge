@@ -1,0 +1,39 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 5000,
+  "phase": "B",
+  "task_id": "research-37",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 5139,
+    "cache_creation_input_tokens": 6759,
+    "output_tokens": 681
+  },
+  "answer": "Yes, the selected v2 snapshot documents `heapq.heapify_max`, and it was added in Python 3.14. I read this directly in the v2 corpus. An earlier conversation note said the function was absent, but that note appears to reflect the older v1 snapshot, and the v2 doc contradicts it.\n\n`library/heapq.rst` lists `heapify_max(x)` under \"For max-heaps, the following functions are provided\". It describes the function as transforming list *x* into a max-heap in place, in linear time, and carries `.. versionadded:: 3.14`. The same section adds `heappush_max`, `heappop_max`, `heappushpop_max` and `heapreplace_max`, all marked 3.14.\n\n```json\n{\"facts\": {\"available\": \"true\", \"added\": \"3.14\"}}\n```\n\nSources: `library/heapq.rst`\n\nReuse decision: REDO \u2014 the prior conversation note (Claude Code \u00b7 'Max heaps') conflicted with the v2 corpus, so I relied only on the v2 documentation.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs",
+    "read_doc"
+  ],
+  "decision": "REDO",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

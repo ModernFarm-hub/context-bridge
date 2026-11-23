@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-09",
+  "arm": "reuse",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 4292,
+    "cache_creation_input_tokens": 2481,
+    "output_tokens": 505
+  },
+  "answer": "Both facts are confirmed in the corpus.\n\n```json\n{\"facts\": {\"diff\": \"difflib.unified_diff\", \"flag\": \"re.IGNORECASE\"}}\n```\n\n`difflib.unified_diff(a, b, fromfile='', tofile='', ...)` compares two lists of strings and returns a generator of delta lines in unified diff format. In `re`, `re.IGNORECASE` (short form `re.I`) enables case-insensitive matching, so a pattern like `[A-Z]` also matches lowercase letters.\n\nSources:\n- `library/difflib.rst`\n- `library/re.rst`\n- `howto/regex.rst`\n\nReuse decision: CHECK. An earlier conversation (Claude Code 'Text diff') gave the same answer, and I re-verified both facts against the corpus.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

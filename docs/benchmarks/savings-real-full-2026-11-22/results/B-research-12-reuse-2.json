@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-12",
+  "arm": "reuse",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 4270,
+    "cache_creation_input_tokens": 4087,
+    "output_tokens": 568
+  },
+  "answer": "The corpus confirms both helpers (`inspect.cleandoc` is referenced in `library/inspect.rst`, where `getdoc` is described as \"cleaned up with cleandoc\").\n\n```json\n{\"facts\": {\"dedent\": \"textwrap.dedent\", \"clean\": \"inspect.cleandoc\"}}\n```\n\n**Explanation:** `textwrap.dedent(text)` removes any common leading whitespace from every line of `text`. It is meant for triple-quoted strings that are indented in the source. `inspect.cleandoc` cleans up the indentation of docstrings. `inspect.getdoc` and `ast.get_docstring(clean=True)` both rely on it.\n\n**Sources:** `library/textwrap.rst`, `library/inspect.rst`, `library/ast.rst`\n\nReuse decision: CHECK \u2014 a prior conversation (\"Text wrappers\", Claude Code, urn:context-bridge:record:5bdff58204fb44ccac44abad11577441) gave the same answer. I re-verified it against the corpus above.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": "CHECK",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

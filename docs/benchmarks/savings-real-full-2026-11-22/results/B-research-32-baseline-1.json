@@ -1,0 +1,34 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-32",
+  "arm": "baseline",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 1676,
+    "cache_creation_input_tokens": 1698,
+    "output_tokens": 257
+  },
+  "answer": "The signature in `library/argparse.rst` shows `suggest_on_error` with a default of `False`.\n\n```json\n{\"facts\": {\"available\": \"true\", \"default\": \"false\"}}\n```\n\nYes, `ArgumentParser` accepts `suggest_on_error` in this snapshot. It is a keyword-only parameter, listed after `*` in the signature as `*, [suggest_on_error]=False, color=True`, and its default is `False`.\n\nI read this from the search snippet of the signature and did not open the full parameter description.\n\nSource: `library/argparse.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

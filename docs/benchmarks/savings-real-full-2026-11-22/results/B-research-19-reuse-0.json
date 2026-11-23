@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-19",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 2142,
+    "cache_creation_input_tokens": 6064,
+    "output_tokens": 496
+  },
+  "answer": "The `fractions` class for rational numbers is `Fraction`, and the function that computes the median is `statistics.median`.\n\n```json\n{\"facts\": {\"class\": \"Fraction\", \"function\": \"median\"}}\n```\n\n`library/fractions.rst` says the `fractions` module supports rational number arithmetic through `Fraction` instances. `library/statistics.rst` lists `median()` among the module's functions and shows it imported with `from statistics import median`. `tutorial/stdlib.rst` also shows `statistics.median(data)` returning the median of a data list.\n\nSources: `library/fractions.rst`, `library/statistics.rst`, `tutorial/stdlib.rst`.\n\nReuse decision: CHECK \u2014 a prior conversation held the same answer, and I confirmed it against the corpus search results rather than relying on it.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": "CHECK",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

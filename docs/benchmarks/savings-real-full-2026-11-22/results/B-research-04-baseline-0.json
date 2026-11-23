@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-04",
+  "arm": "baseline",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 5764,
+    "cache_creation_input_tokens": 4630,
+    "output_tokens": 480
+  },
+  "answer": "```json\n{\"facts\": {\"mode\": \"w+b\", \"json_type\": \"str\"}}\n```\n\n`NamedTemporaryFile` defaults to `mode='w+b'`, which is binary read/write. `json.dump` always produces `str`, never `bytes`.\n\nWriting JSON to a default `NamedTemporaryFile` will therefore fail, because `fp.write()` must accept `str`. To write JSON, open the file in text mode, for example `NamedTemporaryFile('w+')`.\n\nSources:\n- `library/tempfile.rst`: the signature shows `NamedTemporaryFile(mode='w+b', ...)`.\n- `library/json.rst`: \"The json module always produces str objects, not bytes objects. Therefore, fp.write() must support str input.\"",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

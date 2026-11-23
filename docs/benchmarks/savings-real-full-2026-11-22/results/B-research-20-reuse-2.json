@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-20",
+  "arm": "reuse",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 2129,
+    "cache_creation_input_tokens": 6029,
+    "output_tokens": 594
+  },
+  "answer": "Reuse decision: CHECK. A prior conversation matched, so I confirmed the facts against the corpus rather than relying on it.\n\n```json\n{\n  \"facts\": {\n    \"split\": \"shlex.split\",\n    \"class\": \"configparser.ConfigParser\"\n  }\n}\n```\n\n- `shlex.split` splits shell-like syntax. `library/subprocess.rst` says `shlex.split` can show how to break a shell command into an argument sequence. `library/whatsnew/3.8.rst` describes `shlex.join` as the inverse of `shlex.split`. The module itself is documented in `library/shlex.rst`.\n- `configparser.ConfigParser` reads INI files. `library/configparser.rst` says the module provides the `ConfigParser` class, which implements a basic configuration language similar to Windows INI files. `library/shlex.rst` also describes `configparser` as a parser for files similar to Windows `.ini` files.\n\nSources: `library/shlex.rst`, `library/subprocess.rst`, `whatsnew/3.8.rst`, `library/configparser.rst`.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

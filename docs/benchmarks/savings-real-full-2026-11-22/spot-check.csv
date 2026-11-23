@@ -1,0 +1,240 @@
+arm,task_id,repetition,answer,human_correct,notes
+baseline,research-13,2,"A `maxsize` of zero or less means the queue size is infinite, and the Event flag starts as false.
+
+```json
+{""facts"": {""capacity"": ""infinite"", ""event"": ""false""}}
+```
+
+- **Capacity:** the docs say that if `maxsize` is less than or equal to zero, the queue size is infinite. A `maxsize` above zero makes insertion block once the queue is full. This is stated for both `queue.Queue` and `asyncio.Queue`.
+- **Event:** the docs say the flag is set to false initially, and `wait()` blocks until it becomes true. This is stated for both `threading.Event` and `asyncio.Event`.
+
+Sources: `library/queue.rst`, `library/asyncio-queue.rst`, `library/threading.rst`, `library/asyncio-sync.rst`",,
+baseline,research-38,2,"Yes, the selected snapshot's `uuid` module exposes `uuid7()`, and it was added in Python 3.14. The `uuid7()` entry in `library/uuid.rst` carries `.. versionadded:: 3.14`. It describes a time-based UUID per RFC 9562 §5.7.
+
+```json
+{""facts"": {""available"": ""true"", ""added"": ""3.14""}}
+```
+
+Source: `library/uuid.rst`",,
+baseline,research-34,2,"Yes, `functools` exposes `Placeholder` in this snapshot.
+
+```json
+{""facts"": {""available"": true, ""name"": ""Placeholder""}}
+```
+
+`library/functools.rst` documents `functools.Placeholder` as a singleton sentinel that reserves a place for positional arguments when calling `partial` and `partialmethod`. It is marked `versionadded:: 3.14`. The same file has an example that imports `partial` and `Placeholder` from `functools`.
+
+**Source:** `library/functools.rst`",,
+baseline,research-12,0,"The corpus confirms both helpers.
+
+```json
+{""facts"": {""dedent"": ""textwrap.dedent"", ""clean"": ""inspect.cleandoc""}}
+```
+
+- `textwrap.dedent(text)` removes any common leading whitespace from every line in the text. It is documented in `library/textwrap.rst`.
+- `inspect.cleandoc` cleans up docstring indentation. `inspect.getdoc` is documented as returning the docstring ""cleaned up with `cleandoc`"" (in `library/inspect.rst`), and `library/ast.rst` also refers to `inspect.cleandoc` for cleaning a docstring's indentation. I did not open the `cleandoc` entry itself in `library/inspect.rst`, only these references to it.
+
+Sources: `library/textwrap.rst`, `library/inspect.rst`, `library/ast.rst`",,
+baseline,research-32,1,"The signature in `library/argparse.rst` shows `suggest_on_error` with a default of `False`.
+
+```json
+{""facts"": {""available"": ""true"", ""default"": ""false""}}
+```
+
+Yes, `ArgumentParser` accepts `suggest_on_error` in this snapshot. It is a keyword-only parameter, listed after `*` in the signature as `*, [suggest_on_error]=False, color=True`, and its default is `False`.
+
+I read this from the search snippet of the signature and did not open the full parameter description.
+
+Source: `library/argparse.rst`",,
+baseline,research-14,1,"```json
+{""facts"": {""rel_tol"": ""1e-09"", ""precision"": ""28""}}
+```
+
+The default `rel_tol` for `math.isclose` is 1e-09, and the default `Decimal` context precision is 28 significant digits.
+
+The `math.isclose` docs say ""The default tolerance is `1e-09`, which assures that the two values are the same within about 9 decimal digits."" The `Decimal` default of 28 comes from the example in `whatsnew/2.4.rst`, where `decimal.getcontext().prec` returns 28 for the default context. I did not open `library/decimal.rst` to confirm the 28 there, so that value rests on the 2.4 release notes alone.
+
+Sources:
+- `library/math.rst`
+- `whatsnew/2.4.rst`",,
+baseline,research-28,0,"No, `http.server` is not recommended for production, and the `urllib.request` function that opens URLs is `urlopen`.
+
+```json
+{""facts"": {""recommended"": ""false"", ""function"": ""urlopen""}}
+```
+
+- **`http.server`:** its documentation warns that it ""is not recommended for production. It only implements basic security checks."" The security warnings page repeats that it is not suitable for production use. (`library/http.server.rst`, `library/security_warnings.rst`)
+- **`urllib.request`:** the module documents `urlopen(url, data=None[, timeout], *, context=None)`, which opens a URL given as a string or a `Request` object. (`library/urllib.request.rst`)",,
+baseline,research-33,1,"The signature shows `buffersize=None`.
+
+**Answer:**
+
+```json
+{""facts"": {""available"": ""true"", ""default"": ""None""}}
+```
+
+In this snapshot, `Executor.map` is documented as `map(fn, *iterables, timeout=None, chunksize=1, buffersize=None)`. It accepts `buffersize`, and the default is `None`. The docs say iterables are collected immediately unless a `buffersize` is given.
+
+Source: `library/concurrent.futures.rst`",,
+baseline,research-10,0,"**Answer**
+
+```json
+{""facts"": {""function"": ""itertools.combinations"", ""arguments"": ""2""}}
+```
+
+`itertools.combinations(iterable, r)` returns r-length subsequences of the input iterable. The sentinel form of the built-in is `iter(object, sentinel)`, which takes 2 arguments. In that form, `object` must be callable and is called until it returns the sentinel value.
+
+**Sources:**
+- `library/itertools.rst`
+- `library/functions.rst`
+- `whatsnew/2.2.rst`",,
+baseline,research-23,1,"**Answer**
+
+```json
+{
+  ""facts"": {
+    ""pickle_safe"": ""false"",
+    ""json_same_risk"": ""false""
+  }
+}
+```
+
+**Explanation**
+
+- **Pickle is not safe for untrusted data.** The pickle docs say the module ""is not secure. Only unpickle data you trust."" Malicious pickle data can execute arbitrary code during unpickling. They say never to unpickle data that could have come from an untrusted source or been tampered with. The same warning applies to `shelve`, which is built on pickle.
+- **JSON does not inherently have this vulnerability.** The pickle docs state: ""Unlike pickle, deserializing untrusted JSON does not in itself create an arbitrary code execution vulnerability.""
+- **JSON still has a lesser risk.** The json docs warn that a malicious JSON string can make the decoder consume a lot of CPU and memory. They recommend limiting the size of the data you parse.
+
+**Sources**
+- library/pickle.rst
+- library/json.rst
+- library/shelve.rst
+- library/security_warnings.rst
+- tutorial/inputoutput.rst",,
+reuse,research-26,2,"Extracting untrusted ZIP archives without inspection is not advised, and `Path.resolve` is the pathlib method that resolves symlinks.
+
+```json
+{""facts"": {""extract_uninspected"": false, ""method"": ""resolve""}}
+```
+
+- **Extraction:** The zipfile documentation warns: ""Never extract archives from untrusted sources without prior inspection."" Members with absolute filenames or "".."" components can create files outside the target directory. The module attempts to prevent this, but the warning still applies. So extracting uninspected is not advised, which is `false`.
+- **Symlinks:** `Path.resolve(strict=False)` makes the path absolute and resolves any symlinks. By contrast, `Path.absolute()` explicitly does not resolve symlinks.
+
+Sources:
+- `library/zipfile.rst`
+- `library/pathlib.rst`
+- `library/security_warnings.rst`
+- `library/tarfile.rst` carries the same warning for tar archives.
+
+Reuse decision: CHECK. A prior conversation (Claude Code, 'Archive extraction') pointed to the same zipfile warning. I re-verified it against the corpus rather than relying on it.",,
+reuse,research-03,2,"Both facts are confirmed by the v1 corpus.
+
+```json
+{""facts"": {""helper"": ""operator.attrgetter"", ""stable"": ""true""}}
+```
+
+`operator.attrgetter` accepts several attribute names, as in `attrgetter(*attrs)`. When more than one is given it returns a tuple of the fetched values, which works as a sort key. For a dataclass you would write `sorted(records, key=attrgetter('a', 'b'))`.
+
+Python's sort is also guaranteed stable. Records with equal keys keep their original relative order.
+
+Sources:
+- `library/operator.rst`
+- `howto/sorting.rst`
+
+Reuse decision: CHECK. An earlier conversation, ""Sorting records"" (urn:context-bridge:record:dc16485469dc4d1d9291e91d0a95c59c), gave the same answer. I re-verified it against the corpus docs above rather than relying on it.",,
+reuse,research-33,2,"Yes, `Executor.map` accepts `buffersize` in this snapshot, and its default is `None`.
+
+```json
+{""facts"": {""available"": ""true"", ""default"": ""None""}}
+```
+
+The v2 documentation gives the signature as `map(fn, *iterables, timeout=None, chunksize=1, buffersize=None)`. When `buffersize` is `None`, the iterables are collected immediately. When it is set, it caps the number of submitted tasks whose results have not yet been yielded.
+
+An earlier Claude Code note (""Executor buffering"") said `buffersize` was absent. That contradicts the v2 corpus, so I did not rely on it.
+
+Source: `library/concurrent.futures.rst`
+
+Reuse decision: REDO — the earlier note conflicted with the corpus, so I verified against the v2 docs directly.",,
+reuse,research-05,0,"Reuse decision: REDO. The earlier Claude Code conversation hinted at the same answer, but I re-checked the corpus directly.
+
+```json
+{""facts"": {""network_marker"": ""!"", ""return_type"": ""bytes""}}
+```
+
+- **Network marker:** The `struct` format-character table lists `!` as ""network (= big-endian)"", with standard size and no alignment. This is in `library/struct.rst`.
+- **Return type:** `base64.b64encode` encodes a bytes-like object and returns the encoded `bytes`. I confirmed the wording for the sibling `standard_b64encode` in `library/base64.rst`, but did not open the `b64encode` entry itself. A `hashlib.rst` example calls `.decode('utf-8')` on its result, which is consistent with `bytes`.
+
+Sources: `library/struct.rst`, `library/base64.rst`, with `library/hashlib.rst` for the example.",,
+reuse,research-14,2,"Reuse decision: CHECK. A prior conversation reached the same answer, and I re-verified it against the corpus.
+
+```json
+{""facts"": {""rel_tol"": ""1e-09"", ""precision"": ""28""}}
+```
+
+- **rel_tol:** `library/math.rst` says the default tolerance for `math.isclose` is `1e-09`, which keeps two values the same within about 9 decimal digits.
+- **precision:** `whatsnew/2.4.rst` shows `decimal.getcontext().prec` returning `28` for the default context, and `Decimal(1)/Decimal(7)` giving 28 digits. `library/decimal.rst` refers to restoring ""the default precision"" after a local context change, but the snippet I saw does not state the number 28.
+
+Sources:
+- `library/math.rst`
+- `library/decimal.rst`
+- `whatsnew/2.4.rst`
+
+The earlier conversation that gave the same values is ""Floating arithmetic"" (Claude Code, link `urn:context-bridge:record:9ee6e369571d4f8aadf4fb2ed1634e48`).",,
+reuse,research-16,0,"The default root logger level is WARNING, and `warnings.warn` is the function that issues a warning. Both come from this session's corpus searches. A prior session's note gave the same answer, but I relied only on the corpus snippets.
+
+```json
+{""facts"": {""level"": ""warning"", ""function"": ""warnings.warn""}}
+```
+
+- **Level:** `howto/logging.rst` says the root logger always has an explicit level set, `WARNING` by default.
+- **Function:** `library/warnings.rst` says Python programmers issue warnings by calling the `warn()` function defined in that module. `whatsnew/2.1.rst` shows the same call, `warnings.warn(""feature X no longer supported"")`.
+
+Sources: `howto/logging.rst`, `library/warnings.rst`, `whatsnew/2.1.rst`
+
+Reuse decision: CHECK — a prior session note matched, but I re-verified the facts against the corpus.",,
+reuse,research-37,2,"Yes. In the v2 snapshot, `heapq` exposes `heapify_max`, and it was added in Python 3.14.
+
+```json
+{""facts"": {""available"": ""true"", ""added"": ""3.14""}}
+```
+
+`library/heapq.rst` documents `heapify_max(x)` under ""For max-heaps, the following functions are provided"", described as transforming a list into a max-heap in place, in linear time. It carries `.. versionadded:: 3.14`.
+
+An earlier Claude Code conversation (""Max heaps"") said `heapify_max` was absent from this snapshot. That conflicts with the v2 corpus, and the corpus text is what I relied on.
+
+Source: `library/heapq.rst`
+
+Reuse decision: REDO — the earlier note contradicted the v2 corpus, so I verified against the corpus directly.",,
+reuse,research-04,1,"The corpus supports both facts. The `json.dump` result type comes from the docs' description of `dumps` and the file-like `fp` rather than an explicit ""str"" statement on `dump`.
+
+```json
+{""facts"": {""mode"": ""w+b"", ""json_type"": ""str""}}
+```
+
+**Explanation:** `NamedTemporaryFile(mode='w+b', ...)` defaults to binary read/write mode. `json.dump(obj, fp, ...)` writes JSON text (`str`, the same type `json.dumps` returns) to `fp`. Writing to a default `NamedTemporaryFile` would therefore raise a `TypeError`, so pass `mode='w+'` for text.
+
+**Sources:** `library/tempfile.rst`, `library/json.rst`
+
+Reuse decision: CHECK — a prior conversation (Claude Code, ""Temporary JSON"", urn:context-bridge:record:b812240171044c89bdc32f517df562ee) reached the same answer; I re-verified the `NamedTemporaryFile` signature in the corpus.",,
+reuse,research-11,2,"```json
+{""facts"": {""split"": ""urllib.parse.urlsplit"", ""join"": ""urllib.parse.urlunsplit""}}
+```
+
+`urllib.parse.urlsplit()` splits a URL into five components: scheme, netloc, path, query and fragment. `urllib.parse.urlunsplit()` reverses it. It takes any five-item iterable, such as the tuple `urlsplit` returns, and combines it into a complete URL string. The result may be a slightly different but equivalent URL if the original had redundant parts, such as an empty query. `urlparse` and `urlunparse` are the six-component variants, which add `params`.
+
+Source: `library/urllib.parse.rst`. I confirmed the `urlunsplit` wording there directly. The five-part `urlsplit` description comes from an earlier conversation note and the module overview in the same file, so I did not re-read that section itself.
+
+Reuse decision: CHECK. A prior conversation (Claude Code 'URL components') matched, and I re-verified the `urlunsplit` description against the corpus file.",,
+reuse,research-40,1,"Yes. In the v2 snapshot, `threading.Thread` accepts `context`, and its default is `None`.
+
+The signature in `library/threading.rst` is `Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None, context=None)`. The same file marks the parameter with ""Added the *context* parameter"" under a 3.14 version note.
+
+An earlier note in my history said `Thread` has no `context` parameter in ""this snapshot"". That note was about a different snapshot (it cited a signature ending at `daemon=None`), so I did not use it.
+
+```json
+{""facts"": {""available"": ""true"", ""default"": ""None""}}
+```
+
+Sources: `library/threading.rst`
+
+Reuse decision: REDO — the earlier note contradicted the v2 docs, so I re-checked the v2 corpus directly and used only that.",,

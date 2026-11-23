@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 500,
+  "phase": "B",
+  "task_id": "research-24",
+  "arm": "reuse",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 5912,
+    "cache_creation_input_tokens": 4128,
+    "output_tokens": 596
+  },
+  "answer": "`hmac.compare_digest` is the function that avoids content-based short-circuiting, and `secrets.compare_digest` is the matching comparison in `secrets`.\n\n```json\n{\"facts\": {\"hmac\": \"compare_digest\", \"secrets\": \"compare_digest\"}}\n```\n\n`library/hmac.rst` recommends `hmac.compare_digest` over `==` when comparing a digest against an externally supplied one, to reduce vulnerability to timing attacks. `library/secrets.rst` defines `secrets.compare_digest(a, b)` under \"Other functions\" and points to `hmac.compare_digest` for additional details.\n\nSources: `library/hmac.rst`, `library/secrets.rst`. The history from earlier sessions only gave me a lead, and I confirmed the answer in the corpus itself.\n\nReuse decision: REDO \u2014 I verified directly against the corpus rather than relying on prior conversation snippets.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "read_doc"
+  ],
+  "decision": "REDO",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

@@ -12,7 +12,7 @@ Historical cost-control verification, 2026-11-22, Python 3.9 / macOS. That verif
 - Installed-wheel smoke checks pass, including actionable missing-corpus instructions with no benchmark state created. The installed fake pilot succeeds with --corpus-dir pointing to extracted source data.
 - Repeat sensitivity uses a single matching pass for thresholds 0.4/0.5/0.6/0.7 and the selected cutoff. Synthetic tests cover zero matches at default with lower-threshold candidates, local review labels, per-threshold precision and coverage, unchanged conservative defaults, and title/date-only output. Controlled vector scores test accounting, not a real embedding model's calibration.
 
-[Full fake summary](../../benchmarks/savings-real-fake.json), [pilot fake summary](../../benchmarks/savings-real-pilot-fake.json), [fake review sheet](../../benchmarks/savings-real-fake-spot-check.csv), [generated report](../../benchmarks/savings-real.md), [protocol and limits](../../benchmarks/savings-real-guide.md).
+[Full fake summary](../../benchmarks/savings-real-fake.json), [pilot fake summary](../../benchmarks/savings-real-pilot-fake.json), [fake review sheet](../../benchmarks/savings-real-fake-spot-check.csv), [generated fake report](../../benchmarks/savings-real-fake.md), [protocol and limits](../../benchmarks/savings-real-guide.md).
 
 The dollar cap uses supplied prices and a conservative text-byte/framing bound; it is not an account-wide provider billing limit. No personal repeat-rate measurement or measured paid savings claim is made.
 

@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-30",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 6746,
+    "cache_creation_input_tokens": 6113,
+    "output_tokens": 764
+  },
+  "answer": "```json\n{\"facts\": {\"mktemp_safe\": false, \"cleanup\": \"true\"}}\n```\n\n- **`mktemp_safe`:** `tempfile.mktemp` is not safe. `library/security_warnings.rst` lists it as \"deprecated due to vulnerability to race conditions\". A name returned by `mktemp()` can be taken by someone else before your code creates the file. For a security-sensitive workflow, use `mkstemp()`, `NamedTemporaryFile` or `TemporaryDirectory` instead. I did not read the `mktemp` entry in `library/tempfile.rst` itself in this session, so the \"use `mkstemp()` instead\" advice rests on the security-warnings page and an earlier conversation note.\n- **`cleanup`:** `TemporaryDirectory` does clean up. `library/tempfile.rst` says that on completion of the context, or destruction of the object, the newly created directory and all its contents are removed from the filesystem. The `cleanup` key has no boolean-or-string format beyond \"canonical string\", so I gave it as the string \"true\". The same page also describes an option to disable cleanup on exit, which is mainly useful for debugging.\n\nSources: `library/tempfile.rst`, `library/security_warnings.rst`\n\nReuse decision: CHECK. An earlier conversation note (Claude Code, 'Temporary filenames') pointed me to `mktemp`, but I re-verified both facts against the corpus.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

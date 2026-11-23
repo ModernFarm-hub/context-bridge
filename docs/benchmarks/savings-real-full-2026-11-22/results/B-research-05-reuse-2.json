@@ -1,0 +1,40 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 1,
+  "phase": "B",
+  "task_id": "research-05",
+  "arm": "reuse",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 14544,
+    "cache_creation_input_tokens": 1693,
+    "output_tokens": 762
+  },
+  "answer": "```json\n{\"facts\": {\"network_marker\": \"!\", \"return_type\": \"bytes\"}}\n```\n\nIn `struct` format strings, the `'!'` prefix means network byte order, which is always big-endian as defined in IETF RFC 1700. `base64.b64encode` encodes a bytes-like object and returns the encoded `bytes`.\n\nI confirmed the `'!'` marker directly in `library/struct.rst`. For `b64encode`, the corpus text I retrieved was for the sibling `standard_b64encode` (\"return the encoded bytes\"), not `b64encode` itself. I did not read the `b64encode` entry directly. An earlier conversation (Claude Code, 'Binary packing') also cited `library/base64.rst` for `b64encode` returning `bytes`.\n\nSources: `library/struct.rst`, `library/base64.rst`, `howto/sockets.rst` (network byte order is big-endian).\n\nReuse decision: CHECK \u2014 a prior conversation held the same answer, but I re-verified against the corpus.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs",
+    "read_doc",
+    "search_docs"
+  ],
+  "decision": "CHECK",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

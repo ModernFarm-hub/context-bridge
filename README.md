@@ -50,9 +50,11 @@ uvx --from context-bridge-local context-bridge import codex
 
 Connect [ChatGPT desktop, Claude Desktop or Cursor](docs/CLIENTS.md). [Profiles, account checks and removal](docs/USAGE.md).
 
-## Save tokens
+## Does it save tokens?
 
-Reuse can be cheaper than repeating research—but lookups also cost context tokens. Run `context-bridge savings --explain` for local estimates, or `context-bridge benchmark --savings` for a free, offline synthetic comparison. `context-bridge repeats` shows local repeat-research opportunities with title-only samples and optional review, not proof of savings. The risk-weighted agent guide offers economical, balanced (default) and cautious presets, choosing REUSE, CHECK or REDO according to risk rather than savings alone. Query text is not logged by default. `context-bridge agent-guide` prints reusable consultation instructions; an [optional, bounded Claude Code hook](docs/USAGE.md#automatic-consultation) checks history on prompts. [Methods, negative cases and reproducible results](docs/benchmarks/savings.md).
+Not for quick lookups. In a [pre-registered benchmark](docs/benchmarks/savings-real.md) of 40 documentation research tasks, reusing past sessions used **84% more tokens** than researching again, with no loss in accuracy and safe handling of outdated answers. Context Bridge's value is finding what only your history contains (decisions, reasons and context) across tools, not cutting model costs.
+
+For your own library, `context-bridge savings --explain` gives local estimates and `context-bridge repeats` shows how often you revisit similar questions. The `agent-guide` command prints REUSE/CHECK/REDO instructions for `CLAUDE.md` or `AGENTS.md`, and an [optional Claude Code hook](docs/USAGE.md#automatic-consultation) checks history on prompts. Query text is never logged by default.
 
 ## How is this different?
 

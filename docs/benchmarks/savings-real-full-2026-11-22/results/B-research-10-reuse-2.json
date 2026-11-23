@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-10",
+  "arm": "reuse",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 4308,
+    "cache_creation_input_tokens": 4017,
+    "output_tokens": 456
+  },
+  "answer": "Both facts are confirmed in the corpus.\n\n```json\n{\"facts\": {\"function\": \"combinations\", \"arguments\": \"2\"}}\n```\n\n`itertools.combinations(iterable, r)` returns r-length subsequences of the input iterable. The sentinel form of the built-in is `iter(object, sentinel)`, which takes two arguments. It calls the callable `object` repeatedly until it returns the sentinel value.\n\nSources:\n- `library/itertools.rst`\n- `library/functions.rst`\n- `whatsnew/2.2.rst`\n\nReuse decision: CHECK. A prior conversation (Claude Code, \"Iterators\") gave the same answer. I re-verified it against the corpus rather than relying on it.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

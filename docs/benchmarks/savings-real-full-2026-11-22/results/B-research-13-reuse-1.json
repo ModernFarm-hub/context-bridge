@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-13",
+  "arm": "reuse",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 2148,
+    "cache_creation_input_tokens": 5999,
+    "output_tokens": 596
+  },
+  "answer": "Reuse decision: REUSE for the prior finding. I confirmed it against the corpus snippets, which state both facts directly.\n\n```json\n{\"facts\": {\"capacity\": \"infinite\", \"event\": \"false\"}}\n```\n\nA `maxsize` of zero or less makes the queue size infinite, so `put()` never blocks on capacity. The default is `maxsize=0`. A newly created `Event` has its flag set to false until `set()` is called.\n\nSources:\n- `library/queue.rst`: \"If *maxsize* is less than or equal to zero, the queue size is infinite.\"\n- `library/asyncio-queue.rst`: the same rule for `asyncio.Queue`.\n- `library/threading.rst`: the `Event` flag is initially false.\n- `library/asyncio-sync.rst`: \"The flag is set to *false* initially.\"\n\nAn earlier Claude Code session (\"Queues\", `urn:context-bridge:record:dfdfbed77f964540beb580dcfa2c68f1`) reached the same answer, though I only read its search snippet, not the full conversation.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

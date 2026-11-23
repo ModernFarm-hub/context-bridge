@@ -17,3 +17,8 @@ include server.json
 
 recursive-include prototype/evals/savings-real *.rst *.txt
 include docs/benchmarks/savings-real-fake-spot-check.csv
+
+# Published benchmark run data stays in the repository, not in source distributions.
+prune docs/benchmarks/savings-real-full-2026-11-22
+prune docs/benchmarks/savings-real-pilot-2026-11-22
+prune docs/benchmarks/savings-real-pilot-2026-11-22-regrade

@@ -1,0 +1,35 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-23",
+  "arm": "baseline",
+  "repetition": 2,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 862,
+    "cache_creation_input_tokens": 3817,
+    "output_tokens": 549
+  },
+  "answer": "```json\n{\"facts\": {\"pickle_safe\": false, \"json_same_risk\": false}}\n```\n\n**Pickle is not safe for untrusted data.** The docs warn that unpickling data from an untrusted source can execute arbitrary code if an attacker crafted it. Modules built on pickle carry the same warning: `shelve` says loading a shelf can execute arbitrary code, and `multiprocessing` uses HMAC authentication because `recv()` unpickles data.\n\n**JSON does not have the same arbitrary-code risk.** `library/pickle.rst` says: \"Unlike pickle, deserializing untrusted JSON does not in itself create an arbitrary code execution vulnerability.\"\n\nJSON is not risk-free, though. `library/json.rst` warns that a malicious JSON string can make the decoder consume a lot of CPU and memory, and recommends limiting the size of the data you parse. For a privacy-sensitive service, use JSON for untrusted input and enforce size limits.\n\nSources:\n- `library/pickle.rst`\n- `library/json.rst`\n- `library/shelve.rst`\n- `library/multiprocessing.rst`\n- `tutorial/inputoutput.rst`\n- `library/security_warnings.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

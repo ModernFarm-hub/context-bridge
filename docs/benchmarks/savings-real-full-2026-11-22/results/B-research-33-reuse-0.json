@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 1800,
+  "phase": "B",
+  "task_id": "research-33",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 6942,
+    "cache_creation_input_tokens": 5737,
+    "output_tokens": 626
+  },
+  "answer": "Yes, in the v2 snapshot `Executor.map` accepts `buffersize`, and its default is `None`.\n\n```json\n{\"facts\": {\"available\": \"true\", \"default\": \"None\"}}\n```\n\nThe signature in `library/concurrent.futures.rst` is `map(fn, *iterables, timeout=None, chunksize=1, buffersize=None)`. By default the iterables are collected immediately. If you set a `buffersize`, it caps how many submitted tasks can have results not yet yielded. When the buffer is full, iteration over the iterables pauses until a result is yielded.\n\nAn earlier conversation in my context search concluded the parameter was unavailable. That result contradicts this corpus, so I did not rely on it.\n\nSource: `library/concurrent.futures.rst`\n\nReuse decision: REDO. The prior history conflicted with the v2 corpus, so I verified directly in the docs.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "read_doc"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

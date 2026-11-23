@@ -1,0 +1,36 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-14",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 2139,
+    "cache_creation_input_tokens": 6344,
+    "output_tokens": 594
+  },
+  "answer": "Reuse decision: REUSE. A prior conversation reached the same answer, and the fresh corpus search confirmed both values.\n\n```json\n{\"facts\": {\"rel_tol\": \"1e-09\", \"precision\": \"28\"}}\n```\n\n- **rel_tol:** `library/math.rst` says the default tolerance for `math.isclose` is `1e-09`, which keeps two values the same within about 9 decimal digits.\n- **precision:** `whatsnew/2.4.rst` shows `decimal.getcontext().prec` returning `28` for the default context. `library/decimal.rst` also refers to restoring \"the default precision\" after a temporary change.\n\nI did not read the \"Decimal context\" section of `library/decimal.rst` itself, so the precision value rests on the `whatsnew/2.4.rst` example.\n\nSources: `library/math.rst`, `whatsnew/2.4.rst`, `library/decimal.rst`. The earlier conversation was \"Floating arithmetic\" (urn:context-bridge:record:9ee6e369571d4f8aadf4fb2ed1634e48).",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

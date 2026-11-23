@@ -1,0 +1,38 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-31",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 8,
+    "cache_read_input_tokens": 6854,
+    "cache_creation_input_tokens": 6417,
+    "output_tokens": 482
+  },
+  "answer": "Yes. In the selected v2 snapshot, `ArgumentParser` accepts `color`, and its default is `True`.\n\n```json\n{\"facts\": {\"available\": \"true\", \"default\": \"true\"}}\n```\n\nThe `ArgumentParser` signature in `library/argparse.rst` ends with `*, suggest_on_error=False, color=True)`. The same file also shows `color=False` being passed to turn off colored help output.\n\nI didn't use the earlier conversation history for this answer.\n\nSources: `library/argparse.rst`\n\nReuse decision: REDO \u2014 the question is about a specific snapshot, and I verified it directly against the v2 corpus rather than reusing past answers.",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": "REDO",
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

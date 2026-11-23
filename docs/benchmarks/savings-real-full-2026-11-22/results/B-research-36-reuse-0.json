@@ -1,0 +1,35 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-36",
+  "arm": "reuse",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 4258,
+    "cache_creation_input_tokens": 2735,
+    "output_tokens": 374
+  },
+  "answer": "The v2 corpus documents `Path.move_into`, which differs from the earlier v1 conversation that found it unavailable.\n\n```json\n{\"facts\": {\"available\": \"true\", \"added\": \"3.14\"}}\n```\n\n`library/pathlib.rst` in the v2 corpus documents `Path.move_into(target_dir)`. It moves a file or directory tree into an existing directory and returns the new `Path`. The entry is marked `.. versionadded:: 3.14`.\n\nReuse decision: REDO. The earlier conversation's answer was \"unavailable\", but it used a different snapshot (v1). I re-verified directly against v2 and did not reuse it.\n\nSource: `library/pathlib.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "context_search",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

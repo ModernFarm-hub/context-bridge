@@ -1,0 +1,1015 @@
+{
+  "fallback_grading": {
+    "overall": {
+      "sessions": 280,
+      "graded_final_answers": 280,
+      "fallback_sessions": 0,
+      "fallback_share": 0.0,
+      "method_not_recorded": 0,
+      "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+    },
+    "by_phase_arm": {
+      "A-original": {
+        "sessions": 40,
+        "graded_final_answers": 40,
+        "fallback_sessions": 0,
+        "fallback_share": 0.0,
+        "method_not_recorded": 0,
+        "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+      },
+      "B-baseline": {
+        "sessions": 120,
+        "graded_final_answers": 120,
+        "fallback_sessions": 0,
+        "fallback_share": 0.0,
+        "method_not_recorded": 0,
+        "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+      },
+      "B-reuse": {
+        "sessions": 120,
+        "graded_final_answers": 120,
+        "fallback_sessions": 0,
+        "fallback_share": 0.0,
+        "method_not_recorded": 0,
+        "denominator": "Final answers graded by either facts JSON or text fallback; fallback failures included."
+      }
+    }
+  },
+  "decision_compliance": {
+    "applicable_sessions": 120,
+    "compliant": 66,
+    "missing_or_ambiguous": 54,
+    "compliance_rate": 0.55,
+    "notice": "A parsed final-answer decision is compliant even if the decision itself is wrong. Decision accuracy remains separate."
+  },
+  "method": "Mean paired per-task ratio of medians; task bootstrap percentile interval, 10000 draws, seed 104729. Accuracy: mean of three binary repetitions per task, paired task bootstrap. Failures count incorrect.",
+  "overall": {
+    "tasks": 40,
+    "mean_paired_ratio": 1.8433261021190408,
+    "ratio_95_interval": [
+      1.6445684191797516,
+      2.0763223784237157
+    ],
+    "fewer_tokens_percent": -84.33261021190408,
+    "fewer_tokens_95_interval_percent": [
+      -107.63223784237157,
+      -64.45684191797515
+    ],
+    "baseline_accuracy": 0.9333333333333333,
+    "reuse_accuracy": 0.975,
+    "accuracy_difference": 0.04166666666666667,
+    "accuracy_difference_95_interval": [
+      0,
+      0.10833333333333334
+    ],
+    "decision_accuracy": 0.041666666666666664,
+    "reuse_loses_tasks": [
+      "research-01",
+      "research-02",
+      "research-03",
+      "research-05",
+      "research-06",
+      "research-07",
+      "research-08",
+      "research-09",
+      "research-10",
+      "research-11",
+      "research-12",
+      "research-13",
+      "research-14",
+      "research-15",
+      "research-16",
+      "research-17",
+      "research-19",
+      "research-20",
+      "research-21",
+      "research-22",
+      "research-23",
+      "research-24",
+      "research-25",
+      "research-26",
+      "research-27",
+      "research-28",
+      "research-29",
+      "research-31",
+      "research-32",
+      "research-33",
+      "research-34",
+      "research-35",
+      "research-36",
+      "research-37",
+      "research-38",
+      "research-39",
+      "research-40"
+    ]
+  },
+  "per_variant": {
+    "same": {
+      "tasks": 10,
+      "mean_paired_ratio": 1.4302194948419957,
+      "ratio_95_interval": [
+        1.2636977546589023,
+        1.5618567458583146
+      ],
+      "fewer_tokens_percent": -43.021949484199574,
+      "fewer_tokens_95_interval_percent": [
+        -56.18567458583146,
+        -26.369775465890232
+      ],
+      "baseline_accuracy": 0.9,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0.1,
+      "accuracy_difference_95_interval": [
+        0,
+        0.3
+      ],
+      "decision_accuracy": 0,
+      "reuse_loses_tasks": [
+        "research-01",
+        "research-02",
+        "research-03",
+        "research-05",
+        "research-06",
+        "research-07",
+        "research-08",
+        "research-09",
+        "research-10"
+      ]
+    },
+    "paraphrase": {
+      "tasks": 10,
+      "mean_paired_ratio": 1.886562879556919,
+      "ratio_95_interval": [
+        1.4175833430440221,
+        2.576982829938054
+      ],
+      "fewer_tokens_percent": -88.6562879556919,
+      "fewer_tokens_95_interval_percent": [
+        -157.6982829938054,
+        -41.75833430440221
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 0,
+      "reuse_loses_tasks": [
+        "research-11",
+        "research-12",
+        "research-13",
+        "research-14",
+        "research-15",
+        "research-16",
+        "research-17",
+        "research-19",
+        "research-20"
+      ]
+    },
+    "related": {
+      "tasks": 10,
+      "mean_paired_ratio": 1.8688629395395542,
+      "ratio_95_interval": [
+        1.5430865824866156,
+        2.1664881681684407
+      ],
+      "fewer_tokens_percent": -86.88629395395542,
+      "fewer_tokens_95_interval_percent": [
+        -116.64881681684408,
+        -54.30865824866156
+      ],
+      "baseline_accuracy": 0.8333333333333334,
+      "reuse_accuracy": 0.9,
+      "accuracy_difference": 0.06666666666666668,
+      "accuracy_difference_95_interval": [
+        0,
+        0.2
+      ],
+      "decision_accuracy": 0.16666666666666666,
+      "reuse_loses_tasks": [
+        "research-21",
+        "research-22",
+        "research-23",
+        "research-24",
+        "research-25",
+        "research-26",
+        "research-27",
+        "research-28",
+        "research-29"
+      ]
+    },
+    "stale": {
+      "tasks": 10,
+      "mean_paired_ratio": 2.1876590945376946,
+      "ratio_95_interval": [
+        1.8098883126649614,
+        2.5968367407324724
+      ],
+      "fewer_tokens_percent": -118.76590945376945,
+      "fewer_tokens_95_interval_percent": [
+        -159.68367407324723,
+        -80.98883126649613
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 0,
+      "reuse_loses_tasks": [
+        "research-31",
+        "research-32",
+        "research-33",
+        "research-34",
+        "research-35",
+        "research-36",
+        "research-37",
+        "research-38",
+        "research-39",
+        "research-40"
+      ]
+    }
+  },
+  "per_expected_decision": {
+    "REUSE": {
+      "tasks": 20,
+      "mean_paired_ratio": 1.6583911871994572,
+      "ratio_95_interval": [
+        1.40429464487713,
+        2.0411020517915914
+      ],
+      "fewer_tokens_percent": -65.83911871994572,
+      "fewer_tokens_95_interval_percent": [
+        -104.11020517915914,
+        -40.429464487713005
+      ],
+      "baseline_accuracy": 0.95,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0.05,
+      "accuracy_difference_95_interval": [
+        0,
+        0.15
+      ],
+      "decision_accuracy": 0,
+      "reuse_loses_tasks": [
+        "research-01",
+        "research-02",
+        "research-03",
+        "research-05",
+        "research-06",
+        "research-07",
+        "research-08",
+        "research-09",
+        "research-10",
+        "research-11",
+        "research-12",
+        "research-13",
+        "research-14",
+        "research-15",
+        "research-16",
+        "research-17",
+        "research-19",
+        "research-20"
+      ]
+    },
+    "CHECK": {
+      "tasks": 10,
+      "mean_paired_ratio": 2.1876590945376946,
+      "ratio_95_interval": [
+        1.8098883126649614,
+        2.5968367407324724
+      ],
+      "fewer_tokens_percent": -118.76590945376945,
+      "fewer_tokens_95_interval_percent": [
+        -159.68367407324723,
+        -80.98883126649613
+      ],
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "accuracy_difference": 0,
+      "accuracy_difference_95_interval": [
+        0,
+        0
+      ],
+      "decision_accuracy": 0,
+      "reuse_loses_tasks": [
+        "research-31",
+        "research-32",
+        "research-33",
+        "research-34",
+        "research-35",
+        "research-36",
+        "research-37",
+        "research-38",
+        "research-39",
+        "research-40"
+      ]
+    },
+    "REDO": {
+      "tasks": 10,
+      "mean_paired_ratio": 1.8688629395395542,
+      "ratio_95_interval": [
+        1.5430865824866156,
+        2.1664881681684407
+      ],
+      "fewer_tokens_percent": -86.88629395395542,
+      "fewer_tokens_95_interval_percent": [
+        -116.64881681684408,
+        -54.30865824866156
+      ],
+      "baseline_accuracy": 0.8333333333333334,
+      "reuse_accuracy": 0.9,
+      "accuracy_difference": 0.06666666666666668,
+      "accuracy_difference_95_interval": [
+        0,
+        0.2
+      ],
+      "decision_accuracy": 0.16666666666666666,
+      "reuse_loses_tasks": [
+        "research-21",
+        "research-22",
+        "research-23",
+        "research-24",
+        "research-25",
+        "research-26",
+        "research-27",
+        "research-28",
+        "research-29"
+      ]
+    }
+  },
+  "paired_tasks": [
+    {
+      "id": "research-01",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.509573542210618,
+      "baseline_median_tokens": 11490,
+      "reuse_median_tokens": 17345,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-02",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.2757998670844013,
+      "baseline_median_tokens": 10533,
+      "reuse_median_tokens": 13438,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-03",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.4494404476418865,
+      "baseline_median_tokens": 5004,
+      "reuse_median_tokens": 7253,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-04",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 0.8302693847834001,
+      "baseline_median_tokens": 10988,
+      "reuse_median_tokens": 9123,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-05",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.3532212239883283,
+      "baseline_median_tokens": 13023,
+      "reuse_median_tokens": 17623,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-06",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.5217710147584562,
+      "baseline_median_tokens": 10909,
+      "reuse_median_tokens": 16601,
+      "baseline_accuracy": 0,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-07",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.7101105845181674,
+      "baseline_median_tokens": 5064,
+      "reuse_median_tokens": 8660,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-08",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.5008710002750527,
+      "baseline_median_tokens": 10907,
+      "reuse_median_tokens": 16370,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-09",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.4445764053840062,
+      "baseline_median_tokens": 5052,
+      "reuse_median_tokens": 7298,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-10",
+      "variant": "same",
+      "expected_decision": "REUSE",
+      "ratio": 1.7065614777756397,
+      "baseline_median_tokens": 5197,
+      "reuse_median_tokens": 8869,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-11",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 4.68992781024407,
+      "baseline_median_tokens": 2909,
+      "reuse_median_tokens": 13643,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-12",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.7144772117962466,
+      "baseline_median_tokens": 5222,
+      "reuse_median_tokens": 8953,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-13",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.7370929308975378,
+      "baseline_median_tokens": 5036,
+      "reuse_median_tokens": 8748,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-14",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.7641350998320582,
+      "baseline_median_tokens": 5359,
+      "reuse_median_tokens": 9454,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-15",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.5833260661027295,
+      "baseline_median_tokens": 11467,
+      "reuse_median_tokens": 18156,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-16",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.6940471588712795,
+      "baseline_median_tokens": 5174,
+      "reuse_median_tokens": 8765,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-17",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.60497289212937,
+      "baseline_median_tokens": 5349,
+      "reuse_median_tokens": 8585,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-18",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 0.7927532489887253,
+      "baseline_median_tokens": 11619,
+      "reuse_median_tokens": 9211,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-19",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.6615414184124544,
+      "baseline_median_tokens": 5203,
+      "reuse_median_tokens": 8645,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-20",
+      "variant": "paraphrase",
+      "expected_decision": "REUSE",
+      "ratio": 1.6233549582947173,
+      "baseline_median_tokens": 5395,
+      "reuse_median_tokens": 8758,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-21",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 2.1986716719607275,
+      "baseline_median_tokens": 3463,
+      "reuse_median_tokens": 7614,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0.3333333333333333
+    },
+    {
+      "id": "research-22",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 2.2945139557266603,
+      "baseline_median_tokens": 3117,
+      "reuse_median_tokens": 7152,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0.3333333333333333
+    },
+    {
+      "id": "research-23",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.7820022927015666,
+      "baseline_median_tokens": 5234,
+      "reuse_median_tokens": 9327,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-24",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.9787749022528394,
+      "baseline_median_tokens": 5371,
+      "reuse_median_tokens": 10628,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0.3333333333333333
+    },
+    {
+      "id": "research-25",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.518233082706767,
+      "baseline_median_tokens": 5320,
+      "reuse_median_tokens": 8077,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-26",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.5604495196664854,
+      "baseline_median_tokens": 11034,
+      "reuse_median_tokens": 17218,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-27",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 2.5813343328335834,
+      "baseline_median_tokens": 5336,
+      "reuse_median_tokens": 13774,
+      "baseline_accuracy": 0,
+      "reuse_accuracy": 0,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-28",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 1.666472755477991,
+      "baseline_median_tokens": 5157,
+      "reuse_median_tokens": 8594,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0.3333333333333333
+    },
+    {
+      "id": "research-29",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 2.34705566493646,
+      "baseline_median_tokens": 5587,
+      "reuse_median_tokens": 13113,
+      "baseline_accuracy": 0.3333333333333333,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0.3333333333333333
+    },
+    {
+      "id": "research-30",
+      "variant": "related",
+      "expected_decision": "REDO",
+      "ratio": 0.7611212171324624,
+      "baseline_median_tokens": 12094,
+      "reuse_median_tokens": 9205,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-31",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 1.6083397854219665,
+      "baseline_median_tokens": 9041,
+      "reuse_median_tokens": 14541,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-32",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 2.128677481440748,
+      "baseline_median_tokens": 3637,
+      "reuse_median_tokens": 7742,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-33",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 3.365893587994543,
+      "baseline_median_tokens": 3665,
+      "reuse_median_tokens": 12336,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-34",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 1.7252944188428059,
+      "baseline_median_tokens": 7812,
+      "reuse_median_tokens": 13478,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-35",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 1.8724817518248176,
+      "baseline_median_tokens": 13700,
+      "reuse_median_tokens": 25653,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-36",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 3.135617214043035,
+      "baseline_median_tokens": 3532,
+      "reuse_median_tokens": 11075,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-37",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 1.2820335636722606,
+      "baseline_median_tokens": 10130,
+      "reuse_median_tokens": 12987,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-38",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 2.141226004424463,
+      "baseline_median_tokens": 14013,
+      "reuse_median_tokens": 30005,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-39",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 2.744955300127714,
+      "baseline_median_tokens": 7830,
+      "reuse_median_tokens": 21493,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    },
+    {
+      "id": "research-40",
+      "variant": "stale",
+      "expected_decision": "CHECK",
+      "ratio": 1.8720718375845913,
+      "baseline_median_tokens": 7684,
+      "reuse_median_tokens": 14385,
+      "baseline_accuracy": 1,
+      "reuse_accuracy": 1,
+      "decision_accuracy": 0
+    }
+  ],
+  "incomplete_tasks": [],
+  "counts": {
+    "baseline": {
+      "cap_reached": 0,
+      "refused": 0,
+      "truncated": 0,
+      "error": 0
+    },
+    "reuse": {
+      "cap_reached": 0,
+      "refused": 0,
+      "truncated": 0,
+      "error": 0
+    }
+  },
+  "phase_a": {
+    "sessions": 40,
+    "correct": 36,
+    "cap_reached": 0,
+    "refused": 0,
+    "truncated": 0,
+    "error": 0
+  },
+  "user_priced_costs": {
+    "A": {
+      "input_tokens": 306,
+      "cache_read_input_tokens": 186360,
+      "cache_creation_input_tokens": 188285,
+      "output_tokens": 18216,
+      "total_input_tokens": 374951,
+      "total_usd": 0.6907565,
+      "input_usd": 0.000612,
+      "cache_read_input_usd": 0.037272,
+      "cache_creation_input_usd": 0.4707125,
+      "output_usd": 0.18216,
+      "abandoned_reserved_usd": 0.0
+    },
+    "B": {
+      "input_tokens": 1716,
+      "cache_read_input_tokens": 1127089,
+      "cache_creation_input_tokens": 1164602,
+      "output_tokens": 124515,
+      "total_input_tokens": 2293407,
+      "total_usd": 4.4539348,
+      "input_usd": 0.003432,
+      "cache_read_input_usd": 0.2254178,
+      "cache_creation_input_usd": 2.911505,
+      "output_usd": 1.24515,
+      "abandoned_reserved_usd": 0.06843
+    },
+    "grader": {
+      "input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 0,
+      "total_input_tokens": 0,
+      "total_usd": 0.0,
+      "input_usd": 0.0,
+      "cache_read_input_usd": 0.0,
+      "cache_creation_input_usd": 0.0,
+      "output_usd": 0.0,
+      "abandoned_reserved_usd": 0.0
+    }
+  },
+  "mean_characters_read_per_session": 633.45,
+  "accuracy_noninferiority_passed": true,
+  "stale_safety_passed": true,
+  "claim_eligible": false,
+  "resolved_models": [
+    "claude-sonnet-5-5"
+  ],
+  "model": "claude-sonnet-5-5",
+  "mode": "paid-public-corpus",
+  "pilot": false,
+  "notice": "Measured provider usage on this frozen public corpus only.",
+  "run": {
+    "grading_amendment": "2026-11-22-formatting-only",
+    "grader_sha256": "37bd6385ef46515a05bc591cb54ad0f7e643975f5b6018e01509b84789acc939",
+    "decision_parser_sha256": "96b6d4eee55a20bbd9cf37da13e9b8899d0eed36f5760e0ae381907fbf3d1f20",
+    "costs_sha256": "aa5d406e4ff53eab1c3c21ab1e62c780b31b42fba096a42fda4c982e2cdea1b8",
+    "max_usd": 10.0,
+    "prices": {
+      "input_tokens": "2.0",
+      "cache_read_input_tokens": "0.2",
+      "cache_creation_input_tokens": "2.5",
+      "output_tokens": "10.0"
+    },
+    "grader_prices": {
+      "input_tokens": "0",
+      "cache_read_input_tokens": "0",
+      "cache_creation_input_tokens": "0",
+      "output_tokens": "0"
+    },
+    "fake": false,
+    "pilot": false,
+    "model": "claude-sonnet-5-5",
+    "grader_model": null,
+    "call_cap": 12,
+    "total_cap": 4000,
+    "input_price": 2.0,
+    "output_price": 10.0,
+    "grader_input_price": 0,
+    "grader_output_price": 0,
+    "tasks_sha256": "8f565ed553927e1df52166dd0c394f8a79dd6550d3160ccd3ebe2c572125df8b",
+    "analysis_sha256": "cbe0a18b258eb3c3c96a6cab90f74e26f4715f65932768e115754ff6d6e03c81",
+    "runner_sha256": "d00e51bd497d05ac40aca97dca98f5914074cd8219e1d7a188ba55f3faa91810",
+    "manifest_sha256": "71955c475704e1978ed52f39b96d56d292982109a75c6ad35b1551f892443bfe"
+  },
+  "budget": {
+    "max_usd": 10.0,
+    "recorded_usd": 5.1446913,
+    "recorded_response_usd": 5.0762613,
+    "abandoned_reserved_usd": 0.06843,
+    "abandoned_calls": [
+      {
+        "key": "B-research-07-baseline-0-00",
+        "reserved_usd": "0.06843",
+        "who": "Vineeth Ayyat Kochaniyan (run owner), executed by independent tester",
+        "when": "2026-11-23T00:16:02.953687+00:00",
+        "why": "transport read timeout after send; no outcomes inspected",
+        "possibly_billed": true,
+        "never_refunded": true,
+        "retry_key": "B-research-07-baseline-0-00--attempt-1"
+      }
+    ],
+    "unresolved_calls": 0,
+    "stop_reason": null,
+    "basis": "Supplied rates, with abandoned reservations permanently charged in full in addition to successful response costs; no assumed cache hits."
+  },
+  "usage_observations": {
+    "mean_tokens_per_call": {
+      "input_tokens": 2.766073871409029,
+      "cache_read_input_tokens": 1796.7838577291382,
+      "cache_creation_input_tokens": 1850.734610123119,
+      "output_tokens": 195.25444596443228
+    },
+    "mean_tokens_per_session": {
+      "input_tokens": 7.2214285714285715,
+      "cache_read_input_tokens": 4690.8892857142855,
+      "cache_creation_input_tokens": 4831.739285714286,
+      "output_tokens": 509.75357142857143
+    },
+    "grader_mean_tokens_per_call": {
+      "input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 0
+    },
+    "by_phase_arm": {
+      "A-original": {
+        "sessions": 40,
+        "mean_tokens_per_session": {
+          "input_tokens": 7.65,
+          "cache_read_input_tokens": 4659.0,
+          "cache_creation_input_tokens": 4707.125,
+          "output_tokens": 455.4
+        }
+      },
+      "B-baseline": {
+        "sessions": 120,
+        "mean_tokens_per_session": {
+          "input_tokens": 7.083333333333333,
+          "cache_read_input_tokens": 3242.391666666667,
+          "cache_creation_input_tokens": 3862.3166666666666,
+          "output_tokens": 430.7
+        }
+      },
+      "B-reuse": {
+        "sessions": 120,
+        "mean_tokens_per_session": {
+          "input_tokens": 7.216666666666667,
+          "cache_read_input_tokens": 6150.016666666666,
+          "cache_creation_input_tokens": 5842.7,
+          "output_tokens": 606.925
+        }
+      }
+    },
+    "mean_characters_read_per_session": 633.45,
+    "full_run_projected_tokens": {
+      "input_tokens": 2022.0,
+      "cache_read_input_tokens": 1313449.0,
+      "cache_creation_input_tokens": 1352887.0,
+      "output_tokens": 142731.0
+    },
+    "full_run_estimated_research_usd": 5.0762613,
+    "full_run_estimated_grader_usd": 0.0,
+    "full_run_estimated_usd": 5.0762613,
+    "full_run_worst_case_usd": 8468.8128,
+    "full_run_call_limit": 3360,
+    "notice": "Measured pilot extrapolation by phase/arm, not a guarantee or confidence interval. Grader estimate assumes 240 judgments (no deduplication savings). Fake tokens remain fabricated; use a separate full-run directory."
+  },
+  "call_accounting": {
+    "reserved": 732,
+    "unresolved": 0,
+    "cost_coverage": "Recorded successful responses only; unresolved requests may have unknown billable usage."
+  },
+  "secondary_grading": null,
+  "infrastructure": {
+    "amendment": "2026-11-22-outcome-blind-transport",
+    "read_timeout_seconds": 300.0,
+    "connect_timeout_seconds": 30,
+    "runner_sha256": "40c319151e15f38bbe825c75a2d23fa9e8a6f91e245b20dfd15766feb1492139",
+    "transport_sha256": "48ea0f3f5b329d4fa34974f7dd6e73c1b0db8d3317898af1c4746532a5d94248",
+    "journal_sha256": "32ebecaad7c6adb7ab9a268cddd771b1873afd0c753b2ca85acce04f31e7617d",
+    "adoption": {
+      "who": "Vineeth Ayyat Kochaniyan (run owner), executed by independent tester",
+      "why": "transport read timeout after send; no outcomes inspected",
+      "outcome_blind": true,
+      "when": "2026-11-23T00:16:02.953128+00:00",
+      "original_runner_sha256": "d00e51bd497d05ac40aca97dca98f5914074cd8219e1d7a188ba55f3faa91810",
+      "original_run_sha256": "a204fdaa9c9464dbe9623d1264bd53caba9a03ae811f3279c99405008595e06d"
+    },
+    "abandoned_calls": [
+      {
+        "key": "B-research-07-baseline-0-00",
+        "reserved_usd": "0.06843",
+        "who": "Vineeth Ayyat Kochaniyan (run owner), executed by independent tester",
+        "when": "2026-11-23T00:16:02.953687+00:00",
+        "why": "transport read timeout after send; no outcomes inspected",
+        "possibly_billed": true,
+        "never_refunded": true,
+        "retry_key": "B-research-07-baseline-0-00--attempt-1"
+      }
+    ],
+    "abandoned_reserved_usd": 0.06843,
+    "connect_failures": 0,
+    "rule": "Abandon/retry does not by itself disqualify a run. All tasks, arms and repetitions must complete and all existing accuracy/token/safety criteria must pass; abandonments must be disclosed. Unknown abandoned token usage is not invented or substituted into the token metric."
+  }
+}

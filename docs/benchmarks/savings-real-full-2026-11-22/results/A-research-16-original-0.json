@@ -1,0 +1,35 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "A",
+  "task_id": "research-16",
+  "arm": "original",
+  "repetition": 0,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 838,
+    "cache_creation_input_tokens": 4034,
+    "output_tokens": 364
+  },
+  "answer": "The root logger starts at WARNING, and you emit a warning with `warnings.warn()`.\n\n```json\n{\"facts\": {\"level\": \"warning\", \"function\": \"warnings.warn\"}}\n```\n\n- **Root logger level:** `howto/logging.rst` says the root logger always has an explicit level set, `WARNING` by default.\n- **Emitting a warning:** `library/warnings.rst` says Python programmers issue warnings by calling the `warn()` function defined in the `warnings` module. For example, `warnings.warn(\"feature X no longer supported\")` (`whatsnew/2.1.rst`).\n\nSources: `howto/logging.rst`, `library/warnings.rst`, `whatsnew/2.1.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs",
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}

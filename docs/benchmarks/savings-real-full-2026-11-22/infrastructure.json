@@ -1,0 +1,16 @@
+{
+  "amendment": "2026-11-22-outcome-blind-transport",
+  "read_timeout_seconds": 300.0,
+  "connect_timeout_seconds": 30,
+  "runner_sha256": "40c319151e15f38bbe825c75a2d23fa9e8a6f91e245b20dfd15766feb1492139",
+  "transport_sha256": "48ea0f3f5b329d4fa34974f7dd6e73c1b0db8d3317898af1c4746532a5d94248",
+  "journal_sha256": "32ebecaad7c6adb7ab9a268cddd771b1873afd0c753b2ca85acce04f31e7617d",
+  "adoption": {
+    "who": "Vineeth Ayyat Kochaniyan (run owner), executed by independent tester",
+    "why": "transport read timeout after send; no outcomes inspected",
+    "outcome_blind": true,
+    "when": "2026-11-23T00:16:02.953128+00:00",
+    "original_runner_sha256": "d00e51bd497d05ac40aca97dca98f5914074cd8219e1d7a188ba55f3faa91810",
+    "original_run_sha256": "a204fdaa9c9464dbe9623d1264bd53caba9a03ae811f3279c99405008595e06d"
+  }
+}

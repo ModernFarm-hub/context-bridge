@@ -1,0 +1,34 @@
+{
+  "grading_method": "facts_json",
+  "grading_amendment": "2026-11-22-formatting-only",
+  "characters_read": 0,
+  "phase": "B",
+  "task_id": "research-33",
+  "arm": "baseline",
+  "repetition": 1,
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 3431,
+    "cache_creation_input_tokens": 0,
+    "output_tokens": 229
+  },
+  "answer": "The signature shows `buffersize=None`.\n\n**Answer:**\n\n```json\n{\"facts\": {\"available\": \"true\", \"default\": \"None\"}}\n```\n\nIn this snapshot, `Executor.map` is documented as `map(fn, *iterables, timeout=None, chunksize=1, buffersize=None)`. It accepts `buffersize`, and the default is `None`. The docs say iterables are collected immediately unless a `buffersize` is given.\n\nSource: `library/concurrent.futures.rst`",
+  "correct": true,
+  "final": true,
+  "cap_reached": false,
+  "refused": false,
+  "truncated": false,
+  "error": null,
+  "stop_reasons": [
+    "tool_use",
+    "end_turn"
+  ],
+  "tools_used": [
+    "search_docs"
+  ],
+  "decision": null,
+  "resolved_models": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+  ]
+}
