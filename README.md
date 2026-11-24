@@ -8,6 +8,8 @@
 
 0.10.0b1 · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
 
+[![ModernFarm-hub/context-bridge MCP server](https://glama.ai/mcp/servers/ModernFarm-hub/context-bridge/badges/score.svg)](https://glama.ai/mcp/servers/ModernFarm-hub/context-bridge)
+
 ## Try it in 60 seconds
 
 ```sh
