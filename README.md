@@ -6,7 +6,7 @@
 
 ![Synthetic import, search and citation demo](https://raw.githubusercontent.com/ModernFarm-hub/context-bridge/main/docs/assets/demo.gif)
 
-0.10.0b1 · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
+0.11.0a3 · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
 
 [![ModernFarm-hub/context-bridge MCP server](https://glama.ai/mcp/servers/ModernFarm-hub/context-bridge/badges/score.svg)](https://glama.ai/mcp/servers/ModernFarm-hub/context-bridge)
 
@@ -72,10 +72,16 @@ Results are grouped by conversation. `context_read` returns surrounding indexed 
 
 ## Contribute
 
-[Installation](docs/INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](docs/ROADMAP.md) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/verification/0.9.0b1/README.md) · [Third-party notices](THIRD_PARTY.md)
+[Installation](docs/INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](docs/ROADMAP.md) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/verification/0.11.0a3/README.md) · [Third-party notices](THIRD_PARTY.md)
 
 Tests use synthetic conversations: `PYTHONPATH=prototype python3 -m unittest discover -s prototype/tests -v`. Historical experiments are [archived](research/README.md) and are not public CLI commands. Original project code is licensed under [Apache-2.0](LICENSE).
 
 <!-- mcp-name: io.github.ModernFarm-hub/context-bridge -->
 
 The [public-document benchmark](docs/benchmarks/savings-real-guide.md) provides a preregistered, isolated comparison of balanced reuse with fresh research. Its current report uses fake provider responses only; it does not establish measured token savings.
+
+## Trace a commit (experimental)
+
+`context-bridge trace HEAD --repo /path/to/repo` (or `trace --path src/x.py --line 42`) ranks evidence from already approved Claude Code and ChatGPT desktop sessions. Output defaults to turn references without titles or text. This alpha tests feasibility; it does not establish how well segments explain code. Use `context-bridge trace-eval --repo /path/to/repo --sample 20` for a local, interactive comparison with git messages and diffs. [Method and privacy](docs/TRACE.md).
+
+Opt in to `context_trace` with `context-bridge trace enable-mcp --profile personal`, then use `trace-eval --ai --sample 10` to rate short, cited answers from your AI client; selected evidence goes to that client and its model provider.

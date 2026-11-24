@@ -103,7 +103,7 @@ class SemanticInstallFailureTests(unittest.TestCase):
             self.assertIn('[semantic]',message)
             commands = [call.args[0] for call in run.call_args_list]
             self.assertEqual(commands[0][-2:],['--upgrade','pip'])
-            self.assertEqual(commands[1][-1],'context-bridge-local[semantic]==0.10.0b1')
+            self.assertEqual(commands[1][-1],'context-bridge-local[semantic]==0.11.0a3')
 
     def test_explicit_source_checkout_is_used_instead_of_pypi(self):
         import configure_semantic

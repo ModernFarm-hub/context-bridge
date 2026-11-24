@@ -1,6 +1,6 @@
 # Roadmap
 
-Last updated: 2026-11-22. Context Bridge is a free, open-source, local-first project. Priorities come from public testing and user questions; they can change.
+Last updated: 2026-11-24. Context Bridge is a free, open-source, local-first project. Priorities come from public testing and user questions; they can change.
 
 ## What Context Bridge is for
 
@@ -26,7 +26,7 @@ These tasks were quick documentation lookups (a median of 2 model calls and abou
 ## Next
 
 - **Real users before new features.** Gather what people actually find, miss or don't need, through GitHub Discussions and issues. No telemetry.
-- **Candidate: trace a commit to the AI session that produced it.** A local feasibility check matched 31 of 33 commits in this repository to the Claude Code or ChatGPT desktop session that made them. Explaining *why* needs the originating request and tool evidence, and links must stay at turn level so unrelated private content in the same session is never exposed. Built only if users ask for it.
+- **Experimental: trace a commit to the AI session that produced it** (0.11 alphas). On this repository it linked 34 of 35 commits. With the commit message plus session evidence, short AI answers to "why was this commit made?" were better than git alone in 7 of 10 sampled commits and never worse ([details and limits](TRACE.md#first-check-on-a-real-repository)). Next: developers trying "why is this line like this?" on their own repositories.
 
 ## Later
 
@@ -40,3 +40,17 @@ These tasks were quick documentation lookups (a median of 2 model calls and abou
 - Paid tiers, hosted services or data collection.
 - Scraping chatgpt.com or claude.ai. Web history arrives only through official exports until providers offer a history API.
 - Claims of token or cost savings without a pre-registered result that supports them.
+
+## 0.11.0a1: trace feasibility experiment
+
+`trace` links commits to evidence in already approved coding sessions, with references only by default. `trace-eval` collects local human labels and compares the selected segment with git messages/diffs. This is an experimental alpha; matching evidence is not proof of authorship or an explanation of why. No real-session probe or quality result is bundled. Next: review synthetic failures and independently label a local sample before making any quality claim. [Method and privacy](TRACE.md).
+
+
+## 0.11.0a2: short, cited AI explanations experiment
+
+The opt-in `context_trace` MCP tool sends bounded, redacted selected evidence to the user's AI client and its model provider. It uses the existing matcher, with no new matching rules. Sensitive-term turns are withheld. `trace-eval --ai` lets one person compare short answers against a git-only baseline using a seeded sample of ten linked commits and four quick ratings per item. Next: independently collect those judgments and review unsupported reasons and privacy incidents. No explanation-quality result is claimed. [Flow and privacy](TRACE.md).
+
+
+## 0.11.0a3: reason-focused evidence and developer questions
+
+Supply the commit message alongside selected origins, approvals, decisions and informative fixed tool summaries; ask the client for a short Reason / supported Alternatives or caveats / Sources answer. Accept code locations and bounded history queries. Offer an explicit local counts-only self-report, with no monitoring or authorship claim. Next: independently judge short answers and inspect missing evidence, unsupported reasons and privacy incidents. These features are an experiment, not a quality result. [Usage and privacy](TRACE.md).

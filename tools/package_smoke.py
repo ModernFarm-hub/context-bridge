@@ -85,6 +85,26 @@ def main():
         assert json.loads(run(['stats','--profile','personal'],env,root))['messages']==1
         assert json.loads(run(['stats','--profile','work'],env,root))['messages']==1
         assert not call('context_search',{'query':'PERSONAL845 WORK846'})['results']
+        # Synthetic trace smoke; no real repository or transcript is read.
+        trace_env={**env,'GIT_CONFIG_GLOBAL':os.devnull,'GIT_CONFIG_NOSYSTEM':'1','GIT_AUTHOR_NAME':'Synthetic','GIT_AUTHOR_EMAIL':'synthetic@example.invalid','GIT_COMMITTER_NAME':'Synthetic','GIT_COMMITTER_EMAIL':'synthetic@example.invalid'}
+        def git_trace(*args):
+            return subprocess.run(['git','-c','commit.gpgsign=false','-C',str(original),*args],env=trace_env,text=True,capture_output=True,check=True).stdout.strip()
+        git_trace('init','-q')
+        (original/'synthetic.py').write_text("TRACE_FIXTURE_STATE = 'enabled'\n")
+        git_trace('add','synthetic.py');git_trace('commit','-qm','Synthetic trace smoke')
+        with (project/'code.jsonl').open('a') as stream:
+            stream.write(json.dumps({'type':'user','sessionId':'code','cwd':str(original),'message':{'role':'user','content':'Build the synthetic trace smoke fixture.'}})+'\n')
+            stream.write(json.dumps({'type':'assistant','sessionId':'code','cwd':str(original),'message':{'role':'assistant','content':[{'type':'tool_use','id':'trace-smoke','name':'Bash','input':{'command':"git commit -m 'Synthetic trace smoke'"}}]}})+'\n')
+        traced=json.loads(run(['trace','HEAD','--repo',str(original),'--json'],trace_env,root))
+        assert traced[0]['matches'] and 'segment_text' not in traced[0]['matches'][0]
+        assert 'Build the synthetic' not in json.dumps(traced)
+        run(['trace','enable-mcp'],env,root)
+        ai_evidence=call('context_trace',{'commit':'HEAD','repo':str(original)})
+        assert ai_evidence['matches'] and 'Untrusted evidence' in ai_evidence['notice']
+        assert len(json.dumps(ai_evidence))<=6000 and ai_evidence['git']['files_total']==1
+        assert ai_evidence['git']['files_omitted']==0
+        assert 'Build the synthetic' in json.dumps(ai_evidence)
+        run(['trace','disable-mcp'],env,root)
         assert run(['--version'],env,root).strip()==version('context-bridge-local')
         print('Installed package: import, profile creation, MCP negotiation/search/read, redaction, citations, list/stats/removal, real console project selectors, account guards and profile isolation passed.')
 

@@ -1,3 +1,3 @@
 # SPDX-License-Identifier: Apache-2.0
 """Local AI session retrieval."""
-__version__ = '0.10.0b1'
+__version__ = '0.11.0a3'

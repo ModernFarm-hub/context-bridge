@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.11.0a3 — reason-focused evidence and code-location queries
+
+- Reserve whole-commit totals and the top five files before fitting message/turn text; disclose budget omissions explicitly and preserve the hard serialized response limit.
+
+- Include redacted commit body and author date, recover substantive origins past short approvals within the same work block, rank reason/alternative prose, and replace generic tool placeholders with fixed informative summaries. Return structured reason-evidence sections within the existing hard response budget.
+- Resolve paths/lines through read-only history and blame, on MCP and CLI. Add capped shared-budget range/since summaries and an explicit CLI-only counts self-report with no identities, source text or file names.
+- Update the AI response format, privacy documentation and synthetic verification. No explanation-quality claim or real-data result is bundled.
+
+## 0.11.0a2 — opt-in evidence for the user’s AI
+
+- Add per-profile, disabled-by-default MCP `context_trace` using the existing matcher. Return prioritized redacted selected turns with URN citations, commit subject and diffstat; withhold sensitive-term turns and omit paths, emails and titles.
+- Add `trace enable-mcp`, `disable-mcp`, and `sensitive add/remove/list`, with an explicit explanation that selected evidence reaches the AI client and its model provider.
+- Add `trace-eval --ai` seeded linked-commit sampling, short-answer/baseline questions and local paired ratings. Reports describe one person’s judgments on one repository, with no explanation-quality claim.
+- Verify using invented transcripts/repositories and a fake MCP client only.
+
+- Bound the complete serialized MCP tool result, cap diffstats at 20 ranked files with whole-commit totals/omission counts, and accept append-only live-session growth. Add synthetic thousand-file/long-segment wire-budget and snapshot-invalidation fixtures.
+
+## 0.11.0a1 — experimental commit tracing
+
+- Add read-only `trace` evidence over explicitly approved coding transcripts: commit subjects, stable patch identity, recorded diffs, content overlap and weak time tie-breaks. Human-only commits can return no link.
+- Select request/edit/tool-evidence turns across earlier commits, excluding intervening unrelated request blocks. Hide titles and text by default; reveal only confirmed, redacted segment turns with sensitive-pattern warnings.
+- Add local `trace-eval` labels for session precision, why scores, privacy incidents and a git-message/diff baseline. Synthetic tests only; no claim about real-world explanation quality.
+
 ## 0.10.0b1
 
 - **Benchmark result:** in the pre-registered 40-task confirmatory run (claude-sonnet-5-5, $5.14), reuse used 84% more tokens than fresh research (95% interval 64–108% more), with accuracy non-inferior (97.5% vs 93.3%) and stale-answer safety passed. No savings claim is made. Results and all recorded calls are in docs/benchmarks/savings-real.md. The README now says plainly that Context Bridge is for finding past work, not for cutting model costs.
@@ -111,3 +134,15 @@
 - Prepare a product README/demo, security policy, CI matrix and publishing/registry instructions. Move historical research docs aside; retrieval research remains frozen.
 
 The distribution name is `context-bridge-local`; `context-bridge` on PyPI is an unrelated project. Publication and remote CI results must be verified separately from local build checks.
+
+### 0.11.0a1 parser correction
+
+- Recognize multiline commit messages in shell chains and Codex `exec` literal command wrappers, including relative workdirs and heredoc writes.
+- Accept single-commit `REV^!` / `REV^-` selectors and add references-only `trace --explain-coverage` counts.
+- Add invented real-shape regression fixtures; no real transcripts or evaluation outcomes used.
+
+### 0.11.0a1 determinism correction
+
+- Evaluate each commit independently against fixed transcript snapshots with per-commit patch-ID memoization. Preserve links during append-only transcript growth; fail the whole invocation on changed original bytes or approval withdrawal.
+- Bind captured diffs to the next recorded commit and expose cold single-versus-range differences in coverage diagnostics.
+- Add synthetic range/individual/shuffled-order properties, amendment and quiet-command cases, live append/rewrite/revocation checks, and a diagnostic fault-injection test. No real library or history was inspected.
