@@ -4,6 +4,42 @@
 
 Records written at commit time can be incomplete, skipped or edited. Checking git changes separately from the record can expose discrepancies, including history from before installation if approved transcripts still exist. Raw transcripts are also incomplete and editable: this check cannot prove who acted, that a tool really executed successfully, or that an absent record means no action occurred.
 
+## In plain terms
+
+AI coding agents now write code, run commands, install packages and push changes. When something goes wrong, or someone asks "what did the AI do here?", most teams can only check what the agent says it did. Existing tools mostly record the agent's own account at commit time, and that account can be incomplete, skipped or edited.
+
+`audit` checks the agents' own transcripts against what actually happened in git, on your machine, and answers three questions:
+
+| Question | What audit shows |
+|---|---|
+| Does the record match reality? | Commits with AI work behind them, commits with no AI record, and commits an agent made that are no longer in history (rewritten or dropped). |
+| Did the agent do anything that needs a second look? | Reading credentials, sending them over the network, writing outside the project, force-pushing, changing CI or agent settings, installing packages. |
+| Were the usual checks skipped? | AI commits with no recorded request, no test run after the last edit, no human turn before the commit, or a push or publish. |
+
+It works on history that already exists, even from before you installed it, and across agents (Claude Code and ChatGPT desktop/Codex). Its default report contains counts and reference IDs only, with no code, prompts, file names or commands, so a summary can be shared without exposing private work. Nothing leaves the machine.
+
+### What it found on this repository
+
+Context Bridge was built with two AI agents. Running `audit` over the project's own history (36 commits, about 20 seconds):
+
+- **A rewritten history was caught.** Ten commits that an agent recorded making were no longer in the history. Each was matched to the commit that replaced it. (The rewrite was deliberate, to change author emails, but `audit` had no way to know that, so it correctly flagged the commits for review.)
+- **Every use of a real API key was surfaced:** saving the key to a file, reading it, sending it to the provider, and the paid benchmark runs that used it. The developer approved all of these, but they are exactly the actions a reviewer would want listed.
+- **12 items were rated high.** On manual review:
+  - 8 were the key-related actions above;
+  - 3 were an agent writing log files to its own work folder outside the project;
+  - 1 was a push that happened shortly after a key was read.
+- **Earlier alphas were too noisy:** the first version raised 213 high findings on the same history. Three rounds of fixes against this real history brought that down to 12.
+
+This is one repository and one developer. It is a first real check, not a measured accuracy rate.
+
+### What it is not
+
+- **Not proof.** Transcripts can be incomplete or edited, and the rules are heuristics with known false positives (listed below).
+- **Not monitoring.** A developer runs it on their own machine, over records they have approved.
+- **Not a compliance certification.** It can help answer questions reviewers ask about AI-assisted changes; it does not make a team compliant with any standard.
+
+## Usage
+
 ```sh
 context-bridge audit --repo /path/to/repo --since 30d --profile personal
 context-bridge audit --repo /path/to/repo --range main~10..main --profile personal --json

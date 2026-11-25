@@ -82,7 +82,13 @@ The [public-document benchmark](docs/benchmarks/savings-real-guide.md) provides 
 
 ## Experimental
 
-`context-bridge audit --repo /path/to/repo --since 30d` checks approved agent records against git changes and flags notable recorded actions; it is a self-run local heuristic, not proof. [Method and privacy](docs/AUDIT.md).
+**Audit what your AI coding agents actually did.** `context-bridge audit --repo /path/to/repo --since 30d` checks the agents' own transcripts against your git history. It shows:
+
+- commits that don't match the record;
+- risky actions, such as reading or sending credentials;
+- skipped checks, such as no tests before a commit.
+
+It runs locally, and its default report contains counts and references only. On this project's own history it caught 10 rewritten commits and every use of a real API key. It is a heuristic, not proof. [What it checks and what it found](docs/AUDIT.md).
 
 ## Trace a commit (experimental)
 
