@@ -138,7 +138,7 @@ def match(repo,commit,session,action_list,cache=None):
     for action in action_list:
         if action.kind!='commit':continue
         evidence=[];score=0
-        failed=bool(re.search(r'(?m)^\s*(?:fatal:|error:)|nothing to commit|(?:exit code|exited with code) [1-9]',action.output,re.I))
+        failed=not action.observed_hash and bool(re.search(r'(?m)^\s*(?:fatal:|error:)|nothing to commit|(?:exit code|exited with code) [1-9]',action.output,re.I))
         if action.subject and action.subject==commit['subject'] and not failed:
             score=((78 if not action.observed_hash else 82) if action.output_turn is not None else 65) if len(action.subject)>=8 and len(action.subject.split())>=2 else 35
             evidence.append({'type':'commit_command','turn':action.turn,'subject_matched':True,'tool_result_present':action.output_turn is not None})

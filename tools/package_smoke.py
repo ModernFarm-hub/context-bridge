@@ -105,6 +105,10 @@ def main():
         assert ai_evidence['git']['files_omitted']==0
         assert 'Build the synthetic' in json.dumps(ai_evidence)
         run(['trace','disable-mcp'],env,root)
+        audited=json.loads(run(['audit','--repo',str(original),'--since','2025-01-01','--json'],trace_env,root))
+        assert audited['notice']=='self-run local audit; heuristics; not proof'
+        assert audited['summary']['commits']==1
+        assert str(root) not in json.dumps(audited) and 'Build the synthetic' not in json.dumps(audited)
         assert run(['--version'],env,root).strip()==version('context-bridge-local')
         print('Installed package: import, profile creation, MCP negotiation/search/read, redaction, citations, list/stats/removal, real console project selectors, account guards and profile isolation passed.')
 

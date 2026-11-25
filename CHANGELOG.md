@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.12.0a3 — multi-result commits and shell precision
+
+- Pair commit commands with distinct wrapper result records; preserve rewrite links and deduplicate missing hashes per source.
+- Recognise literal commands in substitutions and loop bodies without evaluation; distinguish placeholder credentials, device redirects, absolute literal variables, and low-severity outside log output.
+- Add synthetic regressions and document the remaining static-parser limits; no accuracy claim.
+
+## 0.12.0a2 — audit precision and grouped reports
+
+- Decode wrapped tool results and root-commit hashes; recognise git configuration flags, pager/directory prefixes, environment assignments and wrapped/looped tests. Unreachable recorded hashes remain missing even when subjects are reachable; patch matches explicitly mark rewrites.
+- Use token-scoped action rules to distinguish data parsers, config reads, scratch work and real write targets. Add scratch-directory configuration, informational scratch counts, low-severity environment presence checks, agent-settings path classes and force-push severity distinctions.
+- Reconcile all approved linked contributors with recorded author/committer roles; distinguish commit-only records and analyse literal Python/Node heredoc writes without executing them.
+- Group repeated findings with occurrence/turn bounds; show raw and grouped counts, a concise text summary, grouped Markdown and a default medium printed severity threshold. Synthetic regressions only; no accuracy claim.
+
+## 0.12.0a1 — experimental local audit
+
+- Add CLI-only `audit` for commit reconciliation, recorded-but-missing commits, notable agent actions and missing recorded controls, using approved transcript snapshots and existing trace matching/scoping. Default reports contain counts and references; details require interactive confirmation and filtering. No commands are executed and no repository files are written.
+- Preserve exact added-line multiplicities in the shared action parser for reconciliation without changing trace ranking. List/count configured ignores and separate plausible command modifications from unaccounted lines.
+- Add optional private, hash-chained snapshot seals and `audit verify`, with no transcript content or raw paths in the ledger. Synthetic fixtures only; no accuracy or authorship claim.
+
 ## 0.11.0a3 — reason-focused evidence and code-location queries
 
 - Reserve whole-commit totals and the top five files before fitting message/turn text; disclose budget omissions explicitly and preserve the hard serialized response limit.

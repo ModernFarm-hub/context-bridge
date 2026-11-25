@@ -1,6 +1,6 @@
 # Roadmap
 
-Last updated: 2026-11-24. Context Bridge is a free, open-source, local-first project. Priorities come from public testing and user questions; they can change.
+Last updated: 2026-11-25. Context Bridge is a free, open-source, local-first project. Priorities come from public testing and user questions; they can change.
 
 ## What Context Bridge is for
 
@@ -54,3 +54,16 @@ The opt-in `context_trace` MCP tool sends bounded, redacted selected evidence to
 ## 0.11.0a3: reason-focused evidence and developer questions
 
 Supply the commit message alongside selected origins, approvals, decisions and informative fixed tool summaries; ask the client for a short Reason / supported Alternatives or caveats / Sources answer. Accept code locations and bounded history queries. Offer an explicit local counts-only self-report, with no monitoring or authorship claim. Next: independently judge short answers and inspect missing evidence, unsupported reasons and privacy incidents. These features are an experiment, not a quality result. [Usage and privacy](TRACE.md).
+
+## 0.12.0a1: independent local audit experiment
+
+Compare raw approved agent records with actual git changes, flag notable recorded actions and missing recorded controls, and distinguish unaccounted changes from plausible command-generated changes. Reports default to counts/references, with no network or repository writes. An optional profile-local hash chain can detect later changes to sealed transcript prefixes. Next: independently inspect heuristic false positives, missed actions and incomplete records before drawing conclusions. This is self-run local analysis, not proof or monitoring of other people. [Rules and privacy](AUDIT.md).
+
+
+## 0.12.0a2: audit precision and concise reports
+
+Recognise wrapped commit/test records, distinguish literal execution from data parsing and config reads, account for linked author/committer contributors, and separate scratch information from higher-severity findings. Group repeated observations while retaining raw counts and provide a severity-filtered printed list. Continue independent inspection of the documented heuristic limits; no real-world accuracy result is claimed. [Rules and limitations](AUDIT.md).
+
+## 0.12.0a3: multi-result and shell audit fixes
+
+Pair distinct commit result records in shared tool calls, retain rewritten-history links, and extend literal shell recognition for substitutions, loop bodies and absolute variable targets. Separate placeholder credentials and outside log output from higher-severity observations. Continue synthetic regression checks and independent review; no accuracy claim.

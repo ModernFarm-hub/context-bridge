@@ -6,7 +6,7 @@
 
 ![Synthetic import, search and citation demo](https://raw.githubusercontent.com/ModernFarm-hub/context-bridge/main/docs/assets/demo.gif)
 
-0.11.0a3 · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
+0.12.0a3 · Apache-2.0 · Python 3.9–3.13 · macOS and Linux · local-first · no telemetry
 
 [![ModernFarm-hub/context-bridge MCP server](https://glama.ai/mcp/servers/ModernFarm-hub/context-bridge/badges/score.svg)](https://glama.ai/mcp/servers/ModernFarm-hub/context-bridge)
 
@@ -72,13 +72,17 @@ Results are grouped by conversation. `context_read` returns surrounding indexed 
 
 ## Contribute
 
-[Installation](docs/INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](docs/ROADMAP.md) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/verification/0.11.0a3/README.md) · [Third-party notices](THIRD_PARTY.md)
+[Installation](docs/INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](docs/ROADMAP.md) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/verification/0.12.0a3/README.md) · [Third-party notices](THIRD_PARTY.md)
 
 Tests use synthetic conversations: `PYTHONPATH=prototype python3 -m unittest discover -s prototype/tests -v`. Historical experiments are [archived](research/README.md) and are not public CLI commands. Original project code is licensed under [Apache-2.0](LICENSE).
 
 <!-- mcp-name: io.github.ModernFarm-hub/context-bridge -->
 
 The [public-document benchmark](docs/benchmarks/savings-real-guide.md) provides a preregistered, isolated comparison of balanced reuse with fresh research. Its current report uses fake provider responses only; it does not establish measured token savings.
+
+## Experimental
+
+`context-bridge audit --repo /path/to/repo --since 30d` checks approved agent records against git changes and flags notable recorded actions; it is a self-run local heuristic, not proof. [Method and privacy](docs/AUDIT.md).
 
 ## Trace a commit (experimental)
 

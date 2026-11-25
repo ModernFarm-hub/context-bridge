@@ -67,4 +67,4 @@ python3 -m venv .venv
 
 The source package remains in `prototype/` for this release. Tracked in [issue #1](https://github.com/ModernFarm-hub/context-bridge/issues/1). A future packaging cleanup must preserve the installed `context_bridge` import and CLI.
 
-Pin the release with `uvx --from 'context-bridge-local==0.11.0a3' context-bridge mcp`. [Release process](RELEASING.md).
+Pin the release with `uvx --from 'context-bridge-local==0.12.0a3' context-bridge mcp`. [Release process](RELEASING.md).

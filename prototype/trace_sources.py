@@ -28,6 +28,7 @@ class Turn:
     arguments:object=None
     call_id:str=None
     cwd:str=None
+    output_chunks:object=None
 
 @dataclass
 class Session:
@@ -96,15 +97,53 @@ def content_text(content,types=('text','input_text','output_text')):
     if not isinstance(content,list):return ''
     return '\n'.join(b.get('text','') for b in content if isinstance(b,dict) and b.get('type') in types and isinstance(b.get('text'),str))
 
-def tool_text(value):
+def tool_text(value,depth=0):
+    if depth>10:return ''
     if isinstance(value,str):
         try:decoded=json.loads(value)
-        except ValueError:return value
-        if isinstance(decoded,dict) and isinstance(decoded.get('output'),str):return tool_text(decoded['output'])
-        return value
-    if isinstance(value,list):return content_text(value)
-    if isinstance(value,dict) and isinstance(value.get('output'),str):return tool_text(value['output'])
-    return json.dumps(value)
+        except ValueError:
+            # Multiple wrapper results can be concatenated JSON objects.
+            decoder=json.JSONDecoder();chunks=[];offset=0
+            while offset<len(value):
+                while offset<len(value) and value[offset].isspace():offset+=1
+                if offset==len(value):break
+                try:item,end=decoder.raw_decode(value,offset)
+                except ValueError:return value
+                chunks.append(tool_text(item,depth+1));offset=end
+            return '\n'.join(chunks) if chunks else value
+        return tool_text(decoded,depth+1) if isinstance(decoded,(dict,list)) else value
+    if isinstance(value,list):return '\n'.join(tool_text(v,depth+1) for v in value if isinstance(v,(dict,str)))
+    if isinstance(value,dict):
+        if value.get('type') in ('image','image_url','audio','resource','resource_link'):return ''
+        prefix='exit code '+str(value['exit_code'])+'\n' if type(value.get('exit_code')) is int and value['exit_code']!=0 else 'error: tool failed\n' if value.get('isError') is True else ''
+        for key in ('output','content','text','result'):
+            if isinstance(value.get(key),(str,list,dict)):return prefix+tool_text(value[key],depth+1)
+        return prefix+json.dumps(value)
+    return ''
+
+
+def tool_chunks(value,depth=0):
+    """Preserve separate literal wrapper results, including empty quiet output."""
+    if depth>10:return []
+    if isinstance(value,str):
+        decoder=json.JSONDecoder();items=[];offset=0
+        while offset<len(value):
+            while offset<len(value) and value[offset].isspace():offset+=1
+            if offset==len(value):break
+            try:item,end=decoder.raw_decode(value,offset)
+            except ValueError:return [value]
+            items.append(item);offset=end
+        if not items:return [value]
+        if all(isinstance(item,(dict,list)) for item in items):return [chunk for item in items for chunk in tool_chunks(item,depth+1)]
+        return [value]
+    if isinstance(value,list):return [chunk for item in value for chunk in tool_chunks(item,depth+1)]
+    if isinstance(value,dict):
+        if 'output' in value or 'result' in value:return [tool_text(value)]
+        for key in ('content','text'):
+            if key in value:return tool_chunks(value[key],depth+1)
+        return [tool_text(value)]
+    return []
+
 
 def read_session(path,provider,identity,data):
     raw=path.read_bytes();fingerprint=hashlib.sha256(raw).hexdigest()
@@ -139,7 +178,7 @@ def read_session(path,provider,identity,data):
                 turns.append(Turn(number,'tool_call','',timestamp,p.get('name',''),args,p.get('call_id') or p.get('id'),cwd))
             elif kind in ('function_call_output','custom_tool_call_output'):
                 value=p.get('output','')
-                turns.append(Turn(number,'tool_output',tool_text(value),timestamp,call_id=p.get('call_id'),cwd=cwd))
+                turns.append(Turn(number,'tool_output',tool_text(value),timestamp,call_id=p.get('call_id'),cwd=cwd,output_chunks=tool_chunks(value)))
         else:
             actual=item.get('sessionId')
             if actual and sid and actual!=sid:continue
@@ -156,7 +195,7 @@ def read_session(path,provider,identity,data):
                 for b in content:
                     if not isinstance(b,dict):continue
                     if b.get('type')=='tool_use':turns.append(Turn(number,'tool_call','',timestamp,b.get('name',''),b.get('input',{}),b.get('id'),cwd))
-                    elif b.get('type')=='tool_result':turns.append(Turn(number,'tool_output',tool_text(b.get('content')),timestamp,call_id=b.get('tool_use_id'),cwd=cwd))
+                    elif b.get('type')=='tool_result':turns.append(Turn(number,'tool_output',tool_text(b.get('content')),timestamp,call_id=b.get('tool_use_id'),cwd=cwd,output_chunks=tool_chunks(b.get('content'))))
     if not isinstance(sid,str) or not sid or excluded(data,provider,sid):return None
     return Session(provider,sid,path,turns,fingerprint,len(raw),raw.endswith(b'\n'))
 

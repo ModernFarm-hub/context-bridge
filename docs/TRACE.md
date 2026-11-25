@@ -1,4 +1,4 @@
-# Experimental commit tracing (0.11.0a3)
+# Experimental commit tracing (0.12.0a3)
 
 `trace` ranks local evidence connecting a commit to an already approved Claude Code or ChatGPT desktop (Codex) transcript. The experiment asks whether the selected turns help a person understand why code changed. A match is not proof of authorship. All shipped fixtures and verification use invented repositories and transcripts. One small real-repository check is reported [below](#first-check-on-a-real-repository); it is not a general accuracy or quality claim.
 
